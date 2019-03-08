@@ -1,19 +1,19 @@
 <template>
-  <div class="area">
-    <div class="bar clearfix">
-      <div class="logo">
+  <div id="container">
+    <div id="bar" class="clearfix">
+      <div id="logo">
         <a>
           <img width="120px" height="120px" alt="Vamos" src="../assets/header/logo.png">
         </a>
       </div>
-      <div class="title">
+      <div id="title">
         <img alt="Vamos" src="../assets/header/header_text.png">
       </div>
-      <div class="phone">
+      <div id="phone">
         {{ phone }}
       </div>
     </div>
-    <div class="menu">
+    <div id="menu">
       <ul>
         <li><a>О Vamos</a></li>
         <li><a>Курсы</a></li>
@@ -40,24 +40,24 @@
 
 <style scoped>
 
-  .logo {
+  #logo {
     float: left;
     margin-top: 10px;
   }
 
-  .title {
+  #title {
     float: left;
     margin: 35px 0 35px 80px;
     padding: 3px 0 3px 14px;
     border-left: 4px solid #F6D900;
   }
 
-  .bar {
+  #bar {
     position: relative;
     margin: 0 55px;
   }
 
-  .phone {
+  #phone {
     float: right;
     font-size: 20px;
     position: absolute;
@@ -72,9 +72,10 @@
     display: table;
   }
 
-  .menu {
+  #menu {
     background-color: #ffd906;
   }
+
   ul {
     list-style-type: none;
     margin: 0 55px;

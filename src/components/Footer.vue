@@ -1,6 +1,6 @@
 <template>
-  <div class="area">
-    <div class="bar clearfix">
+  <div id="container">
+    <div id="bar" class="clearfix">
         <span class="link">
           <a href="#">набор в группы</a>
           <a href="#">запись online</a>
@@ -19,17 +19,16 @@
 
 <script>
   export default {
-    name: ""
   }
 </script>
 
 <style scoped>
-  .area {
+
+  #container {
     background-color: #f0f0f0;
-    font-family: 'Open Sans', sans-serif;
   }
 
-  .bar {
+  #bar {
     display: flex;
     flex-direction: row;
     margin: 0 55px;
@@ -57,4 +56,5 @@
     clear: both;
     display: table;
   }
+
 </style>
