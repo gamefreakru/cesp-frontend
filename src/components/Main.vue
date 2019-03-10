@@ -18,6 +18,72 @@
         <p id="enrollment-message">Нажимая "Записаться" вы соглашаетесь с <a href="#">политикой конфиденциальности</a></p>
       </div>
     </div>
+
+    <div id="course" class="section">
+      <div id="course-header">
+        <img alt="Курсы" src="../assets/main/course.png">
+        <p class="section-title">Cursos</p>
+        <p class="section-description">Курсы испанского и каталонского в Москве</p>
+      </div>
+      <div id="course-body">
+      </div>
+      <a href="#" class="section-button">Все курсы</a>
+    </div>
+
+    <hr class="delimiter"/>
+
+    <div id="feedback" class="section">
+      <div id="feedback-header">
+        <img alt="Отзывы" src="../assets/main/feedback.png">
+        <p class="section-title">Opiniones</p>
+        <p class="section-description">Отзывы о курсах испанского</p>
+      </div>
+      <div id="feedback-body">
+      </div>
+      <a href="#" class="section-button">Все отзывы</a>
+    </div>
+
+    <hr class="delimiter"/>
+
+    <div id="blog" class="section">
+      <div id="blog-header">
+        <img alt="Блог" src="../assets/main/blog.png">
+        <p class="section-title">Blog</p>
+        <p class="section-description">Блог о языке и культуре Испании</p>
+      </div>
+      <div id="blog-body">
+      </div>
+      <a href="#" class="section-button">Перейти в блог</a>
+    </div>
+
+    <hr class="delimiter"/>
+
+    <div id="about" class="section">
+      <div id="about-header">
+        <img alt="Отзывы" src="../assets/main/blog.png">
+        <p class="section-title">Nosotros</p>
+        <p class="section-description">О нас</p>
+      </div>
+      <div id="about-body">
+      </div>
+      <a href="#" class="section-button">читать дальше</a>
+    </div>
+
+    <hr class="delimiter"/>
+
+    <div id="contact" class="section">
+      <div id="contact-header">
+        <img alt="Контакты" src="../assets/main/contact.png">
+        <p class="section-title">Contactos</p>
+        <p class="section-description">Контакты</p>
+      </div>
+      <div id="contact-body">
+      </div>
+      <a href="#" class="section-button">напишите нам</a>
+    </div>
+
+    <hr class="delimiter"/>
+
   </div>
 </template>
 
@@ -28,6 +94,7 @@
 
 <style scoped>
 
+ /*#region Cover*/
  #cover {
    background: url("../assets/main/cover.jpg") no-repeat;
    position: relative;
@@ -115,5 +182,64 @@
    color: #465f99;
    text-decoration: none
  }
+
+ /*# endregion */
+
+ /*# region Common */
+
+ .section {
+   padding: 60px 55px;
+ }
+ .section-title {
+   font-family: 'Patua One', cursive, sans-serif;
+   font-size: 2.5rem;
+   font-weight: bold;
+   color: #312A1E;
+   margin-top: 20px;
+   margin-bottom: 0;
+ }
+
+ .section-description {
+   font-size: 1.3rem;
+   font-weight: bold;
+   margin-top: 10px;
+ }
+
+ .section-button {
+   font-size: 1.4rem;
+   line-height: 1.4rem;
+   text-align: center;
+   font-weight: bold;
+   color: white;
+   background: #f0bf00;
+   text-decoration: none;
+   letter-spacing: 0.05rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 10px;
+   width: 185px;
+   height: 40px;
+   margin: 0 auto;
+   border-radius: 3px;
+ }
+
+ .section-button:hover {
+   background: #312A1E;
+ }
+
+ .delimiter {
+   border: 0;
+   border-top: #f0bf00 1px solid;
+   border-bottom: white 1px solid;
+   margin: 20px 0;
+ }
+
+ /*# endregion */
+
+ /*# region Course */
+
+ /*# endregion */
+
 
 </style>
