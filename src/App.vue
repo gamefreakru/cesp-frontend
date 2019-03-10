@@ -8,14 +8,12 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import HelloWorld from './components/HelloWorld.vue'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import Main from './components/Main.vue'
 
 @Component({
   components: {
-    HelloWorld,
     Header,
     Footer,
     Main
@@ -26,10 +24,14 @@ export default class App extends Vue {}
 
 <style>
 #app {
-  font-family: 'Open Sans', sans-serif;;
+  font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+input, textarea, button {
+  font-family: 'Open Sans', sans-serif;
 }
 </style>

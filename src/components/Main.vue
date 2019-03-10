@@ -13,8 +13,9 @@
         <div id="form">
           <input class="form-input" name="name" type="text" id="name" placeholder="Ваше имя"/>
           <input class="form-input" name="phone" type="text" id="phone" placeholder="Телефон"/>
-          <button type="submit" id="submit-button">Записаться</button>
+          <button class="form-button" type="submit" id="submit-button">Записаться</button>
         </div>
+        <p id="enrollment-message">Нажимая "Записаться" вы соглашаетесь с <a href="#">политикой конфиденциальности</a></p>
       </div>
     </div>
   </div>
@@ -30,8 +31,6 @@
  #cover {
    background: url("../assets/main/cover.jpg") no-repeat;
    position: relative;
-   /*display: flex;*/
-   /*flex-direction: row;*/
  }
 
  #info-block {
@@ -55,22 +54,66 @@
 
  #enrollment {
    float: right;
-   height: 400px;
-   width: 300px;
+   max-width: 320px;
    background: white;
    margin: 50px 55px 45px 50px;
    border-radius: 20px
  }
 
+ #enrollment-title {
+   font-size: 1.4rem;
+   margin: 10px 20px;
+ }
+
  #form {
    display: flex;
    flex-direction: column;
+   align-items: center;
  }
 
  .clearfix::after {
    content: "";
    clear: both;
    display: table;
+ }
+
+ .form-input {
+   height: 42px;
+   width: 250px;
+   border: #f0bf00 2px solid;
+   border-radius: 4px;
+   font-size: 1rem;
+   text-align: center;
+ }
+
+ .form-input::placeholder {
+   color: #9b9b9b;
+ }
+
+ .form-button {
+   height: 42px;
+   width: 250px;
+   background-color: #f50000;
+   color: white;
+   border: #f50000 2px solid;
+   border-radius: 4px;
+   font-size: 1.4rem;
+   text-align: center;
+   letter-spacing: 0.05rem;
+ }
+
+ #form > input, button {
+   margin: 10px;
+ }
+
+ #enrollment-message {
+   font-size: 1.1rem;
+   margin: 10px 20px 30px 20px;
+ }
+
+ #enrollment-message > a {
+   color: #465f99;
+   text-decoration: none
  }
 
 </style>

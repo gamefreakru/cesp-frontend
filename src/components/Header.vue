@@ -62,7 +62,7 @@
     font-size: 20px;
     position: absolute;
     top: 50%;
-    right: 5%;
+    right: 0;
     transform: translateY(-50%);
   }
 
