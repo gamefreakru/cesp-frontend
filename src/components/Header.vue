@@ -34,7 +34,7 @@
 
   @Component
   export default class Header extends Vue {
-    @Prop() private phone!: string;
+    @Prop() public phone!: string;
   }
 </script>
 

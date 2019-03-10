@@ -19,9 +19,23 @@
       </div>
     </div>
 
+    <div id="info" class="section">
+      <InfoBlock title="Набор в группы: Январь, Февраль"
+                 image="../assets/main/info/winter_groups.jpg"
+                 description="При оплате полного стандартного курса действуют скидки
+                 <br>— Семейным парам - 20%
+                 <br>— Приведи друга и получите скидку в 15% каждый"
+                 linkTitle="посмотреть расписание"/>
+      <InfoBlock title="Наши преподаватели" description="Описание 2" linkTitle="познакомиться"/>
+      <InfoBlock title="Мероприятия" linkTitle="подробнее"/>
+      <InfoBlock title="Отзывы о нас" linkTitle="читать дальше"/>
+    </div>
+
+    <hr class="delimiter"/>
+
     <div id="course" class="section">
       <div id="course-header">
-        <img alt="Курсы" src="../assets/main/course.png">
+        <img alt="Курсы" src="../assets/main/common/course.png">
         <p class="section-title">Cursos</p>
         <p class="section-description">Курсы испанского и каталонского в Москве</p>
       </div>
@@ -34,7 +48,7 @@
 
     <div id="feedback" class="section">
       <div id="feedback-header">
-        <img alt="Отзывы" src="../assets/main/feedback.png">
+        <img alt="Отзывы" src="../assets/main/common/feedback.png">
         <p class="section-title">Opiniones</p>
         <p class="section-description">Отзывы о курсах испанского</p>
       </div>
@@ -47,7 +61,7 @@
 
     <div id="blog" class="section">
       <div id="blog-header">
-        <img alt="Блог" src="../assets/main/blog.png">
+        <img alt="Блог" src="../assets/main/common/blog.png">
         <p class="section-title">Blog</p>
         <p class="section-description">Блог о языке и культуре Испании</p>
       </div>
@@ -60,26 +74,26 @@
 
     <div id="about" class="section">
       <div id="about-header">
-        <img alt="Отзывы" src="../assets/main/blog.png">
+        <img alt="Отзывы" src="../assets/main/common/blog.png">
         <p class="section-title">Nosotros</p>
         <p class="section-description">О нас</p>
       </div>
       <div id="about-body">
       </div>
-      <a href="#" class="section-button">читать дальше</a>
+      <a href="#" class="section-button">Читать дальше</a>
     </div>
 
     <hr class="delimiter"/>
 
     <div id="contact" class="section">
       <div id="contact-header">
-        <img alt="Контакты" src="../assets/main/contact.png">
+        <img alt="Контакты" src="../assets/main/common/contact.png">
         <p class="section-title">Contactos</p>
         <p class="section-description">Контакты</p>
       </div>
       <div id="contact-body">
       </div>
-      <a href="#" class="section-button">напишите нам</a>
+      <a href="#" class="section-button">Напишите нам</a>
     </div>
 
     <hr class="delimiter"/>
@@ -87,16 +101,34 @@
   </div>
 </template>
 
-<script>
-  export default {
-  }
+<script lang="ts">
+
+  import { Component, Vue } from 'vue-property-decorator'
+  import InfoBlock from './InfoBlock.vue'
+
+  @Component({
+    components: {
+      InfoBlock
+    }
+  })
+  export default class App extends Vue {}
 </script>
 
 <style scoped>
 
+ /*# region Info */
+
+ #info {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+ }
+
+ /*# endregion */
  /*#region Cover*/
+
  #cover {
-   background: url("../assets/main/cover.jpg") no-repeat;
+   background: url("../assets/main/common/cover.jpg") no-repeat;
    position: relative;
  }
 
