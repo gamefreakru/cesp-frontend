@@ -21,14 +21,26 @@
 
     <div id="info" class="section">
       <InfoBlock title="Набор в группы: Январь, Февраль"
-                 image="../assets/main/info/winter_groups.jpg"
+                 image="winter_groups"
                  description="При оплате полного стандартного курса действуют скидки
                  <br>— Семейным парам - 20%
                  <br>— Приведи друга и получите скидку в 15% каждый"
                  linkTitle="посмотреть расписание"/>
-      <InfoBlock title="Наши преподаватели" description="Описание 2" linkTitle="познакомиться"/>
-      <InfoBlock title="Мероприятия" linkTitle="подробнее"/>
-      <InfoBlock title="Отзывы о нас" linkTitle="читать дальше"/>
+      <InfoBlock title="Наши преподаватели"
+                 image="teachers"
+                 description="C нами работают преподаватели - носители языка из Испании, 
+                 увлеченные своей профессией. " 
+                 linkTitle="познакомиться"/>
+      <InfoBlock title="Мероприятия"
+                 image="events"
+                 description="Мы проводим различные мероприятия и встречи!"
+                 linkTitle="подробнее"/>
+      <InfoBlock title="Отзывы о нас"
+                 image="feedback"
+                 description="Когда изучение иностранного языка в удовольствие. Прошла в центре программу А1 и А2. 
+                 Программа занятий очень хорошо продумана, уроки проходят эффективно. И при этом в дружеской позитивной атмосфере; 
+                 язык ложится легко..."
+                 linkTitle="читать дальше"/>
     </div>
 
     <hr class="delimiter"/>
