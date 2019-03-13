@@ -7,15 +7,15 @@
   </div>
 </template>
 
-<script lang="ts">
-  import {Component, Prop, Vue} from 'vue-property-decorator'
+<script>
 
-  @Component
-  export default class InfoBlock extends Vue {
-    @Prop() private title!: string;
-    @Prop() private image!: string;
-    @Prop() private description!: string;
-    @Prop() private linkTitle!: string;
+  export default {
+    props: {
+      title: String,
+      image: String,
+      description: String,
+      linkTitle: String
+    }
   }
 </script>
 

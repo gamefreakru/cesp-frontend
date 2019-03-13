@@ -29,13 +29,14 @@
 
 </template>
 
-<script lang="ts">
-  import {Component, Prop, Vue} from 'vue-property-decorator'
+<script>
 
-  @Component
-  export default class Header extends Vue {
-    @Prop() public phone!: string;
+  export default {
+    props : {
+      phone: String
+    }
   }
+
 </script>
 
 <style scoped>

@@ -101,17 +101,15 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 
-  import { Component, Vue } from 'vue-property-decorator'
   import InfoBlock from './InfoBlock.vue'
 
-  @Component({
+  export default  {
     components: {
       InfoBlock
     }
-  })
-  export default class App extends Vue {}
+  }
 </script>
 
 <style scoped>

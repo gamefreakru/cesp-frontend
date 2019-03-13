@@ -6,20 +6,19 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+<script>
+
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import Main from './components/Main.vue'
 
-@Component({
+export default {
   components: {
     Header,
-    Footer,
-    Main
+    Main,
+    Footer
   }
-})
-export default class App extends Vue {}
+}
 </script>
 
 <style>
