@@ -139,8 +139,16 @@
         <p class="section-description">О нас</p>
       </div>
       <div id="about-body">
-        <ImageCarousel/>
+        <ImageCarousel v-bind:images="['slide1', 'slide2', 'slide3', 'slide4', 'slide5', 
+        'slide6', 'slide7', 'slide8', 'slide9', 'slide10', 'slide11', 'slide12', 'slide13',
+         'slide14', 'slide15', 'slide16', 'slide17', 'slide18', 'slide19', 'slide20' , 'slide21']"/>
       </div>
+      <p id="about-text">
+        Считаете, что выучить язык – это долго и скучно? Мы думаем, что это не так. Вы уже знаете, что значит "Hola!", 
+        пробовали хамон и паэлью и хотите узнать больше. Или вы совсем не знакомы с Испанией, и это ваш первый шаг.
+        Тогда курсы испанского языка это то, что вам нужно! От вас требуется желание и посещаемость. 
+        От нас - много полезной информации и приятная атмосфера.
+      </p>
       <a href="#" class="section-button">Читать дальше</a>
     </div>
 
@@ -152,7 +160,15 @@
         <p class="section-title">Contactos</p>
         <p class="section-description">Контакты</p>
       </div>
-      <div id="contact-body">
+      <div class="content-body">
+        <YandexMaps />
+        <div id="contacts">
+          <a :href="'tel:{{ phone }}'">{{ phone }}</a>
+          <a :href="'tel:{{ additionalPhone }}'">{{ additionalPhone }}</a>
+          <a :href="'mailto:{{ email }}'">{{ email }}</a>
+          <br>
+          <span v-for="(metro, index) in metroStationsInfo" v-bind:key="index" v-bind:data="metro">{{ metro }}</span>
+        </div>
       </div>
       <a href="#" class="section-button">Напишите нам</a>
     </div>
@@ -168,13 +184,22 @@
   import Course from './Course.vue'
   import Feedback from './Feedback.vue'
   import ImageCarousel from './ImageCarousel'
+  import YandexMaps from './YandexMaps'
 
   export default  {
+    props: {
+      phone: String,
+      additionalPhone: String,
+      email: String,
+      address: String,
+      metroStationsInfo: Array
+    },
     components: {
       InfoBlock,
       Course,
       Feedback,
-      ImageCarousel
+      ImageCarousel,
+      YandexMaps
     }
   }
 </script>
@@ -282,6 +307,41 @@
  }
 
  /*# endregion */
+ 
+ /*# region About */
+
+ #about-body {
+   margin: 20px 40px
+ }
+ 
+ #about-text {
+   margin: 10px 200px 20px;
+   line-height: 1.5;
+   text-align: center;
+   color: #312A1E;
+   font-size: 1.2rem;
+ }
+ 
+ /*# endregion */
+ 
+ /*# region Contact */
+ 
+ #contacts {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   margin: 0 20px;
+ }
+ 
+ #contacts > a {
+   font-size: 1.5rem;
+   color: #312A1E;
+ }
+ 
+ #contacts > span {
+   font-size: 1.2rem;
+ }
+ /* endregion */
 
  /*# region Common */
 
