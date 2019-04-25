@@ -1,5 +1,5 @@
 <template>
-    <a :href=link class="section-button" :style="style">{{ text }}</a>
+    <a :href=link class="section-button" :style="styling">{{ text }}</a>
 </template>
 
 <script>
@@ -7,18 +7,21 @@
         props: {
             text: String,
             link: String,
-            height: {
-                type: Number,
-                default: 185
-            },
-            width: {
+            buttonHeight: {
                 type: Number,
                 default: 40
+            },
+            buttonWidth: {
+                type: Number,
+                default: 185
             }
         },
         computed: {
-            style() {
-                return 'width: ' + this.width + '; ' + 'height: ' + this.height;
+            styling() {
+                return {
+                    width: this.buttonWidth + 'px',
+                    height: this.buttonHeight + 'px'
+                }
             }
         }
     }
@@ -41,8 +44,6 @@
         padding: 10px;
         margin: 10px auto;
         border-radius: 5px;
-        width: 185px;
-        height: 40px;
     }
 
     .section-button:hover {

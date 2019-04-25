@@ -3,6 +3,7 @@
         <img :alt="title" :src="getImgUrl(image)"/>
         <span id="title">{{ title }}</span>
         <p class="description">{{ description }}</p>
+        
         <p v-if="duration" class="description">
             <b>Продолжительность:</b>
             <br>
@@ -12,10 +13,15 @@
             <b>{{ discount }}</b>
         </span>
         <span v-if="priceInfo" class="description">{{ priceInfo }}</span>
+        
+        <Button v-if="signup" text="записаться" link="#"/>
     </div>
 </template>
 
 <script>
+    
+    import Button from "./Button.vue"
+    
     export default {
         props: {
             title: String,
@@ -25,6 +31,9 @@
             discount: String,
             priceInfo: String,
             signup: Boolean
+        },
+        components: {
+            Button
         },
         methods : {
             getImgUrl(imagePath) {
@@ -41,7 +50,7 @@
      display: flex;
      flex-direction: column;
      width: 370px;
-     height: 400px;
+     height: auto;
      margin: 0 0 auto;
  }
     

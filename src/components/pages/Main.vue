@@ -212,8 +212,6 @@
 
         </div>
 
-        <Delimiter/>
-
     </div>
 </template>
 
