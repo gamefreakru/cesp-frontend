@@ -39,8 +39,6 @@
                     discount="Скидка 19%"
                     price-info="В стоимость входят учебные материалы."
                     :signup=true
-                    :buttonWidth=200
-                    :buttonHeight=30
             />
 
             <Course image="spanish"

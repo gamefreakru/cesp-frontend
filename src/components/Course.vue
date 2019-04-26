@@ -14,7 +14,10 @@
         </span>
         <span v-if="priceInfo" class="description">{{ priceInfo }}</span>
         
-        <Button v-if="signup" text="записаться" link="#"/>
+        <Button v-if="signup" text="записаться" style="align-self: flex-start" 
+                link="#" 
+                :buttonWidth=160
+                :buttonHeight=15 />
     </div>
 </template>
 

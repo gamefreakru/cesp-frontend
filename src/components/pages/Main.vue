@@ -1,58 +1,58 @@
 <template>
 
     <div id="container">
-        
+
         <div id="cover" class="clearfix">
-            
+
             <div id="info-block">
-                
+
                 <p class="info">Лучшие преподаватели <b>только из Испании</b></p>
                 <p class="info">Стоимость академического часа <b>от 300 рублей</b></p>
                 <p class="info">Kультурные мероприятия, вечеринки, конкурсы, вино и испанcкая еда</p>
                 <p class="info"><b>6 лет</b> работы и <b>3.000</b> довольных слушателей</p>
                 <p class="info">Обучаем взрослых и детей, юристов и экономистов, бизнесменов и дипломатов</p>
-                
+
             </div>
-            
+
             <div id="enrollment">
-                
+
                 <p id="enrollment-title">Запишитесь на бесплатный пробный урок</p>
-                
+
                 <div id="form">
-                    
+
                     <input class="form-input" name="name" type="text" id="name" placeholder="Ваше имя"/>
                     <input class="form-input" name="phone" type="text" id="phone" placeholder="Телефон"/>
                     <button class="form-button" type="submit" id="submit-button">Записаться</button>
-                    
+
                 </div>
-                
+
                 <p id="enrollment-message">Нажимая "Записаться" вы соглашаетесь с <a href="#">политикой
                     конфиденциальности</a></p>
-                
+
             </div>
-            
+
         </div>
 
         <div id="info" class="section">
-            
+
             <InfoBlock title="Набор в группы: Январь, Февраль"
                        image="winter_groups"
                        description="При оплате полного стандартного курса действуют скидки
                  <br>— Семейным парам - 20%
                  <br>— Приведи друга и получите скидку в 15% каждый"
                        linkTitle="посмотреть расписание"/>
-            
+
             <InfoBlock title="Наши преподаватели"
                        image="teachers"
                        description="C нами работают преподаватели - носители языка из Испании, 
                  увлеченные своей профессией. "
                        linkTitle="познакомиться"/>
-            
+
             <InfoBlock title="Мероприятия"
                        image="events"
                        description="Мы проводим различные мероприятия и встречи!"
                        linkTitle="подробнее"/>
-            
+
             <InfoBlock title="Отзывы о нас"
                        image="feedback"
                        description="Когда изучение иностранного языка в удовольствие. Прошла в центре программу А1 и А2. 
@@ -64,37 +64,37 @@
         <Delimiter/>
 
         <div id="course" class="section">
-            
+
             <SectionHeader image="course"
                            title="Cursos"
                            description="Курсы испанского и каталонского в Москве"/>
-            
+
             <div id="courses-grid">
-                
+
                 <Course image="spanish"
                         title="Испанский язык"
                         description="Испанский язык является одним из самых распространенных и 
                 востредованных языков в мире. На нем говорят в Испании, Латинской Америке и США. 
                 Если вы выбираете иностранный язык, несомненно, следует остановить свой выбор на испанском."
                 />
-                
+
                 <Course image="catalan"
                         title="Каталонский язык"
                         description="Каталонский язык является официальным языком Каталонии, Балеарских островов, Арагона, Валенсии и Андорры.
                 У нас Вы можете изучать каталанский, общаясь с носителями языка, узнать новые аспекты много-культурной Испании."
                 />
-                
+
                 <Course image="children"
                         title="Испанский для детей"
                         description="Методики преподавания испанского языка для детей отличается от методик для взрослых. 
                 Здесь большое внимание уделяется заданиям в игровой форме, используется много визуальных материалов. 
                 Мы проводим занятия для детей от 4 до 16 лет."
                 />
-                
+
             </div>
-            
-            <Button text="Все курсы" link="#"/>
-            
+
+            <Button text="Все курсы" link="#" style="margin-left: auto; margin-right: auto;"/>
+
         </div>
 
         <Delimiter/>
@@ -136,7 +136,7 @@
                 />
             </div>
 
-            <Button text="Все отзывы" link="#"/>
+            <Button text="Все отзывы" link="#" style="margin-left: auto; margin-right: auto;"/>
 
         </div>
 
@@ -150,7 +150,7 @@
 
             <div id="blog-body"></div>
 
-            <Button text="Перейти в блог" link="#"/>
+            <Button text="Перейти в блог" link="#" style="margin-left: auto; margin-right: auto;"/>
 
         </div>
 
@@ -181,7 +181,7 @@
 
             </p>
 
-            <Button text="Читать дальше" link="#"/>
+            <Button text="Читать дальше" link="#" style="margin-left: auto; margin-right: auto;"/>
 
         </div>
 
@@ -208,7 +208,7 @@
 
             </div>
 
-            <Button text="Читать дальше" link="#"/>
+            <Button text="напишите нам" link="#" style="margin-left: auto; margin-right: auto;"/>
 
         </div>
 

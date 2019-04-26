@@ -42,7 +42,7 @@
         justify-content: center;
         align-items: center;
         padding: 10px;
-        margin: 10px auto;
+        margin-top: 10px;
         border-radius: 5px;
     }
 
