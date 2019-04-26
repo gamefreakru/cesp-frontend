@@ -30,7 +30,7 @@
     width: 270px;
     height: auto;
     background-color: #E9E9E9;
-    margin: 0 20px auto;
+    margin-bottom: auto;
     padding: 30px 10px;
 }
     
