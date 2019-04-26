@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Main from './components/pages/Main.vue'
 import Courses from './components/pages/Courses.vue'
+import Feedbacks from './components/pages/Feedbacks.vue'
 
 Vue.use(Router);
 
@@ -25,6 +26,11 @@ export default new Router({
       path: '/courses',
       name: 'courses',
       component: Courses
+    },
+    {
+      path: '/feedbacks',
+      name: 'feedbacks',
+      component: Feedbacks
     }
   ]
 })
