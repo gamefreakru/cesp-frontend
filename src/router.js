@@ -5,6 +5,7 @@ import Courses from './components/pages/Courses'
 import Feedbacks from './components/pages/Feedbacks'
 import Teachers from './components/pages/Teachers'
 import Contacts from './components/pages/Contacts.vue'
+import Club from './components/pages/Club'
 
 Vue.use(Router);
 
@@ -38,6 +39,11 @@ export default new Router({
       path: '/teachers',
       name: 'teachers',
       component: Teachers
+    },
+    {
+      path: '/club',
+      name: 'club',
+      component: Club
     },
     {
       path: '/contacts',
