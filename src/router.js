@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Main from './components/pages/Main.vue'
 import Courses from './components/pages/Courses.vue'
 import Feedbacks from './components/pages/Feedbacks.vue'
+import Contacts from './components/pages/Contacts.vue'
 
 Vue.use(Router);
 
@@ -14,8 +15,8 @@ export default new Router({
       name: 'main',
       component: Main,
       props: {
-        phone: '8 (495) 920-74-30',
-        additionalPhone: '8 916 1691837',
+        phone: '+7 (495) 920-74-30',
+        additionalPhone: '+7 (916) 169-18-37',
         address: 'Москва, Малый Каретный переулок 11/1',
         email: 'info@centroespanol.ru',
         metroStationsInfo: ['метро Цветной Бульвар - 6 минут пешком',
@@ -31,6 +32,19 @@ export default new Router({
       path: '/feedbacks',
       name: 'feedbacks',
       component: Feedbacks
+    },
+    {
+      path: '/contacts',
+      name: 'contacts',
+      component: Contacts,
+      props: {
+        phone: '+7 (495) 920-74-30',
+        additionalPhone: '+7 (916) 169-18-37',
+        address: 'Москва, Малый Каретный переулок 11/1',
+        email: 'info@centroespanol.ru',
+        metroStationsInfo: ['метро Цветной Бульвар - 6 минут пешком',
+          'метро Трубная - 11 минут пешком', 'метро Чеховская - 12 минут пешком']
+      }
     }
   ]
 })

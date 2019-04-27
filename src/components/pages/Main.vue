@@ -223,14 +223,14 @@
 
 <script>
 
-    import SectionHeader from '.././SectionHeader.vue'
-    import Delimiter from '.././Delimiter.vue'
-    import Button from '.././Button.vue'
-    import InfoBlock from '.././InfoBlock.vue'
-    import Course from '.././Course.vue'
-    import Feedback from '.././Feedback.vue'
-    import ImageCarousel from '.././ImageCarousel'
-    import YandexMaps from '.././YandexMaps'
+    import SectionHeader from '../SectionHeader.vue'
+    import Delimiter from '../Delimiter.vue'
+    import Button from '../Button.vue'
+    import InfoBlock from '../InfoBlock.vue'
+    import Course from '../Course.vue'
+    import Feedback from '../Feedback.vue'
+    import ImageCarousel from '../ImageCarousel'
+    import YandexMaps from '../YandexMaps'
 
     export default {
         props: {
@@ -405,6 +405,7 @@
     #contacts > a {
         font-size: 1.5rem;
         color: #312A1E;
+        margin: 5px 0;
     }
 
     #contacts > span {

@@ -105,8 +105,8 @@
 
 <script>
     
-    import SectionHeader from '.././SectionHeader.vue'
-    import Feedback from '.././Feedback.vue'
+    import SectionHeader from '../SectionHeader.vue'
+    import Feedback from '../Feedback.vue'
     
     export default {
         components: {
