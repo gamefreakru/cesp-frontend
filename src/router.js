@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Main from './components/pages/Main.vue'
-import Courses from './components/pages/Courses.vue'
-import Feedbacks from './components/pages/Feedbacks.vue'
+import Main from './components/pages/Main'
+import Courses from './components/pages/Courses'
+import Feedbacks from './components/pages/Feedbacks'
+import Teachers from './components/pages/Teachers'
 import Contacts from './components/pages/Contacts.vue'
 
 Vue.use(Router);
@@ -32,6 +33,11 @@ export default new Router({
       path: '/feedbacks',
       name: 'feedbacks',
       component: Feedbacks
+    },
+    {
+      path: '/teachers',
+      name: 'teachers',
+      component: Teachers
     },
     {
       path: '/contacts',
