@@ -405,6 +405,7 @@
     #contacts > a {
         font-size: 1.5rem;
         color: #312A1E;
+        margin: 5px 0;
     }
 
     #contacts > span {
