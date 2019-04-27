@@ -43,7 +43,7 @@
 
 <script>
 
-    import SectionHeader from '.././SectionHeader'
+    import SectionHeader from '../SectionHeader'
     import Input from "../Input"
     import Button from "../Button"
     import YandexMaps from "../YandexMaps"

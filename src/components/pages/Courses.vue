@@ -223,10 +223,10 @@
 
 <script>
 
-    import SectionHeader from '.././SectionHeader.vue'
-    import Delimiter from '.././Delimiter.vue'
-    import SubMenu from '.././SubMenu.vue'
-    import Course from '.././Course.vue'
+    import SectionHeader from '../SectionHeader.vue'
+    import Delimiter from '../Delimiter.vue'
+    import SubMenu from '../SubMenu.vue'
+    import Course from '../Course.vue'
 
     export default {
         name: "",
