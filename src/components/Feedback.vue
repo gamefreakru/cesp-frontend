@@ -1,6 +1,6 @@
 <template>
     <div id="container">
-        <img :alt="text" :src="getImgUrl(image)">
+        <ImageCircle text="text" :image="getImgUrl(image)" />
         <p id="text">{{ text }}</p>
         <p id="date" class="grey-text">{{ date }}</p>
         <p id="author" class="grey-text">{{ author }}</p>
@@ -8,7 +8,13 @@
 </template>
 
 <script>
+    
+    import ImageCircle from "./ImageCircle"
+    
     export default {
+        components: {
+            ImageCircle  
+        },
         props: {
             image: String,
             text: String,
