@@ -1,6 +1,6 @@
 <template>
     <div id="container">
-        <ImageCircle text="text" :image="getImgUrl(image)" />
+        <ImageCircle :text="text" :image="image" />
         <p id="text">{{ text }}</p>
         <p id="date" class="grey-text">{{ date }}</p>
         <p id="author" class="grey-text">{{ author }}</p>
@@ -20,12 +20,6 @@
             text: String,
             date: String,
             author: String  
-        },
-        methods : {
-            getImgUrl(imagePath) {
-                var images = require.context('../assets/main/feedbacks', false, /\.jpg$/);
-                return images('./' + imagePath + ".jpg");
-            }
         }
     }
 </script>
