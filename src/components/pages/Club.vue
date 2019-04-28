@@ -47,6 +47,43 @@
             
         </div>
         
+        <div id="events">
+            
+            <ClubEvent date="26.04.2019" 
+                       :image="getImgUrl('event')"
+                       title="La igualdad de genero"
+                       link="#"
+                       level="B1.2 - B2.2"
+                       description="В наше время равноправие стало одной из центральных тем для обсуждения. 
+                       Вот и мы решили затронуть эту неоднозначную, но очень интересную для всех нас тему."
+                       leader-name="Rafael"
+                       leader-link="#"
+            />
+
+            <ClubEvent date="26.04.2019"
+                       :image="getImgUrl('event')"
+                       title="La igualdad de genero"
+                       link="#"
+                       level="B1.2 - B2.2"
+                       description="В наше время равноправие стало одной из центральных тем для обсуждения. 
+                       Вот и мы решили затронуть эту неоднозначную, но очень интересную для всех нас тему."
+                       leader-name="Rafael"
+                       leader-link="#"
+            />
+
+            <ClubEvent date="26.04.2019"
+                       :image="getImgUrl('event')"
+                       title="La igualdad de genero"
+                       link="#"
+                       level="B1.2 - B2.2"
+                       description="В наше время равноправие стало одной из центральных тем для обсуждения. 
+                       Вот и мы решили затронуть эту неоднозначную, но очень интересную для всех нас тему."
+                       leader-name="Rafael"
+                       leader-link="#"
+            />
+
+        </div>
+        
     </div>
     
 </template>
@@ -54,10 +91,18 @@
 <script>
     
     import Button from "../Button"
+    import ClubEvent from "../ClubEvent"
     
     export default {
         components: {
-            Button
+            Button,
+            ClubEvent
+        },
+        methods: {
+            getImgUrl(imagePath) {
+                var images = require.context('../../assets/club', false, /\.jpg$/);
+                return images('./' + imagePath + ".jpg");
+            }
         }
     }
 </script>
@@ -98,6 +143,11 @@
     
     .key {
         color: #465F99
+    }
+    
+    #events {
+        display: flex;
+        flex-direction: column;
     }
     
 </style>
