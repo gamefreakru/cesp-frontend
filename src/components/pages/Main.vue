@@ -170,9 +170,12 @@
 
             <div id="about-body">
 
-                <ImageCarousel v-bind:images="['slide1', 'slide2', 'slide3', 'slide4', 'slide5', 
-        'slide6', 'slide7', 'slide8', 'slide9', 'slide10', 'slide11', 'slide12', 'slide13',
-         'slide14', 'slide15', 'slide16', 'slide17', 'slide18', 'slide19', 'slide20' , 'slide21']"/>
+                <ImageCarousel v-bind:images="[getCarouselImgUrl('slide1'), getCarouselImgUrl('slide2'), getCarouselImgUrl('slide3'), 
+                getCarouselImgUrl('slide4'), getCarouselImgUrl('slide5'), getCarouselImgUrl('slide6'), getCarouselImgUrl('slide7'),
+                getCarouselImgUrl('slide8'), getCarouselImgUrl('slide9'), getCarouselImgUrl('slide10'), getCarouselImgUrl('slide11'),
+                getCarouselImgUrl('slide12'), getCarouselImgUrl('slide13'), getCarouselImgUrl('slide14'), getCarouselImgUrl('slide15'), 
+                getCarouselImgUrl('slide16'), getCarouselImgUrl('slide17'), getCarouselImgUrl('slide18'), getCarouselImgUrl('slide19'), 
+                getCarouselImgUrl('slide20'), getCarouselImgUrl('slide21')]"/>
 
             </div>
 
@@ -253,6 +256,10 @@
         methods : {
             getFeedbackImgUrl(imagePath) {
                 var images = require.context('../../assets/feedbacks', false, /\.jpg$/);
+                return images('./' + imagePath + ".jpg");
+            },
+            getCarouselImgUrl(imagePath) {
+                var images = require.context('../../assets/main/carousel', false, /\.jpg$/);
                 return images('./' + imagePath + ".jpg");
             }
         }
