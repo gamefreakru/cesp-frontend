@@ -9,6 +9,8 @@ import Club from './components/pages/Club'
 import ClubEventInfo from './components/pages/ClubEventInfo' 
 import Events from './components/pages/Events'
 import EventInfo from './components/pages/EventInfo'
+import Schools from './components/pages/Schools'
+import SchoolInfo from './components/pages/SchoolInfo'
 
 Vue.use(Router);
 
@@ -62,6 +64,16 @@ export default new Router({
       path: '/events/:name',
       name: 'eventInfo',
       component: EventInfo
+    },
+    {
+      path: '/schools',
+      name: 'schools',
+      component: Schools
+    },
+    {
+      path: '/schools/:name',
+      name: 'schoolInfo',
+      component: SchoolInfo
     },
     {
       path: '/contacts',
