@@ -6,6 +6,7 @@ import Feedbacks from './components/pages/Feedbacks'
 import Teachers from './components/pages/Teachers'
 import Contacts from './components/pages/Contacts.vue'
 import Club from './components/pages/Club'
+import ClubEventInfo from './components/pages/ClubEventInfo' 
 
 Vue.use(Router);
 
@@ -44,6 +45,11 @@ export default new Router({
       path: '/club',
       name: 'club',
       component: Club
+    },
+    {
+      path: '/club/:name',
+      name: 'clubEventInfo',
+      component: ClubEventInfo
     },
     {
       path: '/contacts',
