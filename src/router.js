@@ -8,6 +8,7 @@ import Contacts from './components/pages/Contacts.vue'
 import Club from './components/pages/Club'
 import ClubEventInfo from './components/pages/ClubEventInfo' 
 import Events from './components/pages/Events'
+import EventInfo from './components/pages/EventInfo'
 
 Vue.use(Router);
 
@@ -48,14 +49,19 @@ export default new Router({
       component: Club
     },
     {
+      path: '/club/:name',
+      name: 'clubEventInfo',
+      component: ClubEventInfo
+    },
+    {
       path: '/events',
       name: 'events',
       component: Events
     },
     {
-      path: '/club/:name',
-      name: 'clubEventInfo',
-      component: ClubEventInfo
+      path: '/events/:name',
+      name: 'eventInfo',
+      component: EventInfo
     },
     {
       path: '/contacts',
