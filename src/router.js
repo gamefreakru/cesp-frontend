@@ -11,6 +11,9 @@ import Events from './components/pages/Events'
 import EventInfo from './components/pages/EventInfo'
 import Schools from './components/pages/Schools'
 import SchoolInfo from './components/pages/SchoolInfo'
+import Partners from './components/pages/Partners'
+import PartnerInfo from './components/pages/PartnerInfo'
+import Test from './components/pages/Test'
 
 Vue.use(Router);
 
@@ -74,6 +77,21 @@ export default new Router({
       path: '/schools/:name',
       name: 'schoolInfo',
       component: SchoolInfo
+    },
+    {
+      path: '/partners',
+      name: 'partners',
+      component: Partners
+    },
+    {
+      path: '/partners/:name',
+      name: 'partnersInfo',
+      component: PartnerInfo
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: Test
     },
     {
       path: '/contacts',

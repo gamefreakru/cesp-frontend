@@ -2,9 +2,9 @@
   <div id="container">
     <div id="bar" class="clearfix">
       <div id="logo">
-        <a>
+        <router-link to="/">
           <img width="120px" height="120px" alt="Vamos" src="../assets/header/logo.png">
-        </a>
+        </router-link>
       </div>
       <div id="title">
         <img alt="Vamos" src="../assets/header/header_text.png">
@@ -15,14 +15,14 @@
     </div>
     <div id="menu">
       <ul>
-        <li><a>О Vamos</a></li>
-        <li><a>Курсы</a></li>
-        <li><a>Отзывы</a></li>
-        <li><a>Блог</a></li>
-        <li><a>Habla клуб</a></li>
-        <li><a>Обучение в Испании</a></li>
-        <li><a>Тест</a></li>
-        <li><a>Контакты</a></li>
+        <li><a href="#">О Vamos</a></li>
+        <li><router-link to="courses">Курсы</router-link></li>
+        <li><router-link to="feedbacks">Отзывы</router-link></li>
+        <li><router-link to="blog">Блог</router-link></li>
+        <li><router-link to="club">Habla клуб</router-link></li>
+        <li><router-link to="schools">Обучение в Испании</router-link></li>
+        <li><router-link to="test">Тест</router-link></li>
+        <li><router-link to="contacts">Контакты</router-link></li>
       </ul>
     </div>
   </div>
