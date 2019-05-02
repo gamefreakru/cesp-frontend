@@ -14,6 +14,8 @@ import SchoolInfo from './components/pages/SchoolInfo'
 import Partners from './components/pages/Partners'
 import PartnerInfo from './components/pages/PartnerInfo'
 import Test from './components/pages/Test'
+import About from './components/pages/About'
+import Program from './components/pages/Program'
 
 Vue.use(Router);
 
@@ -92,6 +94,16 @@ export default new Router({
       path: '/test',
       name: 'test',
       component: Test
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: About
+    },
+    {
+      path: '/program',
+      name: 'program',
+      component: Program
     },
     {
       path: '/contacts',

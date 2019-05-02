@@ -45,7 +45,8 @@
             styling() {
                 return {
                     width: this.imageWidth + 'px',
-                    height: this.imageHeight + 'px'
+                    height: this.imageHeight + 'px',
+                    'border-radius': '20px'
                 }
             }
         }

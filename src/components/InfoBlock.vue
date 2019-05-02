@@ -1,7 +1,7 @@
 <template>
   <div id="container">
     <p id="title">{{ title }}</p>
-    <img :alt="title" :src="getImgUrl(image)"/>
+    <img :alt="title" :src="image"/>
     <p id="description" v-html="description"></p>
     <p id="linkText">{{ linkTitle }}</p>
   </div>
@@ -15,12 +15,6 @@
       image: String,
       description: String,
       linkTitle: String
-    },
-    methods : {
-      getImgUrl(imagePath) {
-        var images = require.context('../assets/main/info', false, /\.jpg$/);
-        return images('./' + imagePath + ".jpg");
-      }
     }
   }
 

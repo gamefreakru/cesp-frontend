@@ -1,6 +1,6 @@
 <template>
     <div id="container">
-        <img :alt="title" :src="getImgUrl(image)"/>
+        <img :alt="title" :src="image"/>
         <span id="title">{{ title }}</span>
         <p class="description">{{ description }}</p>
         
@@ -37,12 +37,6 @@
         },
         components: {
             Button
-        },
-        methods : {
-            getImgUrl(imagePath) {
-                var images = require.context('../assets/main/courses', false, /\.jpg$/);
-                return images('./' + imagePath + ".jpg");
-            }
         }
     }
 </script>
