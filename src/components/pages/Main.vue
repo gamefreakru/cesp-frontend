@@ -36,25 +36,25 @@
         <div id="info" class="section">
 
             <InfoBlock title="Набор в группы: Январь, Февраль"
-                       image="winter_groups"
+                       :image="getInfoImgUrl('winter_groups')"
                        description="При оплате полного стандартного курса действуют скидки
                  <br>— Семейным парам - 20%
                  <br>— Приведи друга и получите скидку в 15% каждый"
                        linkTitle="посмотреть расписание"/>
 
             <InfoBlock title="Наши преподаватели"
-                       image="teachers"
+                       :image="getInfoImgUrl('teachers')"
                        description="C нами работают преподаватели - носители языка из Испании, 
                  увлеченные своей профессией. "
                        linkTitle="познакомиться"/>
 
             <InfoBlock title="Мероприятия"
-                       image="events"
+                       :image="getInfoImgUrl('events')"
                        description="Мы проводим различные мероприятия и встречи!"
                        linkTitle="подробнее"/>
 
             <InfoBlock title="Отзывы о нас"
-                       image="feedback"
+                       :image="getInfoImgUrl('feedback')"
                        description="Когда изучение иностранного языка в удовольствие. Прошла в центре программу А1 и А2. 
                  Программа занятий очень хорошо продумана, уроки проходят эффективно. И при этом в дружеской позитивной атмосфере; 
                  язык ложится легко..."
@@ -71,20 +71,20 @@
 
             <div id="courses-grid">
 
-                <Course image="spanish"
+                <Course :image="getCourseImgUrl('spanish')"
                         title="Испанский язык"
                         description="Испанский язык является одним из самых распространенных и 
                 востредованных языков в мире. На нем говорят в Испании, Латинской Америке и США. 
                 Если вы выбираете иностранный язык, несомненно, следует остановить свой выбор на испанском."
                 />
 
-                <Course image="catalan"
+                <Course :image="getCourseImgUrl('catalan')"
                         title="Каталонский язык"
                         description="Каталонский язык является официальным языком Каталонии, Балеарских островов, Арагона, Валенсии и Андорры.
                 У нас Вы можете изучать каталанский, общаясь с носителями языка, узнать новые аспекты много-культурной Испании."
                 />
 
-                <Course image="children"
+                <Course :image="getCourseImgUrl('children')"
                         title="Испанский для детей"
                         description="Методики преподавания испанского языка для детей отличается от методик для взрослых. 
                 Здесь большое внимание уделяется заданиям в игровой форме, используется много визуальных материалов. 
@@ -259,7 +259,15 @@
                 return images('./' + imagePath + ".jpg");
             },
             getCarouselImgUrl(imagePath) {
-                var images = require.context('../../assets/main/carousel', false, /\.jpg$/);
+                var images = require.context('../../assets/carousel', false, /\.jpg$/);
+                return images('./' + imagePath + ".jpg");
+            },
+            getCourseImgUrl(imagePath) {
+                var images = require.context('../../assets/courses', false, /\.jpg$/);
+                return images('./' + imagePath + ".jpg");
+            },
+            getInfoImgUrl(imagePath) {
+                var images = require.context('../../assets/info', false, /\.jpg$/);
                 return images('./' + imagePath + ".jpg");
             }
         }
@@ -281,7 +289,7 @@
     /*#region Cover*/
 
     #cover {
-        background: url("../../assets/main/common/cover.jpg") no-repeat;
+        background: url("../../assets/common/cover.jpg") no-repeat;
         position: relative;
     }
 
