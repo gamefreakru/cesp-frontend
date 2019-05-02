@@ -9,7 +9,7 @@
             placeholder: String,
             height: {
                 type: Number,
-                default: 50
+                default: 45
             }
         },
         computed: {

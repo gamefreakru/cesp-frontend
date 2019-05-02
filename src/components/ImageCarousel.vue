@@ -18,6 +18,7 @@
 </template>
 
 <script>
+    // noinspection ES6CheckImport
     import {Carousel, Slide} from 'vue-carousel'
 
     export default {
