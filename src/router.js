@@ -1,22 +1,22 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Main from './components/pages/Main'
-import Courses from './components/pages/Courses'
-import Feedbacks from './components/pages/Feedbacks'
-import Teachers from './components/pages/Teachers'
-import Contacts from './components/pages/Contacts.vue'
-import Club from './components/pages/Club'
-import ClubEventInfo from './components/pages/ClubEventInfo'
-import Events from './components/pages/Events'
-import EventInfo from './components/pages/EventInfo'
-import Schools from './components/pages/Schools'
-import SchoolInfo from './components/pages/SchoolInfo'
-import Partners from './components/pages/Partners'
-import PartnerInfo from './components/pages/PartnerInfo'
-import Test from './components/pages/Test'
-import About from './components/pages/About'
-import Program from './components/pages/Program'
-import Policy from './components/pages/Policy'
+import MainNew from './pages/MainNew'
+import Courses from './pages/Courses'
+import Feedbacks from './pages/Feedbacks'
+import Teachers from './pages/Teachers'
+import Contacts from './pages/Contacts.vue'
+import Club from './pages/Club'
+import ClubEventInfo from './pages/ClubEventInfo'
+import Events from './pages/Events'
+import EventInfo from './pages/EventInfo'
+import Schools from './pages/Schools'
+import SchoolInfo from './pages/SchoolInfo'
+import Partners from './pages/Partners'
+import PartnerInfo from './pages/PartnerInfo'
+import Test from './pages/Test'
+import About from './pages/About'
+import Program from './pages/Program'
+import Policy from './pages/Policy'
 
 Vue.use(Router);
 
@@ -26,15 +26,15 @@ export default new Router({
         {
             path: '/',
             name: 'main',
-            component: Main,
-            props: {
-                phone: '+7 (495) 920-74-30',
-                additionalPhone: '+7 (916) 169-18-37',
-                address: 'Москва, Малый Каретный переулок 11/1',
-                email: 'info@centroespanol.ru',
-                metroStationsInfo: ['метро Цветной Бульвар - 6 минут пешком',
-                    'метро Трубная - 11 минут пешком', 'метро Чеховская - 12 минут пешком']
-            }
+            component: MainNew
+            // props: {
+            //     phone: '+7 (495) 920-74-30',
+            //     additionalPhone: '+7 (916) 169-18-37',
+            //     address: 'Москва, Малый Каретный переулок 11/1',
+            //     email: 'info@centroespanol.ru',
+            //     metroStationsInfo: ['метро Цветной Бульвар - 6 минут пешком',
+            //         'метро Трубная - 11 минут пешком', 'метро Чеховская - 12 минут пешком']
+            // }
         },
         {
             path: '/courses',

@@ -226,14 +226,14 @@
 
 <script>
 
-    import SectionHeader from '../SectionHeader.vue'
-    import Delimiter from '../Delimiter.vue'
-    import Button from '../Button.vue'
-    import InfoBlock from '../InfoBlock.vue'
-    import Course from '../Course.vue'
-    import Feedback from '../Feedback.vue'
-    import ImageCarousel from '../ImageCarousel'
-    import YandexMaps from '../YandexMaps'
+    import SectionHeader from '../components/SectionHeader.vue'
+    import Delimiter from '../components/Delimiter.vue'
+    import Button from '../components/Button.vue'
+    import InfoBlock from '../components/InfoBlock.vue'
+    import Course from '../components/Course.vue'
+    import Feedback from '../components/Feedback.vue'
+    import ImageCarousel from '../components/ImageCarousel'
+    import YandexMaps from '../components/YandexMaps'
 
     export default {
         props: {
@@ -255,19 +255,19 @@
         },
         methods : {
             getFeedbackImgUrl(imagePath) {
-                var images = require.context('../../assets/feedbacks', false, /\.jpg$/);
+                var images = require.context('../assets/feedbacks', false, /\.jpg$/);
                 return images('./' + imagePath + ".jpg");
             },
             getCarouselImgUrl(imagePath) {
-                var images = require.context('../../assets/carousel', false, /\.jpg$/);
+                var images = require.context('../assets/carousel', false, /\.jpg$/);
                 return images('./' + imagePath + ".jpg");
             },
             getCourseImgUrl(imagePath) {
-                var images = require.context('../../assets/courses', false, /\.jpg$/);
+                var images = require.context('../assets/courses', false, /\.jpg$/);
                 return images('./' + imagePath + ".jpg");
             },
             getInfoImgUrl(imagePath) {
-                var images = require.context('../../assets/info', false, /\.jpg$/);
+                var images = require.context('../assets/info', false, /\.jpg$/);
                 return images('./' + imagePath + ".jpg");
             }
         }
@@ -289,7 +289,7 @@
     /*#region Cover*/
 
     #cover {
-        background: url("../../assets/common/cover.jpg") no-repeat;
+        background: url("../assets/common/cover.jpg") no-repeat;
         position: relative;
     }
 

@@ -223,10 +223,10 @@
 
 <script>
 
-    import SectionHeader from '../SectionHeader.vue'
-    import Delimiter from '../Delimiter.vue'
-    import SubMenu from '../SubMenu.vue'
-    import Course from '../Course.vue'
+    import SectionHeader from '../components/SectionHeader.vue'
+    import Delimiter from '../components/Delimiter.vue'
+    import SubMenu from '../components/SubMenu.vue'
+    import Course from '../components/Course.vue'
 
     export default {
         components: {
@@ -237,7 +237,7 @@
         },
         methods: {
             getImgUrl(imagePath) {
-                var images = require.context('../../assets/courses', false, /\.jpg$/);
+                var images = require.context('../assets/courses', false, /\.jpg$/);
                 return images('./' + imagePath + ".jpg");
             }
         }

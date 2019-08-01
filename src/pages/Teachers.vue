@@ -120,8 +120,8 @@
 
 <script>
     
-    import SectionHeader from "../SectionHeader"
-    import Teacher from "../Teacher"
+    import SectionHeader from "../components/SectionHeader"
+    import Teacher from "../components/Teacher"
     
     export default {
         components: {

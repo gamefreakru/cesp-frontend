@@ -83,11 +83,11 @@
             
             <div id="footer-grid">
                 
-                <img alt="facebook" src="../../assets/feedbacks/facebook.png">
+                <img alt="facebook" src="../assets/feedbacks/facebook.png">
                 <span>Отзывы с таким значком мы взяли из социальных сетей и интернета. Их можно найти в facebook и vk,
                     на сайтах и форумах.</span>
 
-                <img alt="vcard" src="../../assets/feedbacks/vcard.png">
+                <img alt="vcard" src="../assets/feedbacks/vcard.png">
                 <span>Это отзывы из анкет, которые наши студенты заполняют в конце курса.
                     Анкеты анонимные, но в большинстве случаев респонденты вписывают свое имя. 
                     Если здесь есть ваш отзыв, и вы не хотите, чтоб он стоял на сайте, сообщите нам.
@@ -105,8 +105,8 @@
 
 <script>
     
-    import SectionHeader from '../SectionHeader.vue'
-    import Feedback from '../Feedback.vue'
+    import SectionHeader from '../components/SectionHeader.vue'
+    import Feedback from '../components/Feedback.vue'
     
     export default {
         components: {
@@ -115,7 +115,7 @@
         },
         methods : {
             getImgUrl(imagePath) {
-                var images = require.context('../../assets/feedbacks', false, /\.jpg$/);
+                var images = require.context('../assets/feedbacks', false, /\.jpg$/);
                 return images('./' + imagePath + ".jpg");
             }
         }

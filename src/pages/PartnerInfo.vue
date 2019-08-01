@@ -23,7 +23,7 @@
 
 <script>
     
-    import ImageCarousel from '../ImageCarousel'
+    import ImageCarousel from '../components/ImageCarousel'
     
     export default {
         components: {
@@ -55,7 +55,7 @@
         },
         methods: {
             getImgUrl(imagePath) {
-                var images = require.context('../../assets/partners', false, /\.jpg$/);
+                var images = require.context('../assets/partners', false, /\.jpg$/);
                 return images('./' + imagePath + ".jpg");
             }
         }

@@ -43,10 +43,10 @@
 
 <script>
 
-    import SectionHeader from '../SectionHeader'
-    import Input from "../Input"
-    import Button from "../Button"
-    import YandexMaps from "../YandexMaps"
+    import SectionHeader from '../components/SectionHeader'
+    import Input from "../components/Input"
+    import Button from "../components/Button"
+    import YandexMaps from "../components/YandexMaps"
 
     export default {
         props: {

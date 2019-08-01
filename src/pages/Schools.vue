@@ -46,8 +46,8 @@
 
 <script>
     
-    import SectionHeader from "../SectionHeader"
-    import School from "../School"
+    import SectionHeader from "../components/SectionHeader"
+    import School from "../components/School"
     
     export default {
         name: "",
@@ -57,7 +57,7 @@
         },
         methods: {
             getImgUrl(imagePath) {
-                var images = require.context('../../assets/schools', false, /\.jpg$/);
+                var images = require.context('../assets/schools', false, /\.jpg$/);
                 return images('./' + imagePath + ".jpg");
             }
         }

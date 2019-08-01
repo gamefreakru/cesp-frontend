@@ -6,7 +6,7 @@
 
         <div id="description">
 
-            <img alt="О школе" src="../../assets/about/about.gif" style="position: relative; float: right; margin-left: 10px;"/>
+            <img alt="О школе" src="../assets/about/about.gif" style="position: relative; float: right; margin-left: 10px;"/>
 
             <div>
                 Считаете, что выучить язык – это долго и скучно? Мы думаем, что это не так.
@@ -62,7 +62,7 @@
                 getCarouselImgUrl('slide20'), getCarouselImgUrl('slide21')]"/>
 
         <div id="sub-description">
-            <img alt="О школе" src="../../assets/about/about-teacher.jpg" style="position: relative; float: left; margin-right: 20px;"/>
+            <img alt="О школе" src="../assets/about/about-teacher.jpg" style="position: relative; float: left; margin-right: 20px;"/>
             <b>Руже Вила Орриольс</b>
             <br>
             <br>
@@ -102,8 +102,8 @@
 
 <script>
 
-    import ImageCarousel from '../ImageCarousel'
-    import Button from '../Button'
+    import ImageCarousel from '../components/ImageCarousel'
+    import Button from '../components/Button'
 
     export default {
         components: {
@@ -112,7 +112,7 @@
         },
         methods: {
             getCarouselImgUrl(imagePath) {
-                var images = require.context('../../assets/carousel', false, /\.jpg$/);
+                var images = require.context('../assets/carousel', false, /\.jpg$/);
                 return images('./' + imagePath + ".jpg");
             },
         }
@@ -145,7 +145,7 @@
     }
 
     ul {
-        list-style-image: url("../../assets/about/check.png");
+        list-style-image: url("../assets/about/check.png");
     }
 
     li {

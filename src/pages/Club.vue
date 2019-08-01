@@ -6,7 +6,7 @@
         
         <div id="header">
             
-            <img alt="Разговорный клуб" src="../../assets/club/logo.png" />
+            <img alt="Разговорный клуб" src="../assets/club/logo.png" />
             
             <div id="description">
                 <b>Друзья, мы рады сообщить вам, что проведение разговорного клуба возобновляется!</b>
@@ -90,8 +90,8 @@
 
 <script>
     
-    import Button from "../Button"
-    import ClubEvent from "../ClubEvent"
+    import Button from "../components/Button"
+    import ClubEvent from "../components/ClubEvent"
     
     export default {
         components: {
@@ -100,7 +100,7 @@
         },
         methods: {
             getImgUrl(imagePath) {
-                var images = require.context('../../assets/club', false, /\.jpg$/);
+                var images = require.context('../assets/club', false, /\.jpg$/);
                 return images('./' + imagePath + ".jpg");
             }
         }

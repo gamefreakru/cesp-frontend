@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <Header phone="8 (495) 920-74-30"/>
+        <Header/>
         <router-view/>
         <Footer/>
     </div>
@@ -8,8 +8,8 @@
 
 <script>
 
-    import Header from './components/Header.vue'
-    import Footer from './components/Footer.vue'
+    import Header from './components/HeaderNew.vue'
+    import Footer from './components/FooterNew.vue'
 
     export default {
         components: {
@@ -21,13 +21,26 @@
 </script>
 
 <style>
+    @import "main.css";
+    @font-face {
+        font-family: GothamPro;
+        src: url(fonts/GothamPro.woff)
+    }
+    @font-face {
+        font-family: GothamPro-Bold;
+        src: url(fonts/GothamPro-Bold.woff)
+    }
     #app {
-        font-family: 'Open Sans', sans-serif;
+        font-family: GothamPro, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: black;
         background-color: #f0f0f0;
+    }
+    
+    html {
+        font-size: 10px;
     }
 
     input, textarea, button {

@@ -44,8 +44,8 @@
 
 <script>
     
-    import Delimiter from "../Delimiter"
-    import Event from "../Event"
+    import Delimiter from "../components/Delimiter"
+    import Event from "../components/Event"
     
     export default {
         components: {
@@ -54,7 +54,7 @@
         },
         methods: {
             getImgUrl(imagePath) {
-                var images = require.context('../../assets/events', false, /\.jpg$/);
+                var images = require.context('../assets/events', false, /\.jpg$/);
                 return images('./' + imagePath + ".jpg");
             }
         }

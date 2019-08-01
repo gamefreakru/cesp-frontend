@@ -23,8 +23,8 @@
 
 <script>
     
-    import SectionHeader from "../SectionHeader"
-    import Partner from "../Partner"
+    import SectionHeader from "../components/SectionHeader"
+    import Partner from "../components/Partner"
     
     export default {
         components: {
@@ -33,7 +33,7 @@
         },
         methods:{
             getImgUrl(imagePath) {
-                var images = require.context('../../assets/partners', false, /\.jpg$/);
+                var images = require.context('../assets/partners', false, /\.jpg$/);
                 return images('./' + imagePath + ".jpg");
             }
         }

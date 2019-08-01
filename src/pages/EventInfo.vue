@@ -16,8 +16,8 @@
 
 <script>
 
-    import ImageCarousel from "../ImageCarousel";
-    import Button from "../Button";
+    import ImageCarousel from "../components/ImageCarousel";
+    import Button from "../components/Button";
 
     export default {
         components: {
@@ -39,7 +39,7 @@
         },
         methods: {
             getImgUrl(imagePath) {
-                var images = require.context('../../assets/events', false, /\.jpg$/);
+                var images = require.context('../assets/events', false, /\.jpg$/);
                 return images('./' + imagePath + ".jpg");
             }
         }
