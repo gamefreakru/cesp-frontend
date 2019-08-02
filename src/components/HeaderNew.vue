@@ -1,6 +1,9 @@
 <template>
     <div class="menu">
         <ul class="menu-container">
+            <li class="menu-item menu-burger">
+                <img alt="menu-burger" src="../assets/header/menu_burger.svg">
+            </li>
             <li class="menu-item">
                 <router-link to="about">О школе</router-link>
             </li>
@@ -26,6 +29,7 @@
                 <router-link to="about">Контакты</router-link>
             </li>
             <li class="menu-item menu-item-color-light">
+                <img class="gift-image" alt="gift" src="../assets/header/gift.svg">
                 <router-link to="about">Дарим пробный урок!</router-link>
             </li>
         </ul>
@@ -49,6 +53,7 @@
     }
     
     .menu {
+        min-width: 32rem;
         background-color: var(--menu-background-color);
         font-family: GothamPro-Bold, sans-serif;
         box-shadow: 0 1rem 2rem rgba(0,0,0,0.1), 0 0.6rem 0.6rem rgba(0,0,0,0.1);
@@ -62,7 +67,7 @@
         display: block;
         color: black;
         text-align: center;
-        padding: 2.1rem 2rem;
+        padding: 2.1rem 1.9rem;
         text-decoration: none;
         font-size: 1.2rem;
         letter-spacing: 0.092rem;
@@ -72,6 +77,31 @@
     .menu-item-color-light {
         background-color: var(--menu-background-color-light);
         float: right;
+        display: flex;
+    }
+    
+    .gift-image {
+        margin-bottom: -0.5rem;
+        margin-left: -1rem;
+    }
+    
+    .menu-burger {
+        padding: 2rem 1.9rem;
+        display: none;
+    }
+    
+    @media screen and (max-width: 1360px) {
+        .menu-container {
+            margin: 0;
+        }
+        
+        .menu-item:not(:first-child):not(:last-child) {
+            display: none;
+        }
+
+        .menu-burger {
+            display: block;
+        }
     }
     
 </style>
