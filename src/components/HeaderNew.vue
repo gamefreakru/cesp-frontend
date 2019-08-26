@@ -1,7 +1,7 @@
 <template>
     <div class="menu">
         <ul class="menu-container">
-            <li class="menu-item menu-burger">
+            <li class="menu-item menu-burger" v-on:click="showMenu">
                 <img alt="menu-burger" src="../assets/header/menu_burger.svg">
             </li>
             <li class="menu-item">
@@ -38,7 +38,10 @@
 
 <script>
     export default {
-        name: ""
+        methods : {
+            showMenu: function() {
+            }
+        }
     }
 </script>
 
@@ -49,12 +52,12 @@
         margin: 0 10rem;
         padding: 0;
         overflow: hidden;
-        background-color: var(--menu-background-color);
+        background-color: var(--main-color);
     }
     
     .menu {
         min-width: 32rem;
-        background-color: var(--menu-background-color);
+        background-color: var(--main-color);
         font-family: GothamPro-Bold, sans-serif;
         box-shadow: 0 1rem 2rem rgba(0,0,0,0.1), 0 0.6rem 0.6rem rgba(0,0,0,0.1);
     }
@@ -75,7 +78,7 @@
     }
     
     .menu-item-color-light {
-        background-color: var(--menu-background-color-light);
+        background-color: var(--background-color-light);
         float: right;
         display: flex;
     }
