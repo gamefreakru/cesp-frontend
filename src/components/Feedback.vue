@@ -2,8 +2,8 @@
     <div id="container">
         <ImageCircle :text="text" :image="image" />
         <p id="text">{{ text }}</p>
-        <p id="date" class="grey-text">{{ date }}</p>
-        <p id="author" class="grey-text">{{ author }}</p>
+        <p id="date" class="footer-block-grey-text">{{ date }}</p>
+        <p id="author" class="footer-block-grey-text">{{ author }}</p>
     </div>
 </template>
 
@@ -54,7 +54,7 @@
     margin: 0;
 }
     
-.grey-text {
+.footer-block-grey-text {
     line-height: 1.5;
     text-align: left;
     color: #A5A5A2;

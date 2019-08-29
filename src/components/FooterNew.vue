@@ -1,12 +1,57 @@
 <template>
     <div class="container">
-        <hr class="footer-delimiter"/>
         <div class="footer-links">
-            <span class="copyright">© Centro Vamos, 2019</span>
+            <div class="footer-block">
+                <span class="footer-block-item footer-block-header">О школе</span>
+                <router-link class="footer-block-item footer-block-link" to="/">Centro Vamos</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/">Отзывы</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/">Преподаватели</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/">Методика</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/">Партнёры</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/">Контакты</router-link>
+                <router-link class="footer-block-item footer-block-header" to="/">Блог</router-link>
+                <router-link class="footer-block-item footer-block-header" to="/">Онлайн запись</router-link>
+            </div>
+            <div class="footer-block">
+                <span class="footer-block-item footer-block-header">Обучение</span>
+                <router-link class="footer-block-item footer-block-link" to="/">Набор в группы</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/">Наши мероприятия</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/">Курсы</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/">Обучение в Испании</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/">Habla клуб</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/">Тест</router-link>
+            </div>
+            <div class="footer-block">
+                <span class="footer-block-item footer-block-header">Контакты</span>
+                <a class="footer-block-item footer-block-text" href="tel:+74959207430">+7 (495) 920-74-30</a>
+                <a class="footer-block-item footer-block-text" href="tel:+79161691837">+7 (916) 169-18-37</a>
+                <a class="footer-block-item footer-block-link" href="mailto:info@centroespanol.ru">info@centroespanol.ru</a>
+                <span class="footer-block-item footer-block-text">Москва, Пятницкая ул., 71/5 строение 2</span>
+                <span class="footer-block-item footer-block-metro">
+                    <img class="footer-block-image" alt="metro" src="../assets/footer/metro-red.svg">
+                    <span class="footer-block-text footer-block-grey-text footer-block-metro-text">Добрынинская - 5 мин. пешком</span>
+                </span>
+                <span class="footer-block-item footer-block-metro">
+                    <img class="footer-block-image" alt="metro" src="../assets/footer/metro-grey.svg">
+                    <span class="footer-block-text footer-block-grey-text footer-block-metro-text">Серпуховская - 5 мин. пешком</span>
+                </span>
+                <span class="footer-block-item footer-block-metro">
+                    <img class="link-image" alt="metro" src="../assets/footer/metro-green.svg">
+                    <span class="footer-block-text footer-block-grey-text footer-block-metro-text">Павелецкая - 10 мин. пешком</span>
+                </span>
+            </div>
+            <div class="footer-map">
+                <YandexMaps width="480" height="360"/>
+            </div>
+        </div>
+       
+        <hr class="footer-delimiter"/>
+        <div class="footer-information">
+            <span class="info-text">© Centro Vamos, 2019</span>
             <div class="links-container">
-                <a class="link" href="#"><img alt="facebook" src="../assets/footer/facebook.svg"></a>
-                <a class="link" href="#"><img alt="youtube" src="../assets/footer/youtube.svg"></a>
-                <a class="link" href="#"><img alt="instagram" src="../assets/footer/instagram.svg"></a>
+                <a class="link" href="#"><img class="link-image" alt="facebook" src="../assets/footer/facebook.svg"></a>
+                <a class="link" href="#"><img class="link-image" alt="youtube" src="../assets/footer/youtube.svg"></a>
+                <a class="link" href="#"><img class="link-image" alt="instagram" src="../assets/footer/instagram.svg"></a>
             </div>
             <span class="information">Правовая информация</span>
             <div class="payment-container">
@@ -20,8 +65,13 @@
 </template>
 
 <script>
+
+    import YandexMaps from '../components/YandexMaps'
+    
     export default {
-        name: ""
+        components: {
+            YandexMaps
+        }
     }
 </script>
 
@@ -34,13 +84,65 @@
         flex-direction: column;
     }
     
+    .footer-links {
+        display: flex;
+        margin: 5rem 0 7rem 4rem;
+    }
+    
+    .footer-block {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0 2rem
+    }
+    
+    .footer-block-item {
+        margin: 0.6rem 0;
+        font-family: GothamPro-Bold, sans-serif;
+    }
+    
+    .footer-block-header {
+        text-decoration: none;
+        letter-spacing: 0.092rem;
+        text-transform: uppercase;
+        color: white;
+        margin: 1.5rem 0;
+    }
+    
+    .footer-block-link {
+        text-decoration: none;
+        color: var(--main-color);
+    }
+    
+    .footer-block-text {
+        text-decoration: none;
+        font-family: GothamPro, sans-serif;
+        color: white;
+    }
+    
+    .footer-block-metro {
+        display: flex;
+    }
+    
+    .footer-block-metro-text {
+        margin-left: 0.5rem;
+    }
+    
+    .footer-block-grey-text {
+        color: rgba(255, 255, 255, 0.45);
+    }
+    
+    .footer-map {
+        margin-left: auto;
+    }
+    
     .footer-delimiter {
         border: 0;
         border-top: rgba(255, 255, 255, 0.1) 0.1rem solid;
         margin: 2rem 0;
     }
     
-    .footer-links {
+    .footer-information {
         display: flex;
         align-items: center;
         margin-bottom: 2rem;
@@ -59,7 +161,13 @@
         margin-left: 0.5rem;
         margin-right: 0.5rem;
         display: flex;
+        align-items: center;
         justify-content: center;
+    }
+    
+    .link-image {
+        max-width: 2rem;
+        max-height: 2rem;
     }
     
     .information {
@@ -69,7 +177,7 @@
         margin-right: auto;
     }
     
-    .copyright {
+    .info-text {
         color: rgba(255, 255, 255, 0.45);
         margin-right: 10rem;
     }
