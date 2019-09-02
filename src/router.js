@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import MainNew from './pages/MainNew'
+import Main from './pages/MainNew'
 import Courses from './pages/Courses'
 import Feedbacks from './pages/Feedbacks'
 import Teachers from './pages/Teachers'
@@ -26,7 +26,7 @@ export default new Router({
         {
             path: '/',
             name: 'main',
-            component: MainNew
+            component: Main
             // props: {
             //     phone: '+7 (495) 920-74-30',
             //     additionalPhone: '+7 (916) 169-18-37',

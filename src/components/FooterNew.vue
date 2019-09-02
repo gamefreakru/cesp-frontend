@@ -41,7 +41,7 @@
                 </span>
             </div>
             <div class="footer-map">
-                <YandexMaps width="480" height="360"/>
+                <YandexMaps :width=480 :height=360 />
             </div>
         </div>
        
