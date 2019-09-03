@@ -1,6 +1,8 @@
 :root {
     --main-color: #ffc900;
     --background-color-light: rgba(255, 239, 170, 0.5);
+    --background-color-lighter: rgba(255, 239, 170, 0.3);
+    --background-color-white: #fffae5;
     --background-color-dark: #1d1d1f;
     --border-color: rgba(255, 255, 255, 0.21);
 }

@@ -17,7 +17,7 @@
             Footer
         }
     }
-    
+
 </script>
 
 <style>
@@ -38,8 +38,14 @@
         font-size: 1.2rem;
         color: black;
         background-color: #f0f0f0;
+        max-width: 144rem;
+        float: none;
+        margin: 0 auto;
+        position: relative;
+        border-left: 0.1rem solid black;
+        border-right: 0.1rem solid black;
     }
-    
+
     html {
         font-size: 10px;
     }
