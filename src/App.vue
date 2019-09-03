@@ -30,6 +30,14 @@
         font-family: GothamPro-Bold;
         src: url(fonts/GothamPro-Bold.woff)
     }
+    @font-face {
+        font-family: FedraSerifAPro;
+        src: url(fonts/FedraSerifAPro.otf)
+    }
+    @font-face {
+        font-family: FedraSerifAPro-Bold;
+        src: url(fonts/FedraSerifAPro-Bold.otf)
+    }
     #app {
         font-family: GothamPro, sans-serif;
         -webkit-font-smoothing: antialiased;
