@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="footer-container">
         <div class="footer-links">
             <div class="footer-block">
                 <span class="footer-block-item footer-block-header">О школе</span>
@@ -77,7 +77,7 @@
 
 <style scoped>
     
-    .container {
+    .footer-container {
         background-color: var(--background-color-dark);
         padding: 7.5rem 10rem 0 10rem;
         display: flex;

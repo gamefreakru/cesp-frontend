@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="main-container">
         <div class="information-container">
             <div style="width: 75rem; 
             height: 75rem; 
@@ -45,28 +45,62 @@
                 <div style="width: 55rem;" class="title-block">и каталанского в Москве</div>
             </div>
             <div class="info-block-circle-container">
-                <div class="info-block-circle info-block-circle-light">
+                <div class="info-block-circle-item">
+                    <div class="info-block-circle info-block-circle-light"></div>
                     <span style="color: var(--tomato);" class="info-block-circle-title">4 000</span>
                     <span class="info-block-circle-description info-block-circle-description-black">
                         довольных слушателей</span>
                 </div>
-                <div class="info-block-circle">
+                <div class="info-block-circle-item">
+                    <div class="info-block-circle"></div>
                     <span class="info-block-circle-title">от 319 ₽</span>
                     <span class="info-block-circle-description">стоимость 1 часа занятия</span>
                 </div>
-                <div class="info-block-circle">
+                <div class="info-block-circle-item">
+                    <div class="info-block-circle"></div>
                     <span class="info-block-circle-title">8 лет</span>
                     <span class="info-block-circle-description">успешной работы</span>
                 </div>
             </div>
         </div>
-        <div class="group-recruitment">
+        <div class="group-recruitment-container">
             <img style="position: absolute; left: 0; top: -5rem;" src="../assets/main/group-recruitment.png"
                  srcset="../assets/main/group-recruitment@2x.png 2x, ../assets/main/group-recruitment@3x.png 3x"
                  alt="">
+            <div class="group-recruitment-information-container">
+                <span class="group-recruitment-information-title">Идёт набор в группы: 
+                    <span style="color: var(--tomato);">апрель</span>, 
+                    <span style="color: var(--tomato);">май</span>
+                </span>
+                <span class="group-recruitment-information-description">
+                    При оплате полного стандартного курса действуют скидки:
+                </span>
+                <div style="display: flex;">
+                    <div class="group-recruitment-information-discount-item">
+                        <span class="group-recruitment-information-discount-value">-15%</span>
+                        <span class="group-recruitment-information-discount-description">
+                            каждому, если прийти с другом
+                        </span>
+                    </div>
+                    <div style="margin-left: 5rem;" class="group-recruitment-information-discount-item">
+                        <span class="group-recruitment-information-discount-value">-20%</span>
+                        <span class="group-recruitment-information-discount-description"> семейным <br/>парам</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="courses">
-
+        <div class="courses-container">
+            <span class="courses-cards-title"><span style="color: var(--tomato);">Топ-3 </span>наших курсов</span>
+            <div class="courses-card-container">
+                <CourseCard class="course-card-wrapper" 
+                            red-title="Испанский" 
+                            title=" стандартный курс"
+                            description="Классический курс испанского языка в Москве продолжительностью около двух месяцев."
+                />
+                <CourseCard class="course-card-wrapper" />
+                <CourseCard class="course-card-wrapper" />
+            </div>
+           
         </div>
         <div class="events">
 
@@ -92,14 +126,19 @@
 </template>
 
 <script>
+
+    import CourseCard from '../components/CourseCard'
+    
     export default {
-        name: ""
+        components: {
+            CourseCard
+        }
     }
 </script>
 
 <style scoped>
 
-    .container {
+    .main-container {
         background-color: white;
     }
 
@@ -112,13 +151,13 @@
         position: absolute;
         display: flex;
         right: 0;
-        top: 6rem;
+        top: 7rem;
     }
     
     .info-block {
         display: flex;
         align-items: flex-start;
-        margin: 0 2rem;
+        margin: 0 3rem;
     }
     
     .info-block-text {
@@ -137,7 +176,7 @@
     }
     
     .info-block-phone {
-        font-family: GothamPro-Bold, sans-serif;
+        font-family: GothamPro-Medium, sans-serif;
         font-size: 2.4rem;
         font-weight: 500;
         color: white;
@@ -145,10 +184,10 @@
     }
     
     .info-block-description {
-        font-family: GothamPro-Bold, sans-serif;
+        font-family: GothamPro-Medium, sans-serif;
         font-size: 1.4rem;
         color: white;
-        max-width: 20rem;
+        max-width: 18rem;
         text-align: left;
         line-height: 1.57;
         margin-top: 1rem;
@@ -179,14 +218,18 @@
         right: 0;
     }
     
+    .info-block-circle-item {
+        display: flex;
+        flex-direction: column;
+        margin: 0 11rem;
+        align-items: center;
+    }
+    
     .info-block-circle {
         height: 20rem;
         width: 20rem;
         border-radius: 10rem;
         background-color: rgba(15, 5, 1, 0.7);
-        display: flex;
-        flex-direction: column;
-        margin: 0 14rem;
     }
     
     .info-block-circle-light {
@@ -195,33 +238,94 @@
     
     .info-block-circle-title {
         font-size: 6rem;
-        font-family: GothamPro-Bold, sans-serif;
-        margin-top: 7rem;
+        font-family: GothamPro-Medium, sans-serif;
         color: white;
+        margin-top: -13rem;
+        width: 25rem;
     }
     
     .info-block-circle-description {
-        font-family: FedraSerifAPro-Bold, sans-serif;
+        font-family: FedraSerifAPro-Medium, sans-serif;
         font-size: 2.4rem;
         line-height: 1.33;
-        margin-top: 2rem;
         color: white;
+        max-width: 23rem;
+        margin-top: 1.5rem;
     }
 
     .info-block-circle-description-black {
         color: black;
     }
 
-    .group-recruitment {
+    .group-recruitment-container {
         height: 44.4rem;
         background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 239, 170, 0.3));
         position: relative;
     }
-
-    .courses {
-        height: 70rem;
+    
+    .group-recruitment-information-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        right: 20rem;
+        top: 9rem;
+    }
+    
+    .group-recruitment-information-title {
+        font-family: FedraSerifAPro-Medium, sans-serif;
+        font-size: 3rem;
+        margin-bottom: 4rem;
+    }
+    
+    .group-recruitment-information-description {
+        font-family: GothamPro-Medium, sans-serif;
+        font-size: 1.8rem;
+        margin-bottom: 3rem;
+    }
+    
+    .group-recruitment-information-discount-item {
+        display: flex;
+        align-items: center;
+    }
+    
+    .group-recruitment-information-discount-value {
+        font-family: GothamPro-Medium, sans-serif;
+        font-size: 6rem;
+        color: var(--tomato);
+    }
+    
+    .group-recruitment-information-discount-description {
+        font-family: FedraSerifAPro-Italic, sans-serif;
+        font-size: 1.6rem;
+        line-height: 1.5;
+        max-width: 20rem;
+        text-align: left;
+        margin: 0 2rem;
     }
 
+    .courses-container {
+        height: 70rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .courses-cards-title {
+        font-family: FedraSerifAPro-Medium, sans-serif;
+        font-size: 3rem;
+        margin-top: 7.5rem;
+        margin-bottom: 6rem;
+    }
+    
+    .courses-card-container {
+        display: flex;
+    }
+    
+    .course-card-wrapper {
+        margin: 0 2rem;
+    }
+    
     .events {
         height: 78rem;
         background-color: var(--background-color-lighter);

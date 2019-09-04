@@ -24,19 +24,31 @@
     @import "main.css";
     @font-face {
         font-family: GothamPro;
-        src: url(fonts/GothamPro.woff)
+        src: url(fonts/GothamPro.otf)
+    }
+    @font-face {
+        font-family: GothamPro-Medium;
+        src: url(fonts/GothamPro-Medium.otf)
     }
     @font-face {
         font-family: GothamPro-Bold;
-        src: url(fonts/GothamPro-Bold.woff)
+        src: url(fonts/GothamPro-Bold.otf)
     }
     @font-face {
         font-family: FedraSerifAPro;
         src: url(fonts/FedraSerifAPro.otf)
     }
     @font-face {
+        font-family: FedraSerifAPro-Medium;
+        src: url(fonts/FedraSerifAPro-Medium.otf)
+    }
+    @font-face {
         font-family: FedraSerifAPro-Bold;
         src: url(fonts/FedraSerifAPro-Bold.otf)
+    }
+    @font-face {
+        font-family: FedraSerifAPro-Italic;
+        src: url(fonts/FedraSerifAPro-Italic.otf)
     }
     #app {
         font-family: GothamPro, sans-serif;

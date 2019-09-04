@@ -38,6 +38,11 @@ docker build . -t cr.yandex/crpi40k5e5q63h0a89q1/cesp
 docker push cr.yandex/crpi40k5e5q63h0a89q1/cesp
 ```
 
+## Pull Docker image on remote machine
+```
+docker pull cr.yandex/crpi40k5e5q63h0a89q1/cesp
+```
+
 ## Run Docker container
 ```
 docker run -d -p 8080:80 --rm --name cesp cr.yandex/crpi40k5e5q63h0a89q1/cesp:latest 
