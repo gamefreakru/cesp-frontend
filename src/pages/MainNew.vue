@@ -93,12 +93,28 @@
             <span class="courses-cards-title"><span style="color: var(--tomato);">Топ-3 </span>наших курсов</span>
             <div class="courses-card-container">
                 <CourseCard class="course-card-wrapper" 
+                            :image="getImgUrl('spain-course')"
                             red-title="Испанский" 
                             title=" стандартный курс"
                             description="Классический курс испанского языка в Москве продолжительностью около двух месяцев."
+                            duration-description="60 ак. часов (9 недель)"
+                            :discount-value=19
+                            price-description="от 19 000 руб."
                 />
-                <CourseCard class="course-card-wrapper" />
-                <CourseCard class="course-card-wrapper" />
+                <CourseCard class="course-card-wrapper"
+                            :image="getImgUrl('catalan-course')"
+                            red-title="Каталонский"
+                            title=" язык"
+                            description="Каталонский является официальным языком Каталонии, Балеарских островов, Арагона, Валенсии и Андорры."
+                            price-description="от 19 000 руб."
+                />
+                <CourseCard class="course-card-wrapper"
+                            :image="getImgUrl('personal-course')"
+                            red-title="Индивидуальные"
+                            title=" занятия и мини-группы"
+                            description="Занятия проходят индивидуально 1-2 человека или в мини-группах по 3-4 человека."
+                            duration-description="Частота и продолжительность согласовываются с учётом ваших пожеланий"
+                            price-description="2 500 руб./час"/>
             </div>
            
         </div>
@@ -132,6 +148,12 @@
     export default {
         components: {
             CourseCard
+        },
+        methods: {
+            getImgUrl(imagePath) {
+                var images = require.context('../assets/main', false, /\.svg$/);
+                return images('./' + imagePath + ".svg");
+            }
         }
     }
 </script>
