@@ -87,10 +87,11 @@
                         <span class="group-recruitment-information-discount-description"> семейным <br/>парам</span>
                     </div>
                 </div>
+                <LinkButton class=group-recruitment-link-button-wrapper title="Посмотреть расписание и цены" link="Schedule" />
             </div>
         </div>
         <div class="courses-container">
-            <span class="courses-cards-title"><span style="color: var(--tomato);">Топ-3 </span>наших курсов</span>
+            <span class="main-section-title courses-cards-title"><span style="color: var(--tomato);">Топ-3 </span>наших курсов</span>
             <div class="courses-card-container">
                 <CourseCard class="course-card-wrapper" 
                             :image="getImgUrl('spain-course')"
@@ -116,20 +117,32 @@
                             duration-description="Частота и продолжительность согласовываются с учётом ваших пожеланий"
                             price-description="2 500 руб./час"/>
             </div>
-           
+            <LinkButton class=courses-link-button-wrapper title="Выбрать курсы" link="Courses" />
         </div>
-        <div class="events">
-
+        <div class="events-container">
+            <span class="main-section-title events-title">Наша афиша</span>
+            <div class="events-card-container">
+                <EventCard class="event-card-wrapper" 
+                    link="Event"
+                />
+                <EventCard class="event-card-wrapper" 
+                    link="Event"
+                />
+                <EventCard class="event-card-wrapper"
+                    link="Event"
+                />
+            </div>
+            <LinkButton class="events-link-button-wrapper" title="Все мероприятия" link="Events" />
         </div>
         <div class="teachers">
 
         </div>
-        <div class="feedback">
+        <div class="feedback-container">
             <img style="position: absolute; left: 0; top: 10rem;" src="../assets/main/feedback-left.svg" alt="">
             <img style="position: absolute; left: 0; bottom: 0;" src="../assets/main/feedback-bottom.svg" alt="">
             <img style="position: absolute; right: 0; top: 10rem;" src="../assets/main/feedback-right.svg" alt="">
-            <img style="position: absolute; right: 6rem; top: 8rem;" src="../assets/main/feedback-right-2.svg"
-                 alt="">
+            <img style="position: absolute; right: 6rem; top: 8rem; z-index: 3" src="../assets/main/feedback-right-2.svg" alt="">
+            <SignupForm class="signup-form-wrapper" />
         </div>
         <div class="blog">
 
@@ -143,11 +156,17 @@
 
 <script>
 
-    import CourseCard from '../components/CourseCard'
+    import CourseCard from '../components/CourseCard';
+    import EventCard from "../components/EventCard";
+    import LinkButton from "../components/LinkButton";
+    import SignupForm from "../components/SignupForm";
     
     export default {
         components: {
-            CourseCard
+            CourseCard,
+            EventCard,
+            LinkButton,
+            SignupForm
         },
         methods: {
             getImgUrl(imagePath) {
@@ -162,6 +181,11 @@
 
     .main-container {
         background-color: white;
+    }
+    
+    .main-section-title {
+        font-family: FedraSerifAPro-Medium, sans-serif;
+        font-size: 3rem;
     }
 
     .information-container {
@@ -325,17 +349,19 @@
         text-align: left;
         margin: 0 2rem;
     }
+    
+    .group-recruitment-link-button-wrapper {
+        margin-top: 4rem;
+    }
 
     .courses-container {
-        height: 70rem;
+        height: 78rem;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
     
     .courses-cards-title {
-        font-family: FedraSerifAPro-Medium, sans-serif;
-        font-size: 3rem;
         margin-top: 7.5rem;
         margin-bottom: 6rem;
     }
@@ -348,16 +374,50 @@
         margin: 0 2rem;
     }
     
-    .events {
+    .courses-link-button-wrapper {
+        margin-top: 4rem;
+    }
+    
+    .events-container {
         height: 78rem;
         background-color: var(--background-color-lighter);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .events-title {
+        margin-top: 6rem;
+    }
+    
+    .events-card-container {
+        display: flex;
+        margin-top: 6rem;
+    }
+    
+    .event-card-wrapper {
+        margin: 0 1.8rem;
+    }
+    
+    .events-link-button-wrapper {
+        margin-top: 5rem;
     }
 
     .teachers {
         height: 80rem;
     }
 
-    .feedback {
+    .signup-form-wrapper {
+        position: absolute;
+        z-index: 2;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        top: -12.5rem;
+    }
+    
+    .feedback-container {
         background-color: var(--background-color-white);
         height: 70rem;
         position: relative;

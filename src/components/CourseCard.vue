@@ -100,6 +100,7 @@
         height: 0.1rem;
         background-color: rgba(0, 0, 0, 0.1);
         margin-bottom: 1.25rem;
+        width: 30rem;
     }
     
     .course-card-bottom-flex-container {
