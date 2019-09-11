@@ -124,12 +124,27 @@
             <div class="events-card-container">
                 <EventCard class="event-card-wrapper" 
                     link="Event"
+                    link-title="Записаться"
+                    title="Cosina club"
+                    description="В эту пятницу мы отправимся в Колумбию, чтобы научиться готовить знаменитое
+                    блюдо колумбийской кухни — Патаконес."
+                    :image="getJpegImgUrl('event_card_example')"
                 />
                 <EventCard class="event-card-wrapper" 
                     link="Event"
+                    link-title="Поехали!"
+                    title="В Валенсию со скидкой!"
+                    description="Презентация школы «IH Españolé» разобьет ваши стереотипы об Испании 
+                    и Валенсии в частности."
+                    :image="getJpegImgUrl('event_card_example')"
                 />
                 <EventCard class="event-card-wrapper"
                     link="Event"
+                    link-title="Хочу послушать"
+                    title="Semana Santa"
+                    description="Наш преподаватель Анхель расскажет о Semana Santa — Страстной неделе,
+                    которая празднуется в Испании перед Пасхой."
+                    :image="getJpegImgUrl('event_card_example')"
                 />
             </div>
             <LinkButton class="events-link-button-wrapper" title="Все мероприятия" link="Events" />
@@ -144,7 +159,7 @@
             <img style="position: absolute; right: 6rem; top: 8rem; z-index: 3" src="../assets/main/feedback-right-2.svg" alt="">
             <SignupForm class="signup-form-wrapper" />
         </div>
-        <div class="blog">
+        <div class="blog-container">
 
         </div>
         <div class="about">
@@ -172,6 +187,10 @@
             getImgUrl(imagePath) {
                 var images = require.context('../assets/main', false, /\.svg$/);
                 return images('./' + imagePath + ".svg");
+            },
+            getJpegImgUrl(imagePath) {
+                var images = require.context('../assets/main', false, /\.jpeg$/);
+                return images('./' + imagePath + ".jpeg");
             }
         }
     }
