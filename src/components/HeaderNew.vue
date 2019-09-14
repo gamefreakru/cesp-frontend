@@ -61,7 +61,8 @@
         font-family: GothamPro-Bold, sans-serif;
         box-shadow: 0 1rem 2rem rgba(0,0,0,0.1), 0 0.6rem 0.6rem rgba(0,0,0,0.1);
         z-index: 10;
-        position: relative;
+        position: sticky;
+        top: 0;
     }
     
     .menu-item {

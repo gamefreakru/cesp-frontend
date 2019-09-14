@@ -43,6 +43,10 @@
         src: url(fonts/FedraSerifAPro-Medium.otf)
     }
     @font-face {
+        font-family: FedraSerifAPro-Medium-Italic;
+        src: url(fonts/FedraSerifAPro-Medium-Italic.ttf)
+    }
+    @font-face {
         font-family: FedraSerifAPro-Bold;
         src: url(fonts/FedraSerifAPro-Bold.otf)
     }

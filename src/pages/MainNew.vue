@@ -62,6 +62,7 @@
                     <span class="info-block-circle-description">успешной работы</span>
                 </div>
             </div>
+            <div class="arrow-element"></div>
         </div>
         <div class="group-recruitment-container">
             <img style="position: absolute; left: 0; top: -5rem;" src="../assets/main/group-recruitment.png"
@@ -91,7 +92,11 @@
             </div>
         </div>
         <div class="courses-container">
-            <span class="main-section-title courses-cards-title"><span style="color: var(--tomato);">Топ-3 </span>наших курсов</span>
+            <span class="main-section-title courses-cards-title">
+                <span style="color: var(--tomato);">Топ-3 </span>
+                наших курсов
+                <TextBabel class="text-babel-courses-wrapper" text="Cursos" />
+            </span>
             <div class="courses-card-container">
                 <CourseCard class="course-card-wrapper" 
                             :image="getImgUrl('spain-course')"
@@ -120,7 +125,11 @@
             <LinkButton class=courses-link-button-wrapper title="Выбрать курсы" link="Courses" />
         </div>
         <div class="events-container">
-            <span class="main-section-title events-title">Наша афиша</span>
+            <span class="main-section-title events-title">
+                Наша афиша
+                <TextBabel class="text-babel-events-wrapper" text="Nuestro cartel"/>
+            </span>
+            
             <div class="events-card-container">
                 <EventCard class="event-card-wrapper" 
                     link="Event"
@@ -149,8 +158,43 @@
             </div>
             <LinkButton class="events-link-button-wrapper" title="Все мероприятия" link="Events" />
         </div>
-        <div class="teachers">
-
+        <div class="teachers-container">
+            <span class="main-section-title teachers-title">
+                Наши преподаватели
+                <TextBabel class="text-babel-teachers-wrapper" text="Profesores"/>
+            </span>
+            <div class="teachers-card-container">
+                <TeacherCard class="teacher-card-wrapper"
+                             :image="getJpegImgUrl('teacher_card_example')"
+                             title="Йосу"
+                             country="Барселона"
+                             description="Имеет международный сертификат ELE для преподавания
+                             испанского как иностранного (от International House Barcelona, 
+                             утвержденным Университетом Барселоны)."
+                 />
+                <TeacherCard class="teacher-card-wrapper"
+                             :image="getJpegImgUrl('teacher_card_example')"
+                             title="Анхель"
+                             country="Малага"
+                             description="Преподаёт испанский в Москве
+                             с 2012 года, прекрасно ладит как со взрослыми, так и с детьми,
+                             готовит свои уроки индивидуально, с учетом особенностей каждой группы."
+                />
+                <TeacherCard class="teacher-card-wrapper"
+                             :image="getJpegImgUrl('teacher_card_example')"
+                             title="Рафаэль"
+                             country="Барселона"
+                             description="В Россию приехал в 2013 году, до этого жил и работал в Англии.
+                             Имеет сертификаты Института Сервантеса о специальной подготовке преподавателеЙ."
+                />
+                <TeacherCard class="teacher-card-wrapper"
+                             :image="getJpegImgUrl('teacher_card_example')"
+                             title="Юлия"
+                             country="Москва"
+                             description="Закончила с отличием филологический факультет МГУ им М.В. Ломоносова.
+                             Прошла стажировку в Университете Барселоны. Три года работает преподавателем."
+                />
+            </div>
         </div>
         <div class="feedback-container">
             <img style="position: absolute; left: 0; top: 10rem;" src="../assets/main/feedback-left.svg" alt="">
@@ -158,30 +202,96 @@
             <img style="position: absolute; right: 0; top: 10rem;" src="../assets/main/feedback-right.svg" alt="">
             <img style="position: absolute; right: 6rem; top: 8rem; z-index: 3" src="../assets/main/feedback-right-2.svg" alt="">
             <SignupForm class="signup-form-wrapper" />
+            <span class="main-section-title feedbacks-cards-title">
+                Отзывы
+                <TextBabel class="text-babel-feedback-wrapper" text="Opiniones"/>
+            </span>
+            <div class="feedbacks-card-container">
+                <FeedbackCard class="feedback-card-wrapper"
+                              :image="getJpegImgUrl('feedback_card_example')"
+                              first-name="Анжелика"
+                              second-name="Ластенкова"
+                              :date="new Date('2018-02-15')"
+                              text="Я начала изучать испанский язык с нуля. Занимаюсь с группой у преподавателя Хуана.
+                              Никогда не думала,что изучать язык может быть так познавательно, весело и захватывающе,
+                              т.к. из школьного детства всплывали совершенно другие воспоминания.
+                              Всем рекомендую эту школу испанского языка!"
+                />
+            </div>
         </div>
         <div class="blog-container">
-
+            <span class="main-section-title blogs-cards-title">
+                <span style="color: var(--tomato);">Блог </span>
+                о культуре и языке Испании
+                <TextBabel class="text-babel-blog-wrapper" text="Blog"/>
+            </span>
+            <div class="blogs-card-container">
+                <BlogCard class="blog-card-wrapper"
+                          link="Blog"
+                          title="3 места, где можно выучить каталанский"
+                          description="Большой город составил маленький путеводитель по местам, где можно выучить 
+                          каталанский язык."
+                          :image="getJpegImgUrl('blog_card_example')"
+                />
+                <BlogCard class="blog-card-wrapper"
+                          link="Blog"
+                          title="Прогулки по Барселоне, архитектура Гауди"
+                          description="Не секрет, что Саграда Фамилияи и другие архитектурные шедевры Антонио Гауди
+                          являются визитной карточкой Барселоны."
+                          :image="getJpegImgUrl('blog_card_example')"
+                />
+                <BlogCard class="blog-card-wrapper"
+                          link="Blog"
+                          title="Испанско-каталонско-русский разговорник"
+                          description="Звучит сранно. Но если вы хотя бы однажды были в Барселоне или на побережье
+                          Коста Брава, вы знаете, что кроме своих достопримечательностей и пляжей этот регион интересен тем,
+                          что имеет два официальных языка: испанский и каталанский."
+                          :image="getJpegImgUrl('blog_card_example')"
+                />
+            </div>
         </div>
-        <div class="about">
+        <div class="about-container">
             <img style="position: absolute; left: 0;" src="../assets/main/about-left.svg" alt="">
             <img style="position: absolute; right: 0; top: 10rem;" src="../assets/main/about-right.svg" alt="">
+            <div class="about-text-container">
+                <span class="main-section-title about-title">
+                    О нас
+                    <TextBabel class="text-babel-about-wrapper" text="Nosostros"/>
+                </span>
+                <div class="about-descritpion">
+                    Считаете, что выучить язык — это долго и скучно?
+                    Мы думаем, что это не так. Вы уже знаете, что значит «Hola!», 
+                    пробовали хамон и паэлью и хотите узнать больше. Или вы совсем не знакомы с Испанией, 
+                    и это ваш первый шаг. Тогда курсы испанского языка это то, что вам нужно!
+                    От вас требуется желание и посещаемость. От нас — много полезной информации
+                    и приятная атмосфера.
+                </div>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
 
+    import TeacherCard from "../components/TeacherCard";
     import CourseCard from '../components/CourseCard';
     import EventCard from "../components/EventCard";
+    import BlogCard from "../components/BlogCard";
+    import FeedbackCard from "../components/FeedbackCard";
     import LinkButton from "../components/LinkButton";
     import SignupForm from "../components/SignupForm";
+    import TextBabel from "../components/TextBabel";
     
     export default {
         components: {
+            TeacherCard,
             CourseCard,
             EventCard,
+            BlogCard,
+            FeedbackCard,
             LinkButton,
-            SignupForm
+            SignupForm,
+            TextBabel
         },
         methods: {
             getImgUrl(imagePath) {
@@ -321,6 +431,19 @@
     .info-block-circle-description-black {
         color: black;
     }
+    
+    .arrow-element {
+        width: 3.2rem;
+        height: 4.8rem;
+        border: solid 0.25rem rgba(255, 255, 255, 0.45);
+        position: absolute;
+        z-index: 2;
+        left: 0; right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        top: 70rem;
+        border-radius: 1.8rem;
+    }
 
     .group-recruitment-container {
         height: 44.4rem;
@@ -383,6 +506,13 @@
     .courses-cards-title {
         margin-top: 7.5rem;
         margin-bottom: 6rem;
+        position: relative;
+    }
+    
+    .text-babel-courses-wrapper {
+        position: absolute;
+        top: -4rem;
+        left: 31rem;
     }
     
     .courses-card-container {
@@ -407,6 +537,13 @@
     
     .events-title {
         margin-top: 6rem;
+        position: relative;
+    }
+    
+    .text-babel-events-wrapper {
+        position: absolute;
+        top: -4rem;
+        left: 19rem;
     }
     
     .events-card-container {
@@ -422,8 +559,31 @@
         margin-top: 5rem;
     }
 
-    .teachers {
-        height: 80rem;
+    .teachers-container {
+        height: 85rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .teachers-title {
+        margin-top: 10rem;
+        position: relative;
+    }
+    
+    .text-babel-teachers-wrapper {
+        position: absolute;
+        top: -4rem;
+        left: 33rem;
+    }
+    
+    .teachers-card-container {
+        display: flex;
+        margin-top: 4rem;
+    }
+    
+    .teacher-card-wrapper {
+        margin: 0 2rem;
     }
 
     .signup-form-wrapper {
@@ -437,19 +597,95 @@
     }
     
     .feedback-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         background-color: var(--background-color-white);
-        height: 70rem;
+        height: 67rem;
+        position: relative;
+    }
+    
+    .feedback-card-wrapper {
+        box-shadow: 0 4px 16px 0 rgba(41, 41, 41, 0.15);
+    }
+    
+    .feedbacks-cards-title {
+        margin-top: 22rem;
+        position: relative;
+    }
+    
+    .text-babel-feedback-wrapper {
+        position: absolute;
+        top: -4rem;
+        left: 10rem;
+    }
+    
+    .feedbacks-card-container {
+        display: flex;
+        align-items: center;
+        z-index: 1;
+        margin-top: 6rem;
+    }
+
+    .blog-container {
+        height: 75rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .blogs-cards-title {
+        margin-top: 10rem;
         position: relative;
     }
 
-    .blog {
-        height: 70rem;
+    .text-babel-blog-wrapper {
+        position: absolute;
+        top: -4rem;
+        left: 54rem;
+    }
+    
+    .blogs-card-container {
+        display: flex;
+        margin-top: 6rem;
+    }
+    
+    .blog-card-wrapper {
+        margin: 0 2rem;
+        z-index: 1;
     }
 
-    .about {
+    .about-container {
         height: 84rem;
         background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 239, 170, 0.3));
         position: relative;
+    }
+    
+    .about-text-container {
+        display: flex;
+        flex-direction: column;
+        width: 48rem;
+        position: absolute;
+        left: 0; right: 0;
+        margin-left: 38%; margin-right: auto;
+        top: 15rem;
+        text-align: left;
+    }
+    
+    .about-title {
+        margin-bottom: 4rem;
+        position: relative;
+    }
+    .text-babel-about-wrapper {
+        position: absolute;
+        top: -4rem;
+        left: 7rem;
+    }
+    
+    .about-descritpion {
+        font-family: GothamPro, sans-serif;
+        font-size: 1.6rem;
+        line-height: 1.75;
     }
 
 </style>
