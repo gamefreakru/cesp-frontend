@@ -20,7 +20,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 5.3rem;
+        height: 5.6rem;
         border: solid 0.2rem rgba(0, 0, 0, 0.15);
         border-radius: 0.8rem;
         padding: 0 3.5rem;
@@ -29,6 +29,7 @@
         font-size: 1.4rem;
         text-transform: uppercase;
         color: black;
+        box-sizing: border-box;
     }
     
     .link-button-arrow-image {

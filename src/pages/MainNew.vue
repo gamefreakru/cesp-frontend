@@ -68,6 +68,18 @@
             <img style="position: absolute; left: 0; top: -5rem;" src="../assets/main/group-recruitment.png"
                  srcset="../assets/main/group-recruitment@2x.png 2x, ../assets/main/group-recruitment@3x.png 3x"
                  alt="">
+            <div class="text-babel-with-link">
+                <span class="text-babel-with-link-title">
+                    Las Fallas <span style="color: var(--light-text)">весенний фестиваль Огня в Валенсии</span>
+                </span>
+                <div class="text-babel-with-link-position-container">
+                    <div class="text-babel-with-link-delimiter"></div>
+                    <div class="text-babel-with-link-bottom-flex-container">
+                        <span class="text-babel-with-link-bottom-title">Читайте в блоге</span>
+                        <img class="text-babel-with-link-bottom-arrow" src="../assets/common/arrow-white.svg" alt=""/>
+                    </div>
+                </div>
+            </div>
             <div class="group-recruitment-information-container">
                 <span class="group-recruitment-information-title">Идёт набор в группы: 
                     <span style="color: var(--tomato);">апрель</span>, 
@@ -266,6 +278,8 @@
                     От вас требуется желание и посещаемость. От нас — много полезной информации
                     и приятная атмосфера.
                 </div>
+                <div class="about-image-carousel"></div>
+                <LinkButton class="about-link-button-wrapper" title="Познакомьтесь с нами поближе" link="about" />
             </div>
         </div>
     </div>
@@ -451,6 +465,72 @@
         position: relative;
     }
     
+    .text-babel-with-link {
+        background-color: #564f4c;
+        height: 11rem;
+        width: 22rem;
+        position: absolute;
+        border-radius: 0.5rem;
+        left: 22rem;
+        top: -8rem;
+        padding: 0 2rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .text-babel-with-link:after {
+        content: '';
+        top: 11rem;
+        left: 25%;
+        right: 75%;
+        position: absolute;
+        display: block;
+        width: 1.4rem;
+        height: 0.75rem;
+        background-color: transparent;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        box-shadow: 0.7rem 0.35rem 0 0.3rem #564f4c;
+        transform: rotate(-45deg);
+        z-index: 1;
+    }
+    
+    .text-babel-with-link-title {
+        font-family: FedraSerifAPro-Medium-Italic, sans-serif;
+        font-size: 1.2rem;
+        color: white;
+        line-height: 1.5;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .text-babel-with-link-position-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .text-babel-with-link-delimiter {
+        height: 0.1rem;
+        background-color: rgba(255, 255, 255, 0.1);
+        width: 17rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .text-babel-with-link-bottom-flex-container {
+        display: flex;
+    }
+    
+    .text-babel-with-link-bottom-title {
+        font-family: GothamPro-Bold, sans-serif;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        color: white;
+        letter-spacing: 0.092rem;
+        margin-right: 1rem;
+    }
+    
     .group-recruitment-information-container {
         display: flex;
         flex-direction: column;
@@ -593,7 +673,7 @@
         margin-right: auto;
         left: 0;
         right: 0;
-        top: -12.5rem;
+        top: -14rem;
     }
     
     .feedback-container {
@@ -656,25 +736,29 @@
     }
 
     .about-container {
-        height: 84rem;
+        height: 90rem;
         background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 239, 170, 0.3));
         position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
     .about-text-container {
         display: flex;
         flex-direction: column;
         width: 48rem;
-        position: absolute;
-        left: 0; right: 0;
-        margin-left: 38%; margin-right: auto;
         top: 15rem;
         text-align: left;
+        margin-top: 17rem;
+        margin-left: 5rem;
+        align-items: center;
     }
     
     .about-title {
         margin-bottom: 4rem;
         position: relative;
+        align-self: flex-start;
     }
     .text-babel-about-wrapper {
         position: absolute;
@@ -686,6 +770,11 @@
         font-family: GothamPro, sans-serif;
         font-size: 1.6rem;
         line-height: 1.75;
+    }
+    
+    .about-image-carousel {
+        height: 26rem;
+        margin: 5rem 0;
     }
 
 </style>
