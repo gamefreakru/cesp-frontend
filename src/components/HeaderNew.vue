@@ -96,7 +96,7 @@
         display: none;
     }
     
-    @media screen and (max-width: 1360px) {
+    @media screen and (max-width: 1365px) {
         .menu-container {
             margin: 0;
         }
