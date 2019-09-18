@@ -1,14 +1,10 @@
 <template>
-    
     <div id="container">
-        
         <a :href="link">
             <img :alt="name" :src="image"/>
             <span id="name">{{ name }}</span>            
         </a>
-        
     </div>
-    
 </template>
 
 <script>
@@ -30,7 +26,7 @@
         flex-direction: column;
         align-items: center;
         color: #0089FF;
-        font-size: 1.2rem;
+        font-size: 1.6rem;
     }
     
     img {
@@ -44,7 +40,7 @@
     
     #name {
         color: #0089FF;
-        font-size: 1.2rem;
+        font-size: 1.6rem;
     }
     
     #name:hover {

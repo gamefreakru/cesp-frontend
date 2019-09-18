@@ -1,5 +1,5 @@
 <template>
-    <div class="menu">
+    <div class="header-container">
         <ul class="menu-container">
             <li class="menu-item menu-burger" v-on:click="showMenu">
                 <img alt="menu-burger" src="../assets/header/menu_burger.svg">
@@ -8,25 +8,25 @@
                 <router-link to="about">О школе</router-link>
             </li>
             <li class="menu-item">
-                <router-link to="about">Курсы</router-link>
+                <router-link to="courses">Курсы</router-link>
             </li>
             <li class="menu-item">
-                <router-link to="about">Блог</router-link>
+                <router-link to="blog">Блог</router-link>
             </li>
             <li class="menu-item">
-                <router-link to="about">Отзывы</router-link>
+                <router-link to="feedbacks">Отзывы</router-link>
             </li>
             <li class="menu-item">
-                <router-link to="about">Habla клуб</router-link>
+                <router-link to="club">Habla клуб</router-link>
             </li>
             <li class="menu-item">
-                <router-link to="about">Обучение в Испании</router-link>
+                <router-link to="schools">Обучение в Испании</router-link>
             </li>
             <li class="menu-item">
-                <router-link to="about">Тест</router-link>
+                <router-link to="test">Тест</router-link>
             </li>
             <li class="menu-item">
-                <router-link to="about">Контакты</router-link>
+                <router-link to="contacts">Контакты</router-link>
             </li>
             <li class="menu-item menu-item-color-light">
                 <img class="gift-image" alt="gift" src="../assets/header/gift.svg">
@@ -53,9 +53,10 @@
         padding: 0;
         overflow: hidden;
         background-color: var(--main-color);
+       
     }
     
-    .menu {
+    .header-container {
         min-width: 32rem;
         background-color: var(--main-color);
         font-family: GothamPro-Bold, sans-serif;
@@ -96,18 +97,18 @@
         display: none;
     }
     
-    @media screen and (max-width: 1365px) {
-        .menu-container {
-            margin: 0;
-        }
-        
-        .menu-item:not(:first-child):not(:last-child) {
-            display: none;
-        }
-
-        .menu-burger {
-            display: block;
-        }
-    }
+    /*@media screen and (max-width: 1365px) {*/
+    /*    .menu-container {*/
+    /*        margin: 0;*/
+    /*    }*/
+    /*    */
+    /*    .menu-item:not(:first-child):not(:last-child) {*/
+    /*        display: none;*/
+    /*    }*/
+    
+    /*    .menu-burger {*/
+    /*        display: block;*/
+    /*    }*/
+    /*}*/
     
 </style>

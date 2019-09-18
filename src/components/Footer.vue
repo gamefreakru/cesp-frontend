@@ -14,7 +14,7 @@
         </span>
             <span class="link">
           <a href="#">online оплата курсов</a>
-          <img alt="Оплата онлайн" src="../assets/footer/online_pay.jpg">
+<!--          <img alt="Оплата онлайн" src="../assets/footer/online_pay.jpg">-->
         </span>
         </div>
     </div>

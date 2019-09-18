@@ -1,43 +1,28 @@
 <template>
     <div id="contacts">
-
         <SectionHeader image="contact"
                        title="Contactos"
                        description="Контакты"/>
-
         <div id="contacts-section">
-
             <div class="contacts-info">
-
                 <span class="contacts-title">Напишите нам</span>
-                
                 <Input class="contacts-input" name="name" placeholder="Ваше имя"/>
                 <Input class="contacts-input" name="email" placeholder="Email"/>
                 <Input class="contacts-input" name="phone" placeholder="Телефон"/>
                 <Input class="contacts-input" name="comments" placeholder="Письмо" :height=250 />
-                
                 <Button text="Отправить" link="#" :button-height="25" :button-width="150" style="align-self: center"/>
-
             </div>
-            
             <div class="contacts-info">
-
                 <span class="contacts-title">Наши контакты</span>
-
                 <a class="contacts-label" :href="'tel:{{ phone }}'">{{ phone }}</a>
                 <a class="contacts-label" :href="'tel:{{ additionalPhone }}'">{{ additionalPhone }}</a>
                 <a class="contacts-label" :href="'mailto:{{ email }}'">{{ email }}</a>
                 <br>
                 <span v-for="(metro, index) in metroStationsInfo" v-bind:key="index"
                       v-bind:data="metro">{{ metro }}</span>
-
                 <YandexMaps :height="325" style="margin-top: 20px"/>
-
             </div>
-
         </div>
-
-
     </div>
 </template>
 
@@ -69,6 +54,8 @@
 
     #contacts {
         padding: 60px 55px;
+        font-size: 1.6rem;
+        margin-top: 10rem;
     }
 
     #contacts-section {
@@ -80,6 +67,7 @@
         font-weight: bold;
         align-self: center;
         margin: 20px 0;
+        font-size: 2rem;
     }
 
     .contacts-info {
@@ -90,15 +78,10 @@
     }
     
     .contacts-label {
-        font-size: 1.3rem;
         color: #312A1E;
         margin-bottom: 10px;
     }
 
-    .contacts-info > span {
-        font-size: 1.2rem;
-    }
-    
     .contacts-input {
         margin-bottom: 15px;
     }

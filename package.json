@@ -10,6 +10,7 @@
   "dependencies": {
     "vue": "^2.6.6",
     "vue-carousel": "^0.18.0",
+    "vue-extend-layout": "^2.0.6",
     "vue-moment": "^4.0.0",
     "vue-router": "^3.0.3"
   },

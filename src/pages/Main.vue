@@ -289,7 +289,7 @@
     /*#region Cover*/
 
     #cover {
-        background: url("../assets/common/cover.jpg") no-repeat;
+        /*background: url("../assets/common/cover.jpg") no-repeat;*/
         position: relative;
     }
 

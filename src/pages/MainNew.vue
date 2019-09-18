@@ -11,34 +11,34 @@
             ></div>
             <img style="position: absolute; right: 0;" src="../assets/main/background.png"
                  srcset="../assets/main/background@2x.png 2x" alt="">
-            <img style="position: absolute; right: 108rem; top: 8rem;" src="../assets/main/logo.png"
-                 srcset="../assets/main/logo@2x.png 2x, ../assets/main/logo@3x.png 3x" alt="">
-            <div class="info-block-container">
-                <div class="info-block">
-                    <img class="info-block-image" src="../assets/main/phone-icon.svg" alt="clock">
-                    <div class="info-block-text">
-                        <span class="info-block-phone">
-                            <span class="info-block-phone-light">+7</span>
-                            (916) 169-18-30</span>
-                        <span class="info-block-description">Ответим в Whatsapp с любое время!</span>
-                    </div>
-                </div>
-                <div class="info-block">
-                    <img class="info-block-image" src="../assets/main/clock-icon.svg" alt="clock">
-                    <div class="info-block-text">
-                        <span class="info-block-phone">
-                            <span class="info-block-phone-light">+7</span>
-                            (495) 920-74-30</span>
-                        <span class="info-block-description">Каждый день с 11:00 до 20:00</span>
-                    </div>
-                </div>
-                <div class="info-block">
-                    <img class="info-block-image" src="../assets/main/metro-icon.svg" alt="metro">
-                    <div class="info-block-text">
-                        <span class="info-block-description">Добрынинская, Серпуховская, Павелецкая</span>
-                    </div>
-                </div>
-            </div>
+<!--            <img style="position: absolute; right: 108rem; top: 8rem;" src="../assets/main/logo.png"-->
+<!--                 srcset="../assets/main/logo@2x.png 2x, ../assets/main/logo@3x.png 3x" alt="">-->
+<!--            <div class="info-block-container">-->
+<!--                <div class="info-block">-->
+<!--                    <img class="info-block-image" src="../assets/main/phone-icon.svg" alt="clock">-->
+<!--                    <div class="info-block-text">-->
+<!--                        <span class="info-block-phone">-->
+<!--                            <span class="info-block-phone-light">+7</span>-->
+<!--                            (916) 169-18-30</span>-->
+<!--                        <span class="info-block-description">Ответим в Whatsapp с любое время!</span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="info-block">-->
+<!--                    <img class="info-block-image" src="../assets/main/clock-icon.svg" alt="clock">-->
+<!--                    <div class="info-block-text">-->
+<!--                        <span class="info-block-phone">-->
+<!--                            <span class="info-block-phone-light">+7</span>-->
+<!--                            (495) 920-74-30</span>-->
+<!--                        <span class="info-block-description">Каждый день с 11:00 до 20:00</span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="info-block">-->
+<!--                    <img class="info-block-image" src="../assets/main/metro-icon.svg" alt="metro">-->
+<!--                    <div class="info-block-text">-->
+<!--                        <span class="info-block-description">Добрынинская, Серпуховская, Павелецкая</span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
             <div class="title-block-container">
                 <div style="width: 60rem;" class="title-block">Лучшая школа 
                     <span style="color: var(--tomato);">испанского</span></div>
@@ -336,51 +336,7 @@
         position: relative;
     }
     
-    .info-block-container {
-        position: absolute;
-        display: flex;
-        right: 0;
-        top: 7rem;
-    }
     
-    .info-block {
-        display: flex;
-        align-items: flex-start;
-        margin: 0 3rem;
-    }
-    
-    .info-block-text {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin: 0 2rem;
-    }
-    
-    .info-block-image {
-        max-width: 3.6rem;
-    }
-    
-    .info-block-phone-light {
-        color: rgba(255, 255, 255, 0.7);
-    }
-    
-    .info-block-phone {
-        font-family: GothamPro-Medium, sans-serif;
-        font-size: 2.4rem;
-        font-weight: 500;
-        color: white;
-        line-height: 1.17;
-    }
-    
-    .info-block-description {
-        font-family: GothamPro-Medium, sans-serif;
-        font-size: 1.4rem;
-        color: white;
-        max-width: 18rem;
-        text-align: left;
-        line-height: 1.57;
-        margin-top: 1rem;
-    }
     
     .title-block-container {
         position: absolute;

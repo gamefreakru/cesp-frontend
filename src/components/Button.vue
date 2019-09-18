@@ -30,7 +30,7 @@
 <style scoped>
 
     .section-button {
-        font-size: 1.4rem;
+        font-size: 2rem;
         line-height: 1.4rem;
         text-align: center;
         font-weight: bold;

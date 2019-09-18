@@ -1,6 +1,6 @@
 <template>
 
-    <div id="about">
+    <div class="about-container">
 
         <div id="title">Курсы испанского языка в Centro VAMOS</div>
 
@@ -121,7 +121,7 @@
 
 <style scoped>
 
-    #about {
+    .about-container {
         display: flex;
         flex-direction: column;
         margin: 0 55px 60px;
@@ -131,13 +131,14 @@
         border-bottom-right-radius: 10px;
         box-shadow: 0 1px 6px #0000001a;
         text-align: left;
-        font-size: 1.1rem;
+        font-size: 1.6rem;
         line-height: 1.3;
+        font-family: 'Open Sans', sans-serif;
     }
 
     #title {
-        font-size: 1.5rem;
-        margin: 15px 0;
+        font-size: 3rem;
+        margin: 15rem 0 1.5rem 0;
     }
     
     #sub-description {

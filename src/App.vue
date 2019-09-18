@@ -1,20 +1,16 @@
 <template>
     <div id="app">
-        <Header/>
-        <router-view/>
-        <Footer/>
+        <vue-extend-layout/>
     </div>
 </template>
 
 <script>
-
-    import Header from './components/HeaderNew.vue'
-    import Footer from './components/FooterNew.vue'
+    
+    import VueExtendLayout from 'vue-extend-layout'
 
     export default {
         components: {
-            Header,
-            Footer
+            VueExtendLayout
         }
     }
 

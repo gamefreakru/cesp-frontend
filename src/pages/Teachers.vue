@@ -1,6 +1,6 @@
 <template>
     
-    <div id="teachers">
+    <div class="teachers-container">
 
         <SectionHeader image="teachers"
                        title="Profesores"
@@ -133,8 +133,11 @@
 
 <style scoped>
 
-    #teachers {
+    .teachers-container {
         padding: 60px 55px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1.6rem;
+        margin-top: 10rem;
     }
 
     #teachers-grid {

@@ -38,12 +38,12 @@
         flex-direction: column;
         align-items: center;
         padding: 5px;
+        font-size: 1.6rem;
     }
     
     #name {
         color: #465F99;
         text-decoration: none;
-        font-size: 1.5rem;
         font-weight: bold;
         margin-top: 20px;
     }

@@ -1,5 +1,5 @@
 <template>
-    <div id="courses">
+    <div class="courses-container">
 
         <SectionHeader image="course"
                        title="Cursos"
@@ -246,8 +246,10 @@
 
 <style scoped>
 
-    #courses {
+    .courses-container {
         padding: 60px 55px;
+        margin-top: 10rem;
+        font-size: 1.6rem;
     }
     
     #courses-footer {
@@ -263,14 +265,14 @@
     }
     
     #footer-title {
-        font-size: 1.2rem;
+        font-size: 1.6rem;
         color: #888888;
         font-weight: bold;
         text-align: left;
     }
     
     #footer-description {
-        font-size: 0.9rem;
+        font-size: 1.4rem;
         color: #888888;
         text-align: left;
     }

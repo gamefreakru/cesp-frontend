@@ -49,6 +49,7 @@
      width: 370px;
      height: auto;
      margin: 0 0 auto;
+     font-size: 1.6rem;
  }
     
 #container > img {
@@ -57,7 +58,7 @@
 }
     
 #title {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
     font-weight: bold;
     margin: 10px 0;
 }

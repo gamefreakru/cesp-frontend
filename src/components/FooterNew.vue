@@ -3,23 +3,23 @@
         <div class="footer-links">
             <div class="footer-block">
                 <span class="footer-block-item footer-block-header">О школе</span>
-                <router-link class="footer-block-item footer-block-link" to="/">Centro Vamos</router-link>
-                <router-link class="footer-block-item footer-block-link" to="/">Отзывы</router-link>
-                <router-link class="footer-block-item footer-block-link" to="/">Преподаватели</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/about">Centro Vamos</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/feedbacks">Отзывы</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/teachers">Преподаватели</router-link>
                 <router-link class="footer-block-item footer-block-link" to="/">Методика</router-link>
-                <router-link class="footer-block-item footer-block-link" to="/">Партнёры</router-link>
-                <router-link class="footer-block-item footer-block-link" to="/">Контакты</router-link>
-                <router-link class="footer-block-item footer-block-header" to="/">Блог</router-link>
-                <router-link class="footer-block-item footer-block-header" to="/">Онлайн запись</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/partners">Партнёры</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/contacts">Контакты</router-link>
+                <router-link class="footer-block-item footer-block-header" to="/blog">Блог</router-link>
+                <router-link class="footer-block-item footer-block-header" to="/contacts">Онлайн запись</router-link>
             </div>
             <div class="footer-block">
                 <span class="footer-block-item footer-block-header">Обучение</span>
                 <router-link class="footer-block-item footer-block-link" to="/">Набор в группы</router-link>
-                <router-link class="footer-block-item footer-block-link" to="/">Наши мероприятия</router-link>
-                <router-link class="footer-block-item footer-block-link" to="/">Курсы</router-link>
-                <router-link class="footer-block-item footer-block-link" to="/">Обучение в Испании</router-link>
-                <router-link class="footer-block-item footer-block-link" to="/">Habla клуб</router-link>
-                <router-link class="footer-block-item footer-block-link" to="/">Тест</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/events">Наши мероприятия</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/courses">Курсы</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/schools">Обучение в Испании</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/club">Habla клуб</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/test">Тест</router-link>
             </div>
             <div class="footer-block">
                 <span class="footer-block-item footer-block-header">Контакты</span>

@@ -1,6 +1,6 @@
 <template>
     
-    <div id="club">
+    <div id="club-container">
         
         <span id="title">Разговорный клуб</span>
         
@@ -112,12 +112,14 @@
     img {
         height: 100%;
     }
-    #club {
+    
+    #club-container {
         padding: 60px 55px;
+        margin-top: 10rem;
     }
     
     #title {
-        font-size: 1.5rem;
+        font-size: 3rem;
         font-weight: bold;
         color: black;
     }
@@ -131,7 +133,7 @@
         color: black;
         text-align: left;
         line-height: 1.5;
-        font-size: 1.05rem;
+        font-size: 1.6rem;
         margin-left: 30px;
     }
 

@@ -44,18 +44,17 @@
         grid-template-columns: fit-content(100%) auto;
         grid-gap: 10px;
         margin: 20px 0;
+        font-size: 1.6rem;
     }
 
     #date {
         grid-column: 1 / span 2;
         font-weight: bold;
         text-align: left;
-        font-size: 1.2rem;
     }
     
     #description {
         text-align: left;
-        font-size: 1.1rem;
         line-height: 1.5;
         color: black;
     }

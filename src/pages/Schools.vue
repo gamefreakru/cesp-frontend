@@ -68,6 +68,7 @@
     
     #schools {
         padding: 60px 55px;
+        margin-top: 10rem;
     }
     
     #schools-grid {

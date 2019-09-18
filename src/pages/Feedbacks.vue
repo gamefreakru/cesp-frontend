@@ -134,6 +134,8 @@
     
     #feedbacks {
         padding: 60px 55px;
+        font-size: 1.6rem;
+        margin-top: 10rem;
     }
 
     #feedbacks-footer {

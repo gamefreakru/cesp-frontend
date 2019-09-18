@@ -1,19 +1,12 @@
 <template>
-
-    <a :href="link" id="element">
-
+    <router-link :to="link" id="element">
         <div id="container">
-
             <img :alt="title" :src="image"/>
             <span id="title">{{ title }}</span>
             <span id="date">{{ date }}</span>
             <div id="description">{{ description }}</div>
-
         </div>
-
-    </a>
-
-
+    </router-link>
 </template>
 
 <script>
@@ -43,17 +36,21 @@
     }
     
     #title {
-        font-size: 1.2rem;
+        font-size: 1.8rem;
         font-weight: bold;
     }
     
     #date {
-        font-size: 0.8rem;
+        font-size: 1.2rem;
         font-style: italic;
     }
     
     #title:hover {
         text-decoration: underline;
+    }
+    
+    #description {
+        font-size: 1.6rem;
     }
 
     img {

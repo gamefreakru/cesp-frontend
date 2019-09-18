@@ -48,13 +48,13 @@
         box-shadow: 0 1px 6px #0000001a;
         text-align: left;
         line-height: 1.5;
-        font-size: 1.1rem;
+        font-size: 1.6rem;
     }
 
     #title {
-        font-size: 1.5rem;
+        font-size: 3rem;
         font-weight: bold;
-        margin: 20px 0;
+        margin: 14rem 0 1rem 0;
     }
     
     a {

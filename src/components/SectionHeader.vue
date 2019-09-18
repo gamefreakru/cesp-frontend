@@ -37,7 +37,7 @@
     
     #title {
         font-family: 'Patua One', cursive, sans-serif;
-        font-size: 2.5rem;
+        font-size: 3.5rem;
         font-weight: bold;
         color: #312A1E;
         margin-top: 20px;
@@ -45,7 +45,7 @@
     }
 
     #description {
-        font-size: 1.3rem;
+        font-size: 1.6rem;
         font-weight: bold;
         margin-top: 10px;
     }   

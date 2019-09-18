@@ -26,15 +26,10 @@ export default new Router({
         {
             path: '/',
             name: 'main',
-            component: Main
-            // props: {
-            //     phone: '+7 (495) 920-74-30',
-            //     additionalPhone: '+7 (916) 169-18-37',
-            //     address: 'Москва, Малый Каретный переулок 11/1',
-            //     email: 'info@centroespanol.ru',
-            //     metroStationsInfo: ['метро Цветной Бульвар - 6 минут пешком',
-            //         'метро Трубная - 11 минут пешком', 'метро Чеховская - 12 минут пешком']
-            // }
+            component: Main,
+            meta: {
+                layout: 'mainPage'
+            }
         },
         {
             path: '/courses',
