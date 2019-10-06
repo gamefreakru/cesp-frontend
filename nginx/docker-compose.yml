@@ -1,56 +1,69 @@
 version: '3.3'
 
 services:
-  nginx: 
-    image: nginx:latest
+  cesp-nginx: 
+    image: cr.yandex/crpi40k5e5q63h0a89q1/cesp-nginx
     container_name: cesp-nginx
     restart: always
-    volumes: 
-      - ./nginx.conf:/etc/nginx/nginx.conf
     ports: 
       - 80:80
       - 443:443
     links:
       - cesp-frontend
       - cesp-service
-      - cesp-blog-site
+#      - cesp-blog-site
   
   cesp-frontend:
-    image: cesp-frontend:latest
+    image: cr.yandex/crpi40k5e5q63h0a89q1/cesp-frontend:latest
     container_name: cesp-frontend
     restart: always
     
   cesp-service:
-    image: cesp-service
+    image: cr.yandex/crpi40k5e5q63h0a89q1/cesp-service:latest
     container_name: cesp-service
+    depends_on:
+      - cesp-service-db
     restart: always
     environment:
       - ASPNETCORE_ENVIRONMENT=Release
-  
-  cesp-blog-db:
-    image: mysql:5.7
-    container_name: cesp-blog-db
+        
+  cesp-service-db:
+    image: postgres:latest
+    container_name: cesp-service-db
     ports:
-      - 3306:3306
+      - 5432:5432
     volumes:
-      - db_data:/var/lib/mysql
+      - postgres_data:/var/lib/postgresql/data
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: P4bFnBHHqc7UMjf9
-      MYSQL_DATABASE: blog
-      MYSQL_USER: blog_user
-      MYSQL_PASSWORD: P4bFnBHHqc7UMjf9
-
-  cesp-blog-site:
-    depends_on:
-      - cesp-blog-db
-    image: wordpress:latest
-    container_name: cesp-blog-site
-    restart: always
-    environment:
-      WORDPRESS_DB_HOST: cesp-blog-db:3306
-      WORDPRESS_DB_USER: blog_user
-      WORDPRESS_DB_PASSWORD: P4bFnBHHqc7UMjf9
-      WORDPRESS_DB_NAME: blog
+      POSTGRES_USER: cesp-user
+      POSTGRES_DB: cesp-database
+      POSTGRES_PASSWORD: mSxqFn4x
+  
+#  cesp-blog-db:
+#    image: mysql:5.7
+#    container_name: cesp-blog-db
+#    ports:
+#      - 3306:3306
+#    volumes:
+#      - db_data:/var/lib/mysql
+#    restart: always
+#    environment:
+#      MYSQL_ROOT_PASSWORD: P4bFnBHHqc7UMjf9
+#      MYSQL_DATABASE: blog
+#      MYSQL_USER: blog_user
+#      MYSQL_PASSWORD: P4bFnBHHqc7UMjf9
+#
+#  cesp-blog-site:
+#    depends_on:
+#      - cesp-blog-db
+#    image: wordpress:latest
+#    container_name: cesp-blog-site
+#    restart: always
+#    environment:
+#      WORDPRESS_DB_HOST: cesp-blog-db:3306
+#      WORDPRESS_DB_USER: blog_user
+#      WORDPRESS_DB_PASSWORD: P4bFnBHHqc7UMjf9
+#      WORDPRESS_DB_NAME: blog
 volumes:
-  db_data: {}
+  postgres_data: {}
