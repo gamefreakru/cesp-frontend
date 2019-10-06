@@ -45,5 +45,5 @@ docker pull cr.yandex/crpi40k5e5q63h0a89q1/cesp
 
 ## Run Docker container
 ```
-docker run -d -p 8080:80 --restart always --name cesp cr.yandex/crpi40k5e5q63h0a89q1/cesp:latest 
+docker run -d -p 80:80 --restart always --name cesp-frontend cr.yandex/crpi40k5e5q63h0a89q1/cesp:latest 
 ```
