@@ -24,6 +24,8 @@ services:
     depends_on:
       - cesp-service-db
     restart: always
+    volumes:
+      - resources_data:/wwwroot
     environment:
       - ASPNETCORE_ENVIRONMENT=Release
         
@@ -67,3 +69,4 @@ services:
 #      WORDPRESS_DB_NAME: blog
 volumes:
   postgres_data: {}
+  resources_data: {}
