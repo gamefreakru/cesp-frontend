@@ -5,32 +5,32 @@
                 <img alt="menu-burger" src="../assets/header/menu_burger.svg">
             </li>
             <li class="menu-item">
-                <router-link to="about">О школе</router-link>
+                <router-link to="/about">О школе</router-link>
             </li>
             <li class="menu-item">
-                <router-link to="courses">Курсы</router-link>
+                <router-link to="/courses">Курсы</router-link>
             </li>
             <li class="menu-item">
-                <router-link to="blog">Блог</router-link>
+                <router-link to="/blog">Блог</router-link>
             </li>
             <li class="menu-item">
-                <router-link to="feedbacks">Отзывы</router-link>
+                <router-link to="/feedbacks">Отзывы</router-link>
             </li>
             <li class="menu-item">
-                <router-link to="club">Habla клуб</router-link>
+                <router-link to="/club">Habla клуб</router-link>
             </li>
             <li class="menu-item">
-                <router-link to="schools">Обучение в Испании</router-link>
+                <router-link to="/schools">Обучение в Испании</router-link>
             </li>
             <li class="menu-item">
-                <router-link to="test">Тест</router-link>
+                <router-link to="/test">Тест</router-link>
             </li>
             <li class="menu-item">
-                <router-link to="contacts">Контакты</router-link>
+                <router-link to="/contacts">Контакты</router-link>
             </li>
             <li class="menu-item menu-item-color-light">
                 <img class="gift-image" alt="gift" src="../assets/header/gift.svg">
-                <router-link to="about">Дарим пробный урок!</router-link>
+                <router-link to="/about">Дарим пробный урок!</router-link>
             </li>
         </ul>
     </div>

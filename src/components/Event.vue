@@ -1,5 +1,5 @@
 <template>
-    <router-link :to="link" id="element">
+    <router-link :to="link" append id="element">
         <div id="container">
             <img :alt="title" :src="image"/>
             <span id="title">{{ title }}</span>

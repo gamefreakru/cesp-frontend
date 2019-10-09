@@ -4,30 +4,12 @@
         <span id="title">Мероприятия в Centro Vamos</span>
         <Delimiter/>
         <div id="events-grid">
-            <Event :image="getImgUrl('event')" title="Semana Santa" link="#" date="22-25 апреля" 
-                   description=" Неформальная встреча с представителями школы испанского языка LACUNZA,
-                    находящейся в невероятном курортном городе Сан-Себастьян, который также называют 
-                    Северной Жемчужиной из-за его богатой культуры, многовековой истории, живописной 
-                    природы и популярности среди туристов со всего мира" 
-            />
-            <Event :image="getImgUrl('event')" title="Semana Santa" link="#" date="22-25 апреля"
-                   description=" Неформальная встреча с представителями школы испанского языка LACUNZA,
-                    находящейся в невероятном курортном городе Сан-Себастьян, который также называют 
-                    Северной Жемчужиной из-за его богатой культуры, многовековой истории, живописной 
-                    природы и популярности среди туристов со всего мира"
-            />
-            <Event :image="getImgUrl('event')" title="Semana Santa" link="#" date="22-25 апреля"
-                   description=" Неформальная встреча с представителями школы испанского языка LACUNZA,
-                    находящейся в невероятном курортном городе Сан-Себастьян, который также называют 
-                    Северной Жемчужиной из-за его богатой культуры, многовековой истории, живописной 
-                    природы и популярности среди туристов со всего мира"
-            />
-            <Event :image="getImgUrl('event')" title="Semana Santa" link="#" date="22-25 апреля"
-                   description=" Неформальная встреча с представителями школы испанского языка LACUNZA,
-                    находящейся в невероятном курортном городе Сан-Себастьян, который также называют 
-                    Северной Жемчужиной из-за его богатой культуры, многовековой истории, живописной 
-                    природы и популярности среди туристов со всего мира"
-            />
+            <Event v-for="(event, index) in events"
+                   v-bind:key="index"
+                   v-bind:title="event.name"
+                   v-bind:link="event.sysName" 
+                   v-bind:image="event.photo"
+                   v-bind:description="event.shortInfo" />
         </div>
     </div>
 </template>
@@ -37,16 +19,22 @@
     import Delimiter from "../components/Delimiter"
     import Event from "../components/Event"
     
+    import Service from "../service"
+    
     export default {
         components: {
             Delimiter,
             Event
         },
-        methods: {
-            getImgUrl(imagePath) {
-                var images = require.context('../assets/events', false, /\.jpg$/);
-                return images('./' + imagePath + ".jpg");
+        data() {
+            return {
+                events: {}
             }
+        },
+        mounted() {
+            Service.get("events", (status, data) => {
+                this.events = data;
+            })
         }
     }
 </script>

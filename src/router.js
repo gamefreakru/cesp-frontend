@@ -119,5 +119,8 @@ export default new Router({
                     'метро Трубная - 11 минут пешком', 'метро Чеховская - 12 минут пешком']
             }
         }
-    ]
+    ],
+    scrollBehavior (to,from, savedPosition) {
+        return { x: 0, y: 0}
+    }
 })
