@@ -2,7 +2,7 @@
     <div id="container">
         <ImageCircle :text="text" :image="image" />
         <p id="text">{{ text }}</p>
-        <p id="date" class="footer-block-grey-text">{{ date }}</p>
+        <p id="date" class="footer-block-grey-text">{{ date | moment("DD.MM.YYYY") }}</p>
         <p id="author" class="footer-block-grey-text">{{ author }}</p>
     </div>
 </template>

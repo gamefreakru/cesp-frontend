@@ -4,7 +4,7 @@
         <div class="feedback-card-info-container">
             <span class="feedback-card-info-name">{{firstName}}</span>
             <span class="feedback-card-info-name" style="color: var(--tomato)">{{secondName}}</span>
-            <span class="feedback-card-info-date">{{date | moment("DD.MM.YYYY") }}</span>
+            <span class="feedback-card-info-date">{{ date | moment("DD.MM.YYYY") }}</span>
         </div>
         <div class="feedback-card-text">
             {{text}}

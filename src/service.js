@@ -5,7 +5,7 @@ class Service {
         let service = axios.create();
         service.interceptors.response.use(this.handleSuccess, this.handleError);
         this.service = service;
-        service.defaults.baseURL = "http://localhost:5000/"
+        service.defaults.baseURL = "http://cesp.dima.net.ru/api/"
     }
 
     handleSuccess(response) {
