@@ -262,10 +262,6 @@
                 var images = require.context('../assets/carousel', false, /\.jpg$/);
                 return images('./' + imagePath + ".jpg");
             },
-            getCourseImgUrl(imagePath) {
-                var images = require.context('../assets/courses', false, /\.jpg$/);
-                return images('./' + imagePath + ".jpg");
-            },
             getInfoImgUrl(imagePath) {
                 var images = require.context('../assets/info', false, /\.jpg$/);
                 return images('./' + imagePath + ".jpg");
