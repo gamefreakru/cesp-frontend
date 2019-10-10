@@ -1,10 +1,8 @@
 <template>
-    <div id="container">
-        <a :href="link">
-            <img :alt="name" :src="image"/>
-            <span id="name">{{ name }}</span>            
-        </a>
-    </div>
+    <router-link id="container" :to="link" append>
+        <img :alt="name" :src="image"/>
+        <span id="name">{{ name }}</span>            
+    </router-link>
 </template>
 
 <script>
@@ -27,20 +25,19 @@
         align-items: center;
         color: #0089FF;
         font-size: 1.6rem;
+        text-align: center;
+        text-decoration: none;
     }
     
     img {
-        width: 230px;
-        height: 140px;
-    }
-    
-    a {
-        text-decoration: none;
+        max-width: 23rem;
+        max-height: 14rem;
     }
     
     #name {
         color: #0089FF;
         font-size: 1.6rem;
+        margin-top: 1rem;
     }
     
     #name:hover {

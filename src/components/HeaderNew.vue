@@ -10,9 +10,9 @@
             <li class="menu-item">
                 <router-link to="/courses">Курсы</router-link>
             </li>
-            <li class="menu-item">
-                <router-link to="/blog">Блог</router-link>
-            </li>
+<!--            <li class="menu-item">-->
+<!--                <router-link to="/blog">Блог</router-link>-->
+<!--            </li>-->
             <li class="menu-item">
                 <router-link to="/feedbacks">Отзывы</router-link>
             </li>
@@ -23,7 +23,7 @@
                 <router-link to="/schools">Обучение в Испании</router-link>
             </li>
             <li class="menu-item">
-                <router-link to="/test">Тест</router-link>
+                <router-link to="/partners">Партнёры</router-link>
             </li>
             <li class="menu-item">
                 <router-link to="/contacts">Контакты</router-link>

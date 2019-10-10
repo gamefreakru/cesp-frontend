@@ -1,29 +1,23 @@
 <template>
-
     <div id="partner-info">
-
         <div id="header">
-
-            <img id="circle-image" :alt="name" :src="image"/>
-            
+            <img id="circle-image" :alt="partner.name" :src="partner.photo"/>
             <div id="header-container">
-                <span id="title">{{ name }}</span>
-                <span id="link">Сайт: <a :href="link">{{ linkTitle }}</a></span>      
+                <span id="title">{{ partner.name }}</span>
+                <span id="link">Сайт: <a :href="partner.url">{{ partner.name }}</a></span>      
             </div>
-
         </div>
-        
-        <div id="description" v-html="description"></div>
-        
-        <ImageCarousel :images="images" :images-per-page=3 :image-width=380 :image-height=250 />
-
+        <span class="label" v-if="partner.phone" style="margin-top: 3rem;"><b>Телефон: </b> {{ partner.phone }}</span>
+        <span class="label" v-if="partner.address"><b>Адрес: </b> {{ partner.address }}</span>
+        <div id="description" v-html="partner.info"></div>
+        <ImageCarousel :images="partner.photos" :images-per-page=3 :image-width=380 :image-height=250 />
     </div>
-
 </template>
 
 <script>
     
     import ImageCarousel from '../components/ImageCarousel'
+    import Service from '../service'
     
     export default {
         components: {
@@ -31,33 +25,13 @@
         },
         data() {
             return {
-                image: this.getImgUrl('partner'),
-                name: "Московский Дом Книги",
-                link: "#",
-                linkTitle: "mdk-arbat.ru",
-                description: "Один из крупнейших в Европе и самый большой в России Московский дом книги на Новом Арбате был " +
-                    "открыт в 1967году и с тех пор стал самым популярным книжным магазином нашего города Здесь регулярно " +
-                    "проводят различные встречи с интересными и знаменитыми личностями: писателями, актерами и ведущими, " +
-                    "мероприятия при поддержке Правительства Москвы, детские фестивали, образовательные программы, " +
-                    "благотворительные акции в помощь детям. <br><br>" +
-                    "Так же вы можете попасть на различные бесплатные мастер-классы от уроков по макияжу до изучения испанского языка," +
-                    " поиграть в настольные игры или литературную мафию. В «Московском Доме Книги» регулярно проходят видео" +
-                    " показы и презентации наилучших творений отечественного и зарубежного кинематографа в рамках проекта «Реальное кино». <br><br>" +
-                    "А так же на площадке Art-клуба «Переплет» вы можете окунуться в мир творческих людей, артистов Московских театров и кино," +
-                    " познакомиться с покупателями и зрителями и обрести новых друзей по интересам.<br><br>" +
-                    "<b>Адрес (главный филиал):</b><br><br>" +
-                    "Россия, г. Москва, ул. Новый Арбат, д.8 (м. Арбатская)<br><br>" +
-                    "<b>Телефоны:</b><br><br>" +
-                    "+7 (495) 789-35-91 (сеть магазинов)<br>" +
-                    "+7 (495) 648-17-68 (интернет-магазин)",
-                images: [this.getImgUrl('partner-info1'), this.getImgUrl('partner-info2'), this.getImgUrl('partner-info3')]
+                partner: {},
             }
         },
-        methods: {
-            getImgUrl(imagePath) {
-                var images = require.context('../assets/partners', false, /\.jpg$/);
-                return images('./' + imagePath + ".jpg");
-            }
+        mounted() {
+            Service.get("partners/" + this.$route.params.name, (status, data) => {
+                this.partner = data;
+            })
         }
     }
 </script>
@@ -73,11 +47,12 @@
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
         box-shadow: 0 1px 6px #0000001a;
+        font-size: 1.6rem;
     }
 
     #header {
         display: flex;
-        margin-top: 40px;
+        margin-top: 15rem;
         justify-content: center;
         align-self: flex-start;
     }
@@ -91,8 +66,8 @@
     }
     
     #circle-image {
-        width: 230px;
-        height: 150px;
+        max-width: 23rem;
+        max-height: 15rem;
         border-radius: 10%;
         grid-row-start: 1;
         grid-row-end: 3;
@@ -111,10 +86,15 @@
         color: #83C6FF;
     }
     
+    .label {
+        margin: 1rem 0;
+        align-self: flex-start;
+    }
+    
     #description {
         text-align: left;
         line-height: 1.5;
-        margin: 40px 0;
+        margin: 3rem 0;
     }
 
 </style>

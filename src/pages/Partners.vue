@@ -2,14 +2,11 @@
     <div class="partners-container">
         <SectionHeader image="teachers" title="Partners" description="Наши партнёры" style="margin-top: 15rem;"/>
         <div id="partners-grid">
-            <Partner :image="getImgUrl('partner')" link="#" name="Московский дом книги"/>
-            <Partner :image="getImgUrl('partner')" link="#" name="Московский дом книги"/>
-            <Partner :image="getImgUrl('partner')" link="#" name="Московский дом книги"/>
-            <Partner :image="getImgUrl('partner')" link="#" name="Московский дом книги"/>
-            <Partner :image="getImgUrl('partner')" link="#" name="Московский дом книги"/>
-            <Partner :image="getImgUrl('partner')" link="#" name="Московский дом книги"/>
-            <Partner :image="getImgUrl('partner')" link="#" name="Московский дом книги"/>
-            <Partner :image="getImgUrl('partner')" link="#" name="Московский дом книги"/>
+            <Partner v-for="(partner, index) in partners"
+                     v-bind:key="index"
+                     v-bind:image="partner.photo"
+                     v-bind:link="partner.sysName"
+                     v-bind:name="partner.name" />
         </div>
     </div>
 </template>
@@ -18,17 +15,22 @@
     
     import SectionHeader from "../components/SectionHeader"
     import Partner from "../components/Partner"
+    import Service from "../service"
     
     export default {
         components: {
             SectionHeader,
             Partner
         },
-        methods:{
-            getImgUrl(imagePath) {
-                var images = require.context('../assets/partners', false, /\.jpg$/);
-                return images('./' + imagePath + ".jpg");
+        data() {
+            return {
+                partners: {}
             }
+        },
+        mounted() {
+            Service.get("partners", (status, data) => {
+                this.partners = data;
+            })
         }
     }
 </script>

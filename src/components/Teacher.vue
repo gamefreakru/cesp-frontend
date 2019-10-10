@@ -1,6 +1,6 @@
 <template>
     <div id="container">
-        <ImageCircle :image="getImgUrl(image)" :text="name" :width=200 :height=200 />
+        <ImageCircle :image="image" :text="name" :width=200 :height=200 />
         <span id="name">{{ name }}</span>
         <span id="position">{{ position }}</span>
         <div id="description">{{ description }}</div>
@@ -20,12 +20,6 @@
             name: String,
             position: String,
             description: String
-        },
-        methods: {
-            getImgUrl(imagePath) {
-                var images = require.context('../assets/teachers', false, /\.jpg$/);
-                return images('./' + imagePath + ".jpg");
-            }
         }
     }
 </script>
