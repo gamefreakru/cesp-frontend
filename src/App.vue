@@ -63,8 +63,7 @@
         float: none;
         margin: 0 auto;
         position: relative;
-        border-left: 0.1rem solid black;
-        border-right: 0.1rem solid black;
+        box-shadow: 0 0.5rem 0 0 white, 0 -0.5rem 0 0 white, 0.8rem 0 1rem -0.4rem rgba(0, 0, 0, 0.3), -0.8rem 0 1rem -0.4rem rgba(0, 0, 0, 0.3);
     }
 
     html {

@@ -3,25 +3,25 @@
         <SectionHeader image="course"
                        title="Cursos"
                        description="Курсы испанского и каталонского в Москве"/>
-        <Delimiter/>
-        <SubMenu v-bind:items="[
-        {
-            name: 'Типы курсов',
-            active: true
-        },
-        {
-            name: 'Для начинающих',
-            active: false
-        },
-        {
-            name: 'Расписание и цены',
-            active: false
-        },
-        {
-            name: 'Запись',
-            active: false
-        }]"/>
-        <Delimiter/>
+<!--        <Delimiter/>-->
+<!--        <SubMenu v-bind:items="[-->
+<!--        {-->
+<!--            name: 'Типы курсов',-->
+<!--            active: true-->
+<!--        },-->
+<!--        {-->
+<!--            name: 'Для начинающих',-->
+<!--            active: false-->
+<!--        },-->
+<!--        {-->
+<!--            name: 'Расписание и цены',-->
+<!--            active: false-->
+<!--        },-->
+<!--        {-->
+<!--            name: 'Запись',-->
+<!--            active: false-->
+<!--        }]"/>-->
+<!--        <Delimiter/>-->
         <div id="courses-grid">
             <Course v-for="(course, index) in courses"
                     v-bind:key="index"
@@ -128,6 +128,7 @@
     }
 
     #courses-grid {
+        margin-top: 5rem;
         display: inline-grid;
         grid-template-columns: auto auto auto;
         grid-gap: 50px 35px;

@@ -1,5 +1,5 @@
 <template>
-    <div class="course-card-container">
+    <router-link class="course-card-container" :to="link">
         <img class="course-card-image" :src="image" alt=""/>
         <div class="course-card-flex-container">
             <span class="course-card-title">
@@ -19,7 +19,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </router-link>
 </template>
 
 <script>
@@ -27,6 +27,7 @@
         props: {
             image: String,
             title: String,
+            link: String,
             redTitle: String,
             description: String,
             durationDescription: String,
@@ -46,6 +47,8 @@
         border-radius: 1.2rem;
         text-align: left;
         position: relative;
+        text-decoration: none;
+        color: black;
     }
 
     .course-card-image {

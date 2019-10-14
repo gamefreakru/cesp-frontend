@@ -37,6 +37,7 @@
     
     .teacher-card-image {
         width: 18rem;
+        border-radius: 50%;
     }
     
     .teacher-card-title {

@@ -1,7 +1,7 @@
 <template>
     <div id="container">
         <div id="map">
-            <iframe src="https://api-maps.yandex.ru/frame/v1/-/C6uUj2yt" :style="styling" frameborder="0">
+            <iframe src="https://yandex.ru/map-widget/v1/-/CCV3qK0~" :style="styling" frameborder="0">
             </iframe>
         </div>
         <div style="text-align: right;"></div>

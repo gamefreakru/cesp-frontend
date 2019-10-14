@@ -114,7 +114,7 @@
             getCarouselImgUrl(imagePath) {
                 var images = require.context('../assets/carousel', false, /\.jpg$/);
                 return images('./' + imagePath + ".jpg");
-            },
+            }
         }
     }
 </script>

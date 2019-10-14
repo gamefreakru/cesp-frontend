@@ -7,18 +7,18 @@
         <div class="info-header-block">
             <img class="info-header-block-image" src="../assets/main/phone-icon.svg" alt="clock">
             <div class="info-header-block-text">
-                <span class="info-header-block-phone">
+                <a href="tel:+79161691830" class="info-header-block-phone">
                     <span style="opacity: 0.7;">+7</span>
-                    (916) 169-18-30</span>
+                    (916) 169-18-30</a>
                 <span class="info-header-block-description">Ответим в Whatsapp с любое время!</span>
             </div>
         </div>
         <div class="info-header-block">
             <img class="info-header-block-image" src="../assets/main/clock-icon.svg" alt="clock">
             <div class="info-header-block-text">
-                <span class="info-header-block-phone">
+                <a href="tel:+74959207430" class="info-header-block-phone">
                     <span style="opacity: 0.7;">+7</span>
-                    (495) 920-74-30</span>
+                    (495) 920-74-30</a>
                 <span class="info-header-block-description">Каждый день с 11:00 до 20:00</span>
             </div>
         </div>
@@ -81,6 +81,8 @@
         font-size: 2.4rem;
         font-weight: 500;
         line-height: 1.17;
+        text-decoration: none;
+        color: inherit;
     }
 
     .info-header-block-description {

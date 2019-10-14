@@ -53,20 +53,20 @@
 <style scoped>
 
     #contacts {
-        padding: 60px 55px;
+        padding: 6rem 5.5rem;
         font-size: 1.6rem;
         margin-top: 10rem;
     }
 
     #contacts-section {
         display: flex;
-        margin-top: 20px;
+        margin-top: 2rem;
     }
     
     .contacts-title {
         font-weight: bold;
         align-self: center;
-        margin: 20px 0;
+        margin: 2rem 0;
         font-size: 2rem;
     }
 
@@ -74,16 +74,25 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        margin: 0 20px;
+        margin: 0 2rem;
     }
     
     .contacts-label {
         color: #312A1E;
-        margin-bottom: 10px;
+        margin-bottom: 1rem;
     }
 
     .contacts-input {
-        margin-bottom: 15px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .contacts-input-body {
+        margin-bottom: 1.5rem;
+    }
+
+    .contacts-input-body::placeholder {
+        margin-bottom: 1.5rem;
+        vertical-align: top;
     }
     
 </style>

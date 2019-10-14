@@ -1,6 +1,6 @@
 <template>
     <div id="container">
-        <ImageCircle :text="text" :image="image" />
+        <ImageCircle  :text="text" :image="image" v-if="image" />
         <p id="text">{{ text }}</p>
         <p id="date" class="footer-block-grey-text">{{ date | moment("DD.MM.YYYY") }}</p>
         <p id="author" class="footer-block-grey-text">{{ author }}</p>
