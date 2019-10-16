@@ -1,39 +1,31 @@
 <template>
     <div id="club-event">
-
         <div id="club-event-section">
-
-            <span id="title">Разговорный клуб "{{ title }}"</span>
+            <span id="title">Разговорный клуб "{{ clubEventInfo.name }}"</span>
             <br>
             <div id="description">
-                <b>Разговорный клуб {{ date }}!</b>
-                <br>
                 <span>
-                    <b>{{ date }}</b>
+                    <b>{{ clubEventInfo.date | moment("DD.MM.YYYY") }}</b>
                     в Centro VAMOS на нашем еженедельном разговорном клубе мы обсудим тему
-                    <b>"{{ title }}"</b>
+                    <b>"{{ clubEventInfo.name }}"</b>
                 </span>
                 <br>
                 <b>Специально для вас мы заранее подготовили вопросы, которые мы обсудим на нашем разговорном клубе:</b>
             </div>
-
-            <ol>
-                <li v-for="(question, index) in questions" v-bind:key="index">{{ question }}</li>
-            </ol>
-
-            <b>Ведущий: <a :href="leaderLink">{{ leaderName }}</a></b>
+            <br>
+            <div v-html="clubEventInfo.info"></div>
+            <br>
+            <b>Ведущий: <span>{{ clubEventInfo.teacher }}</span></b>
             <span>Ждём вас! Начало: 19.00</span>
-
-            <Button text="Записаться онлайн" link="#" :button-height="20" :button-width=300 style="align-self: center"/>
-
+            <Button text="Записаться онлайн" link="/contacts" :button-height="20" :button-width=300 style="align-self: center"/>
         </div>
-
     </div>
 </template>
 
 <script>
 
     import Button from '../components/Button'
+    import Service from '../service'
 
     export default {
         components: {
@@ -41,23 +33,13 @@
         },
         data() {
             return {
-                // name: this.route.params.name,
-                title: "La igualdad de genero",
-                date: "19.04.2019",
-                questions: ['¿Qué significa la iguaidad para ti?',
-                    '¿Quién tiene más derechos ahora: hombres o mujeres?',
-                    '¿Por qué el hombre tiene que pagar por la mujer en la cita?',
-                    '¿Por qué los hombres cobran más que las mujeres?',
-                    '¿Por qué los hombres se dedican solo a trabajar y las mujeres a trabajar, cocinar, limpiar y cuidar a los niños?',
-                    '¿Por qué existen los trabajos exclusivamente para los hombres?',
-                    '¿Por qué las mujeres ahora quieren independizarse tanto?',
-                    '¿Cuáles son las carecteristicas principales de la desigualidad en la sociedad?',
-                    '¿En tu casa hay desigualdad?',
-                    '¿En que paises hay mucha desigualdad y en que otros no existe?'
-                ],
-                leaderName: "Rafael",
-                leaderLink: "#"
+                clubEventInfo: {},
             }
+        },
+        mounted() {
+            Service.get("club/" + this.$route.params.name, (status, data) => {
+                this.clubEventInfo = data;
+            })
         }
     }
 </script>
@@ -73,14 +55,14 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        font-size: 1.1rem;
+        font-size: 1.6rem;
         line-height: 1.5;
         text-align: left;
-
+        margin-top: 15rem;
     }
 
     #title {
-        font-size: 1.5rem;
+        font-size: 2rem;
         font-weight: bold;
     }
 

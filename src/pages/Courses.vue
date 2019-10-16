@@ -81,16 +81,12 @@
 <script>
 
     import SectionHeader from '../components/SectionHeader.vue'
-    import Delimiter from '../components/Delimiter.vue'
-    import SubMenu from '../components/SubMenu.vue'
     import Course from '../components/Course.vue'
     import Service from "../service";
 
     export default {
         components: {
             SectionHeader,
-            Delimiter,
-            SubMenu,
             Course
         },
         filters: {

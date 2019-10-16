@@ -1,25 +1,20 @@
 <template>
-    <div id="container">
-
-        <span id="date">{{ date }}</span>
-
+    <router-link id="container" v-if="link" :to="link" append>
+        <span id="date">{{ date | moment("DD.MM.YYYY") }}</span>
         <img :alt="title" :src="image"/>
-
         <div id="description">
-            
             <b>Разговорный клуб</b>
             <br>
-            <a :href="link">{{ title }}</a>
+            <router-link :to="link" append>{{ title }}</router-link>
             <p>Уровень - {{ level }}</p>
             <p>{{ description }}</p>
             <b>Ведущий: </b>
-            <a :href="leaderLink">{{ leaderName }}</a>
+            <span>{{ leaderName }}</span>
             <br>
             <span>Ждём вас! Начало: 19:00</span>
-            
         </div>
 
-    </div>
+    </router-link>
 </template>
 
 <script>
@@ -31,8 +26,7 @@
             level: String,
             description: String,
             link: String,
-            leaderName: String,
-            leaderLink: String
+            leaderName: String
         }
     }
 </script>

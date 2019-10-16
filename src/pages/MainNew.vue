@@ -54,8 +54,8 @@
             <!--            </div>-->
             <div class="group-recruitment-information-container">
                 <span class="group-recruitment-information-title">Идёт набор в группы: 
-                    <span style="color: var(--tomato);">апрель</span>, 
-                    <span style="color: var(--tomato);">май</span>
+                    <span style="color: var(--tomato);">октябрь</span>, 
+                    <span style="color: var(--tomato);">ноябрь</span>
                 </span>
                 <span class="group-recruitment-information-description">
                     При оплате полного стандартного курса действуют скидки:
@@ -259,7 +259,7 @@
     import TeacherCard from "../components/TeacherCard";
     import CourseCard from '../components/CourseCard';
     import EventCard from "../components/EventCard";
-    import BlogCard from "../components/BlogCard";
+    // import BlogCard from "../components/BlogCard";
     import FeedbackCard from "../components/FeedbackCard";
     import LinkButton from "../components/LinkButton";
     import SignupForm from "../components/SignupForm";
@@ -272,7 +272,6 @@
             TeacherCard,
             CourseCard,
             EventCard,
-            BlogCard,
             FeedbackCard,
             LinkButton,
             SignupForm,
@@ -283,10 +282,6 @@
             getImgUrl(imagePath) {
                 var images = require.context('../assets/main', false, /\.svg$/);
                 return images('./' + imagePath + ".svg");
-            },
-            getJpegImgUrl(imagePath) {
-                var images = require.context('../assets/main', false, /\.jpeg$/);
-                return images('./' + imagePath + ".jpeg");
             },
             getCarouselImgUrl(imagePath) {
                 var images = require.context('../assets/carousel', false, /\.jpg$/);

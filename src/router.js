@@ -20,6 +20,7 @@ import Policy from './pages/Policy'
 
 Vue.use(Router);
 
+// noinspection ES6ShorthandObjectProperty
 export default new Router({
     mode: 'history',
     routes: [
@@ -120,7 +121,7 @@ export default new Router({
             }
         }
     ],
-    scrollBehavior (to,from, savedPosition) {
+    scrollBehavior () {
         return { x: 0, y: 0}
     }
 })

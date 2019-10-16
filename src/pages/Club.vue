@@ -1,13 +1,8 @@
 <template>
-    
     <div id="club-container">
-        
         <span id="title">Разговорный клуб</span>
-        
         <div id="header">
-            
             <img alt="Разговорный клуб" src="../assets/club/logo.png" />
-            
             <div id="description">
                 <b>Друзья, мы рады сообщить вам, что проведение разговорного клуба возобновляется!</b>
                 <br>
@@ -28,7 +23,6 @@
                 Разговорный клуб может стать отличным способом отдохнуть от сложного дня и в то же время узнать много нового и полезного.
                 <br>
                 <br>
-                
                 <div id="description-grid">
 
                     <span class="key">Уровни сложности</span>
@@ -37,61 +31,29 @@
                     <span>Пятница 19.00 - 21.00</span>
                     <span class="key">Продолижтельность</span>
                     <span>2 часа</span>
-
                 </div>
-                
                 <Button text="Записаться" link="#" :button-height=20 :button-width=150 />
-                
             </div> 
-            
-            
         </div>
-        
         <div id="events">
-            
-            <ClubEvent date="26.04.2019" 
-                       :image="getImgUrl('event')"
-                       title="La igualdad de genero"
-                       link="#"
-                       level="B1.2 - B2.2"
-                       description="В наше время равноправие стало одной из центральных тем для обсуждения. 
-                       Вот и мы решили затронуть эту неоднозначную, но очень интересную для всех нас тему."
-                       leader-name="Rafael"
-                       leader-link="#"
-            />
-
-            <ClubEvent date="26.04.2019"
-                       :image="getImgUrl('event')"
-                       title="La igualdad de genero"
-                       link="#"
-                       level="B1.2 - B2.2"
-                       description="В наше время равноправие стало одной из центральных тем для обсуждения. 
-                       Вот и мы решили затронуть эту неоднозначную, но очень интересную для всех нас тему."
-                       leader-name="Rafael"
-                       leader-link="#"
-            />
-
-            <ClubEvent date="26.04.2019"
-                       :image="getImgUrl('event')"
-                       title="La igualdad de genero"
-                       link="#"
-                       level="B1.2 - B2.2"
-                       description="В наше время равноправие стало одной из центральных тем для обсуждения. 
-                       Вот и мы решили затронуть эту неоднозначную, но очень интересную для всех нас тему."
-                       leader-name="Rafael"
-                       leader-link="#"
-            />
-
+            <ClubEvent v-for="(clubEvent, index) in clubEvents" 
+                       v-bind:key="index"
+                       v-bind:date="clubEvent.date"
+                       v-bind:image="clubEvent.photo"
+                       v-bind:title="clubEvent.name"
+                       v-bind:link="clubEvent.sysName"
+                       v-bind:level="clubEvent.minLanguageLevel"
+                       v-bind:description="clubEvent.shortInfo"
+                       v-bind:leader-name="clubEvent.teacher" />
         </div>
-        
     </div>
-    
 </template>
 
 <script>
     
-    import Button from "../components/Button"
-    import ClubEvent from "../components/ClubEvent"
+    import Button from '../components/Button'
+    import ClubEvent from '../components/ClubEvent'
+    import Service from '../service'
     
     export default {
         components: {
@@ -103,6 +65,16 @@
                 var images = require.context('../assets/club', false, /\.jpg$/);
                 return images('./' + imagePath + ".jpg");
             }
+        },
+        data() {
+            return {
+                clubEvents: {}
+            }
+        },
+        mounted() {
+            Service.get("club", (status, data) => {
+                this.clubEvents = data;
+            })
         }
     }
 </script>

@@ -39,8 +39,8 @@
     }
     
     .feedback-card-image {
-        width: 12rem;
-        height: 12rem;
+        max-width: 12rem;
+        max-height: 12rem;
         border-radius: 6rem;
     }
     
