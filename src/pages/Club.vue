@@ -32,7 +32,7 @@
                     <span class="key">Продолижтельность</span>
                     <span>2 часа</span>
                 </div>
-                <Button text="Записаться" link="#" :button-height=20 :button-width=150 />
+                <Button text="Записаться" link="/contacts" :button-height=20 :button-width=150 />
             </div> 
         </div>
         <div id="events">

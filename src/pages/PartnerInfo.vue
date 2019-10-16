@@ -4,7 +4,7 @@
             <img id="circle-image" :alt="partner.name" :src="partner.photo"/>
             <div id="header-container">
                 <span id="title">{{ partner.name }}</span>
-                <span id="link">Сайт: <a :href="partner.url">{{ partner.name }}</a></span>      
+                <span id="link">Сайт: <a target="_blank" rel="noopener noreferrer" :href="partner.url">{{ partner.name }}</a></span>      
             </div>
         </div>
         <span class="label" v-if="partner.phone" style="margin-top: 3rem;"><b>Телефон: </b> {{ partner.phone }}</span>

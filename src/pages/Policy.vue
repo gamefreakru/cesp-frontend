@@ -1,9 +1,6 @@
 <template>
-
     <div id="policy">
-
         <span id="title">Политика конфиденциальности</span>
-
         <div id="body">
             Настоящая Политика конфиденциальности персональной информации (далее — Политика) действует в отношении всей
             информации,
@@ -24,7 +21,6 @@
             должен воздержаться от использования Сервисов.
             <br>
             <br>
-
             <ol>
                 <li>
                     Персональная информация пользователей, которую получает и обрабатывает ИП Неудачина Н.А.
@@ -182,11 +178,8 @@
                     </ol>
                 </li>
             </ol>
-
         </div>
-
     </div>
-
 </template>
 
 <script>
@@ -198,20 +191,21 @@
     #policy {
         display: flex;
         flex-direction: column;
-        margin: 0 55px 60px;
-        padding: 20px 40px;
+        margin: 0 5.5rem 6rem;
+        padding: 2rem 4rem;
         background-color: #ffffffb3;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
         box-shadow: 0 1px 6px #0000001a;
         text-align: left;
         line-height: 1.3;
+        font-size: 1.6rem;
     }
 
     #title {
         font-size: 1.5rem;
         font-weight: bold;
-        margin: 20px 0;
+        margin: 15rem 0 2rem;
     }
 
     ol {

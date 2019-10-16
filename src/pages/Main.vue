@@ -1,454 +1,741 @@
 <template>
-
-    <div id="container">
-
-        <div id="cover" class="clearfix">
-
-            <div id="info-block">
-
-                <p class="info">Лучшие преподаватели <b>только из Испании</b></p>
-                <p class="info">Стоимость академического часа <b>от 300 рублей</b></p>
-                <p class="info">Kультурные мероприятия, вечеринки, конкурсы, вино и испанcкая еда</p>
-                <p class="info"><b>6 лет</b> работы и <b>3.000</b> довольных слушателей</p>
-                <p class="info">Обучаем взрослых и детей, юристов и экономистов, бизнесменов и дипломатов</p>
-
+    <div class="main-container">
+        <div class="information-container">
+            <div style="width: 75rem; 
+            height: 75rem; 
+            background-color: #fff7d4; 
+            border-radius: 50rem / 60rem; 
+            position: absolute; 
+            top: -20rem; 
+            right: 55rem;"
+            ></div>
+            <img style="position: absolute; right: 0;" src="../assets/main/background.png"
+                 srcset="../assets/main/background@2x.png 2x" alt="">
+            <div class="title-block-container">
+                <div style="width: 60rem;" class="title-block">Лучшая школа
+                    <span style="color: var(--tomato);">испанского</span></div>
+                <div style="width: 55rem;" class="title-block">и каталанского в Москве</div>
             </div>
-
-            <div id="enrollment">
-
-                <p id="enrollment-title">Запишитесь на бесплатный пробный урок</p>
-
-                <div id="form">
-
-                    <input class="form-input" name="name" type="text" id="name" placeholder="Ваше имя"/>
-                    <input class="form-input" name="phone" type="text" id="phone" placeholder="Телефон"/>
-                    <button class="form-button" type="submit" id="submit-button">Записаться</button>
-
+            <div class="info-block-circle-container">
+                <div class="info-block-circle-item">
+                    <div class="info-block-circle info-block-circle-light"></div>
+                    <span style="color: var(--tomato);" class="info-block-circle-title">4 000</span>
+                    <span class="info-block-circle-description info-block-circle-description-black">
+                        довольных слушателей</span>
                 </div>
-
-                <p id="enrollment-message">Нажимая "Записаться" вы соглашаетесь с <a href="#">политикой
-                    конфиденциальности</a></p>
-
+                <div class="info-block-circle-item">
+                    <div class="info-block-circle"></div>
+                    <span class="info-block-circle-title">от 319 ₽</span>
+                    <span class="info-block-circle-description">стоимость 1 часа занятия</span>
+                </div>
+                <div class="info-block-circle-item">
+                    <div class="info-block-circle"></div>
+                    <span class="info-block-circle-title">8 лет</span>
+                    <span class="info-block-circle-description">успешной работы</span>
+                </div>
             </div>
-
+<!--            <div class="arrow-element"></div>-->
         </div>
-
-        <div id="info" class="section">
-
-            <InfoBlock title="Набор в группы: Январь, Февраль"
-                       :image="getInfoImgUrl('winter_groups')"
-                       description="При оплате полного стандартного курса действуют скидки
-                 <br>— Семейным парам - 20%
-                 <br>— Приведи друга и получите скидку в 15% каждый"
-                       linkTitle="посмотреть расписание"/>
-
-            <InfoBlock title="Наши преподаватели"
-                       :image="getInfoImgUrl('teachers')"
-                       description="C нами работают преподаватели - носители языка из Испании, 
-                 увлеченные своей профессией. "
-                       linkTitle="познакомиться"/>
-
-            <InfoBlock title="Мероприятия"
-                       :image="getInfoImgUrl('events')"
-                       description="Мы проводим различные мероприятия и встречи!"
-                       linkTitle="подробнее"/>
-
-            <InfoBlock title="Отзывы о нас"
-                       :image="getInfoImgUrl('feedback')"
-                       description="Когда изучение иностранного языка в удовольствие. Прошла в центре программу А1 и А2. 
-                 Программа занятий очень хорошо продумана, уроки проходят эффективно. И при этом в дружеской позитивной атмосфере; 
-                 язык ложится легко..."
-                       linkTitle="читать дальше"/>
-        </div>
-
-        <Delimiter/>
-
-        <div id="course" class="section">
-
-            <SectionHeader image="course"
-                           title="Cursos"
-                           description="Курсы испанского и каталонского в Москве"/>
-
-            <div id="courses-grid">
-
-                <Course :image="getCourseImgUrl('spanish')"
-                        title="Испанский язык"
-                        description="Испанский язык является одним из самых распространенных и 
-                востредованных языков в мире. На нем говорят в Испании, Латинской Америке и США. 
-                Если вы выбираете иностранный язык, несомненно, следует остановить свой выбор на испанском."
-                />
-
-                <Course :image="getCourseImgUrl('catalan')"
-                        title="Каталонский язык"
-                        description="Каталонский язык является официальным языком Каталонии, Балеарских островов, Арагона, Валенсии и Андорры.
-                У нас Вы можете изучать каталанский, общаясь с носителями языка, узнать новые аспекты много-культурной Испании."
-                />
-
-                <Course :image="getCourseImgUrl('children')"
-                        title="Испанский для детей"
-                        description="Методики преподавания испанского языка для детей отличается от методик для взрослых. 
-                Здесь большое внимание уделяется заданиям в игровой форме, используется много визуальных материалов. 
-                Мы проводим занятия для детей от 4 до 16 лет."
-                />
-
+        <div class="group-recruitment-container">
+            <img style="position: absolute; left: 0; top: -5rem;" src="../assets/main/group-recruitment.png"
+                 srcset="../assets/main/group-recruitment@2x.png 2x, ../assets/main/group-recruitment@3x.png 3x"
+                 alt="">
+            <!--            <div class="text-babel-with-link">-->
+            <!--                <span class="text-babel-with-link-title">-->
+            <!--                    Las Fallas <span style="color: var(&#45;&#45;light-text)">весенний фестиваль Огня в Валенсии</span>-->
+            <!--                </span>-->
+            <!--                <div class="text-babel-with-link-position-container">-->
+            <!--                    <div class="text-babel-with-link-delimiter"></div>-->
+            <!--                    <div class="text-babel-with-link-bottom-flex-container">-->
+            <!--                        <span class="text-babel-with-link-bottom-title">Читайте в блоге</span>-->
+            <!--                        <img class="text-babel-with-link-bottom-arrow" src="../assets/common/arrow-white.svg" alt=""/>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
+            <div class="group-recruitment-information-container">
+                <span class="group-recruitment-information-title">Идёт набор в группы: 
+                    <span style="color: var(--tomato);">октябрь</span>, 
+                    <span style="color: var(--tomato);">ноябрь</span>
+                </span>
+                <span class="group-recruitment-information-description">
+                    При оплате полного стандартного курса действуют скидки:
+                </span>
+                <div style="display: flex;">
+                    <div class="group-recruitment-information-discount-item">
+                        <span class="group-recruitment-information-discount-value">-15%</span>
+                        <span class="group-recruitment-information-discount-description">
+                            каждому, если прийти с другом
+                        </span>
+                    </div>
+                    <div style="margin-left: 5rem;" class="group-recruitment-information-discount-item">
+                        <span class="group-recruitment-information-discount-value">-20%</span>
+                        <span class="group-recruitment-information-discount-description"> семейным <br/>парам</span>
+                    </div>
+                </div>
+                <!--                <LinkButton class=group-recruitment-link-button-wrapper title="Посмотреть расписание и цены" link="Schedule" />-->
             </div>
-
-            <Button text="Все курсы" link="#" style="margin-left: auto; margin-right: auto;"/>
-
         </div>
-
-        <Delimiter/>
-
-        <div id="feedback" class="section">
-            <SectionHeader image="feedback"
-                           title="Opiniones"
-                           description="Отзывы о курсах испанского"/>
-            
-            <div id="feedbacks-grid">
-                
-                <Feedback :image="getFeedbackImgUrl('feedback1')"
-                          text="Я начала изучать испанский язык с нуля. Занимаюсь с группой у преподавателя Хуана.
-                  Никогда не думала,что изучать язык может быть так познавательно, весело и захватывающе, т.к.
-                  из школьного детства всплывали совершенно другие воспоминания. Всем рекомендую эту школу испанского языка!
-                  Приходите заниматься, не бойтесь открывать новые страницы своей жизни!"
-                          date="15.02.2016"
-                          author="Анжелика Лестиникова"
+        <div class="courses-container">
+            <span class="main-section-title courses-cards-title">
+                <span style="color: var(--tomato);">Топ-3 </span>
+                наших курсов
+                <TextBabel class="text-babel-courses-wrapper" text="Cursos"/>
+            </span>
+            <div class="courses-card-container">
+                <CourseCard class="course-card-wrapper"
+                            :image="getImgUrl('spain-course')"
+                            red-title="Испанский"
+                            title=" стандартный курс"
+                            link="/contacts"
+                            description="Классический курс испанского языка в Москве продолжительностью около двух месяцев."
+                            duration-description="60 ак. часов (9 недель)"
+                            :discount-value=19
+                            price-description="от 19 000 руб."
                 />
-                
-                <Feedback :image="getFeedbackImgUrl('feedback2')"
-                          text="Я обучалась в течении 3-х лет (правда, с перерывами в обучении), у разных преподавателей. 
-                  Мне очень трудно было первые два-три урока, но потом, по мере увелечения словарного запаса - легче. 
-                  Очень нравится, что преподаватели - носители языка - это заставляет напрягаться, думать, искать синонимы, не не говорить по-русски.
-                  Атмосфера в классе дружелюбная, почти семейная, заниматься интересно."
-                          date="17.01.2016"
-                          author="Родина Анна"
+                <CourseCard class="course-card-wrapper"
+                            :image="getImgUrl('catalan-course')"
+                            red-title="Каталонский"
+                            title=" язык"
+                            link="/contacts"
+                            description="Каталонский является официальным языком Каталонии, Балеарских островов, Арагона, Валенсии и Андорры."
+                            price-description="от 19 000 руб."
                 />
-                
-                <Feedback :image="getFeedbackImgUrl('feedback3')"
-                          text="Я изучаю испанский язык в школе уже 4-й год и на каникулах решил подтянуть свои знания. Я занимался с Еленой Алексеевной.
-                  Мне очень понравилось, что учительница спокойная, никогда не ругала за ошибки, а просто и понятно объясняла недочёты.
-                  Осталось приятное ощущение от общения. При случае обращусь опять за помощью."
-                          date="10.02.2016"
-                          author="Виталий Лукашев"
-                />
-                
-                <Feedback :image="getFeedbackImgUrl('feedback4')"
-                          text="Учусь в этой школе почти 2 года. Дружеская, семейная атмосфера, небольшие группы. Преподают носители языка. 
-                  На занятиях очень интересно и весело. Эффект есть, в Испании свободно разговариваю, почти нет языкового барьера. 
-                  Учусь у Ориола. Всем рекомендую!"
-                          date="26.04.2015"
-                          author="Люба Зимина"
-                />
-                
+                <CourseCard class="course-card-wrapper"
+                            :image="getImgUrl('personal-course')"
+                            red-title="Индивидуальные"
+                            title=" занятия и мини-группы"
+                            link="/contacts"
+                            description="Занятия проходят индивидуально 1-2 человека или в мини-группах по 3-4 человека."
+                            duration-description="Частота и продолжительность согласовываются с учётом ваших пожеланий"
+                            price-description="2 500 руб./час"/>
             </div>
-
-            <Button text="Все отзывы" link="#" style="margin-left: auto; margin-right: auto;"/>
-
+            <LinkButton class=courses-link-button-wrapper title="Выбрать курсы" link="courses"/>
         </div>
+        <div class="events-container">
+            <span class="main-section-title events-title">
+                Наша афиша
+                <TextBabel class="text-babel-events-wrapper" text="Nuestro cartel"/>
+            </span>
 
-        <Delimiter/>
-
-        <div id="blog" class="section">
-
-            <SectionHeader image="blog"
-                           title="Blog"
-                           description="Блог о языке и культуре Испании"/>
-
-            <div id="blog-body"></div>
-
-            <Button text="Перейти в блог" link="#" style="margin-left: auto; margin-right: auto;"/>
-
+            <div class="events-card-container">
+                <EventCard class="event-card-wrapper" v-for="(event, index) in events"
+                           v-bind:key="index"
+                           v-bind:link="event.sysName | createEventLink"
+                           link-title="Записаться"
+                           v-bind:title="event.name"
+                           v-bind:image="event.photo"
+                           v-bind:description="event.shortInfo"/>
+            </div>
+            <LinkButton class="events-link-button-wrapper" title="Все мероприятия" link="events"/>
         </div>
-
-        <Delimiter/>
-
-        <div id="about" class="section">
-
-            <SectionHeader image="blog"
-                           title="Nosotros"
-                           description="О нас"/>
-
-            <div id="about-body">
-
-                <ImageCarousel v-bind:images="[getCarouselImgUrl('slide1'), getCarouselImgUrl('slide2'), getCarouselImgUrl('slide3'), 
+        <div class="teachers-container">
+            <span class="main-section-title teachers-title">
+                Наши преподаватели
+                <TextBabel class="text-babel-teachers-wrapper" text="Profesores"/>
+            </span>
+            <div class="teachers-card-container">
+                <TeacherCard class="teacher-card-wrapper" v-for="(teacher, index) in teachers"
+                             v-bind:key="index"
+                             v-bind:image="teacher.photo"
+                             v-bind:title="teacher.name"
+                             v-bind:description="teacher.info | trim(200)"/>
+                <!--                <TeacherCard class="teacher-card-wrapper"-->
+                <!--                             :image="getJpegImgUrl('teacher_card_example')"-->
+                <!--                             title="Йосу"-->
+                <!--                             country="Барселона"-->
+                <!--                             description="Имеет международный сертификат ELE для преподавания-->
+                <!--                             испанского как иностранного (от International House Barcelona, -->
+                <!--                             утвержденным Университетом Барселоны)."-->
+                <!--                 />-->
+                <!--                <TeacherCard class="teacher-card-wrapper"-->
+                <!--                             :image="getJpegImgUrl('teacher_card_example')"-->
+                <!--                             title="Анхель"-->
+                <!--                             country="Малага"-->
+                <!--                             description="Преподаёт испанский в Москве-->
+                <!--                             с 2012 года, прекрасно ладит как со взрослыми, так и с детьми,-->
+                <!--                             готовит свои уроки индивидуально, с учетом особенностей каждой группы."-->
+                <!--                />-->
+                <!--                <TeacherCard class="teacher-card-wrapper"-->
+                <!--                             :image="getJpegImgUrl('teacher_card_example')"-->
+                <!--                             title="Рафаэль"-->
+                <!--                             country="Барселона"-->
+                <!--                             description="В Россию приехал в 2013 году, до этого жил и работал в Англии.-->
+                <!--                             Имеет сертификаты Института Сервантеса о специальной подготовке преподавателеЙ."-->
+                <!--                />-->
+                <!--                <TeacherCard class="teacher-card-wrapper"-->
+                <!--                             :image="getJpegImgUrl('teacher_card_example')"-->
+                <!--                             title="Юлия"-->
+                <!--                             country="Москва"-->
+                <!--                             description="Закончила с отличием филологический факультет МГУ им М.В. Ломоносова.-->
+                <!--                             Прошла стажировку в Университете Барселоны. Три года работает преподавателем."-->
+                <!--                />-->
+            </div>
+            <LinkButton title="Все преподаватели" link="teachers"/>
+        </div>
+        <div class="feedback-container">
+            <img style="position: absolute; left: 0; top: 10rem;" src="../assets/main/feedback-left.svg" alt="">
+            <img style="position: absolute; left: 0; bottom: 0;" src="../assets/main/feedback-bottom.svg" alt="">
+            <img style="position: absolute; right: 0; top: 10rem;" src="../assets/main/feedback-right.svg" alt="">
+            <img style="position: absolute; right: 6rem; top: 8rem; z-index: 3"
+                 src="../assets/main/feedback-right-2.svg" alt="">
+            <SignupForm class="signup-form-wrapper"/>
+            <span class="main-section-title feedbacks-cards-title">
+                Отзывы
+                <TextBabel class="text-babel-feedback-wrapper" text="Opiniones"/>
+            </span>
+            <div class="feedbacks-card-container">
+                <FeedbackCard class="feedback-card-wrapper" v-for="(feedback, index) in feedbacks"
+                              v-bind:key="index"
+                              v-bind:image="feedback.photo"
+                              v-bind:first-name="feedback.signature"
+                              v-bind:date="feedback.date"
+                              v-bind:text="feedback.message | trim(300)" />
+            </div>
+            <LinkButton class="feedbacks-link-button-wrapper" title="Все отзывы" link="feedbacks"/>
+        </div>
+        <!--        <div class="blog-container">-->
+        <!--            <span class="main-section-title blogs-cards-title">-->
+        <!--                <span style="color: var(&#45;&#45;tomato);">Блог </span>-->
+        <!--                о культуре и языке Испании-->
+        <!--                <TextBabel class="text-babel-blog-wrapper" text="Blog"/>-->
+        <!--            </span>-->
+        <!--            <div class="blogs-card-container">-->
+        <!--                <BlogCard class="blog-card-wrapper"-->
+        <!--                          link="Blog"-->
+        <!--                          title="3 места, где можно выучить каталанский"-->
+        <!--                          description="Большой город составил маленький путеводитель по местам, где можно выучить -->
+        <!--                          каталанский язык."-->
+        <!--                          :image="getJpegImgUrl('blog_card_example')"-->
+        <!--                />-->
+        <!--                <BlogCard class="blog-card-wrapper"-->
+        <!--                          link="Blog"-->
+        <!--                          title="Прогулки по Барселоне, архитектура Гауди"-->
+        <!--                          description="Не секрет, что Саграда Фамилияи и другие архитектурные шедевры Антонио Гауди-->
+        <!--                          являются визитной карточкой Барселоны."-->
+        <!--                          :image="getJpegImgUrl('blog_card_example')"-->
+        <!--                />-->
+        <!--                <BlogCard class="blog-card-wrapper"-->
+        <!--                          link="Blog"-->
+        <!--                          title="Испанско-каталонско-русский разговорник"-->
+        <!--                          description="Звучит сранно. Но если вы хотя бы однажды были в Барселоне или на побережье-->
+        <!--                          Коста Брава, вы знаете, что кроме своих достопримечательностей и пляжей этот регион интересен тем,-->
+        <!--                          что имеет два официальных языка: испанский и каталанский."-->
+        <!--                          :image="getJpegImgUrl('blog_card_example')"-->
+        <!--                />-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <div class="about-container">
+            <img style="position: absolute; left: 0;" src="../assets/main/about-left.svg" alt="">
+            <img style="position: absolute; right: 0; top: 10rem;" src="../assets/main/about-right.svg" alt="">
+            <div class="about-text-container">
+                <span class="main-section-title about-title">
+                    О нас
+                    <TextBabel class="text-babel-about-wrapper" text="Nosostros"/>
+                </span>
+                <div class="about-descritpion">
+                    Считаете, что выучить язык — это долго и скучно?
+                    Мы думаем, что это не так. Вы уже знаете, что значит «Hola!»,
+                    пробовали хамон и паэлью и хотите узнать больше. Или вы совсем не знакомы с Испанией,
+                    и это ваш первый шаг. Тогда курсы испанского языка это то, что вам нужно!
+                    От вас требуется желание и посещаемость. От нас — много полезной информации
+                    и приятная атмосфера.
+                </div>
+                <div class="about-image-carousel">
+                    <ImageCarousel v-bind:images="[getCarouselImgUrl('slide1'), getCarouselImgUrl('slide2'), getCarouselImgUrl('slide3'), 
                 getCarouselImgUrl('slide4'), getCarouselImgUrl('slide5'), getCarouselImgUrl('slide6'), getCarouselImgUrl('slide7'),
                 getCarouselImgUrl('slide8'), getCarouselImgUrl('slide9'), getCarouselImgUrl('slide10'), getCarouselImgUrl('slide11'),
                 getCarouselImgUrl('slide12'), getCarouselImgUrl('slide13'), getCarouselImgUrl('slide14'), getCarouselImgUrl('slide15'), 
                 getCarouselImgUrl('slide16'), getCarouselImgUrl('slide17'), getCarouselImgUrl('slide18'), getCarouselImgUrl('slide19'), 
                 getCarouselImgUrl('slide20'), getCarouselImgUrl('slide21')]"/>
-
-            </div>
-
-            <p id="about-text">
-
-                Считаете, что выучить язык – это долго и скучно? Мы думаем, что это не так. Вы уже знаете, что значит
-                "Hola!",
-                пробовали хамон и паэлью и хотите узнать больше. Или вы совсем не знакомы с Испанией, и это ваш первый
-                шаг.
-                Тогда курсы испанского языка это то, что вам нужно! От вас требуется желание и посещаемость.
-                От нас - много полезной информации и приятная атмосфера.
-
-            </p>
-
-            <Button text="Читать дальше" link="#" style="margin-left: auto; margin-right: auto;"/>
-
-        </div>
-
-        <Delimiter/>
-
-        <div id="contact" class="section">
-
-            <SectionHeader image="contact"
-                           title="Contactos"
-                           description="Контакты"/>
-
-            <div class="content-body">
-
-                <YandexMaps/>
-
-                <div id="contacts">
-                    <a :href="'tel:{{ phone }}'">{{ phone }}</a>
-                    <a :href="'tel:{{ additionalPhone }}'">{{ additionalPhone }}</a>
-                    <a :href="'mailto:{{ email }}'">{{ email }}</a>
-                    <br>
-                    <span v-for="(metro, index) in metroStationsInfo" v-bind:key="index"
-                          v-bind:data="metro">{{ metro }}</span>
                 </div>
-
+                <LinkButton class="about-link-button-wrapper" title="Познакомьтесь с нами поближе" link="about"/>
             </div>
-
-            <Button text="напишите нам" link="#" style="margin-left: auto; margin-right: auto;"/>
-
         </div>
-
     </div>
 </template>
 
 <script>
 
-    import SectionHeader from '../components/SectionHeader.vue'
-    import Delimiter from '../components/Delimiter.vue'
-    import Button from '../components/Button.vue'
-    import InfoBlock from '../components/InfoBlock.vue'
-    import Course from '../components/Course.vue'
-    import Feedback from '../components/Feedback.vue'
-    import ImageCarousel from '../components/ImageCarousel'
-    import YandexMaps from '../components/YandexMaps'
+    import TeacherCard from "../components/TeacherCard";
+    import CourseCard from '../components/CourseCard';
+    import EventCard from "../components/EventCard";
+    // import BlogCard from "../components/BlogCard";
+    import FeedbackCard from "../components/FeedbackCard";
+    import LinkButton from "../components/LinkButton";
+    import SignupForm from "../components/SignupForm";
+    import TextBabel from "../components/TextBabel";
+    import ImageCarousel from "../components/ImageCarousel";
+    import Service from "../service";
 
     export default {
-        props: {
-            phone: String,
-            additionalPhone: String,
-            email: String,
-            address: String,
-            metroStationsInfo: Array
-        },
         components: {
-            SectionHeader,
-            Delimiter,
-            Button,
-            InfoBlock,
-            Course,
-            Feedback,
-            ImageCarousel,
-            YandexMaps
+            TeacherCard,
+            CourseCard,
+            EventCard,
+            FeedbackCard,
+            LinkButton,
+            SignupForm,
+            TextBabel,
+            ImageCarousel
         },
-        methods : {
-            getFeedbackImgUrl(imagePath) {
-                var images = require.context('../assets/feedbacks', false, /\.jpg$/);
-                return images('./' + imagePath + ".jpg");
+        methods: {
+            getImgUrl(imagePath) {
+                var images = require.context('../assets/main', false, /\.svg$/);
+                return images('./' + imagePath + ".svg");
             },
             getCarouselImgUrl(imagePath) {
                 var images = require.context('../assets/carousel', false, /\.jpg$/);
                 return images('./' + imagePath + ".jpg");
-            },
-            getInfoImgUrl(imagePath) {
-                var images = require.context('../assets/info', false, /\.jpg$/);
-                return images('./' + imagePath + ".jpg");
             }
+        },
+        filters: {
+            trim(value, count) {
+                return value.substring(0, count) + "...";
+            },
+            createEventLink(value) {
+                return "events/" + value;
+            }
+        },
+        data() {
+            return {
+                teachers: {},
+                events: {},
+                feedbacks: {}
+            }
+        },
+        mounted() {
+            Service.get("teachers?count=4", (status, data) => {
+                this.teachers = data;
+            });
+            Service.get("events?count=3", (status, data) => {
+                this.events = data;
+            });
+            Service.get("feedbacks?count=1", (status, data) => {
+                this.feedbacks = data;
+            })
         }
     }
 </script>
 
 <style scoped>
 
-    /*# region Info */
-
-    #info {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+    .main-container {
+        background-color: white;
     }
 
-    /*# endregion */
+    .main-section-title {
+        font-family: FedraSerifAPro-Medium, sans-serif;
+        font-size: 3rem;
+    }
 
-    /*#region Cover*/
-
-    #cover {
-        /*background: url("../assets/common/cover.jpg") no-repeat;*/
+    .information-container {
+        height: 87rem;
         position: relative;
     }
 
-    #info-block {
-        float: left;
+
+    .title-block-container {
+        position: absolute;
         display: flex;
         flex-direction: column;
-        margin: 40px 0 0 55px
+        align-items: center;
+        right: 40rem;
+        top: 23rem;
     }
 
-    .info {
+    .title-block {
+        font-family: FedraSerifAPro, sans-serif;
+        font-size: 4rem;
+        background-color: white;
+        height: 6rem;
+        border-radius: 0.8rem;
+        margin-top: -1rem;
+    }
+
+    .info-block-circle-container {
+        position: absolute;
+        display: flex;
+        top: 45rem;
+        right: 0;
+    }
+
+    .info-block-circle-item {
+        display: flex;
+        flex-direction: column;
+        margin: 0 11rem;
+        align-items: center;
+    }
+
+    .info-block-circle {
+        height: 20rem;
+        width: 20rem;
+        border-radius: 10rem;
+        background-color: rgba(15, 5, 1, 0.7);
+    }
+
+    .info-block-circle-light {
+        background-color: rgba(255, 201, 0, 0.4);
+    }
+
+    .info-block-circle-title {
+        font-size: 6rem;
+        font-family: GothamPro-Medium, sans-serif;
+        color: white;
+        margin-top: -13rem;
+        width: 25rem;
+    }
+
+    .info-block-circle-description {
+        font-family: FedraSerifAPro-Medium, sans-serif;
+        font-size: 2.4rem;
+        line-height: 1.33;
+        color: white;
+        max-width: 23rem;
+        margin-top: 1.5rem;
+    }
+
+    .info-block-circle-description-black {
         color: black;
-        background: #ffffffeb;
-        text-align: left;
-        padding: 7px 15px 7px 15px;
-        border-left: #FCC423 solid 4px;
-        border-radius: 0 10px 58px 0;
+    }
+
+    .arrow-element {
+        width: 3.2rem;
+        height: 4.8rem;
+        border: solid 0.25rem rgba(255, 255, 255, 0.45);
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        top: 70rem;
+        border-radius: 1.8rem;
+    }
+
+    .group-recruitment-container {
+        height: 44.4rem;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 239, 170, 0.3));
+        position: relative;
+    }
+
+    .text-babel-with-link {
+        background-color: #564f4c;
+        height: 11rem;
+        width: 22rem;
+        position: absolute;
+        border-radius: 0.5rem;
+        left: 22rem;
+        top: -8rem;
+        padding: 0 2rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .text-babel-with-link:after {
+        content: '';
+        top: 11rem;
+        left: 25%;
+        right: 75%;
+        position: absolute;
+        display: block;
+        width: 1.4rem;
+        height: 0.75rem;
+        background-color: transparent;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        box-shadow: 0.7rem 0.35rem 0 0.3rem #564f4c;
+        transform: rotate(-45deg);
+        z-index: 1;
+    }
+
+    .text-babel-with-link-title {
+        font-family: FedraSerifAPro-Medium-Italic, sans-serif;
+        font-size: 1.2rem;
+        color: white;
         line-height: 1.5;
-        width: auto;
-        max-width: 450px;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
     }
 
-    #enrollment {
-        float: right;
-        max-width: 320px;
-        background: white;
-        margin: 50px 55px 45px 50px;
-        border-radius: 20px
-    }
-
-    #enrollment-title {
-        font-size: 1.4rem;
-        margin: 10px 20px;
-    }
-
-    #form {
+    .text-babel-with-link-position-container {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .clearfix::after {
-        content: "";
-        clear: both;
-        display: table;
+    .text-babel-with-link-delimiter {
+        height: 0.1rem;
+        background-color: rgba(255, 255, 255, 0.1);
+        width: 17rem;
+        margin-bottom: 1.5rem;
     }
 
-    .form-input {
-        height: 42px;
-        width: 250px;
-        border: #f0bf00 2px solid;
-        border-radius: 4px;
-        font-size: 1rem;
-        text-align: center;
+    .text-babel-with-link-bottom-flex-container {
+        display: flex;
     }
 
-    .form-input::placeholder {
-        color: #9b9b9b;
-    }
-
-    .form-button {
-        height: 42px;
-        width: 250px;
-        background-color: #f50000;
-        color: white;
-        border: #f50000 2px solid;
-        border-radius: 4px;
-        font-size: 1.4rem;
-        text-align: center;
-        letter-spacing: 0.05rem;
-    }
-
-    #form > input, button {
-        margin: 10px;
-    }
-
-    #enrollment-message {
-        font-size: 1.1rem;
-        margin: 10px 20px 30px 20px;
-    }
-
-    #enrollment-message > a {
-        color: #465f99;
-        text-decoration: none
-    }
-
-    /*# endregion */
-
-    /*# region About */
-
-    #about-body {
-        margin: 20px 40px
-    }
-
-    #about-text {
-        margin: 10px 200px 20px;
-        line-height: 1.5;
-        text-align: center;
-        color: #312A1E;
+    .text-babel-with-link-bottom-title {
+        font-family: GothamPro-Bold, sans-serif;
         font-size: 1.2rem;
+        text-transform: uppercase;
+        color: white;
+        letter-spacing: 0.092rem;
+        margin-right: 1rem;
     }
 
-    /*# endregion */
-
-    /*# region Courses */
-
-    #courses-grid {
-        display: inline-grid;
-        grid-template-columns: auto auto auto;
-        grid-gap: 0 35px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-
-    /* endregion */
-
-    #feedbacks-grid {
-        display: inline-grid;
-        grid-template-columns: auto auto auto auto;
-        grid-gap: 0 35px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-
-    /*# region Contact */
-
-    #contacts {
+    .group-recruitment-information-container {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        margin: 0 20px;
+        position: absolute;
+        right: 20rem;
+        top: 9rem;
     }
 
-    #contacts > a {
-        font-size: 1.5rem;
-        color: #312A1E;
-        margin: 5px 0;
+    .group-recruitment-information-title {
+        font-family: FedraSerifAPro-Medium, sans-serif;
+        font-size: 3rem;
+        margin-bottom: 4rem;
     }
 
-    #contacts > span {
-        font-size: 1.2rem;
+    .group-recruitment-information-description {
+        font-family: GothamPro-Medium, sans-serif;
+        font-size: 1.8rem;
+        margin-bottom: 3rem;
     }
 
-    /* endregion */
-
-    /*# region Common */
-
-    .content-body {
+    .group-recruitment-information-discount-item {
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        align-items: center;
     }
 
-    .section {
-        padding: 60px 55px;
+    .group-recruitment-information-discount-value {
+        font-family: GothamPro-Medium, sans-serif;
+        font-size: 6rem;
+        color: var(--tomato);
     }
 
-    /*# endregion */
+    .group-recruitment-information-discount-description {
+        font-family: FedraSerifAPro-Italic, sans-serif;
+        font-size: 1.6rem;
+        line-height: 1.5;
+        max-width: 20rem;
+        text-align: left;
+        margin: 0 2rem;
+    }
 
-    /*# region Course */
+    .group-recruitment-link-button-wrapper {
+        margin-top: 4rem;
+    }
 
-    /*# endregion */
+    .courses-container {
+        height: 78rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .courses-cards-title {
+        margin-top: 7.5rem;
+        margin-bottom: 6rem;
+        position: relative;
+    }
+
+    .text-babel-courses-wrapper {
+        position: absolute;
+        top: -4rem;
+        left: 31rem;
+    }
+
+    .courses-card-container {
+        display: flex;
+    }
+
+    .course-card-wrapper {
+        margin: 0 2rem;
+    }
+
+    .courses-link-button-wrapper {
+        margin-top: 4rem;
+    }
+
+    .events-container {
+        height: 78rem;
+        background-color: var(--background-color-lighter);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .events-title {
+        margin-top: 6rem;
+        position: relative;
+    }
+
+    .text-babel-events-wrapper {
+        position: absolute;
+        top: -4rem;
+        left: 19rem;
+    }
+
+    .events-card-container {
+        display: flex;
+        margin-top: 6rem;
+    }
+
+    .event-card-wrapper {
+        margin: 0 1.8rem;
+    }
+
+    .events-link-button-wrapper {
+        margin-top: 5rem;
+    }
+
+    .teachers-container {
+        height: 90rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .teachers-title {
+        margin-top: 10rem;
+        position: relative;
+    }
+
+    .text-babel-teachers-wrapper {
+        position: absolute;
+        top: -4rem;
+        left: 33rem;
+    }
+
+    .teachers-card-container {
+        display: flex;
+        margin-top: 4rem;
+    }
+
+    .teacher-card-wrapper {
+        margin: 0 2rem;
+    }
+
+    .signup-form-wrapper {
+        position: absolute;
+        z-index: 2;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        top: -14rem;
+    }
+
+    .feedback-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--background-color-white);
+        height: 67rem;
+        position: relative;
+    }
+
+    .feedback-card-wrapper {
+        box-shadow: 0 4px 16px 0 rgba(41, 41, 41, 0.15);
+    }
+
+    .feedbacks-cards-title {
+        margin-top: 22rem;
+        position: relative;
+    }
+
+    .text-babel-feedback-wrapper {
+        position: absolute;
+        top: -4rem;
+        left: 10rem;
+    }
+
+    .feedbacks-card-container {
+        display: flex;
+        align-items: center;
+        z-index: 1;
+        margin-top: 6rem;
+    }
+
+    .feedbacks-link-button-wrapper {
+        margin-top: 5rem;
+        z-index: 2;
+    }
+
+    .blog-container {
+        height: 75rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .blogs-cards-title {
+        margin-top: 10rem;
+        position: relative;
+    }
+
+    .text-babel-blog-wrapper {
+        position: absolute;
+        top: -4rem;
+        left: 54rem;
+    }
+
+    .blogs-card-container {
+        display: flex;
+        margin-top: 6rem;
+    }
+
+    .blog-card-wrapper {
+        margin: 0 2rem;
+        z-index: 1;
+    }
+
+    .about-container {
+        height: 90rem;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 239, 170, 0.3));
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-text-container {
+        display: flex;
+        flex-direction: column;
+        width: 48rem;
+        top: 15rem;
+        text-align: left;
+        margin-top: 17rem;
+        margin-left: 5rem;
+        align-items: center;
+    }
+
+    .about-title {
+        margin-bottom: 4rem;
+        position: relative;
+        align-self: flex-start;
+    }
+
+    .text-babel-about-wrapper {
+        position: absolute;
+        top: -4rem;
+        left: 7rem;
+    }
+
+    .about-descritpion {
+        font-family: GothamPro, sans-serif;
+        font-size: 1.6rem;
+        line-height: 1.75;
+    }
+
+    .about-image-carousel {
+        height: 26rem;
+        width: 135rem;
+        align-self: center;
+        margin: 5rem 0;
+    }
 
 </style>

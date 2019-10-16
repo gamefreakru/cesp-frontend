@@ -1,160 +1,117 @@
 <template>
-    <div id="container">
-        <div id="bar" class="clearfix">
-            <div id="logo">
-                <router-link to="/">
-                    <img width="120" height="120" alt="Vamos" src="../assets/header/logo.png">
-                </router-link>
-            </div>
-            <div id="title">
-                <img alt="Vamos" src="../assets/header/header_text.png">
-            </div>
-            <div id="phone">
-                {{ phone }}
-            </div>
-        </div>
-        <div id="menu">
-            <ul>
-                <li>
-                    <dropdown :class-name="'custom'" :trigger="'hover'" :close-on-click="true">
-                        <template slot="btn">О Vamos</template>
-                        <template slot="icon"><div></div></template>
-                        <template slot="body">
-                            <router-link to="about">О нас</router-link>
-                            <router-link to="program">Программа</router-link>
-                            <router-link to="partners">Партнёры</router-link>
-                        </template>
-                    </dropdown>
-                </li>
-                <li>
-                    <router-link to="courses">Курсы</router-link>
-                </li>
-                <li>
-                    <router-link to="feedbacks">Отзывы</router-link>
-                </li>
-                <li>
-                    <router-link to="blog">Блог</router-link>
-                </li>
-                <li>
-                    <router-link to="club">Habla клуб</router-link>
-                </li>
-                <li>
-                    <router-link to="schools">Обучение в Испании</router-link>
-                </li>
-                <li>
-                    <router-link to="test">Тест</router-link>
-                </li>
-                <li>
-                    <router-link to="contacts">Контакты</router-link>
-                </li>
-            </ul>
-        </div>
+    <div class="header-container">
+        <ul class="menu-container">
+            <li class="menu-item menu-burger" v-on:click="showMenu">
+                <img alt="menu-burger" src="../assets/header/menu_burger.svg">
+            </li>
+            <li class="menu-item">
+                <router-link to="/about">О школе</router-link>
+            </li>
+            <li class="menu-item">
+                <router-link to="/courses">Курсы</router-link>
+            </li>
+            <li class="menu-item">
+                <router-link to="/teachers">Преподаватели</router-link>
+            </li>
+<!--            <li class="menu-item">-->
+<!--                <router-link to="/blog">Блог</router-link>-->
+<!--            </li>-->
+            <li class="menu-item">
+                <router-link to="/feedbacks">Отзывы</router-link>
+            </li>
+            <li class="menu-item">
+                <router-link to="/club">Habla клуб</router-link>
+            </li>
+<!--            <li class="menu-item">-->
+<!--                <router-link to="/schools">Обучение в Испании</router-link>-->
+<!--            </li>-->
+            <li class="menu-item">
+                <router-link to="/partners">Партнёры</router-link>
+            </li>
+            <li class="menu-item">
+                <router-link to="/contacts">Контакты</router-link>
+            </li>
+            <li class="menu-item menu-item-color-light">
+                <img class="gift-image" alt="gift" src="../assets/header/gift.svg">
+                <router-link to="/contacts">Дарим пробный урок!</router-link>
+            </li>
+        </ul>
     </div>
-
 </template>
 
 <script>
-
-    import Dropdown from 'bp-vuejs-dropdown';
-
     export default {
-        components: {
-            Dropdown
-        },
-        props: {
-            phone: String
+        methods : {
+            showMenu: function() {
+            }
         }
     }
-
 </script>
 
 <style scoped>
 
-
-    /*# region Dropdown */
-
-    .bp-dropdown {
-        display: inline-block;
-        color: #312a1e;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        border: none;
-    }
-    
-    .custom-bp__btn {
-    }
-
-    .custom-bp__btn--active {
-        background: #fff;
-    }
-
-    .custom-bp__body {
-        width: 20rem;
-        padding: 2rem;
-        font-size: 1.6rem;
-    }
-    
-    /* endregion */
-
-    #logo {
-        float: left;
-        margin-top: 10px;
-    }
-
-    #title {
-        float: left;
-        margin: 35px 0 35px 80px;
-        padding: 3px 0 3px 14px;
-        border-left: 4px solid #F6D900;
-    }
-
-    #bar {
-        position: relative;
-        margin: 0 55px;
-    }
-
-    #phone {
-        float: right;
-        font-size: 20px;
-        position: absolute;
-        top: 50%;
-        right: 0;
-        transform: translateY(-50%);
-    }
-
-    .clearfix::after {
-        content: "";
-        clear: both;
-        display: table;
-    }
-
-    #menu {
-        background-color: #ffd906;
-    }
-
-    ul {
+    .menu-container {
         list-style-type: none;
-        margin: 0 55px;
+        margin: 0 10rem;
         padding: 0;
         overflow: hidden;
-        background-color: #ffd906;
+        background-color: var(--main-color);
+       
     }
-
-    li {
+    
+    .header-container {
+        min-width: 32rem;
+        background-color: var(--main-color);
+        font-family: GothamPro-Bold, sans-serif;
+        box-shadow: 0 1rem 2rem rgba(0,0,0,0.1), 0 0.6rem 0.6rem rgba(0,0,0,0.1);
+        z-index: 10;
+        position: sticky;
+        top: 0;
+    }
+    
+    .menu-item {
         float: left;
     }
-
-    li a {
-        display: inline-block;
-        color: #312a1e;
+    
+    .menu-item a {
+        display: block;
+        color: black;
         text-align: center;
-        padding: 14px 16px;
+        padding: 2.1rem 1.9rem;
         text-decoration: none;
+        font-size: 1.2rem;
+        letter-spacing: 0.092rem;
+        text-transform: uppercase;
     }
-
-    li a:hover {
-        background-color: #FFF4B9;
+    
+    .menu-item-color-light {
+        background-color: var(--background-color-light);
+        float: right;
+        display: flex;
     }
-
+    
+    .gift-image {
+        margin-bottom: -0.5rem;
+        margin-left: -1rem;
+    }
+    
+    .menu-burger {
+        padding: 2rem 1.9rem;
+        display: none;
+    }
+    
+    /*@media screen and (max-width: 1365px) {*/
+    /*    .menu-container {*/
+    /*        margin: 0;*/
+    /*    }*/
+    /*    */
+    /*    .menu-item:not(:first-child):not(:last-child) {*/
+    /*        display: none;*/
+    /*    }*/
+    
+    /*    .menu-burger {*/
+    /*        display: block;*/
+    /*    }*/
+    /*}*/
+    
 </style>

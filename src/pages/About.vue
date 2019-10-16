@@ -52,7 +52,7 @@
 
         </div>
 
-        <Button text="типы курсов" link="#" :button-height=20 style="align-self: center; margin-bottom: 50px;"/>
+        <Button text="типы курсов" link="/courses" :button-height=20 style="align-self: center; margin-bottom: 50px;"/>
 
         <ImageCarousel v-bind:images="[getCarouselImgUrl('slide1'), getCarouselImgUrl('slide2'), getCarouselImgUrl('slide3'), 
                 getCarouselImgUrl('slide4'), getCarouselImgUrl('slide5'), getCarouselImgUrl('slide6'), getCarouselImgUrl('slide7'),
@@ -93,7 +93,7 @@
             но мне всегда был интересен русский язык и русская культура.
         </div>
 
-        <Button text="Преподаватели" link="#" :button-height=20 style="align-self: center; margin-bottom: 20px;"/>
+        <Button text="Преподаватели" link="/teachers" :button-height=20 style="align-self: center; margin-bottom: 20px;"/>
 
 
     </div>

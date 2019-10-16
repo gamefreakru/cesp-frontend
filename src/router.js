@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Main from './pages/MainNew'
+import Main from './pages/Main'
 import Courses from './pages/Courses'
 import Feedbacks from './pages/Feedbacks'
 import Teachers from './pages/Teachers'
