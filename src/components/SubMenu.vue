@@ -1,10 +1,10 @@
 <template>
     <div id="container">
-        <span id="item" v-for="(item, index) in items"
+        <router-link :to="item.link" id="item" v-for="(item, index) in items"
               v-bind:data="item" v-bind:key="index">
             <span class="dot"></span>
             <span class="text" v-bind:class="{ active: item.active}">{{ item.name }}</span>
-        </span>
+        </router-link>
     </div>
 </template>
 
@@ -26,6 +26,7 @@
     #item {
         display: flex;
         align-items: center;
+        text-decoration: none;
     }
     
     .text {

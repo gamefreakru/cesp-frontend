@@ -139,36 +139,6 @@
                              v-bind:image="teacher.photo"
                              v-bind:title="teacher.name"
                              v-bind:description="teacher.info | trim(200)"/>
-                <!--                <TeacherCard class="teacher-card-wrapper"-->
-                <!--                             :image="getJpegImgUrl('teacher_card_example')"-->
-                <!--                             title="Йосу"-->
-                <!--                             country="Барселона"-->
-                <!--                             description="Имеет международный сертификат ELE для преподавания-->
-                <!--                             испанского как иностранного (от International House Barcelona, -->
-                <!--                             утвержденным Университетом Барселоны)."-->
-                <!--                 />-->
-                <!--                <TeacherCard class="teacher-card-wrapper"-->
-                <!--                             :image="getJpegImgUrl('teacher_card_example')"-->
-                <!--                             title="Анхель"-->
-                <!--                             country="Малага"-->
-                <!--                             description="Преподаёт испанский в Москве-->
-                <!--                             с 2012 года, прекрасно ладит как со взрослыми, так и с детьми,-->
-                <!--                             готовит свои уроки индивидуально, с учетом особенностей каждой группы."-->
-                <!--                />-->
-                <!--                <TeacherCard class="teacher-card-wrapper"-->
-                <!--                             :image="getJpegImgUrl('teacher_card_example')"-->
-                <!--                             title="Рафаэль"-->
-                <!--                             country="Барселона"-->
-                <!--                             description="В Россию приехал в 2013 году, до этого жил и работал в Англии.-->
-                <!--                             Имеет сертификаты Института Сервантеса о специальной подготовке преподавателеЙ."-->
-                <!--                />-->
-                <!--                <TeacherCard class="teacher-card-wrapper"-->
-                <!--                             :image="getJpegImgUrl('teacher_card_example')"-->
-                <!--                             title="Юлия"-->
-                <!--                             country="Москва"-->
-                <!--                             description="Закончила с отличием филологический факультет МГУ им М.В. Ломоносова.-->
-                <!--                             Прошла стажировку в Университете Барселоны. Три года работает преподавателем."-->
-                <!--                />-->
             </div>
             <LinkButton title="Все преподаватели" link="teachers"/>
         </div>

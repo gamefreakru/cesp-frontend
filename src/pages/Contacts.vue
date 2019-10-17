@@ -4,14 +4,14 @@
                        title="Contactos"
                        description="Контакты"/>
         <div id="contacts-section">
-            <div class="contacts-info">
-                <span class="contacts-title">Напишите нам</span>
-                <Input class="contacts-input" name="name" placeholder="Ваше имя"/>
-                <Input class="contacts-input" name="email" placeholder="Email"/>
-                <Input class="contacts-input" name="phone" placeholder="Телефон"/>
-                <Input class="contacts-input" name="comments" placeholder="Письмо" :height=250 />
-                <Button text="Отправить" link="#" :button-height="25" :button-width="150" style="align-self: center"/>
-            </div>
+            <form @submit.prevent="submit" class="contacts-info">
+                <span v-if="!responseMessage" class="contacts-title">Напишите нам</span>
+                <span v-else class="contacts-title">{{ responseMessage }}</span>
+                <input class="contacts-input" v-model="name" name="name" placeholder="Ваше имя" />
+                <input class="contacts-input" v-model="contact" name="contact" placeholder="Телефон или Email" />
+                <input class="contacts-input contacts-input-body" v-model="body" name="comments" placeholder="Письмо" />
+                <FormButton text="Отправить" :button-height="40" :button-width="150" style="align-self: center"/>
+            </form>
             <div class="contacts-info">
                 <span class="contacts-title">Наши контакты</span>
                 <a class="contacts-label" :href="'tel:{{ phone }}'">{{ phone }}</a>
@@ -29,9 +29,10 @@
 <script>
 
     import SectionHeader from '../components/SectionHeader'
-    import Input from "../components/Input"
-    import Button from "../components/Button"
-    import YandexMaps from "../components/YandexMaps"
+    import Input from '../components/Input'
+    import FormButton from '../components/FormButton'
+    import YandexMaps from '../components/YandexMaps'
+    import Service from '../service'
 
     export default {
         props: {
@@ -43,9 +44,28 @@
         },
         components: {
             Input,
-            Button,
+            FormButton,
             SectionHeader,
             YandexMaps
+        },
+        data() {
+            return {
+                name: "",
+                contact: "",
+                body: "",
+                responseMessage: ""
+            }
+        },
+        methods: {
+            submit() {
+                Service.post("sendemail", {
+                    name: this.name,
+                    contact: this.contact,
+                    body: this.body
+                }, (status, data) => {
+                    if(status === 200) this.responseMessage = "Спасибо! Мы свяжемся с вами в ближайшее время."
+                })
+            }
         }
     }
 </script>
@@ -62,7 +82,7 @@
         display: flex;
         margin-top: 2rem;
     }
-    
+
     .contacts-title {
         font-weight: bold;
         align-self: center;
@@ -76,7 +96,7 @@
         align-items: flex-start;
         margin: 0 2rem;
     }
-    
+
     .contacts-label {
         color: #312A1E;
         margin-bottom: 1rem;
@@ -84,15 +104,22 @@
 
     .contacts-input {
         margin-bottom: 1.5rem;
+        width: 55rem;
+        height: 4.5rem;
+        padding : 0 0.5rem;
+        border: 0.2rem solid #F0BF00;
+        overflow: auto;
+        outline: none;
+        border-radius: 0.5rem;
     }
-    
+
     .contacts-input-body {
-        margin-bottom: 1.5rem;
+        height: 25rem;
     }
 
     .contacts-input-body::placeholder {
         margin-bottom: 1.5rem;
         vertical-align: top;
     }
-    
+
 </style>

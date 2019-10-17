@@ -1,26 +1,49 @@
 <template>
     <div class="signup-container">
-        <span class="signup-title">
+        <span v-if="!responseMessage" class="signup-title">
             Запишитесь на 
             <span style="color: var(--tomato)">бесплатный</span>
             пробный урок!
         </span>
+        <span v-else class="signup-title">{{ responseMessage }}</span>
         <div class="signup-form-container">
-            <input type="text" class="signup-form-input" style="margin-right: 2rem;" placeholder="Ваше имя">
-            <input type="text" class="signup-form-input" style="margin: 0 2rem;" placeholder="Контактный телефон">
-            <button class="signup-form-button" style="margin-left: 2rem;">Записаться</button>
+            <form @submit.prevent="submit">
+                <input type="text" v-model="name" class="signup-form-input" style="margin-right: 2rem;" placeholder="Ваше имя">
+                <input type="text" v-model="contact" class="signup-form-input" style="margin: 0 2rem;" placeholder="Контактный телефон или email">
+                <button type="submit" class="signup-form-button" style="margin-left: 2rem;">Записаться</button>
+            </form>
         </div>
         <div class="signup-legal-text">Нажимая на кнопку я соглашаюсь с 
-            <router-link class="signup-legal-link" to="legal">Политикой конфиденциальности</router-link>
+            <router-link class="signup-legal-link" to="/policy">Политикой конфиденциальности</router-link>
         </div>
     </div>
 </template>
 
 <script>
-    import Input from "./Input";
+    import Input from './Input';
+    import Service from '../service'
+    
     export default {
-        name: "",
-        components: {Input}
+        components: {
+            Input
+        },
+        data() {
+            return {
+                name: "",
+                contact: "",
+                responseMessage: ""
+            }
+        },
+        methods: {
+            submit() {
+                Service.post("sendemail", {
+                    name: this.name,
+                    contact: this.contact
+                }, (status, data) => { 
+                    if(status === 200) this.responseMessage = "Спасибо! Мы свяжемся с вами в ближайшее время."
+                })
+            }
+        }
     }
 </script>
 
@@ -83,6 +106,7 @@
         font-size: 1.4rem;
         color: white;
         text-transform: uppercase;
+        cursor: pointer;
     }
     
     .signup-form-button:focus {

@@ -10,7 +10,7 @@
             height: {
                 type: Number,
                 default: 45
-            }
+            },
         },
         computed: {
             styling() {

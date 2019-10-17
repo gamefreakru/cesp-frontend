@@ -20,6 +20,8 @@ class Service {
             case 404:
                 this.redirectTo(document, '/404');
                 break;
+            case 400:
+                break;
             default:
                 this.redirectTo(document, '/500');
                 break;

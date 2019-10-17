@@ -17,6 +17,8 @@ import Test from './pages/Test'
 import About from './pages/About'
 import Program from './pages/Program'
 import Policy from './pages/Policy'
+import Schedule from './pages/Schedule';
+import Prices from './pages/Prices';
 
 Vue.use(Router);
 
@@ -36,6 +38,16 @@ export default new Router({
             path: '/courses',
             name: 'courses',
             component: Courses
+        },
+        {
+            path: '/schedule',
+            name: 'schedule',
+            component: Schedule
+        },
+        {
+            path: '/prices',
+            name: 'prices',
+            component: Prices
         },
         {
             path: '/feedbacks',

@@ -3,25 +3,24 @@
         <SectionHeader image="course"
                        title="Cursos"
                        description="Курсы испанского и каталонского в Москве"/>
-<!--        <Delimiter/>-->
-<!--        <SubMenu v-bind:items="[-->
-<!--        {-->
-<!--            name: 'Типы курсов',-->
-<!--            active: true-->
-<!--        },-->
-<!--        {-->
-<!--            name: 'Для начинающих',-->
-<!--            active: false-->
-<!--        },-->
-<!--        {-->
-<!--            name: 'Расписание и цены',-->
-<!--            active: false-->
-<!--        },-->
-<!--        {-->
-<!--            name: 'Запись',-->
-<!--            active: false-->
-<!--        }]"/>-->
-<!--        <Delimiter/>-->
+        <Delimiter/>
+        <SubMenu v-bind:items="[
+        {
+            name: 'Типы курсов',
+            active: true,
+            link: '/courses'
+        },
+        {
+            name: 'Расписание',
+            active: false,
+            link: '/schedule'
+        },
+        {
+            name: 'Цены',
+            active: false,
+            link: '/prices'
+        }]"/>
+        <Delimiter/>
         <div id="courses-grid">
             <Course v-for="(course, index) in courses"
                     v-bind:key="index"
@@ -82,12 +81,16 @@
 
     import SectionHeader from '../components/SectionHeader.vue'
     import Course from '../components/Course.vue'
+    import Delimiter from '../components/Delimiter'
+    import SubMenu from '../components/SubMenu'
     import Service from "../service";
 
     export default {
         components: {
             SectionHeader,
-            Course
+            Course,
+            Delimiter,
+            SubMenu
         },
         filters: {
             formatDiscountMessage(value)
