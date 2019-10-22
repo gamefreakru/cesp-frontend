@@ -72,7 +72,7 @@
                         <span class="group-recruitment-information-discount-description"> семейным <br/>парам</span>
                     </div>
                 </div>
-                <!--                <LinkButton class=group-recruitment-link-button-wrapper title="Посмотреть расписание и цены" link="Schedule" />-->
+                <LinkButton class=group-recruitment-link-button-wrapper title="Посмотреть расписание и цены" link="/schedule" />
             </div>
         </div>
         <div class="courses-container">
