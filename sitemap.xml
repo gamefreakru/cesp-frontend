@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<urlset
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <url>
+        <loc>https://centroespanol.ru/</loc>
+        <lastmod>2019-10-18T00:00:00+01:00</lastmod>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://centroespanol.ru/courses</loc>
+        <lastmod>2019-10-18T00:00:00+01:00</lastmod>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://centroespanol.ru/feedbacks</loc>
+        <lastmod>2019-10-18T00:00:00+01:00</lastmod>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://centroespanol.ru/teachers</loc>
+        <lastmod>2019-10-18T00:00:00+01:00</lastmod>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://centroespanol.ru/events</loc>
+        <lastmod>2019-10-18T00:00:00+01:00</lastmod>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://centroespanol.ru/club</loc>
+        <lastmod>2019-10-18T00:00:00+01:00</lastmod>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://centroespanol.ru/partners</loc>
+        <lastmod>2019-10-18T00:00:00+01:00</lastmod>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://centroespanol.ru/policy</loc>
+        <lastmod>2019-10-18T00:00:00+01:00</lastmod>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://centroespanol.ru/about</loc>
+        <lastmod>2019-10-18T00:00:00+01:00</lastmod>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://centroespanol.ru/contacts</loc>
+        <lastmod>2019-10-18T00:00:00+01:00</lastmod>
+        <priority>1.0</priority>
+    </url>
+</urlset>

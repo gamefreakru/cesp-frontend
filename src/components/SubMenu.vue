@@ -21,6 +21,7 @@
     #container {
         display: flex;
         justify-content: center;
+        font-size: 1.6rem;
     }
     
     #item {

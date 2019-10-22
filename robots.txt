@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /blog/wp-json/
+Disallow: /temp
+Sitemap: http://centroespanol.ru/sitemap.xml

@@ -115,7 +115,7 @@
 <style scoped>
 
     .courses-container {
-        padding: 60px 55px;
+        padding: 5rem 5.5rem;
         margin-top: 10rem;
         font-size: 1.6rem;
     }

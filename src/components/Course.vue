@@ -46,21 +46,21 @@
  #container {
      display: flex;
      flex-direction: column;
-     width: 370px;
+     width: 37rem;
      height: auto;
      margin: 0 0 auto;
      font-size: 1.6rem;
  }
     
 #container > img {
-    width: 370px;
-    height: 170px;
+    width: 37rem;
+    height: 17rem;
 }
     
 #title {
     font-size: 1.8rem;
     font-weight: bold;
-    margin: 10px 0;
+    margin: 1rem 0;
 }
     
 .description {
