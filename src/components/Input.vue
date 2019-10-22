@@ -1,11 +1,15 @@
 <template>
-    <input :name="name" type="text" :id="name" :placeholder="placeholder" autocomplete="off" :style="styling">
+    <input :name="name" :type="type" :id="name" :placeholder="placeholder" autocomplete="off" :style="styling">
 </template>
 
 <script>
     export default {
         props: {
             name: String,
+            type: {
+                type: String,
+                default: "text"
+            },
             placeholder: String,
             height: {
                 type: Number,
