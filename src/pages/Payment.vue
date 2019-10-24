@@ -3,26 +3,22 @@
         <span class="payment-container-header">Оплата банковской картой</span>
         <input type="hidden" name="shopId" value="106464">
         <input type="hidden" name="scid" value="38609">
-        <span>Идентификатор клиента/Номер заказа:</span>
-        <Input name="customerNumber" placeholder="" height=30 />
         <span>Сумма:</span>
         <Input name="sum" placeholder="введите сумму заказа в рублях" height=30 />
         <span>ФИО плательщика:</span>
         <Input name="custName" height=30 placeholder="" />
         <span>Email:</span>
         <Input name="custEmail" height=30 placeholder="" />
-        <span>Адрес доставки:</span>
-        <Input name="custAddr" height=30 placeholder="город, улица, номер дома, квартира" />
         <span>Телефон плательщика:</span>
         <Input name="orderDetails" height=30 placeholder="пример +79031234567" />
         <span>Способ оплаты:</span>
         <label>
-            <input name="paymentType" value="PC" type="radio">
-            Оплата со счета в Яндекс.Деньгах
+            <input name="paymentType" value="AC" type="radio">
+            ОПЛАТА БАНКОВСКОЙ КАРТОЙ
         </label>
         <label>
-            <input name="paymentType" value="AC" type="radio">
-            Оплата банковской картой
+            <input name="paymentType" value="PC" type="radio">
+            Оплата со счета в Яндекс.Деньгах
         </label>
         <label>
             <input name="paymentType" value="GP" type="radio">
