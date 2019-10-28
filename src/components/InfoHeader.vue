@@ -5,21 +5,21 @@
                  srcset="../assets/main/logo@2x.png 2x, ../assets/main/logo@3x.png 3x" alt="">
         </router-link>
         <div class="info-header-block">
-            <img class="info-header-block-image" src="../assets/main/phone-icon.svg" alt="clock">
+            <img class="info-header-block-image" src="../assets/main/whatsapp-icon.svg" alt="clock">
             <div class="info-header-block-text">
                 <a href="tel:+79161691830" class="info-header-block-phone">
                     <span style="opacity: 0.7;">+7</span>
-                    (916) 169-18-30</a>
-                <span class="info-header-block-description">Ответим в Whatsapp с любое время!</span>
+                    (916) 169-18-37</a>
+                <span class="info-header-block-description">Ответим в Whatsapp в любое время!</span>
             </div>
         </div>
         <div class="info-header-block">
-            <img class="info-header-block-image" src="../assets/main/clock-icon.svg" alt="clock">
+            <img class="info-header-block-image" src="../assets/main/phone-icon.svg" alt="clock">
             <div class="info-header-block-text">
                 <a href="tel:+74959207430" class="info-header-block-phone">
                     <span style="opacity: 0.7;">+7</span>
                     (495) 920-74-30</a>
-                <span class="info-header-block-description">Каждый день с 11:00 до 20:00</span>
+                <span class="info-header-block-description">Администратор каждый день с 11:00 до 20:00</span>
             </div>
         </div>
         <div class="info-header-block">
@@ -73,7 +73,7 @@
     }
 
     .info-header-block-image {
-        max-width: 3.6rem;
+        width: 3.6rem;
     }
 
     .info-header-block-phone {

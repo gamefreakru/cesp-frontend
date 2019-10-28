@@ -33,7 +33,7 @@
             </li>
             <li class="menu-item menu-item-color-light">
                 <img class="gift-image" alt="gift" src="../assets/header/gift.svg">
-                <router-link to="/contacts">Дарим пробный урок!</router-link>
+                <router-link to="/contacts">Записаться на пробный урок!</router-link>
             </li>
         </ul>
     </div>
