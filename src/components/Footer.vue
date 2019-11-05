@@ -11,6 +11,7 @@
                 <router-link class="footer-block-item footer-block-link" to="/contacts">Контакты</router-link>
                 <router-link class="footer-block-item footer-block-header" to="/blog">Блог</router-link>
                 <router-link class="footer-block-item footer-block-header" to="/contacts">Онлайн запись</router-link>
+                <router-link class="footer-block-item footer-block-header" to="/payment">Оплана онлайн</router-link>
             </div>
             <div class="footer-block">
                 <span class="footer-block-item footer-block-header">Обучение</span>

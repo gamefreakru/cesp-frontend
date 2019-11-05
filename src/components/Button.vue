@@ -1,5 +1,5 @@
 <template>
-    <a :href=link class="section-button" :style="styling">{{ text }}</a>
+    <router-link :to=link class="section-button" :style="styling">{{ text }}</router-link>
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 <template>
     <div class="schedule-container">
         <SectionHeader class="schedule-container-header" image="course"
-                       title="Schedule"
+                       title="Horario"
                        description="Расписание курсов испанского"/>
         <Delimiter/>
         <SubMenu v-bind:items="[
