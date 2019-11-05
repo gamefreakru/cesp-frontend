@@ -91,7 +91,6 @@
         max-width: 18rem;
         text-align: left;
         line-height: 1.57;
-        margin-top: 1rem;
     }
     
 </style>

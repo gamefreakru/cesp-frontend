@@ -20,6 +20,7 @@ import Policy from './pages/Policy'
 import Schedule from './pages/Schedule';
 import Prices from './pages/Prices';
 import Payment from './pages/Payment'
+import NotFound from './pages/NotFound';
 
 Vue.use(Router);
 
@@ -137,6 +138,11 @@ export default new Router({
                 metroStationsInfo: ['Москва, ул. Пятницкая 71/5 строение 2',
                     'метро Добрынинская', 'метро Серпуховская', 'метро Павелецкая']
             }
+        },
+        {
+            path: '*',
+            name: 'notfound',
+            component: NotFound
         }
     ],
     scrollBehavior () {

@@ -23,7 +23,6 @@ class Service {
             case 400:
                 break;
             default:
-                this.redirectTo(document, '/500');
                 break;
         }
         return Promise.reject(error)
