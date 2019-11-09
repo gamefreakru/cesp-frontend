@@ -2,7 +2,7 @@
     <router-link class="event-card-container" :style="style" :to=link>
         <div class="event-card-text-container">
             <span class="event-card-title">{{title}}</span>
-            <div class="event-card-description">{{description}}</div>
+            <div class="event-card-description" v-if="description">{{description | trim(130)}}</div>
         </div>
         <div class="event-card-position-container">
             <div class="event-card-delimiter"></div>
@@ -27,6 +27,11 @@
         computed: {
             style() {
                 return 'background-image: url(' + this.image + ')';
+            }
+        },
+        filters: {
+            trim(value, count) {
+                return value.substring(0, count) + "...";
             }
         }
     }

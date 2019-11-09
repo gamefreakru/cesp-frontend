@@ -18,7 +18,7 @@
             image: String,
             firstName: String,
             secondName: String,
-            date: Date,
+            date: String,
             text: String
         }
     }

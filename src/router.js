@@ -21,6 +21,7 @@ import Schedule from './pages/Schedule';
 import Prices from './pages/Prices';
 import Payment from './pages/Payment'
 import NotFound from './pages/NotFound';
+import HowToLearn from './pages/HowToLearn';
 
 Vue.use(Router);
 
@@ -110,6 +111,11 @@ export default new Router({
             path: '/about',
             name: 'about',
             component: About
+        },
+        {
+            path: '/howtolearn',
+            name: 'howtolearn',
+            component: HowToLearn
         },
         {
             path: '/payment',

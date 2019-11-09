@@ -1,20 +1,14 @@
 <template>
-
     <div class="about-container">
-
         <div id="title">Курсы испанского языка в Centro VAMOS</div>
-
         <div id="description">
-
             <img alt="О школе" src="../assets/about/about.gif" style="position: relative; float: right; margin-left: 10px;"/>
-
             <div>
                 Считаете, что выучить язык – это долго и скучно? Мы думаем, что это не так.
                 Вы уже знаете, что значит "Hola!", пробовали хамон и паэлью и хотите узнать больше.
                 Или вы совсем не знакомы с Испанией, и это ваш первый шаг. Мы поможем!
                 От вас требуется желание и посещаемость. От нас - много полезной информации и приятная атмосфера.
             </div>
-
             <ul>
                 <li>Мы специализируемся только на испанском и каталанском языках, а значит, знаем о них много и поможем
                     узнать вам.
@@ -49,18 +43,14 @@
                     школах Испании.
                 </li>
             </ul>
-
         </div>
-
         <Button text="типы курсов" link="/courses" :button-height=20 style="align-self: center; margin-bottom: 50px;"/>
-
         <ImageCarousel v-bind:images="[getCarouselImgUrl('slide1'), getCarouselImgUrl('slide2'), getCarouselImgUrl('slide3'), 
                 getCarouselImgUrl('slide4'), getCarouselImgUrl('slide5'), getCarouselImgUrl('slide6'), getCarouselImgUrl('slide7'),
                 getCarouselImgUrl('slide8'), getCarouselImgUrl('slide9'), getCarouselImgUrl('slide10'), getCarouselImgUrl('slide11'),
                 getCarouselImgUrl('slide12'), getCarouselImgUrl('slide13'), getCarouselImgUrl('slide14'), getCarouselImgUrl('slide15'), 
                 getCarouselImgUrl('slide16'), getCarouselImgUrl('slide17'), getCarouselImgUrl('slide18'), getCarouselImgUrl('slide19'), 
                 getCarouselImgUrl('slide20'), getCarouselImgUrl('slide21')]"/>
-
         <div id="sub-description">
             <img alt="О школе" src="../assets/about/about-teacher.jpg" style="position: relative; float: left; margin-right: 20px;"/>
             <b>Руже Вила Орриольс</b>
@@ -92,12 +82,8 @@
             Я работаю в Москве уже четыре года. В университете Барселоны я изучал латинский и греческий,
             но мне всегда был интересен русский язык и русская культура.
         </div>
-
         <Button text="Преподаватели" link="/teachers" :button-height=20 style="align-self: center; margin-bottom: 20px;"/>
-
-
     </div>
-
 </template>
 
 <script>
