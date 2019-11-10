@@ -5,12 +5,12 @@
                        description="Контакты"/>
         <div id="contacts-section">
             <form @submit.prevent="submit" class="contacts-info">
-                <span v-if="!responseMessage" class="contacts-title">Напишите нам</span>
-                <span v-else class="contacts-title">{{ responseMessage }}</span>
+                <span class="contacts-title">Напишите нам</span>
                 <input class="contacts-input" v-model="name" name="name" placeholder="Ваше имя" />
                 <input class="contacts-input" v-model="contact" name="contact" placeholder="Телефон или Email" />
                 <input class="contacts-input contacts-input-body" v-model="body" name="comments" placeholder="Письмо" />
                 <FormButton text="Отправить" :button-height="40" :button-width="150" style="align-self: center"/>
+                <ThankYouModal v-show="isModalVisible" @close="closeModal" v-body-scroll-lock:reserve-scroll-bar-gap="isModalVisible" />
             </form>
             <div class="contacts-info">
                 <span class="contacts-title">Наши контакты</span>
@@ -32,6 +32,7 @@
     import FormButton from '../components/FormButton'
     import YandexMaps from '../components/YandexMaps'
     import Service from '../service'
+    import ThankYouModal from '../components/ThankYouModal';
 
     export default {
         props: {
@@ -44,14 +45,15 @@
         components: {
             FormButton,
             SectionHeader,
-            YandexMaps
+            YandexMaps,
+            ThankYouModal
         },
         data() {
             return {
                 name: "",
                 contact: "",
                 body: "",
-                responseMessage: ""
+                isModalVisible: false
             }
         },
         methods: {
@@ -61,8 +63,19 @@
                     contact: this.contact,
                     body: this.body
                 }, (status) => {
-                    if(status === 200) this.responseMessage = "Спасибо! Мы свяжемся с вами в ближайшее время."
+                    if(status === 200) {
+                        this.name = '';
+                        this.contact = '';
+                        this.body = '';
+                        this.showModal();
+                    }
                 })
+            },
+            showModal() {
+                this.isModalVisible = true;
+            },
+            closeModal() {
+                this.isModalVisible = false;
             }
         }
     }
