@@ -9,7 +9,8 @@
 <!--                <router-link class="footer-block-item footer-block-link" to="/">Методика</router-link>-->
                 <router-link class="footer-block-item footer-block-link" to="/partners">Партнёры</router-link>
                 <router-link class="footer-block-item footer-block-link" to="/contacts">Контакты</router-link>
-                <router-link class="footer-block-item footer-block-header" to="/blog">Блог</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/howtolearn">Как выучить испанский?</router-link>
+<!--                <router-link class="footer-block-item footer-block-header" to="/blog">Блог</router-link>-->
                 <router-link class="footer-block-item footer-block-header" to="/contacts">Онлайн запись</router-link>
                 <router-link class="footer-block-item footer-block-header" to="/payment">Оплата онлайн</router-link>
             </div>

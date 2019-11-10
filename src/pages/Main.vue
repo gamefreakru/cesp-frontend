@@ -146,7 +146,7 @@
             <img style="position: absolute; left: 0; top: 10rem;" src="../assets/main/feedback-left.svg" alt="">
             <img style="position: absolute; left: 0; bottom: 0;" src="../assets/main/feedback-bottom.svg" alt="">
             <img style="position: absolute; right: 0; top: 10rem;" src="../assets/main/feedback-right.svg" alt="">
-            <img style="position: absolute; right: 6rem; top: 8rem; z-index: 3"
+            <img style="position: absolute; right: 6rem; top: 8rem; z-index: 2"
                  src="../assets/main/feedback-right-2.svg" alt="">
             <SignupForm class="signup-form-wrapper"/>
             <span class="main-section-title feedbacks-cards-title">
@@ -632,7 +632,6 @@
 
     .feedbacks-link-button-wrapper {
         margin-top: 5rem;
-        z-index: 2;
     }
 
     .blog-container {

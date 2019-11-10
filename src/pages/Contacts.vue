@@ -29,7 +29,6 @@
 <script>
 
     import SectionHeader from '../components/SectionHeader'
-    import Input from '../components/Input'
     import FormButton from '../components/FormButton'
     import YandexMaps from '../components/YandexMaps'
     import Service from '../service'
@@ -43,7 +42,6 @@
             metroStationsInfo: Array
         },
         components: {
-            Input,
             FormButton,
             SectionHeader,
             YandexMaps
@@ -62,7 +60,7 @@
                     name: this.name,
                     contact: this.contact,
                     body: this.body
-                }, (status, data) => {
+                }, (status) => {
                     if(status === 200) this.responseMessage = "Спасибо! Мы свяжемся с вами в ближайшее время."
                 })
             }
