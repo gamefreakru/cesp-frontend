@@ -9,7 +9,7 @@
             <form @submit.prevent="submit">
                 <input type="text" v-model="name" class="signup-form-input" style="margin-right: 2rem;" placeholder="Ваше имя">
                 <input type="text" v-model="contact" class="signup-form-input" style="margin: 0 2rem;" placeholder="Контактный телефон или email">
-                <button type="submit" class="signup-form-button" style="margin-left: 2rem;">
+                <button type="submit" onsubmit="ym(52043682, 'reachGoal', 'send'); return true;" class="signup-form-button" style="margin-left: 2rem;">
                     Записаться
                 </button>
             </form>

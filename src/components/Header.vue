@@ -13,18 +13,12 @@
             <li class="menu-item">
                 <router-link to="/teachers">Преподаватели</router-link>
             </li>
-<!--            <li class="menu-item">-->
-<!--                <router-link to="/blog">Блог</router-link>-->
-<!--            </li>-->
             <li class="menu-item">
                 <router-link to="/feedbacks">Отзывы</router-link>
             </li>
             <li class="menu-item">
                 <router-link to="/club">Habla клуб</router-link>
             </li>
-<!--            <li class="menu-item">-->
-<!--                <router-link to="/schools">Обучение в Испании</router-link>-->
-<!--            </li>-->
             <li class="menu-item">
                 <router-link to="/partners">Партнёры</router-link>
             </li>
@@ -33,7 +27,7 @@
             </li>
             <li class="menu-item menu-item-color-light">
                 <img class="gift-image" alt="gift" src="../assets/header/gift.svg">
-                <router-link to="/contacts">Записаться на пробный урок!</router-link>
+                <router-link to="/contacts" onclick="ym(52043682, 'reachGoal', 'probnij'); return true;">Записаться на пробный урок!</router-link>
             </li>
         </ul>
     </div>

@@ -9,7 +9,7 @@
                 <input class="contacts-input" v-model="name" name="name" placeholder="Ваше имя (обязательно)" />
                 <input class="contacts-input" v-model="contact" name="contact" placeholder="Телефон или Email (обязательно)" />
                 <input class="contacts-input contacts-input-body" v-model="body" name="comments" placeholder="Письмо" />
-                <FormButton text="Отправить" :button-height="40" :button-width="150" style="align-self: center"/>
+                <FormButton text="Отправить" onsubmit="ym(52043682, 'reachGoal', 'send'); return true;" :button-height="40" :button-width="150" style="align-self: center"/>
                 <ThankYouModal v-show="isModalVisible" @close="closeModal" v-body-scroll-lock:reserve-scroll-bar-gap="isModalVisible" />
             </form>
             <div class="contacts-info">

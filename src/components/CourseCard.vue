@@ -1,5 +1,5 @@
 <template>
-    <router-link class="course-card-container" :to="link">
+    <router-link class="course-card-container" :to="link" onclick="ym(52043682, 'reachGoal', 'kurs-zapis'); return true;">
         <img class="course-card-image" :src="image" alt=""/>
         <div class="course-card-flex-container">
             <span class="course-card-title">
