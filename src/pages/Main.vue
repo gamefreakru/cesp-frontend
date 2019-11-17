@@ -137,10 +137,12 @@
                 <TeacherCard class="teacher-card-wrapper" v-for="(teacher, index) in teachers"
                              v-bind:key="index"
                              v-bind:image="teacher.photo"
-                             v-bind:title="teacher.name"
-                             v-bind:description="teacher.info | trim(200)"/>
+                             v-bind:name="teacher.name"
+                             v-bind:city="teacher.city"
+                             v-bind:languages="teacher.languages"
+                             v-bind:short-description="teacher.shortInfo"/>
             </div>
-            <LinkButton title="Все преподаватели" link="teachers"/>
+            <LinkButton class="teachers-link-button-wrapper" title="Все преподаватели" link="teachers"/>
         </div>
         <div class="feedback-container">
             <img style="position: absolute; left: 0; top: 10rem;" src="../assets/main/feedback-left.svg" alt="">
@@ -563,7 +565,7 @@
     }
 
     .teachers-container {
-        height: 90rem;
+        height: 100rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -587,6 +589,10 @@
 
     .teacher-card-wrapper {
         margin: 0 2rem;
+    }
+
+    .teachers-link-button-wrapper {
+        margin-top: 8rem;
     }
 
     .signup-form-wrapper {

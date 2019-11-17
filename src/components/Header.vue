@@ -50,7 +50,6 @@
         padding: 0;
         overflow: hidden;
         background-color: var(--main-color);
-       
     }
     
     .header-container {

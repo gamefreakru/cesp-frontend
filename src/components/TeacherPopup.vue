@@ -1,24 +1,37 @@
 <template>
-    <div class="thank-you-modal-container">
-        <div class="thank-you-modal" role="dialog">
-            <span class="thank-you-modal-title">Ваша заявка принята!</span>
-            <span class="thank-you-modal-description">
-                Наш менеджер скоро свяжется с вами для уточнения всех деталей.
-            </span>
-            <div class="thank-you-modal-button-container" @click="close">
-                <span class="thank-you-modal-button-title">Закрыть</span>
-                <img class="thank-you-modal-button-image" src="../assets/common/arrow.svg" alt="arrow"/>
+    <div class="teacher-modal-container">
+        <div class="teacher-modal" role="dialog">
+            <img v-if="image" class="teacher-modal-image" :src="image" :alt="name">
+            <img v-else class="teacher-modal-image" src="../assets/teachers/teacher-default.svg" :alt="name">
+            <div class="teacher-modal-info-container">
+                <span class="teacher-modal-info-name">{{name}}</span>
+                <span class="teacher-modal-info-city">{{city}}</span>
+                <div class="teacher-modal-info-languages-container">
+                    <span class="teacher-modal-info-language" v-for="(language, index) in languages" :class="language.color">
+                        {{language.name}}
+                    </span>
+                </div>
+                <div class="teacher-modal-info-descritption">
+                    {{description}}
+                </div>
             </div>
-            <img class="thank-you-modal-close-image" @click="close" src="../assets/common/cross.svg" alt="close">
+            <img class="teacher-modal-close-image" @click="close" src="../assets/common/cross.svg" alt="close">
         </div>
     </div>
 </template>
 
 <script>
     export default {
+        props: {
+            image: String,
+            name: String,
+            city: String,
+            languages: Array,
+            description: String
+        },
         methods : {
             close() {
-                this.$emit("close")
+                this.$emit("close");
             }
         }
     }
@@ -26,7 +39,7 @@
 
 <style scoped>
 
-    .thank-you-modal-container {
+    .teacher-modal-container {
         position: fixed;
         top: 0;
         bottom: 0;
@@ -36,58 +49,84 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        z-index: 1;
     }
 
-    .thank-you-modal {
-        width: 127rem;
-        height: 25rem;
-        background-image: url("../assets/signup-form/signup-form-background.svg");
-        background-repeat: no-repeat;
-        background-size: cover;
+    .teacher-modal {
+        width: 124rem;
+        height: 63rem;
+        background-color: white;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 5.5rem 0;
+        align-items: flex-start;
+        padding: 9rem 12rem;
         box-sizing: border-box;
         position: relative;
+        box-shadow: 0 4px 16px 0 rgba(41, 41, 41, 0.15);
+        border-radius: 0.8rem;
     }
-
-    .thank-you-modal-title {
-        font-family: GothamPro-Medium, sans-serif;
-        font-size: 2.4rem;
-        text-align: left;
-        width: 30rem;
+    
+    .teacher-modal-image {
+        width: 35rem;
+        height: 43.5rem;
     }
-
-    .thank-you-modal-description {
-        font-family: GothamPro, sans-serif;
-        font-size: 1.6rem;
-        text-align: left;
-        line-height: 1.5;
-        width: 30rem;
-        margin: 1rem 0 2rem 0;
-    }
-
-    .thank-you-modal-button-container {
+    
+    .teacher-modal-info-container {
         display: flex;
-        width: 30rem;
-        cursor: pointer;
+        flex-direction: column;
+        margin-left: 5rem;
+        justify-content: flex-start;
+    }
+    
+    .teacher-modal-info-name {
+        font-family: FedraSerifAPro-Medium, sans-serif;
+        font-size: 4rem;
+        text-align: left;
+    }
+    
+    .teacher-modal-info-city {
+        font-family: GothamPro-Medium, sans-serif;
+        font-size: 1.8rem;
+        margin-top: 2rem;
+        text-align: left;
     }
 
-    .thank-you-modal-button-title {
+    .teacher-modal-info-languages-container {
+        display: flex;
+        margin-top: 2.5rem;
+    }
+
+    .teacher-modal-info-language {
         font-family: GothamPro-Bold, sans-serif;
-        font-size: 1.4rem;
+        font-size: 1rem;
         text-transform: uppercase;
+        padding: 0.8rem 1.2rem;
+        margin: 0 0.6rem;
     }
 
-    .thank-you-modal-button-image {
-        margin-left: 1rem;
+    .yellow {
+        color: #ffbc00;
+        border: solid 0.1rem #ffbc00;
+        border-radius: 0.4rem;
     }
 
-    .thank-you-modal-close-image {
+    .red {
+        color: var(--tomato);
+        border: solid 0.1rem var(--tomato);
+        border-radius: 0.4rem;
+    }
+    
+    .teacher-modal-info-descritption {
+        font-family: GothamPro, sans-serif;
+        font-size: 1.4rem;
+        text-align: center;
+        line-height: 1.71;
+        margin-top: 2rem;
+    }
+
+    .teacher-modal-close-image {
         position: absolute;
-        right: 3.5rem;
-        top: 3.5rem;
+        right: 2rem;
+        top: 2rem;
         cursor:  pointer;
     }
 
