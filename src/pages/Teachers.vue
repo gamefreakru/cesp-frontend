@@ -1,29 +1,43 @@
 <template>
-    <div class="teachers-container">
-        <SectionHeader image="teachers"
-                       title="Profesores"
-                       description="Наши преподаватели"/>
-        <div id="teachers-grid">
-            <Teacher v-for="(teacher, index) in teachers"
-                     v-bind:key="index"
-                     v-bind:image="teacher.photo"
-                     v-bind:name="teacher.name"
-                     v-bind:position="teacher.position"
-                     v-bind:description="teacher.info" />
+    <div class="teachers-page-container">
+        <div class="teachers-page-container-header">
+            <img style="position: absolute; bottom:0; left: 0;" src="../assets/teachers/teachers-left.svg" alt="">
+            <img style="position: absolute; bottom:0; right: 0;" src="../assets/teachers/teachers-right.svg"  alt="">
+            <span class="teachers-page-title">
+                Наши <span style="color: var(--tomato);">преподаватели</span>
+                <TextBabel class="teachers-page-text-babel-wrapper" text="Profesores"/>
+            </span>
+        </div>
+        <div class="teachers-page-card-container">
+            <TeacherCard class="teacher-page-card-wrapper" v-for="(teacher, index) in teachers"
+                         v-bind:key="index"
+                         v-bind:image="teacher.photo"
+                         v-bind:image-large="teacher.largePhoto"
+                         v-bind:name="teacher.name"
+                         v-bind:city="teacher.city"
+                         v-bind:languages="teacher.languages"
+                         v-bind:short-description="teacher.shortInfo"
+                         v-bind:description="teacher.info"
+            />
         </div>
     </div>
 </template>
 
 <script>
-    
-    import SectionHeader from "../components/SectionHeader"
-    import Teacher from "../components/Teacher"
-    import Service from "../service";
 
+    import TextBabel from "../components/TextBabel";
+    import TeacherCard from "../components/TeacherCard";
+    import Service from "../service";
+    
     export default {
         components: {
-            SectionHeader,
-            Teacher
+            TextBabel,
+            TeacherCard
+        },
+        filters: {
+            trim(value, count) {
+                return value.substring(0, count) + "...";
+            }
         },
         data() {
             return {
@@ -35,24 +49,48 @@
                 this.teachers = data;
             })
         }
-    }
+    }    
+    
 </script>
 
 <style scoped>
-
-    .teachers-container {
-        padding: 60px 55px;
-        font-family: 'Open Sans', sans-serif;
-        font-size: 1.6rem;
-        margin-top: 10rem;
-    }
-
-    #teachers-grid {
-        display: inline-grid;
-        grid-template-columns: auto auto auto auto;
-        grid-gap: 50px 35px;
-        margin-top: 40px;
-        margin-bottom: 20px;
+    
+    .teachers-page-container {
+        background-color: white;
     }
     
+    .teachers-page-container-header {
+        height: 35rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--background-color-white);
+    }
+
+    .teachers-page-title {
+        font-family: FedraSerifAPro-Medium, sans-serif;
+        font-size: 4rem;
+        margin-top: 25rem;
+        width: 50rem;
+        position: relative;
+    }
+    
+    .teachers-page-text-babel-wrapper {
+        position: absolute;
+        top: -4rem;
+        left: 46rem;
+    }
+    
+    .teachers-page-card-container {
+        display: flex;
+        margin: 4rem 0 0 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .teacher-page-card-wrapper {
+        margin: 3.5rem 2rem;
+    }
+
 </style>

@@ -7,7 +7,10 @@
                 <span class="teacher-modal-info-name">{{name}}</span>
                 <span class="teacher-modal-info-city">{{city}}</span>
                 <div class="teacher-modal-info-languages-container">
-                    <span class="teacher-modal-info-language" v-for="(language, index) in languages" :class="language.color">
+                    <span class="teacher-modal-info-language" 
+                          v-for="(language, index) in languages" 
+                          :class="language.color" 
+                          v-bind:key="index">
                         {{language.name}}
                     </span>
                 </div>
