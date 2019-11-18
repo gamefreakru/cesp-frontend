@@ -12,7 +12,7 @@
                 {{language.name}}
             </span>
         </div>
-        <div class="teacher-card-description">{{shortDescription}}</div>
+        <div v-if="shortDescription" class="teacher-card-description">{{shortDescription | trim(160)}}</div>
 <!--        <TeacherPopup v-show="isModalVisible" -->
 <!--                      @close="closeModal" -->
 <!--                      v-body-scroll-lock:reserve-scroll-bar-gap="isModalVisible"-->
@@ -54,6 +54,11 @@
             closeModal() {
                 this.isModalVisible = false;
             }
+        },
+        filters: {
+            trim(value, count) {
+                return value.substring(0, count);
+            }
         }
     }
 </script>
@@ -70,7 +75,9 @@
     
     .teacher-card-image {
         width: 18rem;
+        min-width: 18rem;
         height: 22.5rem;
+        min-height: 22.5rem;
     }
     
     .teacher-card-title {
