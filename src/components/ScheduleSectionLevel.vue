@@ -15,7 +15,7 @@
                                       v-bind:start-date="languageSectionLevelItem.startDate"
                                       v-bind:price="languageSectionLevelItem.price"
                                       v-bind:price-without-discount="languageSectionLevelItem.priceWithoutDiscount"
-                                      v-bind:discount="languageSectionLevelItem.discount"
+                                      v-bind:discount-value="languageSectionLevelItem.discountValue"
                                       v-bind:is-available="languageSectionLevelItem.isAvailable"
             />
         </div>
@@ -41,8 +41,6 @@
 
     .schedule-section-level-container {
         display: flex;
-        border-bottom: 0.4rem solid #e5e5e5;
-        box-sizing: border-box;
     }
     
     .schedule-section-level-title {

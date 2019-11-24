@@ -16,6 +16,7 @@
             <div class="schedule-section-level-item-price-info-container">
             <span v-if="priceWithoutDiscount" class="schedule-section-level-item-price-without-discount">
                 {{priceWithoutDiscount}}
+                <span v-if="discountValue" class="schedule-section-level-item-discount">{{discountString}}</span>
             </span>
                 <span class="schedule-section-level-item-price">{{price}}</span>
             </div>
@@ -41,12 +42,15 @@
             startDate: Date,
             price: Number,
             priceWithoutDiscount: Number,
-            discount: Number,
+            discountValue: Number,
             isAvailable: Boolean
         },
         computed: {
             timeString: function() {
                 return this.$moment(this.startTime).format('hh:mm') + ' - ' + this.$moment(this.endTime).format('hh:mm');
+            },
+            discountString: function() {
+                return 'скидка ' + this.discountValue + '%';
             }
         }
     }
@@ -112,15 +116,16 @@
     .schedule-section-level-item-start-date {
         font-family: GothamPro, sans-serif;
         font-size: 1.4rem;
-        width: 15rem;
+        width: 20rem;
         box-sizing: border-box;
         margin-left: 4rem;
+        margin-top: 0.2rem;
         align-self: flex-start;
     }
     
     .schedule-section-level-item-price-container {
         display: flex;
-        width: 31rem;
+        width: 26rem;
     }
     
     .schedule-section-level-item-price-info-container {
@@ -134,6 +139,23 @@
         font-size: 1.4rem;
         text-decoration: line-through;
         margin: 0.2rem 0;
+        position: relative;
+    }
+    
+    .schedule-section-level-item-discount {
+        font-family: GothamPro, sans-serif;
+        font-size: 1.2rem;
+        width: 8.5rem;
+        height: 2rem;
+        background-color: var(--main-color);
+        border-radius: 0.2rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        left: -10rem;
+        bottom: -0.2rem;
     }
     
     .schedule-section-level-item-price {
@@ -146,7 +168,7 @@
     .schedule-section-level-item-signup-container {
         display: flex;
         align-items: center;
-        margin-left: 10rem;
+        margin-left: auto;
         text-decoration: none;
         color: black;
     }
@@ -165,7 +187,7 @@
         font-family: GothamPro, sans-serif;
         font-size: 1.4rem;
         align-self: flex-start;
-        margin-left: 10rem;
+        margin-left: auto;
     }
     
 </style>

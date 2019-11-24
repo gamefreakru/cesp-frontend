@@ -3,6 +3,8 @@
         <span class="schedule-section-title">{{title}}</span>
         <span class="schedule-section-duration">{{durationDescription}}</span>
         <ScheduleSectionLevel class="schedule-section-levels-wrapper" v-for="(languageLevel, index) in languageLevels"
+                              v-bind:class="{ 'schedule-section-levels-wrapper-border': 
+                                      index!==languageLevels.length - 1 }"
                               v-bind:key="index"
                               v-bind:title="languageLevel.title"
                               v-bind:language-section-level-items="languageLevel.languageLevelItems"
@@ -53,6 +55,10 @@
     
     .schedule-section-levels-wrapper {
         margin-top: 2rem;
+    }
+
+    .schedule-section-levels-wrapper-border {
+        border-bottom: 0.4rem solid #e5e5e5;
     }
     
 </style>

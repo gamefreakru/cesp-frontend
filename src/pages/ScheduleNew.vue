@@ -12,7 +12,7 @@
                 <span style="width: 18rem;" class="schedule-page-table-header-column-title">Уровень</span>
                 <span style="width: 20rem;" class="schedule-page-table-header-column-title">Преподаватель</span>
                 <span style="width: 20rem;" class="schedule-page-table-header-column-title">Время занятий</span>
-                <span style="width: 15rem;" class="schedule-page-table-header-column-title">Дата начала</span>
+                <span style="width: 20rem;" class="schedule-page-table-header-column-title">Дата начала</span>
                 <span class="schedule-page-table-header-column-title">Цена</span>
             </div>
         </div>
