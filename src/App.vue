@@ -57,7 +57,7 @@
         text-align: center;
         font-size: 1.2rem;
         color: black;
-        background-color: #f0f0f0;
+        background-color: white;
         max-width: 144rem;
         min-width: 136.6rem;
         float: none;

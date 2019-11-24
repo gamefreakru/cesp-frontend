@@ -1,6 +1,6 @@
 <template>
     <div class="teachers-page-container">
-        <div class="teachers-page-container-header">
+        <div class="teachers-page-header-container">
             <img style="position: absolute; bottom:0; left: 0;" src="../assets/teachers/teachers-left.svg" alt="">
             <img style="position: absolute; bottom:0; right: 0;" src="../assets/teachers/teachers-right.svg"  alt="">
             <span class="teachers-page-title">
@@ -59,7 +59,7 @@
         background-color: white;
     }
     
-    .teachers-page-container-header {
+    .teachers-page-header-container {
         height: 35rem;
         position: relative;
         display: flex;
