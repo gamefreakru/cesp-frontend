@@ -14,11 +14,6 @@
             name: 'Расписание',
             active: false,
             link: '/schedule'
-        },
-        {
-            name: 'Цены',
-            active: false,
-            link: '/prices'
         }]"/>
         <Delimiter/>
         <div id="courses-grid">

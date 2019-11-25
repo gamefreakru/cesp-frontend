@@ -1,10 +1,15 @@
 <template>
     <div class="schedule-section-level-item-container">
         <div class="schedule-section-level-item-teacher-container">
-            <img class="schedule-section-level-item-teacher-photo" :src="teacherPhoto" :alt="teacherName">
+            <img v-if="teacherPhoto" class="schedule-section-level-item-teacher-photo" 
+                 :src="teacherPhoto" :alt="teacherName">
+            <img v-else class="schedule-section-level-item-teacher-photo" 
+                 src="../assets/teachers/teacher-default-small.svg" alt="">
             <div class="schedule-section-level-item-teacher-info-container">
-                <span class="schedule-section-level-item-teacher-name">{{teacherName}}</span>
-                <span class="schedule-section-level-item-teacher-post">{{teacherPost}}</span>
+                <span v-if="teacherName" class="schedule-section-level-item-teacher-name">{{teacherName}}</span>
+                <span v-else class="schedule-section-level-item-teacher-name-empty">Преподаватель</span>
+                <span v-if="teacherPost" class="schedule-section-level-item-teacher-post">{{teacherPost}}</span>
+                <span v-else class="schedule-section-level-item-teacher-post-empty">уточняется</span>
             </div>
         </div>
         <div class="schedule-section-level-item-time-info-container">
@@ -36,10 +41,10 @@
             teacherPhoto: String,
             teacherName: String,
             teacherPost: String,
-            startTime: Date,
-            endTime: Date,
+            startTime: String,
+            endTime: String,
             days: String,
-            startDate: Date,
+            startDate: String,
             price: Number,
             priceWithoutDiscount: Number,
             discountValue: Number,
@@ -47,7 +52,7 @@
         },
         computed: {
             timeString: function() {
-                return this.$moment(this.startTime).format('hh:mm') + ' - ' + this.$moment(this.endTime).format('hh:mm');
+                return this.startTime + ' - ' + this.endTime;
             },
             discountString: function() {
                 return 'скидка ' + this.discountValue + '%';
@@ -88,9 +93,22 @@
         margin: 0.2rem 0;
     }
     
+    .schedule-section-level-item-teacher-name-empty {
+        font-family: GothamPro, sans-serif;
+        font-size: 1.4rem;
+        margin: 0.2rem 0;
+    }
+    
     .schedule-section-level-item-teacher-post {
         font-family: GothamPro, sans-serif;
         font-size: 1.2rem;
+        margin: 0.2rem 0;
+    }
+    
+    .schedule-section-level-item-teacher-post-empty {
+        font-family: GothamPro, sans-serif;
+        font-size: 1.2rem;
+        color: #ada391;
         margin: 0.2rem 0;
     }
 

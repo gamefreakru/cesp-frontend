@@ -6,8 +6,8 @@
                               v-bind:class="{ 'schedule-section-levels-wrapper-border': 
                                       index!==languageLevels.length - 1 }"
                               v-bind:key="index"
-                              v-bind:title="languageLevel.title"
-                              v-bind:language-section-level-items="languageLevel.languageLevelItems"
+                              v-bind:title="languageLevel.level"
+                              v-bind:language-section-level-items="languageLevel.scheduleItems"
         />
     </div>
 </template>

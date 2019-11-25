@@ -54,8 +54,8 @@
             <!--            </div>-->
             <div class="group-recruitment-information-container">
                 <span class="group-recruitment-information-title">Идёт набор в группы: 
-                    <span style="color: var(--tomato);">октябрь</span>, 
-                    <span style="color: var(--tomato);">ноябрь</span>
+                    <span style="color: var(--tomato);">ноябрь</span>, 
+                    <span style="color: var(--tomato);">декабрь</span>
                 </span>
                 <span class="group-recruitment-information-description">
                     При оплате полного стандартного курса действуют скидки:
@@ -109,7 +109,7 @@
                             duration-description="Частота и продолжительность согласовываются с учётом ваших пожеланий"
                             price-description="2 500 руб./час"/>
             </div>
-            <LinkButton class=courses-link-button-wrapper title="Выбрать курсы" link="courses"/>
+            <LinkButton class=courses-link-button-wrapper title="Выбрать курсы" link="/courses"/>
         </div>
         <div class="events-container">
             <span class="main-section-title events-title">
@@ -126,7 +126,7 @@
                            v-bind:image="event.photo"
                            v-bind:description="event.shortInfo"/>
             </div>
-            <LinkButton class="events-link-button-wrapper" title="Все мероприятия" link="events"/>
+            <LinkButton class="events-link-button-wrapper" title="Все мероприятия" link="/events"/>
         </div>
         <div class="teachers-container">
             <span class="main-section-title teachers-title">
@@ -142,7 +142,7 @@
                              v-bind:languages="teacher.languages"
                              v-bind:short-description="teacher.shortInfo"/>
             </div>
-            <LinkButton class="teachers-link-button-wrapper" title="Все преподаватели" link="teachers"/>
+            <LinkButton class="teachers-link-button-wrapper" title="Все преподаватели" link="/teachers"/>
         </div>
         <div class="feedback-container">
             <img style="position: absolute; left: 0; top: 10rem;" src="../assets/main/feedback-left.svg" alt="">
@@ -163,7 +163,7 @@
                               v-bind:date="feedback.date"
                               v-bind:text="feedback.message | trim(300)" />
             </div>
-            <LinkButton class="feedbacks-link-button-wrapper" title="Все отзывы" link="feedbacks"/>
+            <LinkButton class="feedbacks-link-button-wrapper" title="Все отзывы" link="/feedbacks"/>
         </div>
         <!--        <div class="blog-container">-->
         <!--            <span class="main-section-title blogs-cards-title">-->
@@ -220,7 +220,7 @@
                 getCarouselImgUrl('slide16'), getCarouselImgUrl('slide17'), getCarouselImgUrl('slide18'), getCarouselImgUrl('slide19'), 
                 getCarouselImgUrl('slide20'), getCarouselImgUrl('slide21')]"/>
                 </div>
-                <LinkButton class="about-link-button-wrapper" title="Познакомьтесь с нами поближе" link="about"/>
+                <LinkButton class="about-link-button-wrapper" title="Познакомьтесь с нами поближе" link="/about"/>
             </div>
         </div>
     </div>
@@ -231,7 +231,6 @@
     import TeacherCard from "../components/TeacherCard";
     import CourseCard from '../components/CourseCard';
     import EventCard from "../components/EventCard";
-    // import BlogCard from "../components/BlogCard";
     import FeedbackCard from "../components/FeedbackCard";
     import LinkButton from "../components/LinkButton";
     import SignupForm from "../components/SignupForm";

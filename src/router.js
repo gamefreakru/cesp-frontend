@@ -18,8 +18,6 @@ import About from './pages/About'
 import Program from './pages/Program'
 import Policy from './pages/Policy'
 import Schedule from './pages/Schedule';
-import ScheduleNew from './pages/ScheduleNew'
-import Prices from './pages/Prices';
 import Payment from './pages/Payment'
 import NotFound from './pages/NotFound';
 import HowToLearn from './pages/HowToLearn';
@@ -46,12 +44,7 @@ export default new Router({
         {
             path: '/schedule',
             name: 'schedule',
-            component: ScheduleNew
-        },
-        {
-            path: '/prices',
-            name: 'prices',
-            component: Prices
+            component: Schedule
         },
         {
             path: '/feedbacks',

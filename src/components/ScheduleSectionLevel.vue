@@ -15,7 +15,7 @@
                                       v-bind:start-date="languageSectionLevelItem.startDate"
                                       v-bind:price="languageSectionLevelItem.price"
                                       v-bind:price-without-discount="languageSectionLevelItem.priceWithoutDiscount"
-                                      v-bind:discount-value="languageSectionLevelItem.discountValue"
+                                      v-bind:discount-value="languageSectionLevelItem.discount"
                                       v-bind:is-available="languageSectionLevelItem.isAvailable"
             />
         </div>

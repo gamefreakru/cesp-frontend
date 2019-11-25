@@ -7,7 +7,7 @@
         <div class="info-header-block">
             <img class="info-header-block-image" src="../assets/main/whatsapp-icon.svg" alt="clock">
             <div class="info-header-block-text">
-                <a href="tel:+79161691830" class="info-header-block-phone" 
+                <a href="tel:+79161691837" class="info-header-block-phone" 
                    onclick="ym(52043682, 'reachGoal', 'watsapp'); return true;">
                     <span style="opacity: 0.7;">+7</span>
                     (916) 169-18-37</a>
