@@ -637,6 +637,7 @@
 
     .feedbacks-link-button-wrapper {
         margin-top: 5rem;
+        z-index: 1;
     }
 
     .blog-container {
