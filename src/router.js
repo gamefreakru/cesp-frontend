@@ -4,8 +4,7 @@ import Main from './pages/Main'
 import Courses from './pages/Courses'
 import Feedbacks from './pages/Feedbacks'
 import Teachers from './pages/Teachers'
-import Contacts from './pages/Contacts.vue'
-import ContactsNew from "./pages/ContactsNew";
+import Contacts from './pages/Contacts';
 import Club from './pages/Club'
 import ClubEventInfo from './pages/ClubEventInfo'
 import Events from './pages/Events'
@@ -130,15 +129,7 @@ export default new Router({
         {
             path: '/contacts',
             name: 'contacts',
-            component: ContactsNew
-            // props: {
-            //     phone: '+7 (495) 920-74-30',
-            //     additionalPhone: '+7 (916) 169-18-37',
-            //     address: 'Москва, Малый Каретный переулок 11/1',
-            //     email: 'info@centroespanol.ru',
-            //     metroStationsInfo: ['Москва, ул. Пятницкая 71/5 строение 2',
-            //         'метро Добрынинская', 'метро Серпуховская', 'метро Павелецкая']
-            // }
+            component: Contacts
         },
         {
             path: '*',
