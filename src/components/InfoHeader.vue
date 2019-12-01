@@ -1,8 +1,7 @@
 <template>
     <div class="info-header-container" :style="style">
         <router-link class="info-header-logo" to="/">
-            <img src="../assets/main/logo.png"
-                 srcset="../assets/main/logo@2x.png 2x, ../assets/main/logo@3x.png 3x" alt="">
+            <img src="../assets/main/logo.png" alt="">
         </router-link>
         <div class="info-header-block">
             <img class="info-header-block-image" src="../assets/main/whatsapp-icon.svg" alt="clock">
@@ -15,7 +14,7 @@
             </div>
         </div>
         <div class="info-header-block">
-            <img class="info-header-block-image" src="../assets/main/phone-icon.svg" alt="clock">
+            <img class="info-header-block-image" src="../assets/common/phone-icon.svg" alt="clock">
             <div class="info-header-block-text">
                 <a href="tel:+74959207430" class="info-header-block-phone" 
                    onclick="ym(52043682, 'reachGoal', 'tel'); return true;">

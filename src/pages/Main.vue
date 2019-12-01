@@ -150,7 +150,7 @@
             <img style="position: absolute; right: 0; top: 10rem;" src="../assets/main/feedback-right.svg" alt="">
             <img style="position: absolute; right: 6rem; top: 8rem; z-index: 2"
                  src="../assets/main/feedback-right-2.svg" alt="">
-            <SignupForm class="signup-form-wrapper"/>
+            <SignupForm type="signup" class="signup-form-wrapper"/>
             <span class="main-section-title feedbacks-cards-title">
                 Отзывы
                 <TextBabel class="text-babel-feedback-wrapper" text="Opiniones"/>
