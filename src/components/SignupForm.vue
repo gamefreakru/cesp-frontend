@@ -71,7 +71,7 @@
                     if(status === 200) {
                         this.name = '';
                         this.contact = '';
-                        this.body = '';
+                        this.message = '';
                         this.showModal();
                     }
                 })

@@ -50,6 +50,7 @@
         padding: 5.5rem 0;
         box-sizing: border-box;
         position: relative;
+        border-radius: 1.2rem;
     }
     
     .thank-you-modal-title { 
