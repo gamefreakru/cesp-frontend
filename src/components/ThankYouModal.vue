@@ -41,7 +41,7 @@
     .thank-you-modal {
         width: 127rem;
         height: 25rem;
-        background-image: url("../assets/signup-form/signup-form-background.svg");
+        background-image: url("../assets/signup-form/signup-form-background.png");
         background-repeat: no-repeat;
         background-size: cover;
         display: flex;

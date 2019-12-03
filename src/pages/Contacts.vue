@@ -53,6 +53,36 @@
                             </a>
                         </div>
                     </div>
+                    <div class="contacts-page-requisites-container">
+                        <span class="contacts-page-requsites-title">Реквизиты компании</span>
+                        <span class="contacts-page-requsites">
+                            Индивидуальный предприниматель Неудачина Наталья Анатольевна
+                        </span>
+                        <span class="contacts-page-requsites">
+                            Юридический адрес: 665724 Иркутская обл. г. Братск ул. Возрождения  3-15
+                        </span>
+                        <span class="contacts-page-requsites">
+                            Р/с 40802810620130007157
+                        </span>
+                        <span class="contacts-page-requsites">
+                            К/с: 30101810450040000751
+                        </span>
+                        <span class="contacts-page-requsites">
+                            БАНК: Филиал №5440 ВТБ 24 (ПАО) г.Новосибирск
+                        </span>
+                        <span class="contacts-page-requsites">
+                            БИК: 045004751
+                        </span>
+                        <span class="contacts-page-requsites">
+                            ИНН: 380400215546  
+                        </span>
+                        <span class="contacts-page-requsites">
+                            ОГРН: 304380409300079 выдано 02 Апреля 2004 г 
+                        </span>
+                        <span class="contacts-page-requsites">
+                            ОКПО: 0080732445 
+                        </span>
+                    </div>
                 </div>
                 <div class="contacts-page-info-block-container">
                     <span class="contacts-page-info-block-title">Как связаться</span>
@@ -254,6 +284,27 @@
 
     .contacts-page-social-network-link {
         width: 4rem;
+    }
+    
+    .contacts-page-requisites-container {
+        display: flex;
+        flex-direction: column;
+        width: 35rem;
+        align-items: flex-start;
+        margin-top: 2rem;
+    }
+    
+    .contacts-page-requsites-title {
+        font-family: GothamPro-Medium, sans-serif;
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+    
+    .contacts-page-requsites {
+        font-family: GothamPro, sans-serif;
+        font-size: 1.2rem;
+        margin: 0.2rem 0;
+        text-align: left;
     }
 
 </style>
