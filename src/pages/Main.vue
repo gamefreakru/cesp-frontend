@@ -140,7 +140,9 @@
                              v-bind:name="teacher.name"
                              v-bind:city="teacher.city"
                              v-bind:languages="teacher.languages"
-                             v-bind:short-description="teacher.shortInfo"/>
+                             v-bind:short-description="teacher.shortInfo"
+                             type="normal"
+                />
             </div>
             <LinkButton class="teachers-link-button-wrapper" title="Все преподаватели" link="/teachers"/>
         </div>

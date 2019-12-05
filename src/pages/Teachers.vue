@@ -18,6 +18,7 @@
                          v-bind:languages="teacher.languages"
                          v-bind:short-description="teacher.shortInfo"
                          v-bind:description="teacher.info"
+                         type="normal"
             />
         </div>
     </div>

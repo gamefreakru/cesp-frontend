@@ -1,5 +1,5 @@
 <template>
-    <div class="teacher-card-container" v-on:click="showModal">
+    <div v-if="type === 'normal'" class="teacher-card-container" v-on:click="showModal">
         <img v-if="image" class="teacher-card-image" :src="image" :alt="name">
         <img v-else class="teacher-card-image" src="../assets/teachers/teacher-default.svg" :alt="name">
         <span class="teacher-card-title">{{name}}</span>
@@ -23,6 +23,12 @@
 <!--                      v-bind:description="description"-->
 <!--        />-->
     </div>
+    <div v-else-if="type === 'small'" class="teacher-card-container-small">
+        <img v-if="image" class="teacher-card-image-small" :src="image" :alt="name">
+        <img v-else class="teacher-card-image-small" src="../assets/teachers/teacher-default.svg" :alt="name">
+        <span class="teacher-card-title-small">{{name}}</span>
+        <span class="teacher-card-city-small">{{city}}</span>
+    </div>
 </template>
 
 <script>
@@ -40,7 +46,8 @@
             city: String,
             languages: Array,
             shortDescription: String,
-            description: String
+            description: String,
+            type: String
         },
         data() {
             return {
@@ -73,11 +80,26 @@
         align-items: center;
     }
     
+    .teacher-card-container-small {
+        display: flex;
+        flex-direction: column;
+        width: 10rem;
+        height: 18rem;
+        align-items: center;
+    }
+    
     .teacher-card-image {
         width: 18rem;
         min-width: 18rem;
         height: 22.5rem;
         min-height: 22.5rem;
+    }
+    
+    .teacher-card-image-small {
+        width: 10rem;
+        min-width: 10rem;
+        height: 12.5rem;
+        min-height: 12.5rem;
     }
     
     .teacher-card-title {
@@ -86,10 +108,22 @@
         margin-top: 3rem;
     }
     
+    .teacher-card-title-small {
+        font-family: GothamPro-Medium, sans-serif;
+        font-size: 1.8rem;
+        margin-top: 1rem;
+    }
+    
     .teacher-card-city {
         font-family: GothamPro-Medium, sans-serif;
         font-size: 1.4rem;
         margin-top: 1rem;
+    }
+    
+    .teacher-card-city-small {
+        font-family: GothamPro, sans-serif;
+        font-size: 1.4rem;
+        margin-top: 0.5rem;
     }
     
     .teacher-card-languages-container {
