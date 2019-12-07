@@ -91,6 +91,7 @@
         font-size: 1.4rem;
         color: var(--tomato);
         margin: 0.2rem 0;
+        text-align: left;
     }
     
     .schedule-section-level-item-teacher-name-empty {
@@ -102,12 +103,14 @@
     .schedule-section-level-item-teacher-post {
         font-family: GothamPro, sans-serif;
         font-size: 1.2rem;
+        text-align: left;
         margin: 0.2rem 0;
     }
     
     .schedule-section-level-item-teacher-post-empty {
         font-family: GothamPro, sans-serif;
         font-size: 1.2rem;
+        text-align: left;
         color: #ada391;
         margin: 0.2rem 0;
     }
@@ -122,18 +125,21 @@
     .schedule-section-level-item-time {
         font-family: GothamPro, sans-serif;
         font-size: 1.4rem;
+        text-align: left;
         margin: 0.2rem 0;
     }
     
     .schedule-section-level-item-days {
         font-family: GothamPro, sans-serif;
         font-size: 1.2rem;
+        text-align: left;
         margin: 0.2rem 0;
     }
     
     .schedule-section-level-item-start-date {
         font-family: GothamPro, sans-serif;
         font-size: 1.4rem;
+        text-align: left;
         width: 20rem;
         box-sizing: border-box;
         margin-left: 4rem;
@@ -179,6 +185,7 @@
     .schedule-section-level-item-price {
         font-family: GothamPro-Medium, sans-serif;
         font-size: 1.4rem;
+        text-align: left;
         color: var(--tomato);
         margin: 0.2rem 0;
     }

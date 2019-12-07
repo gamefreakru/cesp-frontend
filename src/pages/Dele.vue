@@ -86,6 +86,22 @@
                     </div>
                 </div>
             </div>
+            <div class="dele-page-schedule-section-levels-header">
+                <span style="width: 18rem;" class="dele-page-schedule-section-level-column-title">Уровень</span>
+                <span style="width: 20rem;" class="dele-page-schedule-section-level-column-title">Преподаватель</span>
+                <span style="width: 20rem;" class="dele-page-schedule-section-level-column-title">Время занятий</span>
+                <span style="width: 20rem;" class="dele-page-schedule-section-level-column-title">Дата начала</span>
+                <span class="dele-page-schedule-section-level-column-title">Цена</span>
+            </div>
+            <div class="dele-page-schedule-sections-levels-container">
+                <ScheduleSectionLevel v-for="(schedule, index) in scheduleA"
+                                      v-bind:class="{ 'dele-page-schedule-section-levels-wrapper-border': 
+                                      index!==scheduleA.length - 1 }"
+                                      v-bind:key="index"
+                                      v-bind:title="schedule.level"
+                                      v-bind:language-section-level-items="schedule.scheduleItems"
+                />
+            </div>
             <div class="dele-page-level-container">
                 <img class="dele-page-level-image" src="../assets/dele/b-level.svg" alt="">
                 <div class="dele-page-level-information-container">
@@ -104,6 +120,22 @@
                         </span>
                     </div>
                 </div>
+            </div>
+            <div v-if="scheduleB" class="dele-page-schedule-section-levels-header">
+                <span style="width: 18rem;" class="dele-page-schedule-section-level-column-title">Уровень</span>
+                <span style="width: 20rem;" class="dele-page-schedule-section-level-column-title">Преподаватель</span>
+                <span style="width: 20rem;" class="dele-page-schedule-section-level-column-title">Время занятий</span>
+                <span style="width: 20rem;" class="dele-page-schedule-section-level-column-title">Дата начала</span>
+                <span class="dele-page-schedule-section-level-column-title">Цена</span>
+            </div>
+            <div class="dele-page-schedule-sections-levels-container">
+                <ScheduleSectionLevel v-for="(schedule, index) in scheduleB"
+                                      v-bind:class="{ 'dele-page-schedule-section-levels-wrapper-border': 
+                                      index!==scheduleB.length - 1 }"
+                                      v-bind:key="index"
+                                      v-bind:title="schedule.level"
+                                      v-bind:language-section-level-items="schedule.scheduleItems"
+                />
             </div>
             <div class="dele-page-level-container">
                 <img class="dele-page-level-image" src="../assets/dele/c-level.svg" alt="">
@@ -125,6 +157,22 @@
                         </span>
                     </div>
                 </div>
+            </div>
+            <div v-if="scheduleC.length >= 1" class="dele-page-schedule-section-levels-header">
+                <span style="width: 18rem;" class="dele-page-schedule-section-level-column-title">Уровень</span>
+                <span style="width: 20rem;" class="dele-page-schedule-section-level-column-title">Преподаватель</span>
+                <span style="width: 20rem;" class="dele-page-schedule-section-level-column-title">Время занятий</span>
+                <span style="width: 20rem;" class="dele-page-schedule-section-level-column-title">Дата начала</span>
+                <span class="dele-page-schedule-section-level-column-title">Цена</span>
+            </div>
+            <div class="dele-page-schedule-sections-levels-container">
+                <ScheduleSectionLevel v-for="(schedule, index) in scheduleC"
+                                      v-bind:class="{ 'dele-page-schedule-section-levels-wrapper-border': 
+                                      index!==scheduleC.length - 1 }"
+                                      v-bind:key="index"
+                                      v-bind:title="schedule.level"
+                                      v-bind:language-section-level-items="schedule.scheduleItems"
+                />
             </div>
             <div class="dele-page-text-block">
                 В Центре испанского языка VAMOS проходит подготовка по всем уровням DELE. 
@@ -155,13 +203,28 @@
         },
         data() {
             return {
-                teachers: {}
+                teachers: {},
+                scheduleA: {},
+                scheduleB: {},
+                scheduleC: {}
             }
         },
         mounted() {
             Service.get("teachers?count=6", (status, data) => {
                 this.teachers = data;
-            })
+            });
+            Service.get("schedule/levels?levelNames=A1&levelNames=A1.1&levelNames=A1.2&levelNames=A2.1&levelNames=A2.2", 
+                (status, data) => {
+                this.scheduleA = data;
+            });
+            Service.get("schedule/levels?levelNames=B1.1&levelNames=B1.2&levelNames=B2.1&levelNames=B2.2&levelNames=B2.3",
+                (status, data) => {
+                    this.scheduleB = data;
+            });
+            Service.get("schedule/levels?levelNames=C1.1&levelNames=C1.2&levelNames=C2.1&levelNames=C2.2&levelNames=C1%2B&levelNames=C2%2B",
+                (status, data) => {
+                    this.scheduleC = data;
+            });
         }
     }
 </script>
@@ -278,6 +341,7 @@
         display: flex;
         align-items: center;
         width: 84rem;
+        margin-top: 3rem;
     }
     
     .dele-page-level-image {
@@ -311,6 +375,42 @@
         text-align: left;
         line-height: 1.5;
         margin-top: 0.6rem;
+    }
+    
+    .dele-page-schedule-section-levels-header {
+        width: 124rem;
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        background-color: var(--light-text);
+        border-top-left-radius: 1.2rem;
+        border-top-right-radius: 1.2rem;
+        margin-top: 3rem;
+        border-bottom: 0.4rem solid #ccc0a9;
+        box-sizing: border-box;
+    }
+    
+    .dele-page-schedule-section-level-column-title {
+        font-family: GothamPro-Bold, sans-serif;
+        text-transform: uppercase;
+        text-align: left;
+        font-size: 1.2rem;
+        margin-left: 4rem;
+        margin-top: 0.5rem;
+    }
+    
+    .dele-page-schedule-sections-levels-container {
+        width: 124rem;
+        margin-bottom: 6rem;
+        padding: 0 4rem;
+        box-sizing: border-box;
+        box-shadow: 0 0.4rem 1.6rem 0 rgba(41, 41, 41, 0.15);
+        border-bottom-left-radius: 0.8rem;
+        -webkit-border-bottom-right-radius: 0.8rem;
+    }
+    
+    .dele-page-schedule-section-levels-wrapper-border {
+        border-bottom: 0.4rem solid #e5e5e5;
     }
     
     .dele-page-signup-form-wrapper {

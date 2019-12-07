@@ -46,7 +46,9 @@
     .schedule-section-level-title {
         font-family: GothamPro-Medium, sans-serif;
         font-size: 1.4rem;
+        text-align: left;
         width: 18rem;
+        margin-top: 2rem;
     }
     
     .schedule-section-level-item-wrapper {
