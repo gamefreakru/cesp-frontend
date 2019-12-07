@@ -9,6 +9,7 @@
                 <router-link class="footer-block-item footer-block-link" to="/partners">Партнёры</router-link>
                 <router-link class="footer-block-item footer-block-link" to="/contacts">Контакты</router-link>
                 <router-link class="footer-block-item footer-block-link" to="/howtolearn">Как выучить испанский?</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/dele">Подготовка к DELE</router-link>
                 <router-link class="footer-block-item footer-block-header" to="/contacts" 
                              onclick="ym(52043682, 'reachGoal', 'online-zapis'); return true;">
                     Онлайн запись
