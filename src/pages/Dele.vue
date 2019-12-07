@@ -221,7 +221,7 @@
                 (status, data) => {
                     this.scheduleB = data;
             });
-            Service.get("schedule/levels?levelNames=C1.1&levelNames=C1.2&levelNames=C2.1&levelNames=C2.2&levelNames=C1%2B&levelNames=C2%2B",
+            Service.get("schedule/levels?levelNames=C1&levelNames=C1.1&levelNames=C1.2&levelNames=C2.1&levelNames=C2.2",
                 (status, data) => {
                     this.scheduleC = data;
             });
