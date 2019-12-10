@@ -54,8 +54,8 @@
             <!--            </div>-->
             <div class="group-recruitment-information-container">
                 <span class="group-recruitment-information-title">Идёт набор в группы: 
-                    <span style="color: var(--tomato);">ноябрь</span>, 
-                    <span style="color: var(--tomato);">декабрь</span>
+                    <span style="color: var(--tomato);">декабрь</span>, 
+                    <span style="color: var(--tomato);">январь</span>
                 </span>
                 <span class="group-recruitment-information-description">
                     При оплате полного стандартного курса действуют скидки:
