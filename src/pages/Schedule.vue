@@ -46,7 +46,6 @@
         mounted() {
             Service.get("schedule", (status, data) => {
                 this.schedule = data;
-                console.log(this.schedule.length)
             })
         }
     }

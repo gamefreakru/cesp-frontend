@@ -25,7 +25,7 @@
                 </div>
                 <div class="info-block-circle-item">
                     <div class="info-block-circle"></div>
-                    <span class="info-block-circle-title">от 319 ₽</span>
+                    <span class="info-block-circle-title">от 319 &#x20bd;</span>
                     <span class="info-block-circle-description">стоимость 1 часа занятия</span>
                 </div>
                 <div class="info-block-circle-item">
