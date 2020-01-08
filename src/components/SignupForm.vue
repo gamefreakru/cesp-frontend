@@ -17,7 +17,7 @@
         <div class="signup-legal-text">Нажимая на кнопку я соглашаюсь с 
             <router-link class="signup-legal-link" to="/policy">Политикой конфиденциальности</router-link>
         </div>
-        <ThankYouModal v-show="isModalVisible" @close="closeModal" v-body-scroll-lock:reserve-scroll-bar-gap="isModalVisible" />
+        <ThankYouModal @hideModal="hideModal" />
     </div>
     <div v-else-if="type === 'contact'" class="signup-container signup-container-contacts">
          <span class="signup-title">
@@ -38,7 +38,7 @@
         <div class="signup-legal-text signup-legal-text-contacts">Нажимая на кнопку я соглашаюсь с
             <router-link class="signup-legal-link" to="/policy">Политикой конфиденциальности</router-link>
         </div>
-        <ThankYouModal v-show="isModalVisible" @close="closeModal" v-body-scroll-lock:reserve-scroll-bar-gap="isModalVisible" />
+        <ThankYouModal @hideModal="hideModal" />
     </div>
 </template>
 
@@ -58,7 +58,6 @@
                 name: "",
                 contact: "",
                 message: "",
-                isModalVisible: false
             }
         },
         methods: {
@@ -77,10 +76,10 @@
                 })
             },
             showModal() {
-                this.isModalVisible = true;
+                this.$modal.show('thank-you-modal')
             },
-            closeModal() {
-                this.isModalVisible = false;
+            hideModal() {
+                this.$modal.hide('thank-you-modal')
             }
         }
     }

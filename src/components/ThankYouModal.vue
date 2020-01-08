@@ -1,31 +1,42 @@
 <template>
-    <div class="thank-you-modal-container">
-        <div class="thank-you-modal" role="dialog">
+    <modal name="thank-you-modal"
+           :classes="['thank-you-modal-container']"
+           @before-open="beforeOpen"
+           @before-close="beforeClose"
+           :width="1270"
+           :height="250">
+        <div class="thank-you-modal">
             <span class="thank-you-modal-title">Ваша заявка принята!</span>
             <span class="thank-you-modal-description">
                 Наш менеджер скоро свяжется с вами для уточнения всех деталей.
             </span>
-            <div class="thank-you-modal-button-container" @click="close">
+            <div class="thank-you-modal-button-container" @click="hideModal">
                 <span class="thank-you-modal-button-title">Закрыть</span>
                 <img class="thank-you-modal-button-image" src="../assets/common/arrow.svg" alt="arrow"/>
             </div>
-            <img class="thank-you-modal-close-image" @click="close" src="../assets/common/cross.svg" alt="close">
+            <img class="thank-you-modal-close-image" @click="hideModal" src="../assets/common/cross.svg" alt="close">
         </div>
-    </div>
+    </modal>
 </template>
 
 <script>
     export default {
         methods : {
-            close() {
-                this.$emit("close")
+            hideModal() {
+                this.$emit("hideModal")
+            },
+            beforeOpen() {
+                document.documentElement.style.overflow = 'hidden'
+            },
+            beforeClose() {
+                document.documentElement.style.overflow = 'auto'
             }
         }
     }
 </script>
 
 <style scoped>
-
+    
     .thank-you-modal-container {
         position: fixed;
         top: 0;
@@ -36,6 +47,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        border-radius: 1.2rem;
     }
     
     .thank-you-modal {

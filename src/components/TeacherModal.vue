@@ -1,5 +1,10 @@
 <template>
-    <div class="teacher-modal-container">
+    <modal  name="teacher-modal" 
+            :classes="['teacher-modal-container']"
+            @before-open="beforeOpen"
+            @before-close="beforeClose"
+            :width="1240"
+            :height="630">
         <div class="teacher-modal" role="dialog">
             <img v-if="image" class="teacher-modal-image" :src="image" :alt="name">
             <img v-else class="teacher-modal-image" src="../assets/teachers/teacher-default.svg" :alt="name">
@@ -18,9 +23,9 @@
                     {{description}}
                 </div>
             </div>
-            <img class="teacher-modal-close-image" @click="close" src="../assets/common/cross.svg" alt="close">
+            <img class="teacher-modal-close-image" @click="hideModal" src="../assets/common/cross.svg" alt="close">
         </div>
-    </div>
+    </modal>
 </template>
 
 <script>
@@ -33,8 +38,14 @@
             description: String
         },
         methods : {
-            close() {
-                this.$emit("close");
+            hideModal() {
+                this.$emit('hideModal')
+            },
+            beforeOpen() {
+                document.documentElement.style.overflow = 'hidden'
+            },
+            beforeClose() {
+                document.documentElement.style.overflow = 'auto'
             }
         }
     }
@@ -71,6 +82,8 @@
     .teacher-modal-image {
         width: 35rem;
         height: 43.5rem;
+        min-width: 35rem;
+        min-height: 43.5rem;
     }
     
     .teacher-modal-info-container {

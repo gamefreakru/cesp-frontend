@@ -9,7 +9,15 @@
             </span>
         </div>
         <div class="teachers-page-card-container">
+            <TeacherModal style="z-index: 10;"
+                          @hideModal="hideModal"
+                          :image="modalData.largePhoto"
+                          :name="modalData.name"
+                          :city="modalData.city"
+                          :languages="modalData.languages"
+                          :description="modalData.info"/>
             <TeacherCard class="teacher-page-card-wrapper" v-for="(teacher, index) in teachers"
+                         v-on:click.native=showModal(teacher)
                          v-bind:key="index"
                          v-bind:image="teacher.photo"
                          v-bind:image-large="teacher.largePhoto"
@@ -18,8 +26,7 @@
                          v-bind:languages="teacher.languages"
                          v-bind:short-description="teacher.shortInfo"
                          v-bind:description="teacher.info"
-                         type="normal"
-            />
+                         type="normal"/>
         </div>
     </div>
 </template>
@@ -28,23 +35,42 @@
 
     import TextBabel from "../components/TextBabel";
     import TeacherCard from "../components/TeacherCard";
+    import TeacherModal from "../components/TeacherModal"
     import Service from "../service";
     
     export default {
         components: {
             TextBabel,
-            TeacherCard
+            TeacherCard,
+            TeacherModal
         },
         filters: {
             trim(value, count) {
                 return value.substring(0, count) + "...";
             }
         },
-        data() {
-            return {
-                teachers: {}
+        methods: {
+            showModal(teacher) {
+                this.modalData = teacher;
+                this.$modal.show('teacher-modal');
+            },
+            hideModal() {
+                this.$modal.hide('teacher-modal');
             }
         },
+        data() {
+            return {
+                teachers: {},
+                modalData: {
+                    largePhoto: "",
+                    name: "",
+                    city: "",
+                    languages: [],
+                    info: ""
+                }
+            }
+        },
+      
         mounted() {
             Service.get("teachers", (status, data) => {
                 this.teachers = data;

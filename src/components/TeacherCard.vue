@@ -1,5 +1,5 @@
 <template>
-    <div v-if="type === 'normal'" class="teacher-card-container" v-on:click="showModal">
+    <div v-if="type === 'normal'" class="teacher-card-container">
         <img v-if="image" class="teacher-card-image" :src="image" :alt="name">
         <img v-else class="teacher-card-image" src="../assets/teachers/teacher-default.svg" :alt="name">
         <span class="teacher-card-title">{{name}}</span>
@@ -13,15 +13,6 @@
             </span>
         </div>
         <div v-if="shortDescription" class="teacher-card-description">{{shortDescription | trim(160)}}</div>
-<!--        <TeacherPopup v-show="isModalVisible" -->
-<!--                      @close="closeModal" -->
-<!--                      v-body-scroll-lock:reserve-scroll-bar-gap="isModalVisible"-->
-<!--                      v-bind:image="imageLarge"-->
-<!--                      v-bind:name="name"-->
-<!--                      v-bind:city="city"-->
-<!--                      v-bind:languages="languages"-->
-<!--                      v-bind:description="description"-->
-<!--        />-->
     </div>
     <div v-else-if="type === 'small'" class="teacher-card-container-small">
         <img v-if="image" class="teacher-card-image-small" :src="image" :alt="name">
@@ -33,11 +24,11 @@
 
 <script>
 
-    // import TeacherPopup from "../components/TeacherPopup";
+    import TeacherModal from "../components/TeacherModal";
 
     export default {
         components: {
-            // TeacherPopup
+            TeacherModal
         },
         props: {
             image: String,
@@ -52,14 +43,6 @@
         data() {
             return {
                 isModalVisible: false,
-            }
-        },
-        methods: {
-            showModal() {
-                this.isModalVisible = true;
-            },
-            closeModal() {
-                this.isModalVisible = false;
             }
         },
         filters: {
