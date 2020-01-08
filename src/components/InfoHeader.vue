@@ -59,6 +59,10 @@
     .info-header-logo {
         margin: -2rem 5rem 0;
     }
+    
+    .info-header-logo-image {
+        width: 21rem;
+    }
 
     .info-header-block {
         display: flex;
