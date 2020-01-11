@@ -45,7 +45,7 @@
             </ul>
         </div>
         <Button text="типы курсов" link="/courses" :button-height=20 style="align-self: center; margin-bottom: 50px;"/>
-        <ImageCarousel v-bind:images="[getCarouselImgUrl('slide1'), getCarouselImgUrl('slide2'), getCarouselImgUrl('slide3'), 
+        <ImageCarousel class="about-page-image-carousel" :image-width=220 :images="[getCarouselImgUrl('slide1'), getCarouselImgUrl('slide2'), getCarouselImgUrl('slide3'), 
                 getCarouselImgUrl('slide4'), getCarouselImgUrl('slide5'), getCarouselImgUrl('slide6'), getCarouselImgUrl('slide7'),
                 getCarouselImgUrl('slide8'), getCarouselImgUrl('slide9'), getCarouselImgUrl('slide10'), getCarouselImgUrl('slide11'),
                 getCarouselImgUrl('slide12'), getCarouselImgUrl('slide13'), getCarouselImgUrl('slide14'), getCarouselImgUrl('slide15'), 
@@ -110,6 +110,7 @@
     .about-container {
         display: flex;
         flex-direction: column;
+        align-items: center;
         margin: 0 55px 60px;
         padding: 20px;
         background-color: #ffffffb3;
@@ -142,6 +143,10 @@
     .quote {
         font-size: 1.5rem;
         color: #465F99;
+    }
+    
+    .about-page-image-carousel {
+        width: 100%;
     }
 
 </style>

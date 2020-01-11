@@ -7,7 +7,7 @@
             border-radius: 50rem / 60rem; 
             position: absolute; 
             top: -20rem; 
-            right: 55rem;"
+            right: 53rem;"
             ></div>
             <img style="position: absolute; right: 0;" src="../assets/main/background.png"
                  srcset="../assets/main/background@2x.png 2x" alt="">
@@ -183,16 +183,16 @@
                     От вас требуется желание и посещаемость. От нас — много полезной информации
                     и приятная атмосфера.
                 </div>
-                <div class="about-image-carousel">
-                    <ImageCarousel v-bind:images="[getCarouselImgUrl('slide1'), getCarouselImgUrl('slide2'), getCarouselImgUrl('slide3'), 
+            </div>
+            <div class="about-image-carousel">
+                <ImageCarousel v-bind:images="[getCarouselImgUrl('slide1'), getCarouselImgUrl('slide2'), getCarouselImgUrl('slide3'), 
                 getCarouselImgUrl('slide4'), getCarouselImgUrl('slide5'), getCarouselImgUrl('slide6'), getCarouselImgUrl('slide7'),
                 getCarouselImgUrl('slide8'), getCarouselImgUrl('slide9'), getCarouselImgUrl('slide10'), getCarouselImgUrl('slide11'),
                 getCarouselImgUrl('slide12'), getCarouselImgUrl('slide13'), getCarouselImgUrl('slide14'), getCarouselImgUrl('slide15'), 
                 getCarouselImgUrl('slide16'), getCarouselImgUrl('slide17'), getCarouselImgUrl('slide18'), getCarouselImgUrl('slide19'), 
                 getCarouselImgUrl('slide20'), getCarouselImgUrl('slide21')]"/>
-                </div>
-                <LinkButton class="about-link-button-wrapper" title="Познакомьтесь с нами поближе" link="/about"/>
             </div>
+            <LinkButton class="about-link-button-wrapper" title="Познакомьтесь с нами поближе" link="/about"/>
         </div>
     </div>
 </template>
@@ -281,7 +281,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        right: 40rem;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
         top: 23rem;
     }
 
@@ -298,7 +301,10 @@
         position: absolute;
         display: flex;
         top: 45rem;
+        left: 0;
         right: 0;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .info-block-circle-item {
@@ -306,6 +312,14 @@
         flex-direction: column;
         margin: 0 11rem;
         align-items: center;
+    }
+    
+    .info-block-circle-item:first-child {
+        margin-left: 0;
+    }
+    
+    .info-block-circle-item:last-child {
+        margin-right: 0;
     }
 
     .info-block-circle {
@@ -429,7 +443,7 @@
         flex-direction: column;
         align-items: flex-start;
         position: absolute;
-        right: 20rem;
+        left: 38%;
         top: 9rem;
     }
 
@@ -602,7 +616,7 @@
     .feedbacks-card-container {
         display: flex;
         align-items: center;
-        z-index: 1;
+        z-index: 2;
         margin-top: 6rem;
     }
 
@@ -652,10 +666,9 @@
         display: flex;
         flex-direction: column;
         width: 48rem;
-        top: 15rem;
         text-align: left;
-        margin-top: 17rem;
-        margin-left: 5rem;
+        margin-top: 10rem;
+        margin-left: 7%;
         align-items: center;
     }
 
@@ -679,9 +692,8 @@
 
     .about-image-carousel {
         height: 26rem;
-        width: 135rem;
-        align-self: center;
-        margin: 5rem 0;
+        width: calc(100vw - 3rem);
+        margin: 12rem 0 6rem 0;
     }
 
 </style>

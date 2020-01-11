@@ -40,6 +40,7 @@
     .partners-container {
         display: flex;
         flex-direction: column;
+        align-items: center;
         margin: 0 55px 60px;
         padding: 20px;
         background-color: #ffffffb3;
@@ -52,8 +53,8 @@
     #partners-grid {
         display: grid;
         grid-template-columns: auto auto auto auto;
-        grid-gap: 75px 30px;
-        margin: 40px 0 40px;
+        grid-gap: 7.5rem 2.5%;
+        margin: 4rem 0 4rem;
         justify-content: center;
         align-items: center;
     }

@@ -10,7 +10,7 @@
         <span class="label" v-if="partner.phone" style="margin-top: 3rem;"><b>Телефон: </b> {{ partner.phone }}</span>
         <span class="label" v-if="partner.address"><b>Адрес: </b> {{ partner.address }}</span>
         <div id="description" v-html="partner.info"></div>
-        <ImageCarousel :images="partner.photos" :images-per-page=3 :image-width=380 :image-height=250 />
+        <ImageCarousel :images="partner.photos" :images-per-page=3 :image-width=350 :image-height=250 />
     </div>
 </template>
 

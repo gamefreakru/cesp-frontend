@@ -1,5 +1,4 @@
 <template>
-    
     <div class="events-container">
         <span id="title">Мероприятия в Centro Vamos</span>
         <Delimiter/>
@@ -55,13 +54,13 @@
     #title { 
         font-size: 3rem;
         font-weight: bold;
-        margin-top: 15rem;
+        margin-top: 20rem;
     }
     
     #events-grid {
-        display: inline-grid;
-        grid-template-columns: fit-content(100%) auto auto auto;
-        grid-gap: 30px;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 5rem 3%;
         justify-items: center;
     }
     

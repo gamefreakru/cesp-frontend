@@ -50,6 +50,7 @@
     .info-header-container {
         position: absolute;
         display: flex;
+        width: 95%;
         right: 0;
         top: 10rem;
         z-index: 9;
@@ -57,7 +58,8 @@
     }
 
     .info-header-logo {
-        margin: -1rem 8rem 0 0;
+        margin: -1rem auto 0 0;
+        right: 9rem;
     }
     
     .info-header-logo-image {
@@ -68,7 +70,7 @@
     .info-header-block {
         display: flex;
         align-items: flex-start;
-        margin: 0 3rem;
+        margin: 0 2rem;
     }
 
     .info-header-block-text {

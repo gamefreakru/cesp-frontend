@@ -46,7 +46,7 @@
 
     .menu-container {
         list-style-type: none;
-        margin: 0 10rem;
+        margin: 0 6rem;
         padding: 0;
         overflow: hidden;
         background-color: var(--main-color);

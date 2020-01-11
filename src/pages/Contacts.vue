@@ -10,7 +10,7 @@
             </span>
         </div>
         <div class="contacts-page-body">
-            <SignupForm type="contact" class="contacts-page-signup-wrapper"></SignupForm>
+            <SignupForm type="contact" class="contacts-page-signup-wrapper"/>
             <img style="position: absolute; bottom:0; right: 0" src="../assets/contacts/contacts-bottom-right.svg"
                  alt="">
             <div class="contacts-page-info-container">
@@ -192,13 +192,12 @@
     .contacts-page-info-container {
         display: flex;
         margin-top: 9rem;
-        align-self: flex-start;
     }
 
     .contacts-page-info-block-container {
         display: flex;
         flex-direction: column;
-        margin: 0 7rem;
+        margin: 0 5rem;
         align-items: flex-start;
     }
 

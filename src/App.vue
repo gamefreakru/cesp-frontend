@@ -59,7 +59,7 @@
         color: black;
         background-color: white;
         max-width: 144rem;
-        min-width: 136.6rem;
+        min-width: 128rem;
         float: none;
         margin: 0 auto;
         position: relative;

@@ -88,21 +88,20 @@
     
     .footer-container {
         background-color: var(--background-color-dark);
-        padding: 7.5rem 10rem 0 10rem;
+        padding: 7.5rem 5% 0 5%;
         display: flex;
         flex-direction: column;
     }
     
     .footer-links {
         display: flex;
-        margin: 5rem 0 7rem 4rem;
     }
     
     .footer-block {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        margin: 0 2rem
+        margin: 0 2rem;
     }
     
     .footer-block-item {

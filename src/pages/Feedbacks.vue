@@ -1,10 +1,8 @@
 <template>
     <div id="feedbacks">
-        
         <SectionHeader image="feedback"
                        title="Opiniones"
                        description="Отзывы о курсах испанского"/>
-        
         <div id="feedbacks-grid">
             <Feedback v-for="(feedback, index) in feedbacks"
                       v-bind:key="index" 
@@ -13,17 +11,12 @@
                       v-bind:date="feedback.date"
                       v-bind:author="feedback.signature" />
         </div>
-        
         <div id="feedbacks-footer">
-            
             <span id="footer-title">Откуда берутся отзывы?</span>
-            
             <div id="footer-grid">
-                
                 <img alt="facebook" src="../assets/feedbacks/facebook.png">
                 <span>Отзывы с таким значком мы взяли из социальных сетей и интернета. Их можно найти в facebook и vk,
                     на сайтах и форумах.</span>
-
                 <img alt="vcard" src="../assets/feedbacks/vcard.png">
                 <span>Это отзывы из анкет, которые наши студенты заполняют в конце курса.
                     Анкеты анонимные, но в большинстве случаев респонденты вписывают свое имя. 
@@ -32,11 +25,8 @@
                     <br>
                     Вы можете оставить свой отзыв через facebook, vk или отправить нам письмо.
                 </span>
-                
             </div>
-            
         </div>
-        
     </div>
 </template>
 
@@ -67,15 +57,17 @@
 <style scoped>
 
     #feedbacks-grid {
-        display: inline-grid;
+        display: grid;
         grid-template-columns: auto auto auto auto;
-        grid-gap: 50px 35px;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        grid-gap: 50px 2%;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        align-items: center;
+        justify-content: center;
     }
     
     #feedbacks {
-        padding: 60px 55px;
+        padding: 6rem 1%;
         font-size: 1.6rem;
         margin-top: 10rem;
     }
