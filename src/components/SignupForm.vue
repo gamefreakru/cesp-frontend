@@ -8,7 +8,7 @@
         <div class="signup-form-container">
             <form @submit.prevent="submit">
                 <input type="text" v-model="name" class="signup-form-input" style="margin-right: 2rem;" placeholder="Ваше имя (обязательно)">
-                <input type="text" v-model="contact" class="signup-form-input" style="margin: 0 2rem;" placeholder="Контактный телефон (обязательно)">
+                <input type="text" v-model="contact" class="signup-form-input" style="margin: 0 2rem;" placeholder="Телефон (обязательно)">
                 <button type="submit" onsubmit="ym(52043682, 'reachGoal', 'send'); return true;" class="signup-form-button" style="margin-left: 2rem;">
                     Записаться
                 </button>
@@ -28,7 +28,7 @@
         <div class="signup-form-container">
             <form @submit.prevent="submit">
                 <input type="text" v-model="name" class="signup-form-input" style="margin-right: 2rem;" placeholder="Ваше имя (обязательно)">
-                <input type="text" v-model="contact" class="signup-form-input" style="margin-left: 2rem;" placeholder="Контактный телефон (обязательно)">
+                <input type="text" v-model="contact" class="signup-form-input" style="margin-left: 2rem;" placeholder="Телефон (обязательно)">
                 <textarea v-model="message" class="signup-form-input signup-form-input-contacts" style="margin: 3rem 2rem 0 2rem;" placeholder="Напишите ваш вопрос здесь"></textarea>
                 <button type="submit" onsubmit="ym(52043682, 'reachGoal', 'send'); return true;" class="signup-form-button" style="margin-left: 2rem; margin-top: 3rem;">
                     Отправить
