@@ -18,7 +18,7 @@
 <style scoped>
 
     #container {
-        width: 270px;
+        width: 27rem;
         height: auto;
         display: flex;
         flex-direction: column;

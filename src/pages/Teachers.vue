@@ -118,6 +118,7 @@
 
     .teacher-page-card-wrapper {
         margin: 3.5rem 2rem;
+        cursor: pointer;
     }
 
 </style>

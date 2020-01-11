@@ -7,9 +7,9 @@
                  src="../assets/teachers/teacher-default-small.svg" alt="">
             <div class="schedule-section-level-item-teacher-info-container">
                 <span v-if="teacherName" class="schedule-section-level-item-teacher-name">{{teacherName}}</span>
-                <span v-else class="schedule-section-level-item-teacher-name-empty">Преподаватель</span>
+                <span v-else class="schedule-section-level-item-teacher-name-empty">носитель</span>
                 <span v-if="teacherPost" class="schedule-section-level-item-teacher-post">{{teacherPost}}</span>
-                <span v-else class="schedule-section-level-item-teacher-post-empty">уточняется</span>
+                <span v-else class="schedule-section-level-item-teacher-post-empty">преподаватель</span>
             </div>
         </div>
         <div class="schedule-section-level-item-time-info-container">

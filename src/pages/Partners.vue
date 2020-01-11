@@ -55,6 +55,7 @@
         grid-gap: 75px 30px;
         margin: 40px 0 40px;
         justify-content: center;
+        align-items: center;
     }
     
 </style>

@@ -34,7 +34,7 @@
                     <span class="info-block-circle-description">успешной работы</span>
                 </div>
             </div>
-<!--            <div class="arrow-element"></div>-->
+            <img class="arrow-element" src="../assets/main/scroll-arrow.svg" alt="arrow"/>
         </div>
         <div class="group-recruitment-container">
             <img style="position: absolute; left: 0; top: -5rem;" src="../assets/main/group-recruitment.png"
@@ -54,8 +54,8 @@
             <!--            </div>-->
             <div class="group-recruitment-information-container">
                 <span class="group-recruitment-information-title">Идёт набор в группы: 
-                    <span style="color: var(--tomato);">декабрь</span>, 
-                    <span style="color: var(--tomato);">январь</span>
+                    <span style="color: var(--tomato);">январь</span>, 
+                    <span style="color: var(--tomato);">февраль</span>
                 </span>
                 <span class="group-recruitment-information-description">
                     При оплате полного стандартного курса действуют скидки:
@@ -74,6 +74,24 @@
                 </div>
                 <LinkButton class=group-recruitment-link-button-wrapper title="Посмотреть расписание и цены" link="/schedule" />
             </div>
+            <SignupForm type="signup" class="signup-form-wrapper"/>
+        </div>
+        <div class="events-container">
+            <span class="main-section-title events-title">
+                Наша афиша
+                <TextBabel class="text-babel-events-wrapper" text="Nuestro cartel"/>
+            </span>
+
+            <div class="events-card-container">
+                <EventCard class="event-card-wrapper" v-for="(event, index) in events"
+                           v-bind:key="index"
+                           v-bind:link="event.sysName | createEventLink"
+                           link-title="Записаться"
+                           v-bind:title="event.name"
+                           v-bind:image="event.photo"
+                           v-bind:description="event.shortInfo"/>
+            </div>
+            <LinkButton class="events-link-button-wrapper" title="Все мероприятия" link="/events"/>
         </div>
         <div class="courses-container">
             <span class="main-section-title courses-cards-title">
@@ -111,23 +129,6 @@
             </div>
             <LinkButton class=courses-link-button-wrapper title="Выбрать курсы" link="/courses"/>
         </div>
-        <div class="events-container">
-            <span class="main-section-title events-title">
-                Наша афиша
-                <TextBabel class="text-babel-events-wrapper" text="Nuestro cartel"/>
-            </span>
-
-            <div class="events-card-container">
-                <EventCard class="event-card-wrapper" v-for="(event, index) in events"
-                           v-bind:key="index"
-                           v-bind:link="event.sysName | createEventLink"
-                           link-title="Записаться"
-                           v-bind:title="event.name"
-                           v-bind:image="event.photo"
-                           v-bind:description="event.shortInfo"/>
-            </div>
-            <LinkButton class="events-link-button-wrapper" title="Все мероприятия" link="/events"/>
-        </div>
         <div class="teachers-container">
             <span class="main-section-title teachers-title">
                 Наши преподаватели
@@ -147,12 +148,11 @@
             <LinkButton class="teachers-link-button-wrapper" title="Все преподаватели" link="/teachers"/>
         </div>
         <div class="feedback-container">
-            <img style="position: absolute; left: 0; top: 10rem;" src="../assets/main/feedback-left.svg" alt="">
+            <img style="position: absolute; left: 0; top: 0;" src="../assets/main/feedback-left.svg" alt="">
             <img style="position: absolute; left: 0; bottom: 0;" src="../assets/main/feedback-bottom.svg" alt="">
-            <img style="position: absolute; right: 0; top: 10rem;" src="../assets/main/feedback-right.svg" alt="">
+            <img style="position: absolute; right: 0; top: 0;" src="../assets/main/feedback-right.svg" alt="">
             <img style="position: absolute; right: 6rem; top: 8rem; z-index: 2"
                  src="../assets/main/feedback-right-2.svg" alt="">
-            <SignupForm type="signup" class="signup-form-wrapper"/>
             <span class="main-section-title feedbacks-cards-title">
                 Отзывы
                 <TextBabel class="text-babel-feedback-wrapper" text="Opiniones"/>
@@ -167,37 +167,6 @@
             </div>
             <LinkButton class="feedbacks-link-button-wrapper" title="Все отзывы" link="/feedbacks"/>
         </div>
-        <!--        <div class="blog-container">-->
-        <!--            <span class="main-section-title blogs-cards-title">-->
-        <!--                <span style="color: var(&#45;&#45;tomato);">Блог </span>-->
-        <!--                о культуре и языке Испании-->
-        <!--                <TextBabel class="text-babel-blog-wrapper" text="Blog"/>-->
-        <!--            </span>-->
-        <!--            <div class="blogs-card-container">-->
-        <!--                <BlogCard class="blog-card-wrapper"-->
-        <!--                          link="Blog"-->
-        <!--                          title="3 места, где можно выучить каталанский"-->
-        <!--                          description="Большой город составил маленький путеводитель по местам, где можно выучить -->
-        <!--                          каталанский язык."-->
-        <!--                          :image="getJpegImgUrl('blog_card_example')"-->
-        <!--                />-->
-        <!--                <BlogCard class="blog-card-wrapper"-->
-        <!--                          link="Blog"-->
-        <!--                          title="Прогулки по Барселоне, архитектура Гауди"-->
-        <!--                          description="Не секрет, что Саграда Фамилияи и другие архитектурные шедевры Антонио Гауди-->
-        <!--                          являются визитной карточкой Барселоны."-->
-        <!--                          :image="getJpegImgUrl('blog_card_example')"-->
-        <!--                />-->
-        <!--                <BlogCard class="blog-card-wrapper"-->
-        <!--                          link="Blog"-->
-        <!--                          title="Испанско-каталонско-русский разговорник"-->
-        <!--                          description="Звучит сранно. Но если вы хотя бы однажды были в Барселоне или на побережье-->
-        <!--                          Коста Брава, вы знаете, что кроме своих достопримечательностей и пляжей этот регион интересен тем,-->
-        <!--                          что имеет два официальных языка: испанский и каталанский."-->
-        <!--                          :image="getJpegImgUrl('blog_card_example')"-->
-        <!--                />-->
-        <!--            </div>-->
-        <!--        </div>-->
         <div class="about-container">
             <img style="position: absolute; left: 0;" src="../assets/main/about-left.svg" alt="">
             <img style="position: absolute; right: 0; top: 10rem;" src="../assets/main/about-right.svg" alt="">
@@ -374,7 +343,6 @@
     .arrow-element {
         width: 3.2rem;
         height: 4.8rem;
-        border: solid 0.25rem rgba(255, 255, 255, 0.45);
         position: absolute;
         z-index: 2;
         left: 0;
@@ -382,15 +350,14 @@
         margin-left: auto;
         margin-right: auto;
         top: 70rem;
-        border-radius: 1.8rem;
     }
 
     .group-recruitment-container {
-        height: 44.4rem;
+        height: 55rem;
         background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 239, 170, 0.3));
         position: relative;
     }
-
+    
     .text-babel-with-link {
         background-color: #564f4c;
         height: 11rem;
@@ -503,7 +470,8 @@
     }
 
     .courses-container {
-        height: 78rem;
+        height: 70rem;
+        background-color: var(--background-color-lighter);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -534,15 +502,14 @@
     }
 
     .events-container {
-        height: 78rem;
-        background-color: var(--background-color-lighter);
+        height: 96rem;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
     .events-title {
-        margin-top: 6rem;
+        margin-top: 24rem;
         position: relative;
     }
 
@@ -559,6 +526,7 @@
 
     .event-card-wrapper {
         margin: 0 1.8rem;
+        border: solid 0.1rem rgba(0, 0, 0, 0.06);
     }
 
     .events-link-button-wrapper {
@@ -566,7 +534,7 @@
     }
 
     .teachers-container {
-        height: 100rem;
+        height: 85rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -603,7 +571,8 @@
         margin-right: auto;
         left: 0;
         right: 0;
-        top: -14rem;
+        top: 45rem;
+        box-shadow: 0 0.4rem 1.6rem 0 rgba(41, 41, 41, 0.15);
     }
 
     .feedback-container {
@@ -611,7 +580,7 @@
         flex-direction: column;
         align-items: center;
         background-color: var(--background-color-white);
-        height: 67rem;
+        height: 51rem;
         position: relative;
     }
 
@@ -620,7 +589,7 @@
     }
 
     .feedbacks-cards-title {
-        margin-top: 22rem;
+        margin-top: 7rem;
         position: relative;
     }
 
