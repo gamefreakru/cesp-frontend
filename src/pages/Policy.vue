@@ -205,7 +205,7 @@
     #title {
         font-size: 1.5rem;
         font-weight: bold;
-        margin: 15rem 0 2rem;
+        margin: 25rem 0 2rem;
     }
 
     ol {

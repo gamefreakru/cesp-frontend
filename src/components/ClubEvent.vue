@@ -36,8 +36,8 @@
     #container {
         display: grid;
         grid-template-columns: fit-content(100%) auto;
-        grid-gap: 10px;
-        margin: 20px 0;
+        grid-gap: 1rem;
+        margin: 2rem 0;
         font-size: 1.6rem;
     }
 
@@ -54,8 +54,8 @@
     }
 
     img {
-        width: 500px;
-        height: 300px;
+        width: 50rem;
+        height: 30rem;
     }
     
     a {

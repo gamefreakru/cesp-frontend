@@ -24,12 +24,7 @@
 
 <script>
 
-    import TeacherModal from "../components/TeacherModal";
-
     export default {
-        components: {
-            TeacherModal
-        },
         props: {
             image: String,
             imageLarge: String,

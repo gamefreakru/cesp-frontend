@@ -58,7 +58,7 @@
         font-size: 1.6rem;
         line-height: 1.5;
         text-align: left;
-        margin-top: 15rem;
+        margin-top: 20rem;
     }
 
     #title {

@@ -124,7 +124,7 @@
 
     #title {
         font-size: 3rem;
-        margin: 15rem 0 1.5rem 0;
+        margin: 23rem 0 1.5rem 0;
     }
     
     #sub-description {

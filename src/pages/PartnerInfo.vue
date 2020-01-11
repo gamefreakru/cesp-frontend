@@ -41,7 +41,7 @@
     #partner-info {
         display: flex;
         flex-direction: column;
-        margin: 0 55px 60px;
+        margin: 0 5.5rem 6rem;
         padding: 30px 40px;
         background-color: #ffffffb3;
         border-bottom-left-radius: 10px;
@@ -52,7 +52,7 @@
 
     #header {
         display: flex;
-        margin-top: 15rem;
+        margin-top: 25rem;
         justify-content: center;
         align-self: flex-start;
     }

@@ -1,7 +1,7 @@
 <template>
     <div class="info-header-container" :style="style">
         <router-link class="info-header-logo" to="/">
-            <img class="info-header-logo-image" src="../assets/main/logo.png" alt="">
+            <img class="info-header-logo-image" src="../assets/common/logo-icon.svg" alt="">
         </router-link>
         <div class="info-header-block">
             <img class="info-header-block-image" src="../assets/main/whatsapp-icon.svg" alt="clock">
@@ -57,11 +57,12 @@
     }
 
     .info-header-logo {
-        margin: -2rem 5rem 0;
+        margin: -1rem 8rem 0 0;
     }
     
     .info-header-logo-image {
-        width: 21rem;
+        width: 20rem;
+        height: 20rem;
     }
 
     .info-header-block {
