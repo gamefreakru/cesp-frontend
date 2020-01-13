@@ -70,7 +70,7 @@
                            v-bind:image="event.photo"
                            v-bind:description="event.shortInfo"/>
                 <EventCard class="event-card-wrapper-tablet" v-for="(event, index) in eventsTablet"
-                           v-bind:key="index"
+                           v-bind:key="index + '-tablet'"
                            v-bind:link="event.sysName | createEventLink"
                            link-title="Записаться"
                            v-bind:title="event.name"
@@ -151,7 +151,7 @@
                              type="normal"
                 />
                 <TeacherCard class="teacher-card-wrapper-tablet" v-for="(teacher, index) in teachersTablet"
-                             v-bind:key="index"
+                             v-bind:key="index + '-tablet'"
                              v-bind:image="teacher.photo"
                              v-bind:name="teacher.name"
                              v-bind:city="teacher.city"
@@ -163,11 +163,10 @@
             <LinkButton class="teachers-link-button-wrapper" title="Все преподаватели" link="/teachers"/>
         </div>
         <div class="feedback-container">
-            <img style="position: absolute; left: 0; top: 0;" src="../assets/main/feedback-left.svg" alt="">
-            <img style="position: absolute; left: 0; bottom: 0;" src="../assets/main/feedback-bottom.svg" alt="">
-            <img style="position: absolute; right: 0; top: 0;" src="../assets/main/feedback-right.svg" alt="">
-            <img style="position: absolute; right: 6rem; top: 8rem; z-index: 2"
-                 src="../assets/main/feedback-right-2.svg" alt="">
+            <img class="main-page-feedback-image-top-left" src="../assets/main/feedback-left.svg" alt="">
+            <img class="main-page-feedback-image-bottom" src="../assets/main/feedback-bottom.svg" alt="">
+            <img class="main-page-feedback-image-top-right" src="../assets/main/feedback-right.svg" alt="">
+            <img class="main-page-feedback-image-top-right-2" src="../assets/main/feedback-right-2.svg" alt="">
             <span class="main-section-title feedbacks-cards-title">
                 Отзывы
                 <TextBabel class="text-babel-feedback-wrapper" text="Opiniones"/>
@@ -183,8 +182,8 @@
             <LinkButton class="feedbacks-link-button-wrapper" title="Все отзывы" link="/feedbacks"/>
         </div>
         <div class="about-container">
-            <img style="position: absolute; left: 0;" src="../assets/main/about-left.svg" alt="">
-            <img style="position: absolute; right: 0; top: 10rem;" src="../assets/main/about-right.svg" alt="">
+            <img class="main-page-about-image-left" src="../assets/main/about-left.svg" alt="">
+            <img class="main-page-about-image-right" src="../assets/main/about-right.svg" alt="">
             <div class="about-text-container">
                 <span class="main-section-title about-title">
                     О нас
@@ -201,6 +200,14 @@
             </div>
             <div class="about-image-carousel">
                 <ImageCarousel v-bind:images="[getCarouselImgUrl('slide1'), getCarouselImgUrl('slide2'), getCarouselImgUrl('slide3'), 
+                getCarouselImgUrl('slide4'), getCarouselImgUrl('slide5'), getCarouselImgUrl('slide6'), getCarouselImgUrl('slide7'),
+                getCarouselImgUrl('slide8'), getCarouselImgUrl('slide9'), getCarouselImgUrl('slide10'), getCarouselImgUrl('slide11'),
+                getCarouselImgUrl('slide12'), getCarouselImgUrl('slide13'), getCarouselImgUrl('slide14'), getCarouselImgUrl('slide15'), 
+                getCarouselImgUrl('slide16'), getCarouselImgUrl('slide17'), getCarouselImgUrl('slide18'), getCarouselImgUrl('slide19'), 
+                getCarouselImgUrl('slide20'), getCarouselImgUrl('slide21')]"/>
+            </div>
+            <div class="about-image-carousel-tablet">
+                <ImageCarousel :image-width=144 :image-height=144 v-bind:images="[getCarouselImgUrl('slide1'), getCarouselImgUrl('slide2'), getCarouselImgUrl('slide3'), 
                 getCarouselImgUrl('slide4'), getCarouselImgUrl('slide5'), getCarouselImgUrl('slide6'), getCarouselImgUrl('slide7'),
                 getCarouselImgUrl('slide8'), getCarouselImgUrl('slide9'), getCarouselImgUrl('slide10'), getCarouselImgUrl('slide11'),
                 getCarouselImgUrl('slide12'), getCarouselImgUrl('slide13'), getCarouselImgUrl('slide14'), getCarouselImgUrl('slide15'), 
@@ -653,6 +660,31 @@
         height: 51rem;
         position: relative;
     }
+    
+    .main-page-feedback-image-top-left {
+        position: absolute; 
+        left: 0; 
+        top: 0;   
+    }
+    
+    .main-page-feedback-image-bottom {
+        position: absolute; 
+        left: 0; 
+        bottom: 0;   
+    }
+    
+    .main-page-feedback-image-top-right {
+        position: absolute; 
+        right: 0; 
+        top: 0;   
+    }
+    
+    .main-page-feedback-image-top-right-2 {
+        position: absolute; 
+        right: 6rem; 
+        top: 8rem;
+        z-index: 2   
+    }
 
     .feedback-card-wrapper {
         box-shadow: 0 4px 16px 0 rgba(41, 41, 41, 0.15);
@@ -717,6 +749,17 @@
         flex-direction: column;
         align-items: center;
     }
+    
+    .main-page-about-image-left {
+        position: absolute; 
+        left: 0;   
+    }
+    
+    .main-page-about-image-right {
+        position: absolute; 
+        right: 0; 
+        top: 10rem;   
+    }
 
     .about-text-container {
         display: flex;
@@ -748,8 +791,15 @@
 
     .about-image-carousel {
         height: 26rem;
-        width: calc(100vw - 3rem);
+        width: calc(100% - 3rem);
         margin: 12rem 0 6rem 0;
+    }
+    
+    .about-image-carousel-tablet {
+        display: none;
+        height: 20rem;
+        width: calc(100% - 3rem);
+        margin: 6rem 0 3rem 0;
     }
 
     @media screen and (max-width: 1280px) {
@@ -861,6 +911,62 @@
         }
         
         .teacher-card-wrapper-tablet {
+            display: block;
+        }
+
+        .feedback-container {
+            height: 65rem;
+        }
+        
+        .main-page-feedback-image-top-left {
+            width: 50%;
+        }
+
+        .main-page-feedback-image-bottom {
+            width: calc(100% - 5rem);
+        }
+        
+        .main-page-feedback-image-top-right {
+            width: 50%;
+        }
+
+        .main-page-feedback-image-top-right-2 {
+            width: 22%;
+            top: -3rem;
+            right: 2rem;
+        }
+        
+        .about-container {
+            height: 80rem;
+        }
+        
+        .main-page-about-image-left {
+            width: 50%;
+            top: 10rem;
+        }
+
+        .main-page-about-image-right {
+            width: 50%;
+        }
+        
+        .about-text-container {
+            margin-left: 0;
+            width: 40%;
+        }
+        
+        .about-title {
+            align-self: center;
+        }
+
+        .about-descritpion {
+            font-size: 1.4rem;
+        }
+        
+        .about-image-carousel {
+            display: none;
+        }
+        
+        .about-image-carousel-tablet {
             display: block;
         }
     }

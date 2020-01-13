@@ -2,23 +2,23 @@
     <div v-if="type === 'normal'" class="teacher-card-container">
         <img v-if="image" class="teacher-card-image" :src="image" :alt="name">
         <img v-else class="teacher-card-image" src="../assets/teachers/teacher-default.svg" :alt="name">
-        <span class="teacher-card-title">{{name}}</span>
-        <span class="teacher-card-city">{{city}}</span>
+        <div class="teacher-card-title">{{name}}</div>
+        <div class="teacher-card-city">{{city}}</div>
         <div class="teacher-card-languages-container">
-            <span class="teacher-card-language"
+            <div class="teacher-card-language"
                   v-for="(language, index) in languages" 
                   :class="language.color"
                   v-bind:key="index">
                 {{language.name}}
-            </span>
+            </div>
         </div>
         <div v-if="shortDescription" class="teacher-card-description">{{shortDescription | trim(160)}}</div>
     </div>
     <div v-else-if="type === 'small'" class="teacher-card-container-small">
         <img v-if="image" class="teacher-card-image-small" :src="image" :alt="name">
         <img v-else class="teacher-card-image-small" src="../assets/teachers/teacher-default.svg" :alt="name">
-        <span class="teacher-card-title-small">{{name}}</span>
-        <span class="teacher-card-city-small">{{city}}</span>
+        <div class="teacher-card-title-small">{{name}}</div>
+        <div class="teacher-card-city-small">{{city}}</div>
     </div>
 </template>
 
@@ -106,6 +106,8 @@
     
     .teacher-card-languages-container {
         display: flex;
+        align-items: center;
+        justify-content: center;
         margin-top: 2.5rem;
     }
     
