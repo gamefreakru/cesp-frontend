@@ -1,16 +1,8 @@
 <template>
     <div class="main-container">
         <div class="information-container">
-            <div style="width: 75rem; 
-            height: 75rem; 
-            background-color: #fff7d4; 
-            border-radius: 50rem / 60rem; 
-            position: absolute; 
-            top: -20rem; 
-            right: 53rem;"
-            ></div>
-            <img style="position: absolute; right: 0;" src="../assets/main/background.png"
-                 srcset="../assets/main/background@2x.png 2x" alt="">
+            <div class="main-page-background-image-left"></div>
+            <img class="main-page-background-image-right" src="../assets/main/background.png" alt="">
             <div class="title-block-container">
                 <div style="width: 60rem;" class="title-block">Лучшая школа
                     <span style="color: var(--tomato);">испанского</span></div>
@@ -37,21 +29,8 @@
             <img class="arrow-element" src="../assets/main/scroll-arrow.svg" alt="arrow"/>
         </div>
         <div class="group-recruitment-container">
-            <img style="position: absolute; left: 0; top: -5rem;" src="../assets/main/group-recruitment.png"
-                 srcset="../assets/main/group-recruitment@2x.png 2x, ../assets/main/group-recruitment@3x.png 3x"
+            <img class="main-page-group-recruitment-background-image" src="../assets/main/group-recruitment.png"
                  alt="">
-            <!--            <div class="text-babel-with-link">-->
-            <!--                <span class="text-babel-with-link-title">-->
-            <!--                    Las Fallas <span style="color: var(&#45;&#45;light-text)">весенний фестиваль Огня в Валенсии</span>-->
-            <!--                </span>-->
-            <!--                <div class="text-babel-with-link-position-container">-->
-            <!--                    <div class="text-babel-with-link-delimiter"></div>-->
-            <!--                    <div class="text-babel-with-link-bottom-flex-container">-->
-            <!--                        <span class="text-babel-with-link-bottom-title">Читайте в блоге</span>-->
-            <!--                        <img class="text-babel-with-link-bottom-arrow" src="../assets/common/arrow-white.svg" alt=""/>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--            </div>-->
             <div class="group-recruitment-information-container">
                 <span class="group-recruitment-information-title">Идёт набор в группы: 
                     <span style="color: var(--tomato);">январь</span>, 
@@ -72,7 +51,7 @@
                         <span class="group-recruitment-information-discount-description"> семейным <br/>парам</span>
                     </div>
                 </div>
-                <LinkButton class=group-recruitment-link-button-wrapper title="Посмотреть расписание и цены" link="/schedule" />
+                <LinkButton class="group-recruitment-link-button-wrapper" title="Посмотреть расписание и цены" link="/schedule" />
             </div>
             <SignupForm type="signup" class="signup-form-wrapper"/>
         </div>
@@ -84,6 +63,13 @@
 
             <div class="events-card-container">
                 <EventCard class="event-card-wrapper" v-for="(event, index) in events"
+                           v-bind:key="index"
+                           v-bind:link="event.sysName | createEventLink"
+                           link-title="Записаться"
+                           v-bind:title="event.name"
+                           v-bind:image="event.photo"
+                           v-bind:description="event.shortInfo"/>
+                <EventCard class="event-card-wrapper-tablet" v-for="(event, index) in eventsTablet"
                            v-bind:key="index"
                            v-bind:link="event.sysName | createEventLink"
                            link-title="Записаться"
@@ -127,6 +113,26 @@
                             duration-description="Частота и продолжительность согласовываются с учётом ваших пожеланий"
                             price-description="2 500 руб./час"/>
             </div>
+            <div class="courses-card-container-tablet">
+                <CourseCard class="course-card-wrapper"
+                            :image="getImgUrl('spain-course')"
+                            red-title="Испанский"
+                            title=" стандартный курс"
+                            link="/contacts"
+                            description="Классический курс испанского языка в Москве продолжительностью около двух месяцев."
+                            duration-description="60 ак. часов (9 недель)"
+                            :discount-value=19
+                            price-description="от 19 000 руб."
+                />
+                <CourseCard class="course-card-wrapper"
+                            :image="getImgUrl('catalan-course')"
+                            red-title="Каталонский"
+                            title=" язык"
+                            link="/contacts"
+                            description="Каталонский является официальным языком Каталонии, Балеарских островов, Арагона, Валенсии и Андорры."
+                            price-description="от 19 000 руб."
+                />
+            </div>
             <LinkButton class=courses-link-button-wrapper title="Выбрать курсы" link="/courses"/>
         </div>
         <div class="teachers-container">
@@ -136,6 +142,15 @@
             </span>
             <div class="teachers-card-container">
                 <TeacherCard class="teacher-card-wrapper" v-for="(teacher, index) in teachers"
+                             v-bind:key="index"
+                             v-bind:image="teacher.photo"
+                             v-bind:name="teacher.name"
+                             v-bind:city="teacher.city"
+                             v-bind:languages="teacher.languages"
+                             v-bind:short-description="teacher.shortInfo"
+                             type="normal"
+                />
+                <TeacherCard class="teacher-card-wrapper-tablet" v-for="(teacher, index) in teachersTablet"
                              v-bind:key="index"
                              v-bind:image="teacher.photo"
                              v-bind:name="teacher.name"
@@ -241,20 +256,24 @@
         data() {
             return {
                 teachers: {},
+                teachersTablet: {},
                 events: {},
+                eventsTablet: {},
                 feedbacks: {}
             }
         },
         mounted() {
             Service.get("teachers?count=4", (status, data) => {
                 this.teachers = data;
+                this.teachersTablet = this.teachers.slice(0,2);
             });
             Service.get("events?count=3", (status, data) => {
                 this.events = data;
+                this.eventsTablet =  this.events.slice(0,2);
             });
             Service.get("feedbacks?count=1", (status, data) => {
                 this.feedbacks = data;
-            })
+            });
         }
     }
 </script>
@@ -263,6 +282,21 @@
 
     .main-container {
         background-color: white;
+    }
+    
+    .main-page-background-image-right {
+        position: absolute;
+        right: 0;
+    }
+    
+    .main-page-background-image-left {
+        width: 75rem; 
+        height: 75rem;
+        background-color: #fff7d4;
+        border-radius: 75rem;
+        position: absolute;
+        top: -20rem;
+        right: 53rem;
     }
 
     .main-section-title {
@@ -305,6 +339,7 @@
         right: 0;
         margin-left: auto;
         margin-right: auto;
+        justify-content: center;
     }
 
     .info-block-circle-item {
@@ -370,6 +405,12 @@
         height: 55rem;
         background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 239, 170, 0.3));
         position: relative;
+    }
+
+    .main-page-group-recruitment-background-image {
+        position: absolute; 
+        left: 0; 
+        top: -5rem;   
     }
     
     .text-babel-with-link {
@@ -506,6 +547,10 @@
     .courses-card-container {
         display: flex;
     }
+    
+    .courses-card-container-tablet {
+        display: none;
+    }
 
     .course-card-wrapper {
         margin: 0 2rem;
@@ -542,6 +587,12 @@
         margin: 0 1.8rem;
         border: solid 0.1rem rgba(0, 0, 0, 0.06);
     }
+    
+    .event-card-wrapper-tablet {
+        margin: 0 1.8rem;
+        border: solid 0.1rem rgba(0, 0, 0, 0.06);
+        display: none;
+    }
 
     .events-link-button-wrapper {
         margin-top: 5rem;
@@ -571,6 +622,11 @@
     }
 
     .teacher-card-wrapper {
+        margin: 0 2rem;
+    }
+    
+    .teacher-card-wrapper-tablet {
+        display: none;
         margin: 0 2rem;
     }
 
@@ -694,6 +750,119 @@
         height: 26rem;
         width: calc(100vw - 3rem);
         margin: 12rem 0 6rem 0;
+    }
+
+    @media screen and (max-width: 1280px) {
+        .arrow-element {
+            display: none;
+        }
+        
+        .main-page-background-image-right {
+            width: 73rem;
+        }
+        
+        .main-page-background-image-left {
+            width: 40rem;
+            height: 40rem;
+            top: -5rem;
+            right: 50rem;
+            border-radius: 40rem;
+        }
+        
+        .information-container {
+            height: 58rem;
+        }
+        
+        .title-block-container {
+            top: 11rem;
+        }
+        
+        .info-block-circle-container {
+            top: 27rem;
+        }
+        
+        .info-block-circle-item {
+            margin: 0 5rem;
+        }
+        
+        .info-block-circle {
+            height: 18rem;
+            width: 18rem;
+        }
+        
+        .info-block-circle-title {
+            font-size: 3.6rem;
+            width: 15rem;
+        }
+        
+        .info-block-circle-description {
+            font-family: FedraSerifAPro, sans-serif;
+            font-size: 1.6rem;
+            max-width: 13rem;
+        }
+        
+        .main-page-group-recruitment-background-image {
+            display: none;
+        }
+        
+        .group-recruitment-container {
+            background-image: none;
+            height: 35rem;
+        }
+        
+        .group-recruitment-information-container {
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            top: 4rem;
+            width: calc(100% - 10rem);
+            align-items: center;
+        }
+        
+        .group-recruitment-link-button-wrapper {
+            align-self: center;
+        }
+        
+        .signup-form-wrapper {
+            top: 40rem;
+        }
+        
+        .events-container {
+            height: 123rem;
+        }
+        
+        .events-title {
+            margin-top: 50rem;
+        }
+        
+        .event-card-wrapper {
+            display: none;
+        }
+        
+        .event-card-wrapper-tablet {
+            display: block;
+        }
+
+        .courses-container {
+            height: 75rem;
+        }
+        
+        .courses-card-container {
+            display: none;    
+        }
+        
+        .courses-card-container-tablet {
+            display: flex;
+        }
+        
+        .teacher-card-wrapper {
+            display: none;
+        }
+        
+        .teacher-card-wrapper-tablet {
+            display: block;
+        }
     }
 
 </style>

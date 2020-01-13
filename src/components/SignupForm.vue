@@ -7,9 +7,9 @@
         </span>
         <div class="signup-form-container">
             <form @submit.prevent="submit">
-                <input type="text" v-model="name" class="signup-form-input" style="margin-right: 2rem;" placeholder="Ваше имя (обязательно)">
-                <input type="text" v-model="contact" class="signup-form-input" style="margin: 0 2rem;" placeholder="Телефон (обязательно)">
-                <button type="submit" onsubmit="ym(52043682, 'reachGoal', 'send'); return true;" class="signup-form-button" style="margin-left: 2rem;">
+                <input type="text" v-model="name" class="signup-form-input" placeholder="Ваше имя (обязательно)">
+                <input type="text" v-model="contact" class="signup-form-input" placeholder="Телефон (обязательно)">
+                <button type="submit" onsubmit="ym(52043682, 'reachGoal', 'send'); return true;" class="signup-form-button">
                     Записаться
                 </button>
             </form>
@@ -126,6 +126,11 @@
         border-radius: 0.8rem;
         border: none;
         padding-left: 2rem;
+        margin: 0 1rem;
+    }
+    
+    .signup-form-input:first-child {
+        margin-left: 0;
     }
     
     .signup-form-input::placeholder {
@@ -150,6 +155,7 @@
     .signup-form-button {
         width: 36rem;
         height: 5.6rem;
+        margin-left: 1rem;
         background-color: var(--tomato);
         border: none;
         border-radius: 0.8rem;
@@ -186,6 +192,32 @@
         font-size: 1.2rem;
         color: var(--tomato); 
         text-decoration: none;
+    }
+
+    @media screen and (max-width: 1280px) {
+        .signup-container {
+            width: 68rem;
+            height: 36.5rem;
+            background-image: url('../assets/signup-form/signup-form-contacts-background.png');
+        }
+        
+        .signup-form-container {
+            flex-direction: column;
+        }
+        
+        .signup-form-input {
+            margin: 0.75rem 0;
+        }
+        
+        .signup-form-button {
+            margin: 0.75rem 0;
+        }
+        
+        .signup-legal-text {
+            align-self: center;
+            margin: 1rem 0 0 0;
+            width: 50rem;
+        }
     }
     
 </style>

@@ -129,5 +129,24 @@
     .course-card-discount-value {
         position: absolute;
     }
+
+    @media screen and (max-width: 1280px) {
+        .course-card-container {
+            width: 32rem;
+            height: 45rem;
+        }
+        
+        .course-card-delimiter {
+            width: 24rem;
+        }
+        
+        .course-card-price {
+            margin-right: 0;
+        }
+        
+        .course-card-lesson-registration {
+            margin: 0 1rem 0 0.5rem;
+        }
+    }
     
 </style>

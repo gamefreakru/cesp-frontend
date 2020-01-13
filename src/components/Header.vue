@@ -93,18 +93,19 @@
         display: none;
     }
     
-    /*@media screen and (max-width: 1365px) {*/
-    /*    .menu-container {*/
-    /*        margin: 0;*/
-    /*    }*/
-    /*    */
-    /*    .menu-item:not(:first-child):not(:last-child) {*/
-    /*        display: none;*/
-    /*    }*/
+    @media screen and (max-width: 1280px) {
+        .menu-container {
+            margin: 0;
+        }
+        
+        .menu-item:not(:first-child):not(:last-child) {
+            display: none;
+        }
     
-    /*    .menu-burger {*/
-    /*        display: block;*/
-    /*    }*/
-    /*}*/
+        .menu-burger {
+            display: block;
+            cursor: pointer;
+        }
+    }
     
 </style>

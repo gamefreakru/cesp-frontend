@@ -106,5 +106,17 @@
         text-transform: uppercase;
         margin-right: 1rem;
     }
+
+    @media screen and (max-width: 1280px) {
+        .event-card-container {
+            width: 32rem;
+            height: 49rem;
+            background-size: 100% 40%;
+        }
+        
+        .event-card-delimiter {
+            width: 25rem;
+        }
+    }
     
 </style>
