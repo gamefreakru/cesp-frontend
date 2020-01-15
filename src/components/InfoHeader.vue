@@ -49,6 +49,26 @@
                 <span class="info-header-block-description">— с 11 до 20</span>
             </div>
         </div>
+        <div class="info-header-blocks-container-mobile">
+            <div class="info-header-block-mobile">
+                <div class="info-header-block-text">
+                    <a href="tel:+79161691837" class="info-header-block-phone"
+                       onclick="ym(52043682, 'reachGoal', 'watsapp'); return true;">
+                        <span style="opacity: 0.5;">+7</span>
+                        (916) 169-18-37</a>
+                    <span class="info-header-block-description">Whatsapp</span>
+                </div>
+            </div>
+            <div class="info-header-block-mobile">
+                <div class="info-header-block-text">
+                    <a href="tel:+74959207430" class="info-header-block-phone"
+                       onclick="ym(52043682, 'reachGoal', 'tel'); return true;">
+                        <span style="opacity: 0.5;">+7</span>
+                        (495) 920-74-30</a>
+                    <span class="info-header-block-description">с 11 до 20</span>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -120,6 +140,10 @@
         line-height: 1.57;
     }
     
+    .info-header-blocks-container-mobile {
+        display: none;
+    }
+    
     .info-header-block-tablet {
         display: none;
         align-items: center;
@@ -130,7 +154,7 @@
             height: 6.6rem;
             width: 100%;
             background-color: white;
-            top: 5.65rem;
+            top: 5.6rem;
             display: flex;
             align-items: center;
         }
@@ -177,6 +201,46 @@
             color: black;
             font-size: 1.2rem;
             margin-left: 0.5rem;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .info-header-container {
+            height: 13.2rem;
+        }
+        
+        .info-header-logo {
+            margin-left: 2rem;
+            margin-right: 2.5rem;
+        }
+        
+        .info-header-logo-image {
+            width: 10rem;
+            height: 10rem;
+        }
+        
+        .info-header-blocks-container-mobile {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .info-header-block-tablet {
+            display: none;
+        }
+        
+        .info-header-block-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 0.8rem 0;
+        }
+        
+        .info-header-block-phone {
+            margin-left: 0;
+        }
+        
+        .info-header-block-description {
+            margin-left: 0;
         }
     }
     

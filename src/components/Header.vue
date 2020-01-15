@@ -1,7 +1,7 @@
 <template>
     <div class="header-container">
         <ul class="menu-container">
-            <li class="menu-item menu-burger" v-on:click="showMenu">
+            <li class="menu-item menu-burger" v-on:click="changeMenuState">
                 <img v-if="!isMobileMenuVisible" alt="menu-burger" src="../assets/header/menu_burger.svg">
                 <img v-else alt="menu-cross" src="../assets/header/menu_cross.svg">
             </li>
@@ -33,13 +33,13 @@
         </ul>
         <div v-if="isMobileMenuVisible" class="mobile-menu-container">
             <div class="mobile-menu-links-container">
-                <router-link class="mobile-menu-item" to="/about">О школе</router-link>
-                <router-link class="mobile-menu-item" to="/courses">Курсы</router-link>
-                <router-link class="mobile-menu-item" to="/teachers">Преподаватели</router-link>
-                <router-link class="mobile-menu-item" to="/feedbacks">Отзывы</router-link>
-                <router-link class="mobile-menu-item" to="/club">Habla клуб</router-link>
-                <router-link class="mobile-menu-item" to="/partners">Партнёры</router-link>
-                <router-link class="mobile-menu-item" to="/contacts">Контакты</router-link>
+                <router-link class="mobile-menu-item" to="/about" v-on:click.native="changeMenuState">О школе</router-link>
+                <router-link class="mobile-menu-item" to="/courses" v-on:click.native="changeMenuState">Курсы</router-link>
+                <router-link class="mobile-menu-item" to="/teachers" v-on:click.native="changeMenuState">Преподаватели</router-link>
+                <router-link class="mobile-menu-item" to="/feedbacks" v-on:click.native="changeMenuState">Отзывы</router-link>
+                <router-link class="mobile-menu-item" to="/club" v-on:click.native="changeMenuState">Habla клуб</router-link>
+                <router-link class="mobile-menu-item" to="/partners" v-on:click.native="changeMenuState">Партнёры</router-link>
+                <router-link class="mobile-menu-item" to="/contacts" v-on:click.native="changeMenuState">Контакты</router-link>
             </div>
             <div class="mobile-menu-delimiter"></div>
             <div class="mobile-menu-info-container">
@@ -76,7 +76,7 @@
 <script>
     export default {
         methods : {
-            showMenu: function() {
+            changeMenuState: function() {
                 this.isMobileMenuVisible = !this.isMobileMenuVisible;
             }
         },
@@ -96,6 +96,7 @@
         padding: 0;
         overflow: hidden;
         background-color: var(--main-color);
+        height: 5.6rem;
     }
     
     .header-container {
@@ -113,10 +114,14 @@
     }
     
     .menu-item a {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         color: black;
         text-align: center;
-        padding: 2.1rem 1.9rem;
+        /*padding: 2.1rem 1.9rem;*/
+        height: 5.6rem;
+        padding: 0 1.9rem;
         text-decoration: none;
         font-size: 1.2rem;
         letter-spacing: 0.092rem;
@@ -127,6 +132,7 @@
         background-color: var(--background-color-light);
         float: right;
         display: flex;
+        box-sizing: border-box;
     }
     
     .gift-image {
@@ -135,8 +141,8 @@
     }
     
     .menu-burger {
-        height: 5.65rem;
-        width: 5.65rem;
+        height: 5.6rem;
+        width: 5.6rem;
         display: none;
     }
     
@@ -242,6 +248,12 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
+        }
+    }
+    
+    @media screen and (max-width: 600px) {
+        .menu-item-color-light {
+            width: 25.4rem;
         }
     }
     
