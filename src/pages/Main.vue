@@ -3,10 +3,15 @@
         <div class="information-container">
             <div class="main-page-background-image-left"></div>
             <img class="main-page-background-image-right" src="../assets/main/background.png" alt="">
+            <img class="main-page-background-image-right-mobile" src="../assets/main/background-mobile.png" alt="">
             <div class="title-block-container">
                 <div style="width: 60rem;" class="title-block">Лучшая школа
                     <span style="color: var(--tomato);">испанского</span></div>
                 <div style="width: 55rem;" class="title-block">и каталанского в Москве</div>
+                <div class="title-block-mobile">Лучшая школа</div>
+                <div class="title-block-mobile" style="color: var(--tomato); border-radius: 0;">испанского</div>
+                <div class="title-block-mobile">и каталанского</div>
+                <div class="title-block-mobile">в Москве</div>
             </div>
             <div class="info-block-circle-container">
                 <div class="info-block-circle-item">
@@ -18,7 +23,7 @@
                 <div class="info-block-circle-item">
                     <div class="info-block-circle"></div>
                     <span class="info-block-circle-title">от 319 ₽</span>
-                    <span class="info-block-circle-description">стоимость 1 часа занятия</span>
+                    <span class="info-block-circle-description">стоимость 1 часа занятий</span>
                 </div>
                 <div class="info-block-circle-item">
                     <div class="info-block-circle"></div>
@@ -26,6 +31,7 @@
                     <span class="info-block-circle-description">успешной работы</span>
                 </div>
             </div>
+            <carousel class="main-page-top-carousel-mobile" :data="topCarouselMobileData"/>
             <img class="arrow-element" src="../assets/main/scroll-arrow.svg" alt="arrow"/>
         </div>
         <div class="group-recruitment-container">
@@ -39,7 +45,7 @@
                 <span class="group-recruitment-information-description">
                     При оплате полного стандартного курса действуют скидки:
                 </span>
-                <div style="display: flex;">
+                <div class="group-recruitment-information-discount-container">
                     <div class="group-recruitment-information-discount-item">
                         <span class="group-recruitment-information-discount-value">-15%</span>
                         <span class="group-recruitment-information-discount-description">
@@ -50,6 +56,14 @@
                         <span class="group-recruitment-information-discount-value">-20%</span>
                         <span class="group-recruitment-information-discount-description"> семейным <br/>парам</span>
                     </div>
+                </div> 
+                <div class="group-recruitment-information-discount-container-mobile">
+                    <span class="group-recruitment-information-discount-value">-15%</span>
+                    <span class="group-recruitment-information-discount-description">
+                        каждому, если <br> прийти с другом
+                    </span>
+                    <span class="group-recruitment-information-discount-value">-20%</span>
+                    <span class="group-recruitment-information-discount-description"> семейным <br/>парам</span>
                 </div>
                 <LinkButton class="group-recruitment-link-button-wrapper" title="Посмотреть расписание и цены" link="/schedule" />
             </div>
@@ -60,7 +74,6 @@
                 Наша афиша
                 <TextBabel class="text-babel-events-wrapper" text="Nuestro cartel"/>
             </span>
-
             <div class="events-card-container">
                 <EventCard class="event-card-wrapper" v-for="(event, index) in events"
                            v-bind:key="index"
@@ -71,6 +84,13 @@
                            v-bind:description="event.shortInfo"/>
                 <EventCard class="event-card-wrapper-tablet" v-for="(event, index) in eventsTablet"
                            v-bind:key="index + '-tablet'"
+                           v-bind:link="event.sysName | createEventLink"
+                           link-title="Записаться"
+                           v-bind:title="event.name"
+                           v-bind:image="event.photo"
+                           v-bind:description="event.shortInfo"/>
+                <EventCard class="event-card-wrapper-mobile" v-for="(event, index) in eventsMobile"
+                           v-bind:key="index + '-mobile'"
                            v-bind:link="event.sysName | createEventLink"
                            link-title="Записаться"
                            v-bind:title="event.name"
@@ -133,6 +153,18 @@
                             price-description="от 19 000 руб."
                 />
             </div>
+            <div class="courses-card-container-mobile">
+                <CourseCard class="course-card-wrapper"
+                            :image="getImgUrl('spain-course')"
+                            red-title="Испанский"
+                            title=" стандартный курс"
+                            link="/contacts"
+                            description="Классический курс испанского языка в Москве продолжительностью около двух месяцев."
+                            duration-description="60 ак. часов (9 недель)"
+                            :discount-value=19
+                            price-description="от 19 000 руб."
+                />
+            </div>
             <LinkButton class=courses-link-button-wrapper title="Выбрать курсы" link="/courses"/>
         </div>
         <div class="teachers-container">
@@ -152,6 +184,15 @@
                 />
                 <TeacherCard class="teacher-card-wrapper-tablet" v-for="(teacher, index) in teachersTablet"
                              v-bind:key="index + '-tablet'"
+                             v-bind:image="teacher.photo"
+                             v-bind:name="teacher.name"
+                             v-bind:city="teacher.city"
+                             v-bind:languages="teacher.languages"
+                             v-bind:short-description="teacher.shortInfo"
+                             type="normal"
+                />
+                <TeacherCard class="teacher-card-wrapper-mobile" v-for="(teacher, index) in teachersMobile"
+                             v-bind:key="index + '-mobile'"
                              v-bind:image="teacher.photo"
                              v-bind:name="teacher.name"
                              v-bind:city="teacher.city"
@@ -264,19 +305,41 @@
             return {
                 teachers: {},
                 teachersTablet: {},
+                teachersMobile: {},
                 events: {},
                 eventsTablet: {},
-                feedbacks: {}
+                eventsMobile: {},
+                feedbacks: {},
+                topCarouselMobileData: [
+                    '<div class="info-block-circle-item">' +
+                    '<div class="info-block-circle"></div>' +
+                    '<span class="info-block-circle-title">4 000</span>' +
+                    '<span class="info-block-circle-description">довольных слушателей</span>' +
+                    '</div>',
+                    '<div class="info-block-circle-item">' +
+                    '<div class="info-block-circle"></div>' +
+                    '<span class="info-block-circle-title">от 319 ₽</span>' +
+                    '<span class="info-block-circle-description">стоимость 1 часа занятий</span>' +
+                    '</div>',
+                    '<div class="info-block-circle-item">' +
+                    '<div class="info-block-circle"></div>' +
+                    '<span class="info-block-circle-title">8 лет</span>' +
+                    '<span class="info-block-circle-description">успешной работы</span>' +
+                    '</div>',
+                        
+                ]
             }
         },
         mounted() {
             Service.get("teachers?count=4", (status, data) => {
                 this.teachers = data;
                 this.teachersTablet = this.teachers.slice(0,2);
+                this.teachersMobile = this.teachers.slice(0,1);
             });
             Service.get("events?count=3", (status, data) => {
                 this.events = data;
                 this.eventsTablet =  this.events.slice(0,2);
+                this.eventsMobile = this.events.slice(0,1);
             });
             Service.get("feedbacks?count=1", (status, data) => {
                 this.feedbacks = data;
@@ -294,6 +357,10 @@
     .main-page-background-image-right {
         position: absolute;
         right: 0;
+    }
+    
+    .main-page-background-image-right-mobile {
+        display: none;
     }
     
     .main-page-background-image-left {
@@ -337,6 +404,10 @@
         border-radius: 0.8rem;
         margin-top: -1rem;
     }
+    
+    .title-block-mobile {
+        display: none;
+    }
 
     .info-block-circle-container {
         position: absolute;
@@ -349,22 +420,22 @@
         justify-content: center;
     }
 
-    .info-block-circle-item {
+    /deep/ .info-block-circle-item {
         display: flex;
         flex-direction: column;
         margin: 0 11rem;
         align-items: center;
     }
     
-    .info-block-circle-item:first-child {
+    /deep/ .info-block-circle-item:first-child {
         margin-left: 0;
     }
     
-    .info-block-circle-item:last-child {
+    /deep/ .info-block-circle-item:last-child {
         margin-right: 0;
     }
 
-    .info-block-circle {
+    /deep/ .info-block-circle {
         height: 20rem;
         width: 20rem;
         border-radius: 10rem;
@@ -375,7 +446,7 @@
         background-color: rgba(255, 201, 0, 0.4);
     }
 
-    .info-block-circle-title {
+    /deep/ .info-block-circle-title {
         font-size: 6rem;
         font-family: GothamPro-Medium, sans-serif;
         color: white;
@@ -383,7 +454,7 @@
         width: 25rem;
     }
 
-    .info-block-circle-description {
+    /deep/ .info-block-circle-description {
         font-family: FedraSerifAPro-Medium, sans-serif;
         font-size: 2.4rem;
         line-height: 1.33;
@@ -394,6 +465,10 @@
 
     .info-block-circle-description-black {
         color: black;
+    }
+    
+    .main-page-top-carousel-mobile {
+        display: none;
     }
 
     .arrow-element {
@@ -506,6 +581,14 @@
         font-size: 1.8rem;
         margin-bottom: 3rem;
     }
+    
+    .group-recruitment-information-discount-container {
+        display: flex;
+    }
+    
+    .group-recruitment-information-discount-container-mobile {
+        display: none;
+    }
 
     .group-recruitment-information-discount-item {
         display: flex;
@@ -558,6 +641,10 @@
     .courses-card-container-tablet {
         display: none;
     }
+    
+    .courses-card-container-mobile {
+        display: none;
+    }
 
     .course-card-wrapper {
         margin: 0 2rem;
@@ -600,6 +687,11 @@
         border: solid 0.1rem rgba(0, 0, 0, 0.06);
         display: none;
     }
+    
+    .event-card-wrapper-mobile {
+        display: none;
+        border: solid 0.1rem rgba(0, 0, 0, 0.06);
+    }
 
     .events-link-button-wrapper {
         margin-top: 5rem;
@@ -635,6 +727,10 @@
     .teacher-card-wrapper-tablet {
         display: none;
         margin: 0 2rem;
+    }
+    
+    .teacher-card-wrapper-mobile {
+        display: none;
     }
 
     .teachers-link-button-wrapper {
@@ -831,21 +927,21 @@
             top: 27rem;
         }
         
-        .info-block-circle-item {
+        /deep/ .info-block-circle-item {
             margin: 0 5rem;
         }
         
-        .info-block-circle {
+        /deep/ .info-block-circle {
             height: 18rem;
             width: 18rem;
         }
         
-        .info-block-circle-title {
+        /deep/ .info-block-circle-title {
             font-size: 3.6rem;
             width: 15rem;
         }
         
-        .info-block-circle-description {
+        /deep/ .info-block-circle-description {
             font-family: FedraSerifAPro, sans-serif;
             font-size: 1.6rem;
             max-width: 13rem;
@@ -968,6 +1064,207 @@
         
         .about-image-carousel-tablet {
             display: block;
+        }
+        
+        @media screen and (max-width: 760px) {
+            .information-container {
+                margin-top: 13.2rem;
+                height: 42rem;
+            }
+            
+            .main-page-background-image-left {
+                display: none;
+            }
+            
+            .main-page-background-image-right {
+                display:none;
+            }
+            
+            .main-page-background-image-right-mobile {
+                display: block;
+                width: 100%;
+                height: 42rem;
+                object-fit: cover;
+                position: absolute;
+            }
+            
+            .title-block-container {
+                top: 3.5rem;
+            }
+            
+            .title-block {
+                display: none;
+            }
+            
+            .title-block-mobile {
+                display: block;
+                font-family: FedraSerifAPro-Medium, sans-serif;
+                font-size: 2.2rem;
+                background-color: white;
+                border-radius: 0.4rem;
+                padding: 0.1rem 1rem;
+                margin: -0.2rem 0;
+            }
+            
+            .info-block-circle-container {
+                display: none;
+            }
+            
+            .main-page-top-carousel-mobile {
+                display: block;
+                position: absolute;
+                height: 21rem;
+                top: 19rem;
+            }
+            
+            /deep/ .info-block-circle-item {
+                height: 18rem;
+            }
+            
+            .group-recruitment-container {
+                height: 48rem;
+                background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 239, 170, 0.3) 55%);
+            }
+
+            .group-recruitment-information-container {
+                width: calc(100% - 4rem);
+                top: 2rem;
+            }
+            
+            .main-page-group-recruitment-background-image {
+                display: none;
+            }
+            
+            .group-recruitment-information-discount-container {
+                display: none
+            }
+            
+            .group-recruitment-information-discount-container-mobile {
+                display: grid;
+                grid-template-columns: auto auto;
+                grid-gap: 1.5rem 2rem;
+            }
+            
+            .group-recruitment-information-title {
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+                width: calc(100% - 3rem);
+            }
+            
+            .group-recruitment-information-description {
+                font-size: 1.4rem;
+                width: calc(100% - 1.5rem);
+                margin-bottom: 1.5rem;
+            }
+            
+            .group-recruitment-information-discount-value {
+                font-size: 3.6rem;
+                text-align: right;
+            }
+            
+            .group-recruitment-information-discount-description {
+                font-size: 1.4rem;
+                line-height: 1.29;
+                margin: 0;
+            }
+            
+            .signup-form-wrapper {
+                top: 34rem;
+            }
+            
+            .group-recruitment-link-button-wrapper {
+                margin-top: 2.5rem;
+            }
+            
+            .main-section-title {
+                font-size: 1.8rem;
+            }
+            
+            .text-babel-events-wrapper {
+                left: 10rem;
+                top: -3.5rem;
+            }
+
+            .events-container {
+                height: 65rem;
+            }
+            
+            .events-title {
+                margin-top: 20rem;
+            }
+            
+            .events-card-container {
+                margin-top: 2.5rem;
+            }
+            
+            .event-card-wrapper-tablet {
+                display: none;
+            }
+
+            .event-card-wrapper-mobile {
+                display: block;
+            }
+            
+            .events-link-button-wrapper {
+                margin-top: 2rem;
+            }
+            
+            .courses-container {
+                background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 239, 170, 0.3) 55%);
+                background-color: white;
+                height: 52rem;
+            }
+            
+            .courses-card-container-tablet {
+                display: none;
+            }
+            
+            .courses-card-container-mobile {
+                display: flex;
+            }
+            
+            .courses-cards-title {
+                margin-top: 5rem;
+                margin-bottom: 3.5rem;
+            }
+            
+            .text-babel-courses-wrapper {
+                left: 18rem;
+                top: -3.5rem;
+            }
+            
+            .course-card-wrapper {
+                margin: 0;
+            }
+            
+            .courses-link-button-wrapper {
+                margin-top: 2rem;
+            }
+            
+            .teachers-container {
+                height: 75rem;
+            }
+            
+            .teacher-card-wrapper-tablet {
+                display: none;
+            }
+
+            .teacher-card-wrapper-mobile {
+                display: flex;
+            }
+            
+            .teachers-title {
+                margin-top: 5rem;
+            }
+            
+            .text-babel-teachers-wrapper {
+                left: 19rem;
+                top: -3.5rem;
+            }
+            
+            .teachers-link-button-wrapper {
+                margin-top: 5rem;
+            }
         }
     }
 

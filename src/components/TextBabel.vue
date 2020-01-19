@@ -44,5 +44,16 @@
         transform: rotate(-45deg);
         z-index: 1;
     }
+
+    @media screen and (max-width: 760px) {
+        .text-babel-container {
+            font-size: 1rem;
+            height: 2.5rem;
+        }
+        
+        .text-babel-container:after {
+            top: 2.7rem;
+        }
+    }
     
 </style>

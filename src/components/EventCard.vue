@@ -118,5 +118,45 @@
             width: 25rem;
         }
     }
+
+    @media screen and (max-width: 760px) {
+        .event-card-container {
+            width: 28rem;
+            height: 30.5rem;
+        }
+
+        .event-card-text-container {
+            top: 12rem;
+            padding: 0 2rem;
+        }
+        
+        .event-card-title {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+        
+        .event-card-description {
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+        
+        .event-card-position-container {
+            padding: 0 2rem;
+            bottom: 1rem;
+        }
+        
+        .event-card-delimiter {
+            width: 24rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .event-card-bottom-flex-container {
+            margin-bottom: 0.5rem;
+        }
+        
+        .event-card-link-title {
+            font-size: 1.2rem;
+        }
+    }
     
 </style>

@@ -6,7 +6,7 @@
             пробный урок!
         </span>
         <div class="signup-form-container">
-            <form @submit.prevent="submit">
+            <form class="signup-form-submit-container" @submit.prevent="submit">
                 <input type="text" v-model="name" class="signup-form-input" placeholder="Ваше имя (обязательно)">
                 <input type="text" v-model="contact" class="signup-form-input" placeholder="Телефон (обязательно)">
                 <button type="submit" onsubmit="ym(52043682, 'reachGoal', 'send'); return true;" class="signup-form-button">
@@ -117,6 +117,10 @@
         flex-wrap: wrap;
     }
     
+    .signup-form-submit-container {
+        display: flex;
+    }
+    
     .signup-form-input {
         width: 36rem;
         height: 5.6rem;
@@ -204,6 +208,10 @@
         .signup-form-container {
             flex-direction: column;
         }
+
+        .signup-form-submit-container {
+            flex-direction: column;
+        }
         
         .signup-form-input {
             margin: 0.75rem 0;
@@ -217,6 +225,55 @@
             align-self: center;
             margin: 1rem 0 0 0;
             width: 50rem;
+        }
+    }
+
+    @media screen and (max-width: 760px) {
+        .signup-container {
+            padding: 2rem;
+            height: 27.5rem;
+            width: calc(100% - 4rem);
+        }
+        
+        .signup-title {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+        
+        .signup-form-container {
+            margin-top: 0;
+        }
+        
+        .signup-form-submit-container {
+            flex-direction: column;
+        }
+        
+        .signup-form-input {
+            width: 24rem;
+            height: 4rem;
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+            padding-left: 0;
+            text-align: center;
+        }
+
+        .signup-form-input::placeholder {
+            font-size: 1.2rem;
+        }
+        
+        .signup-form-button {
+            width: 24rem;
+            height: 4rem;
+            margin: 0.5rem 0;
+        }
+        
+        .signup-legal-text {
+            width: 22rem;
+            font-size: 1.1rem;
+        }
+
+        .signup-legal-link {
+            font-size: 1.1rem;
         }
     }
     

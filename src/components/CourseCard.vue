@@ -148,5 +148,57 @@
             margin: 0 1rem 0 0.5rem;
         }
     }
+
+    @media screen and (max-width: 760px) {
+        .course-card-container {
+            width: 28rem;
+            height: 30.5rem;
+        }
+        
+        .course-card-flex-container {
+            padding: 0 2rem;
+        }
+        
+        .course-card-image {
+            width: 4.5rem;
+            height: 4.5rem;
+            top: -2.3rem;
+            left: 2rem;
+        }
+        
+        .course-card-title {
+            font-size: 1.6rem;
+            margin-top: 2.5rem;
+        }
+        
+        .course-card-description {
+            font-size: 1.2rem;
+        }
+        
+        .course-card-duration-title {
+            font-size: 1rem;
+            margin: 0.5rem 0;
+        }
+        
+        .course-card-duration-description {
+            font-size: 1rem;
+        }
+
+        .course-card-position-container {
+            bottom: 1.5rem;
+        }
+        
+        .course-card-bottom-flex-container {
+            margin: 0;
+        }
+        
+        .course-card-price {
+            font-size: 1.4rem;
+        }
+        
+        .course-card-lesson-registration {
+            font-size: 1.2rem;
+        }
+    }
     
 </style>

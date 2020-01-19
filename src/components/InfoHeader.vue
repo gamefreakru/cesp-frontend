@@ -36,7 +36,7 @@
                    onclick="ym(52043682, 'reachGoal', 'watsapp'); return true;">
                     <span style="opacity: 0.5;">+7</span>
                     (916) 169-18-37</a>
-                <span class="info-header-block-description">— Whatsapp</span>
+                <span class="info-header-block-description">— Whatsapp</span>
             </div>
         </div>
         <div class="info-header-block-tablet">
@@ -46,7 +46,7 @@
                    onclick="ym(52043682, 'reachGoal', 'tel'); return true;">
                     <span style="opacity: 0.5;">+7</span>
                     (495) 920-74-30</a>
-                <span class="info-header-block-description">— с 11 до 20</span>
+                <span class="info-header-block-description">— с 11 до 20</span>
             </div>
         </div>
         <div class="info-header-blocks-container-mobile">
@@ -204,7 +204,7 @@
         }
     }
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 760px) {
         .info-header-container {
             height: 13.2rem;
         }

@@ -64,9 +64,9 @@
                 <img class="mobile-menu-info-image" src="../assets/header/metro-icon.svg" alt="metro-icon">
                 <div class="mobile-menu-info-text-container">
                     <div class="mobile-menu-info-metro">Москва, Пятницкая ул., 71/5 строение 2</div>
-                    <div class="mobile-menu-info-description">Добрынинская — 5 мин. пешком</div>
-                    <div class="mobile-menu-info-description">Серпуховская — 5 мин. пешком</div>
-                    <div class="mobile-menu-info-description">Павелецкая — 10 мин. пешком</div>
+                    <div class="mobile-menu-info-description">Добрынинская — 5 мин. пешком</div>
+                    <div class="mobile-menu-info-description">Серпуховская — 5 мин. пешком</div>
+                    <div class="mobile-menu-info-description">Павелецкая — 10 мин. пешком</div>
                 </div>
             </div>
         </div>
@@ -251,7 +251,7 @@
         }
     }
     
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 760px) {
         .menu-item-color-light {
             width: 25.4rem;
         }
