@@ -1,9 +1,6 @@
 <template>
     <div id="container">
-        <div id="map">
-            <iframe src="https://yandex.ru/map-widget/v1/-/CCV3qK0~" :style="styling" frameborder="0">
-            </iframe>
-        </div>
+        <iframe class="map-wrapper" src="https://yandex.ru/map-widget/v1/-/CCV3qK0~" :style="styling" frameborder="0" />
         <div style="text-align: right;"></div>
     </div>
 </template>
@@ -18,19 +15,29 @@
         props: {
             width: {
                 type: Number,
-                default: 560
+                default: 0
             },
             height: {
                 type: Number,
-                default: 400
+                default: 0
             }
         },
         computed: {
             styling() {
-                return {
-                    width: this.width + 'px',
-                    height: this.height + 'px',
+                if(this.width > 0 && this.height > 0)
+                {
+                    return {
+                        width: this.width + 'px',
+                        height: this.height + 'px',
+                    }
                 }
+                else if(this.height > 0)
+                {
+                    return {
+                        height: this.height + 'px'
+                    }
+                }
+                else return ""
             }
         }
     }
@@ -38,5 +45,11 @@
 </script>
 
 <style scoped>
-   
+
+    @media screen and (max-width: 1280px) {
+        .map-wrapper {
+            width: 100%;
+        }
+    }
+    
 </style>

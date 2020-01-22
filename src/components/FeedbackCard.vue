@@ -8,9 +8,7 @@
                 <div class="feedback-card-info-date">{{ date | moment("DD.MM.YYYY") }}</div>
             </div>
         </div>
-        <div class="feedback-card-text">
-            {{text}}
-        </div>
+        <div class="feedback-card-text">{{text}}</div>
     </div>
 </template>
 
@@ -92,6 +90,42 @@
         
         .feedback-card-info-container {
             margin-left: 5rem;
+        }
+    }
+
+    @media screen and (max-width: 760px) {
+        .feedback-card-container {
+            width: calc(100% - 4rem);
+            height: 30rem;
+            padding: 1.5rem 2rem;
+        }
+
+        .feedback-card-content-container {
+            align-items: flex-start;
+        }
+        
+        .feedback-card-image {
+            max-width: 5.2rem;
+            max-height: 5.2rem;
+        }
+        
+        .feedback-card-info-container {
+            margin-left: 2rem;
+        }
+        
+        .feedback-card-info-name {
+            font-size: 1.6rem;
+        }
+        
+        .feedback-card-info-date {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+        
+        .feedback-card-text {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin-top: 1.5rem;
         }
     }
     

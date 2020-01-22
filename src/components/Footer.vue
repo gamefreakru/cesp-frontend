@@ -51,10 +51,60 @@
                 <YandexMaps :width=480 :height=360 />
             </div>
             <div class="footer-map-tablet">
-                <YandexMaps :width=730 :height=300 />
+                <YandexMaps />
             </div>
         </div>
-       
+        <div class="footer-links-mobile">
+            <div class="footer-map-tablet">
+                <YandexMaps :height=200 />
+            </div>
+            <div class="footer-block">
+                <span class="footer-block-item footer-block-header">Контакты</span>
+                <a class="footer-block-item footer-block-text" href="tel:+74959207430">+7 (495) 920-74-30</a>
+                <a class="footer-block-item footer-block-text" href="tel:+79161691837">+7 (916) 169-18-37</a>
+                <a class="footer-block-item footer-block-link" href="mailto:info@centroespanol.ru">info@centroespanol.ru</a>
+                <span class="footer-block-item footer-block-text">Москва, Пятницкая ул., 71/5 строение 2</span>
+                <span class="footer-block-item footer-block-metro">
+                    <img class="footer-block-image" alt="metro" src="../assets/footer/metro-red.svg">
+                    <span class="footer-block-text footer-block-grey-text footer-block-metro-text">Добрынинская - 5 мин. пешком</span>
+                </span>
+                <span class="footer-block-item footer-block-metro">
+                    <img class="footer-block-image" alt="metro" src="../assets/footer/metro-grey.svg">
+                    <span class="footer-block-text footer-block-grey-text footer-block-metro-text">Серпуховская - 5 мин. пешком</span>
+                </span>
+                <span class="footer-block-item footer-block-metro">
+                    <img class="link-image" alt="metro" src="../assets/footer/metro-green.svg">
+                    <span class="footer-block-text footer-block-grey-text footer-block-metro-text">Павелецкая - 10 мин. пешком</span>
+                </span>
+            </div>
+            <hr class="footer-delimiter"/>
+            <div class="footer-block">
+                <span class="footer-block-item footer-block-header">О школе</span>
+                <router-link class="footer-block-item footer-block-link" to="/about">Centro Vamos</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/feedbacks">Отзывы</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/teachers">Преподаватели</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/partners">Партнёры</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/contacts">Контакты</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/howtolearn">Как выучить испанский?</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/dele">Подготовка к DELE</router-link>
+                <router-link class="footer-block-item footer-block-header" to="/contacts"
+                             onclick="ym(52043682, 'reachGoal', 'online-zapis'); return true;">
+                    Онлайн запись
+                </router-link>
+                <router-link style="margin-bottom: 0" class="footer-block-item footer-block-header" to="/payment"
+                             onclick="ym(52043682, 'reachGoal', 'online-payment'); return true;">
+                    Оплата онлайн
+                </router-link>
+            </div>
+            <hr class="footer-delimiter"/>
+            <div class="footer-block">
+                <span class="footer-block-item footer-block-header">Обучение</span>
+                <router-link class="footer-block-item footer-block-link" to="/contacts">Набор в группы</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/events">Наши мероприятия</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/courses">Курсы</router-link>
+                <router-link class="footer-block-item footer-block-link" to="/club">Habla клуб</router-link>
+            </div>
+        </div>
         <hr class="footer-delimiter"/>
         <div class="footer-information">
             <div class="info-text">© Centro Vamos, 2019</div>
@@ -69,7 +119,26 @@
             </div>
             <router-link class="information" to="/policy">Правовая информация</router-link>
             <div class="payment-container">
-                <span class="payment-info">Принимаем к оплате</span>
+                <div class="payment-info">Принимаем к оплате</div>
+                <img class="payment-method" alt="visa" src="../assets/footer/visa.svg">
+                <img class="payment-method" alt="mastercard" src="../assets/footer/mastercard.svg">
+                <img class="payment-method" alt="mir" src="../assets/footer/mir.svg">
+            </div>
+        </div>
+        <div class="footer-information-mobile">
+            <div class="info-text">© Centro Vamos, 2019</div>
+            <router-link class="information" to="/policy">Правовая информация</router-link>
+            <div class="links-container">
+                <a class="link" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/centroespanol/">
+                    <img class="link-image" alt="facebook" src="../assets/footer/facebook.svg">
+                </a>
+                <a class="link" href="#"><img class="link-image" alt="youtube" src="../assets/footer/youtube.svg"></a>
+                <a class="link" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/vamos_centro/">
+                    <img class="link-image" alt="instagram" src="../assets/footer/instagram.svg">
+                </a>
+            </div>
+            <div class="payment-info">Принимаем к оплате</div>
+            <div class="payment-container">
                 <img class="payment-method" alt="visa" src="../assets/footer/visa.svg">
                 <img class="payment-method" alt="mastercard" src="../assets/footer/mastercard.svg">
                 <img class="payment-method" alt="mir" src="../assets/footer/mir.svg">
@@ -101,6 +170,11 @@
     
     .footer-links {
         display: flex;
+    }
+    
+    .footer-links-mobile {
+        display: none;
+        flex-direction: column;
     }
 
     .footer-blocks-container {
@@ -174,6 +248,12 @@
     
     .footer-information {
         display: flex;
+        align-items: center;
+    }
+    
+    .footer-information-mobile {
+        display: none;
+        flex-direction: column;
         align-items: center;
     }
     
@@ -260,6 +340,53 @@
         
         .info-text-tablet {
             display: block;
+        }
+    }
+
+    @media screen and (max-width: 760px) {
+        .footer-links {
+            display: none;
+        }
+        
+        .footer-links-mobile {
+            display: flex;
+        }
+        
+        .footer-block {
+            margin: 0;
+        }
+        
+        .footer-delimiter {
+            margin-bottom: 0;
+        }
+        
+        .footer-information {
+            display: none;
+        }
+        
+        .footer-information-mobile {
+            display: flex;
+        }
+        
+        .info-text {
+            display: block;
+            margin: 1.5rem 0;
+        }
+        
+        .info-text-tablet {
+            display: none;
+        }
+        
+        .information {
+            margin-bottom: 1.5rem;
+        }
+        
+        .links-container {
+            margin-bottom: 1.5rem;
+        }
+        
+        .payment-info {
+            margin: 0 0 1.5rem 0;
         }
     }
     

@@ -208,6 +208,8 @@
             <img class="main-page-feedback-image-bottom" src="../assets/main/feedback-bottom.svg" alt="">
             <img class="main-page-feedback-image-top-right" src="../assets/main/feedback-right.svg" alt="">
             <img class="main-page-feedback-image-top-right-2" src="../assets/main/feedback-right-2.svg" alt="">
+            <img class="main-page-feedback-image-top-mobile" src="../assets/main/feedback-top-mobile.svg" alt="">
+            <img class="main-page-feedback-image-bottom-mobile" src="../assets/main/feedback-bottom-mobile.svg" alt="">
             <span class="main-section-title feedbacks-cards-title">
                 Отзывы
                 <TextBabel class="text-babel-feedback-wrapper" text="Opiniones"/>
@@ -225,12 +227,13 @@
         <div class="about-container">
             <img class="main-page-about-image-left" src="../assets/main/about-left.svg" alt="">
             <img class="main-page-about-image-right" src="../assets/main/about-right.svg" alt="">
+            <img class="main-page-about-image-right-mobile" src="../assets/main/about-right-mobile.svg" alt="">
             <div class="about-text-container">
-                <span class="main-section-title about-title">
+                <div class="main-section-title about-title">
                     О нас
                     <TextBabel class="text-babel-about-wrapper" text="Nosostros"/>
-                </span>
-                <div class="about-descritpion">
+                </div>
+                <div class="about-description">
                     Считаете, что выучить язык — это долго и скучно?
                     Мы думаем, что это не так. Вы уже знаете, что значит «Hola!»,
                     пробовали хамон и паэлью и хотите узнать больше. Или вы совсем не знакомы с Испанией,
@@ -249,6 +252,14 @@
             </div>
             <div class="about-image-carousel-tablet">
                 <ImageCarousel :image-width=144 :image-height=144 v-bind:images="[getCarouselImgUrl('slide1'), getCarouselImgUrl('slide2'), getCarouselImgUrl('slide3'), 
+                getCarouselImgUrl('slide4'), getCarouselImgUrl('slide5'), getCarouselImgUrl('slide6'), getCarouselImgUrl('slide7'),
+                getCarouselImgUrl('slide8'), getCarouselImgUrl('slide9'), getCarouselImgUrl('slide10'), getCarouselImgUrl('slide11'),
+                getCarouselImgUrl('slide12'), getCarouselImgUrl('slide13'), getCarouselImgUrl('slide14'), getCarouselImgUrl('slide15'), 
+                getCarouselImgUrl('slide16'), getCarouselImgUrl('slide17'), getCarouselImgUrl('slide18'), getCarouselImgUrl('slide19'), 
+                getCarouselImgUrl('slide20'), getCarouselImgUrl('slide21')]"/>
+            </div>
+            <div class="about-image-carousel-mobile">
+                <ImageCarousel :image-width=100 :image-height=100 :images-per-page="3" v-bind:images="[getCarouselImgUrl('slide1'), getCarouselImgUrl('slide2'), getCarouselImgUrl('slide3'), 
                 getCarouselImgUrl('slide4'), getCarouselImgUrl('slide5'), getCarouselImgUrl('slide6'), getCarouselImgUrl('slide7'),
                 getCarouselImgUrl('slide8'), getCarouselImgUrl('slide9'), getCarouselImgUrl('slide10'), getCarouselImgUrl('slide11'),
                 getCarouselImgUrl('slide12'), getCarouselImgUrl('slide13'), getCarouselImgUrl('slide14'), getCarouselImgUrl('slide15'), 
@@ -781,6 +792,20 @@
         top: 8rem;
         z-index: 2   
     }
+    
+    .main-page-feedback-image-top-mobile {
+        position: absolute;
+        width: 100%;
+        display: none;
+    }
+
+    .main-page-feedback-image-bottom-mobile {
+        position: absolute;
+        bottom: 0;
+		left: 0;
+        width: 40%;
+        display: none;
+    }
 
     .feedback-card-wrapper {
         box-shadow: 0 4px 16px 0 rgba(41, 41, 41, 0.15);
@@ -800,6 +825,7 @@
     .feedbacks-card-container {
         display: flex;
         align-items: center;
+        justify-content: center;
         z-index: 2;
         margin-top: 6rem;
     }
@@ -856,6 +882,13 @@
         right: 0; 
         top: 10rem;   
     }
+    .main-page-about-image-right-mobile {
+        position: absolute;
+        right: 0;
+        top: 20rem;
+        width: 50%;
+        display: none;
+    }
 
     .about-text-container {
         display: flex;
@@ -879,7 +912,7 @@
         left: 7rem;
     }
 
-    .about-descritpion {
+    .about-description {
         font-family: GothamPro, sans-serif;
         font-size: 1.6rem;
         line-height: 1.75;
@@ -896,6 +929,13 @@
         height: 20rem;
         width: calc(100% - 3rem);
         margin: 6rem 0 3rem 0;
+    }
+    
+    .about-image-carousel-mobile {
+        display: none;
+        height: 10rem;
+        width: 100%;
+        margin-top: 3rem;
     }
 
     @media screen and (max-width: 1280px) {
@@ -1054,7 +1094,7 @@
             align-self: center;
         }
 
-        .about-descritpion {
+        .about-description {
             font-size: 1.4rem;
         }
         
@@ -1264,6 +1304,103 @@
             
             .teachers-link-button-wrapper {
                 margin-top: 5rem;
+            }
+            
+            .feedback-container {
+                height: 50rem;
+            }
+            
+            .feedbacks-cards-title {
+                margin-top: 5rem;
+            }
+            
+            .text-babel-feedback-wrapper {
+                top: -3.5rem;
+                left: 6rem;
+            }
+            
+            .feedbacks-card-container {
+                margin-top: 2rem;
+            }
+            
+            .main-page-feedback-image-top-left {
+                display: none;
+            }
+            
+            .main-page-feedback-image-bottom {
+                display: none;
+            }
+            
+            .main-page-feedback-image-top-right {
+                display: none;
+            }
+            
+            .main-page-feedback-image-top-right-2 {
+                display: none;
+            }
+
+            .main-page-feedback-image-top-mobile {
+                display: block;
+            }
+
+            .main-page-feedback-image-bottom-mobile {
+                display: block;
+            }
+            
+            .feedbacks-link-button-wrapper {
+                margin-top: 2rem;
+            }
+            
+            .about-container {
+                height: 61rem;
+            }
+            
+            .main-page-about-image-left {
+                display: none;
+            }
+
+            .main-page-about-image-right {
+                display: none;
+            }
+            
+            .about-text-container {
+                width: 100%;
+                align-items: flex-start;
+                margin-top: 0;
+            }
+            
+            .about-description { 
+                font-size: 1.2rem;
+                line-height: 1.5;
+                width: 60%;
+                margin-left: 2rem;
+            }
+            
+            .about-title { 
+                align-self: flex-start;
+                margin: 5rem 0 2.5rem 2rem;
+            }
+            
+            .text-babel-about-wrapper {
+                top: -3.5rem;
+                left: 4rem;
+            }
+            
+            .main-page-about-image-right-mobile {
+                display: block;
+            }
+            
+            .about-image-carousel-tablet {
+                display: none;
+            }
+            
+            .about-image-carousel-mobile {
+                display: block;
+            }
+            
+            .about-link-button-wrapper {
+                margin-top: 6rem;
+                max-width: 28rem;
             }
         }
     }
