@@ -51,7 +51,7 @@
                 <YandexMaps :width=480 :height=360 />
             </div>
             <div class="footer-map-tablet">
-                <YandexMaps />
+                <YandexMaps :height=300 />
             </div>
         </div>
         <div class="footer-links-mobile">

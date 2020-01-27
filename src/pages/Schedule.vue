@@ -1,9 +1,10 @@
 <template>
     <div class="schedule-page-container">
         <div class="schedule-page-header-container">
-            <img style="position: absolute; bottom:14rem; left: 10rem;" src="../assets/schedule/schedule-left.svg"
-                 alt="">
-            <img style="position: absolute; bottom:11rem; right: 0;" src="../assets/schedule/schedule-right.svg" alt="">
+            <img class="schedule-page-left-image" src="../assets/schedule/schedule-left.svg" alt="">
+            <img class="schedule-page-right-image" src="../assets/schedule/schedule-right.svg" alt="">
+            <img class="schedule-page-left-image-tablet" src="../assets/schedule/schedule-left-tablet.svg" alt="">
+            <img class="schedule-page-right-image-tablet" src="../assets/schedule/schedule-right-tablet.svg" alt="">
             <span class="schedule-page-title">
                 Расписание и <span style="color: var(--tomato);">цены</span>
                 <TextBabel class="schedule-page-text-babel-wrapper" text="Horarios y precios"/>
@@ -24,6 +25,8 @@
                              v-bind:language-levels="scheduleSection.scheduleSegments"
             />
         </div>
+        <SignupFormModal @hideModal="hideModal"/>
+        <SignupFormModalTablet @hideModal="hideModalTablet"/>
     </div>
 </template>
 
@@ -31,12 +34,16 @@
 
     import TextBabel from "../components/TextBabel";
     import ScheduleSection from "../components/ScheduleSection";
+    import SignupFormModal from "../components/SignupFormModal";
+    import SignupFormModalTablet from "../components/SignupFormModalTablet";
     import Service from "../service"
 
     export default {
         components: {
             TextBabel,
-            ScheduleSection
+            ScheduleSection,
+            SignupFormModal,
+            SignupFormModalTablet
         },
         data() {
             return {
@@ -47,6 +54,14 @@
             Service.get("schedule", (status, data) => {
                 this.schedule = data;
             })
+        },
+        methods: {
+            hideModal() {
+                this.$modal.hide('signup-form-modal')
+            },
+            hideModalTablet() {
+                this.$modal.hide('signup-form-modal-tablet')
+            }
         }
     }
 </script>
@@ -58,12 +73,40 @@
     }
 
     .schedule-page-header-container {
-        height: 51.5rem;
+        height: 43rem;
         background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 239, 170, 0.3) 55%);
         position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    
+    .schedule-page-left-image {
+        position: absolute; 
+        bottom:6rem; 
+        left: 10rem;
+    }
+    
+    .schedule-page-right-image {
+        position: absolute; 
+        bottom: 2rem; 
+        right: 0;   
+    }
+    
+    .schedule-page-left-image-tablet {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 10rem;
+        width: 25%;
+    }
+    
+    .schedule-page-right-image-tablet {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 10rem;
+        width: 9%;
     }
 
     .schedule-page-title {
@@ -91,6 +134,7 @@
         margin-top: auto;
         border-bottom: 0.4rem solid #ccc0a9;
         box-sizing: border-box;
+        z-index: 1;
     }
 
     .schedule-page-table-header-column-title {
@@ -115,6 +159,47 @@
     
     .schedule-section-wrapper:hover {
         box-shadow: 0 4px 16px 0 rgba(41, 41, 41, 0.15);
+    }
+
+    @media screen and (max-width: 1280px) {
+
+        .schedule-page-header-container {
+            height: 25rem;
+        }
+        
+        .schedule-page-left-image {
+            display: none;
+        }
+        
+        .schedule-page-right-image {
+            display: none;
+        }
+        
+        .schedule-page-left-image-tablet {
+            display: block;
+        }
+
+        .schedule-page-right-image-tablet {
+            display: block;
+        }
+        
+        .schedule-page-title {
+            font-size: 3rem;
+            margin-top: 12rem;
+        }
+        
+        .schedule-page-text-babel-wrapper {
+            top: -3.5rem;
+            left: 38rem;
+        }
+        
+        .schedule-page-table-header {
+            display: none;
+        }
+        
+        .schedule-page-sections-container {
+            margin: 2rem 0 6rem 0;
+        }
     }
 
 </style>

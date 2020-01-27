@@ -1,7 +1,8 @@
 <template>
     <div class="schedule-section-container">
         <span class="schedule-section-title">{{title}}</span>
-        <span class="schedule-section-duration">{{durationDescription}}</span>
+        <span v-if="durationDescription" class="schedule-section-duration">{{durationDescription}}</span>
+        <span v-if="priceDesription" class="schedule-section-price-tablet">{{priceDesription}}</span>
         <ScheduleSectionLevel class="schedule-section-levels-wrapper" v-for="(languageLevel, index) in languageLevels"
                               v-bind:class="{ 'schedule-section-levels-wrapper-border': 
                                       index!==languageLevels.length - 1 }"
@@ -23,6 +24,7 @@
         props: {
             title: String,
             durationDescription: String,
+            priceDesription: String,
             languageLevels: Array
         }
     }
@@ -53,12 +55,32 @@
         margin-top: 1rem;
     }
     
+    .schedule-section-price-tablet {
+        display: none;
+        font-family: GothamPro-Medium, sans-serif;
+        font-size: 1.4rem;
+        color: var(--tomato);
+        margin-top: 1.5rem;
+    }
+    
     .schedule-section-levels-wrapper {
         margin-top: 2rem;
     }
 
     .schedule-section-levels-wrapper-border {
         border-bottom: 0.4rem solid #e5e5e5;
+    }
+
+    @media screen and (max-width: 1280px) {
+        .schedule-section-container {
+            min-height: 14.5rem;
+            width: calc(100% - 8.8rem);
+        }
+        
+        .schedule-section-price-tablet {
+            display: block;
+        }
+      
     }
     
 </style>

@@ -17,7 +17,8 @@
         <div class="signup-legal-text">Нажимая на кнопку я соглашаюсь с 
             <router-link class="signup-legal-link" to="/policy">Политикой конфиденциальности</router-link>
         </div>
-        <ThankYouModal @hideModal="hideModal" />
+        <ThankYouModal class="thank-you-modal" @hideModal="hideModal" />
+        <ThankYouModal class="thank-you-modal-tablet" :width="680" @hideModal="hideModal" />
     </div>
     <div v-else-if="type === 'contact'" class="signup-container signup-container-contacts">
          <span class="signup-title">
@@ -79,6 +80,8 @@
                 this.$modal.show('thank-you-modal')
             },
             hideModal() {
+                this.$modal.hide('signup-form-modal');
+                this.$modal.hide('signup-form-modal-tablet');
                 this.$modal.hide('thank-you-modal')
             }
         }
@@ -197,9 +200,14 @@
         color: var(--tomato); 
         text-decoration: none;
     }
+    
+    .thank-you-modal-tablet {
+        display: none;
+    }
 
     @media screen and (max-width: 1280px) {
         .signup-container {
+            min-width: 60rem;
             width: 68rem;
             height: 36.5rem;
             background-image: url('../assets/signup-form/signup-form-contacts-background.png');
@@ -226,13 +234,22 @@
             margin: 1rem 0 0 0;
             width: 50rem;
         }
+        
+        .thank-you-modal {
+            display: none;
+        }
+        
+        .thank-you-modal-tablet {
+            display: block;
+        }
     }
 
     @media screen and (max-width: 760px) {
         .signup-container {
             padding: 2rem;
             height: 27.5rem;
-            width: calc(100% - 4rem);
+            width: calc(100% - 10rem);
+            min-width: 28rem;
         }
         
         .signup-title {

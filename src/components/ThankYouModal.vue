@@ -3,8 +3,8 @@
            :classes="['thank-you-modal-container']"
            @before-open="beforeOpen"
            @before-close="beforeClose"
-           :width="1270"
-           :height="250">
+           :width=this.width
+           :height=this.height>
         <div class="thank-you-modal">
             <span class="thank-you-modal-title">Ваша заявка принята!</span>
             <span class="thank-you-modal-description">
@@ -21,7 +21,7 @@
 
 <script>
     export default {
-        methods : {
+        methods: {
             hideModal() {
                 this.$emit("hideModal")
             },
@@ -30,6 +30,16 @@
             },
             beforeClose() {
                 document.documentElement.style.overflow = 'auto'
+            }
+        },
+        props: {
+            width: {
+                type: String,
+                default: "1270"
+            },
+            height: {
+                type: String,
+                default: "250"
             }
         }
     }
@@ -102,6 +112,12 @@
         right: 3.5rem;
         top: 3.5rem;
         cursor:  pointer;
+    }
+
+    @media screen and (max-width: 1280px) {
+        .thank-you-modal {
+            width: 68rem;
+        }
     }
     
 </style>

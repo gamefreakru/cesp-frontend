@@ -15,6 +15,13 @@
         <div class="schedule-section-level-item-time-info-container">
             <span class="schedule-section-level-item-time">{{timeString}}</span>
             <span class="schedule-section-level-item-days">{{days}}</span>
+            <div class="schedule-section-level-item-signup-tablet">
+                <div @click="showModalTablet" v-if="isAvailable" class="schedule-section-level-item-signup-container">
+                    <span class="schedule-section-level-item-signup-title">Записаться</span>
+                    <img class="schedule-section-level-item-signup-arrow-image" src="../assets/common/arrow.svg" alt="arrow"/>
+                </div>
+                <span v-else class="schedule-section-level-item-closed">набор закрыт</span>
+            </div>
         </div>
         <span class="schedule-section-level-item-start-date">{{startDate | moment("DD.MM.YYYY")}}</span>
         <div class="schedule-section-level-item-price-container">
@@ -25,10 +32,10 @@
             </span>
                 <span class="schedule-section-level-item-price">{{price}}</span>
             </div>
-            <router-link to="/contacts" v-if="isAvailable" class="schedule-section-level-item-signup-container">
+            <div @click="showModal" v-if="isAvailable" class="schedule-section-level-item-signup-container">
                 <span class="schedule-section-level-item-signup-title">Записаться</span>
                 <img class="schedule-section-level-item-signup-arrow-image" src="../assets/common/arrow.svg" alt="arrow"/>
-            </router-link>
+            </div>
             <span v-else class="schedule-section-level-item-closed">набор закрыт</span>
         </div>
     </div>
@@ -56,6 +63,14 @@
             },
             discountString: function() {
                 return 'скидка ' + this.discountValue + '%';
+            }
+        },
+        methods: {
+            showModal() {
+                this.$modal.show('signup-form-modal')
+            },
+            showModalTablet() {
+                this.$modal.show('signup-form-modal-tablet')
             }
         }
     }
@@ -136,6 +151,12 @@
         margin: 0.2rem 0;
     }
     
+    .schedule-section-level-item-signup-tablet {
+        display: none;
+        margin-top: 1rem;
+        cursor: pointer;
+    }
+    
     .schedule-section-level-item-start-date {
         font-family: GothamPro, sans-serif;
         font-size: 1.4rem;
@@ -196,6 +217,7 @@
         margin-left: auto;
         text-decoration: none;
         color: black;
+        cursor: pointer;
     }
     
     .schedule-section-level-item-signup-title {
@@ -213,6 +235,39 @@
         font-size: 1.4rem;
         align-self: flex-start;
         margin-left: auto;
+    }
+
+    @media screen and (max-width: 1280px) {
+        .schedule-section-level-item-container {
+            padding: 2rem 0;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+        
+        .schedule-section-level-item-start-date {
+            display: none;
+        }
+        
+        .schedule-section-level-item-price-container {
+            display: none;
+        }
+        
+        .schedule-section-level-item-time-info-container {
+            margin-left: 0;
+            width: 50%;
+        }
+        
+        .schedule-section-level-item-teacher-container {
+            width: 50%;
+        }
+        
+        .schedule-section-level-item-teacher-photo {
+            margin-left: 2rem;
+        }
+        
+        .schedule-section-level-item-signup-tablet {
+            display: block;
+        }
     }
     
 </style>
