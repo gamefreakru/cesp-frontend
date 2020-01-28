@@ -137,5 +137,34 @@
         line-height: 1.71;
         margin-top: 2.5rem;
     }
+
+    @media screen and (max-width: 760px) {
+        
+        .teacher-card-container {
+            height: 36rem;
+        }
+        
+        .teacher-card-image {
+            width: 10.8rem;
+            min-width: 10.8rem;
+            height: 13.5rem;
+            min-height: 13.5rem;
+        }
+        
+        .teacher-card-title {
+            font-size: 1.6rem;
+            margin-top: 1.5rem;
+        }
+        
+        .teacher-card-city {
+            font-size: 1.2rem;
+        }
+        
+        .teacher-card-description {
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+        
+    }
     
 </style>

@@ -1,10 +1,10 @@
 <template>
-    <modal  name="teacher-modal" 
+    <modal name="teacher-modal" 
             :classes="['teacher-modal-container']"
             @before-open="beforeOpen"
             @before-close="beforeClose"
-            :width="1240"
-            :height="630">
+            :width=this.width
+            :height=this.height>
         <div class="teacher-modal" role="dialog">
             <img v-if="image" class="teacher-modal-image" :src="image" :alt="name">
             <img v-else class="teacher-modal-image" src="../assets/teachers/teacher-default.svg" :alt="name">
@@ -12,17 +12,37 @@
                 <span class="teacher-modal-info-name">{{name}}</span>
                 <span class="teacher-modal-info-city">{{city}}</span>
                 <div class="teacher-modal-info-languages-container">
-                    <span class="teacher-modal-info-language" 
+                    <div class="teacher-modal-info-language" 
                           v-for="(language, index) in languages" 
                           :class="language.color" 
                           v-bind:key="index">
                         {{language.name}}
-                    </span>
+                    </div>
                 </div>
                 <div class="teacher-modal-info-descritption">
                     {{description}}
                 </div>
             </div>
+            <img class="teacher-modal-close-image" @click="hideModal" src="../assets/common/cross.svg" alt="close">
+        </div>
+        <div class="teacher-modal-tablet" role="dialog">
+            <div class="teacher-modal-tablet-header-container">
+                <img v-if="image" class="teacher-modal-image" :src="image" :alt="name">
+                <img v-else class="teacher-modal-image" src="../assets/teachers/teacher-default.svg" :alt="name">
+                <div class="teacher-modal-info-container">
+                    <span class="teacher-modal-info-name">{{name}}</span>
+                    <span class="teacher-modal-info-city">{{city}}</span>
+                    <div class="teacher-modal-info-languages-container">
+                        <div class="teacher-modal-info-language"
+                              v-for="(language, index) in languages"
+                              :class="language.color"
+                              v-bind:key="index">
+                            {{language.name}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="teacher-modal-info-descritption">{{description}}</div>
             <img class="teacher-modal-close-image" @click="hideModal" src="../assets/common/cross.svg" alt="close">
         </div>
     </modal>
@@ -35,7 +55,15 @@
             name: String,
             city: String,
             languages: Array,
-            description: String
+            description: String,
+            width: {
+                type: String,
+                default: "1240"
+            },
+            height: {
+                type: String,
+                default: "630"
+            }
         },
         methods : {
             hideModal() {
@@ -73,6 +101,19 @@
         display: flex;
         align-items: flex-start;
         padding: 9rem 12rem;
+        box-sizing: border-box;
+        position: relative;
+        box-shadow: 0 4px 16px 0 rgba(41, 41, 41, 0.15);
+        border-radius: 0.8rem;
+    }
+    
+    .teacher-modal-tablet {
+        display: none;
+        width: 60rem;
+        height: 76rem;
+        padding: 5rem 6rem 1rem;
+        background-color: white;
+        align-items: flex-start;
         box-sizing: border-box;
         position: relative;
         box-shadow: 0 4px 16px 0 rgba(41, 41, 41, 0.15);
@@ -144,6 +185,92 @@
         right: 2rem;
         top: 2rem;
         cursor:  pointer;
+    }
+
+    @media screen and (max-width: 1280px) {
+        
+        .teacher-modal {
+            display: none;
+        }
+        
+        .teacher-modal-tablet {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .teacher-modal-image {
+            width: 18rem;
+            height: 22.4rem;
+            min-width: 18rem;
+            min-height: 22.4rem;
+        }
+        
+        .teacher-modal-info-container {
+            margin-left: 3rem;
+        }
+        
+        .teacher-modal-tablet-header-container {
+            display: flex;
+            align-items: flex-end;
+        }
+        
+        .teacher-modal-info-descritption {
+            margin-top: 4rem;
+        }
+        
+    }
+
+    @media screen and (max-width: 760px) {
+        
+        .teacher-modal-tablet {
+            width: 30rem;
+            height: 48rem;
+            padding: 3rem 2rem;
+        }
+        
+        .teacher-modal-image {
+            width: 10.8rem;
+            height: 13.5rem;
+            min-width: 10.8rem;
+            min-height: 13.5rem;
+        }
+        
+        .teacher-modal-info-container {
+            margin-left: 2rem;
+        }
+        
+        .teacher-modal-info-name {
+            font-size: 1.6rem;
+        }
+
+        .teacher-modal-info-city {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+        
+        .teacher-modal-info-languages-container {
+            margin-top: 1rem;
+            flex-direction: column;
+        }
+
+        .teacher-modal-info-language {
+            margin: 0.4rem 0;
+        }
+        
+        .teacher-modal-info-language:first-child {
+            margin-top: 0;
+        }
+        
+        .teacher-modal-info-language:last-child {
+            margin-bottom: 0;
+        }
+        
+        .teacher-modal-info-descritption {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin-top: 1rem;
+        }
+        
     }
 
 </style>

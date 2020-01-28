@@ -19,10 +19,10 @@
         </div>
         <div class="schedule-page-sections-container">
             <ScheduleSection class="schedule-section-wrapper" v-for="(scheduleSection, index) in schedule"
-                             v-bind:key="index"
-                             v-bind:title="scheduleSection.name"
-                             v-bind:duration-description="scheduleSection.description"
-                             v-bind:language-levels="scheduleSection.scheduleSegments"
+                             :key="index"
+                             :title="scheduleSection.name"
+                             :duration-description="scheduleSection.description"
+                             :language-levels="scheduleSection.scheduleSegments"
             />
         </div>
         <SignupFormModal @hideModal="hideModal('signup-form-modal')"/>
