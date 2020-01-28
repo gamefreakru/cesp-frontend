@@ -19,6 +19,7 @@
         </div>
         <ThankYouModal class="thank-you-modal" @hideModal="hideModal" />
         <ThankYouModal class="thank-you-modal-tablet" :width="680" @hideModal="hideModal" />
+        <ThankYouModal class="thank-you-modal-phone" :width="280" :height="180" @hideModal="hideModal" />
     </div>
     <div v-else-if="type === 'contact'" class="signup-container signup-container-contacts">
          <span class="signup-title">
@@ -82,6 +83,7 @@
             hideModal() {
                 this.$modal.hide('signup-form-modal');
                 this.$modal.hide('signup-form-modal-tablet');
+                this.$modal.hide('signup-form-modal-phone');
                 this.$modal.hide('thank-you-modal')
             }
         }
@@ -204,6 +206,10 @@
     .thank-you-modal-tablet {
         display: none;
     }
+    
+    .thank-you-modal-phone {
+        display: none;
+    }
 
     @media screen and (max-width: 1280px) {
         .signup-container {
@@ -291,6 +297,14 @@
 
         .signup-legal-link {
             font-size: 1.1rem;
+        }
+
+        .thank-you-modal-tablet {
+            display: none;
+        }
+        
+        .thank-you-modal-phone {
+            display: block;
         }
     }
     

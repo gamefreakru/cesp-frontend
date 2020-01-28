@@ -25,8 +25,9 @@
                              v-bind:language-levels="scheduleSection.scheduleSegments"
             />
         </div>
-        <SignupFormModal @hideModal="hideModal"/>
-        <SignupFormModalTablet @hideModal="hideModalTablet"/>
+        <SignupFormModal @hideModal="hideModal('signup-form-modal')"/>
+        <SignupFormModalTablet @hideModal="hideModal('signup-form-modal-tablet')"/>
+        <SignupFormModalPhone @hideModal="hideModal('signup-form-modal-phone')"/>
     </div>
 </template>
 
@@ -36,6 +37,7 @@
     import ScheduleSection from "../components/ScheduleSection";
     import SignupFormModal from "../components/SignupFormModal";
     import SignupFormModalTablet from "../components/SignupFormModalTablet";
+    import SignupFormModalPhone from "../components/SignupFormModalPhone";
     import Service from "../service"
 
     export default {
@@ -43,7 +45,8 @@
             TextBabel,
             ScheduleSection,
             SignupFormModal,
-            SignupFormModalTablet
+            SignupFormModalTablet,
+            SignupFormModalPhone
         },
         data() {
             return {
@@ -56,11 +59,8 @@
             })
         },
         methods: {
-            hideModal() {
-                this.$modal.hide('signup-form-modal')
-            },
-            hideModalTablet() {
-                this.$modal.hide('signup-form-modal-tablet')
+            hideModal(name) {
+                this.$modal.hide(name)
             }
         }
     }
@@ -199,6 +199,32 @@
         
         .schedule-page-sections-container {
             margin: 2rem 0 6rem 0;
+        }
+    }
+
+    @media screen and (max-width: 760px) {
+        
+        .schedule-page-left-image-tablet {
+            display: none;
+        }
+
+        .schedule-page-right-image-tablet {
+            display: none;
+        }
+        
+        .schedule-page-header-container {
+            margin-top: 13.2rem;
+            height: 13rem;
+        }
+        
+        .schedule-page-title {
+            font-size: 2.2rem;
+            width: 15rem;
+            margin-top: 5rem;
+        }
+        
+        .schedule-page-text-babel-wrapper {
+            left: 11.5rem;
         }
     }
 

@@ -72,6 +72,7 @@
     }
 
     @media screen and (max-width: 1280px) {
+        
         .schedule-section-container {
             min-height: 14.5rem;
             width: calc(100% - 8.8rem);
@@ -82,5 +83,23 @@
         }
       
     }
-    
+
+    @media screen and (max-width: 760px) {
+        
+        .schedule-section-container {
+            min-height: 13rem;
+            width: calc(100% - 4rem);
+            padding: 1.6rem;
+            border-radius: 0.8rem;
+        }
+        
+        .schedule-section-title {
+            font-size: 1.4rem;
+        }
+        
+        .schedule-section-duration {
+            font-size: 1.2rem;
+        }
+    }
+
 </style>

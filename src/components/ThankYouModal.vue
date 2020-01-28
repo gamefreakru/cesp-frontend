@@ -115,9 +115,41 @@
     }
 
     @media screen and (max-width: 1280px) {
+        
         .thank-you-modal {
             width: 68rem;
         }
+        
+    }
+
+    @media screen and (max-width: 760px) {
+        
+        .thank-you-modal {
+            width: 28rem;
+            height: 18rem;
+            padding: 3rem 0;
+        }
+        
+        .thank-you-modal-close-image {
+            right: 1rem;
+            top: 1rem;
+        }
+        
+        .thank-you-modal-title {
+            font-size: 2rem;
+            width: 25rem;
+            text-align: center;
+        }
+        
+        .thank-you-modal-description {
+            font-size: 1.4rem;
+            width: 25rem;
+        }
+        
+        .thank-you-modal-button-container {
+            width: 25rem;
+        }
+        
     }
     
 </style>

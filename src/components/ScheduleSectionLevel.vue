@@ -80,5 +80,16 @@
             margin-left: 4rem;
         }
     }
+
+    @media screen and (max-width: 760px) {
+        
+        .schedule-section-level-title {
+            font-size: 1.2rem;
+        }
+        
+        .schedule-section-level-item-wrapper-tablet {
+            margin-left: 1.6rem;
+        }
+    }
     
 </style>

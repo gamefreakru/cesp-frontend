@@ -942,11 +942,11 @@
         .arrow-element {
             display: none;
         }
-        
+
         .main-page-background-image-right {
             width: 73rem;
         }
-        
+
         .main-page-background-image-left {
             width: 40rem;
             height: 40rem;
@@ -954,48 +954,48 @@
             right: 50rem;
             border-radius: 40rem;
         }
-        
+
         .information-container {
             height: 58rem;
         }
-        
+
         .title-block-container {
             top: 11rem;
         }
-        
+
         .info-block-circle-container {
             top: 27rem;
         }
-        
+
         /deep/ .info-block-circle-item {
             margin: 0 5rem;
         }
-        
+
         /deep/ .info-block-circle {
             height: 18rem;
             width: 18rem;
         }
-        
+
         /deep/ .info-block-circle-title {
             font-size: 3.6rem;
             width: 15rem;
         }
-        
+
         /deep/ .info-block-circle-description {
             font-family: FedraSerifAPro, sans-serif;
             font-size: 1.6rem;
             max-width: 13rem;
         }
-        
+
         .main-page-group-recruitment-background-image {
             display: none;
         }
-        
+
         .group-recruitment-container {
             background-image: none;
             height: 35rem;
         }
-        
+
         .group-recruitment-information-container {
             margin-left: auto;
             margin-right: auto;
@@ -1005,27 +1005,27 @@
             width: calc(100% - 10rem);
             align-items: center;
         }
-        
+
         .group-recruitment-link-button-wrapper {
             align-self: center;
         }
-        
+
         .signup-form-wrapper {
             top: 40rem;
         }
-        
+
         .events-container {
             height: 123rem;
         }
-        
+
         .events-title {
             margin-top: 50rem;
         }
-        
+
         .event-card-wrapper {
             display: none;
         }
-        
+
         .event-card-wrapper-tablet {
             display: block;
         }
@@ -1033,19 +1033,19 @@
         .courses-container {
             height: 75rem;
         }
-        
+
         .courses-card-container {
-            display: none;    
+            display: none;
         }
-        
+
         .courses-card-container-tablet {
             display: flex;
         }
-        
+
         .teacher-card-wrapper {
             display: none;
         }
-        
+
         .teacher-card-wrapper-tablet {
             display: block;
         }
@@ -1053,7 +1053,7 @@
         .feedback-container {
             height: 65rem;
         }
-        
+
         .main-page-feedback-image-top-left {
             width: 50%;
         }
@@ -1061,7 +1061,7 @@
         .main-page-feedback-image-bottom {
             width: calc(100% - 5rem);
         }
-        
+
         .main-page-feedback-image-top-right {
             width: 50%;
         }
@@ -1071,11 +1071,11 @@
             top: -3rem;
             right: 2rem;
         }
-        
+
         .about-container {
             height: 80rem;
         }
-        
+
         .main-page-about-image-left {
             width: 50%;
             top: 10rem;
@@ -1084,12 +1084,12 @@
         .main-page-about-image-right {
             width: 50%;
         }
-        
+
         .about-text-container {
             margin-left: 0;
             width: 40%;
         }
-        
+
         .about-title {
             align-self: center;
         }
@@ -1097,311 +1097,311 @@
         .about-description {
             font-size: 1.4rem;
         }
-        
+
         .about-image-carousel {
             display: none;
         }
-        
+
         .about-image-carousel-tablet {
             display: block;
         }
+    }
         
-        @media screen and (max-width: 760px) {
-            .information-container {
-                margin-top: 13.2rem;
-                height: 42rem;
-            }
-            
-            .main-page-background-image-left {
-                display: none;
-            }
-            
-            .main-page-background-image-right {
-                display:none;
-            }
-            
-            .main-page-background-image-right-mobile {
-                display: block;
-                width: 100%;
-                height: 42rem;
-                object-fit: cover;
-                position: absolute;
-            }
-            
-            .title-block-container {
-                top: 3.5rem;
-            }
-            
-            .title-block {
-                display: none;
-            }
-            
-            .title-block-mobile {
-                display: block;
-                font-family: FedraSerifAPro-Medium, sans-serif;
-                font-size: 2.2rem;
-                background-color: white;
-                border-radius: 0.4rem;
-                padding: 0.1rem 1rem;
-                margin: -0.2rem 0;
-            }
-            
-            .info-block-circle-container {
-                display: none;
-            }
-            
-            .main-page-top-carousel-mobile {
-                display: block;
-                position: absolute;
-                height: 21rem;
-                top: 19rem;
-            }
-            
-            /deep/ .info-block-circle-item {
-                height: 18rem;
-            }
-            
-            .group-recruitment-container {
-                height: 48rem;
-                background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 239, 170, 0.3) 55%);
-            }
+    @media screen and (max-width: 760px) {
+        .information-container {
+            margin-top: 13.2rem;
+            height: 42rem;
+        }
+        
+        .main-page-background-image-left {
+            display: none;
+        }
+        
+        .main-page-background-image-right {
+            display:none;
+        }
+        
+        .main-page-background-image-right-mobile {
+            display: block;
+            width: 100%;
+            height: 42rem;
+            object-fit: cover;
+            position: absolute;
+        }
+        
+        .title-block-container {
+            top: 3.5rem;
+        }
+        
+        .title-block {
+            display: none;
+        }
+        
+        .title-block-mobile {
+            display: block;
+            font-family: FedraSerifAPro-Medium, sans-serif;
+            font-size: 2.2rem;
+            background-color: white;
+            border-radius: 0.4rem;
+            padding: 0.1rem 1rem;
+            margin: -0.2rem 0;
+        }
+        
+        .info-block-circle-container {
+            display: none;
+        }
+        
+        .main-page-top-carousel-mobile {
+            display: block;
+            position: absolute;
+            height: 21rem;
+            top: 19rem;
+        }
+        
+        /deep/ .info-block-circle-item {
+            height: 18rem;
+        }
+        
+        .group-recruitment-container {
+            height: 48rem;
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 239, 170, 0.3) 55%);
+        }
 
-            .group-recruitment-information-container {
-                width: calc(100% - 4rem);
-                top: 2rem;
-            }
-            
-            .main-page-group-recruitment-background-image {
-                display: none;
-            }
-            
-            .group-recruitment-information-discount-container {
-                display: none
-            }
-            
-            .group-recruitment-information-discount-container-mobile {
-                display: grid;
-                grid-template-columns: auto auto;
-                grid-gap: 1.5rem 2rem;
-            }
-            
-            .group-recruitment-information-title {
-                font-size: 1.8rem;
-                margin-bottom: 1.5rem;
-                width: calc(100% - 3rem);
-            }
-            
-            .group-recruitment-information-description {
-                font-size: 1.4rem;
-                width: calc(100% - 1.5rem);
-                margin-bottom: 1.5rem;
-            }
-            
-            .group-recruitment-information-discount-value {
-                font-size: 3.6rem;
-                text-align: right;
-            }
-            
-            .group-recruitment-information-discount-description {
-                font-size: 1.4rem;
-                line-height: 1.29;
-                margin: 0;
-            }
-            
-            .signup-form-wrapper {
-                top: 34rem;
-            }
-            
-            .group-recruitment-link-button-wrapper {
-                margin-top: 2.5rem;
-            }
-            
-            .main-section-title {
-                font-size: 1.8rem;
-            }
-            
-            .text-babel-events-wrapper {
-                left: 10rem;
-                top: -3.5rem;
-            }
+        .group-recruitment-information-container {
+            width: calc(100% - 4rem);
+            top: 2rem;
+        }
+        
+        .main-page-group-recruitment-background-image {
+            display: none;
+        }
+        
+        .group-recruitment-information-discount-container {
+            display: none
+        }
+        
+        .group-recruitment-information-discount-container-mobile {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-gap: 1.5rem 2rem;
+        }
+        
+        .group-recruitment-information-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            width: calc(100% - 3rem);
+        }
+        
+        .group-recruitment-information-description {
+            font-size: 1.4rem;
+            width: calc(100% - 1.5rem);
+            margin-bottom: 1.5rem;
+        }
+        
+        .group-recruitment-information-discount-value {
+            font-size: 3.6rem;
+            text-align: right;
+        }
+        
+        .group-recruitment-information-discount-description {
+            font-size: 1.4rem;
+            line-height: 1.29;
+            margin: 0;
+        }
+        
+        .signup-form-wrapper {
+            top: 34rem;
+        }
+        
+        .group-recruitment-link-button-wrapper {
+            margin-top: 2.5rem;
+        }
+        
+        .main-section-title {
+            font-size: 1.8rem;
+        }
+        
+        .text-babel-events-wrapper {
+            left: 10rem;
+            top: -3.5rem;
+        }
 
-            .events-container {
-                height: 65rem;
-            }
-            
-            .events-title {
-                margin-top: 20rem;
-            }
-            
-            .events-card-container {
-                margin-top: 2.5rem;
-            }
-            
-            .event-card-wrapper-tablet {
-                display: none;
-            }
+        .events-container {
+            height: 65rem;
+        }
+        
+        .events-title {
+            margin-top: 20rem;
+        }
+        
+        .events-card-container {
+            margin-top: 2.5rem;
+        }
+        
+        .event-card-wrapper-tablet {
+            display: none;
+        }
 
-            .event-card-wrapper-mobile {
-                display: block;
-            }
-            
-            .events-link-button-wrapper {
-                margin-top: 2rem;
-            }
-            
-            .courses-container {
-                background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 239, 170, 0.3) 55%);
-                background-color: white;
-                height: 52rem;
-            }
-            
-            .courses-card-container-tablet {
-                display: none;
-            }
-            
-            .courses-card-container-mobile {
-                display: flex;
-            }
-            
-            .courses-cards-title {
-                margin-top: 5rem;
-                margin-bottom: 3.5rem;
-            }
-            
-            .text-babel-courses-wrapper {
-                left: 18rem;
-                top: -3.5rem;
-            }
-            
-            .course-card-wrapper {
-                margin: 0;
-            }
-            
-            .courses-link-button-wrapper {
-                margin-top: 2rem;
-            }
-            
-            .teachers-container {
-                height: 75rem;
-            }
-            
-            .teacher-card-wrapper-tablet {
-                display: none;
-            }
+        .event-card-wrapper-mobile {
+            display: block;
+        }
+        
+        .events-link-button-wrapper {
+            margin-top: 2rem;
+        }
+        
+        .courses-container {
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 239, 170, 0.3) 55%);
+            background-color: white;
+            height: 52rem;
+        }
+        
+        .courses-card-container-tablet {
+            display: none;
+        }
+        
+        .courses-card-container-mobile {
+            display: flex;
+        }
+        
+        .courses-cards-title {
+            margin-top: 5rem;
+            margin-bottom: 3.5rem;
+        }
+        
+        .text-babel-courses-wrapper {
+            left: 18rem;
+            top: -3.5rem;
+        }
+        
+        .course-card-wrapper {
+            margin: 0;
+        }
+        
+        .courses-link-button-wrapper {
+            margin-top: 2rem;
+        }
+        
+        .teachers-container {
+            height: 75rem;
+        }
+        
+        .teacher-card-wrapper-tablet {
+            display: none;
+        }
 
-            .teacher-card-wrapper-mobile {
-                display: flex;
-            }
-            
-            .teachers-title {
-                margin-top: 5rem;
-            }
-            
-            .text-babel-teachers-wrapper {
-                left: 19rem;
-                top: -3.5rem;
-            }
-            
-            .teachers-link-button-wrapper {
-                margin-top: 5rem;
-            }
-            
-            .feedback-container {
-                height: 50rem;
-            }
-            
-            .feedbacks-cards-title {
-                margin-top: 5rem;
-            }
-            
-            .text-babel-feedback-wrapper {
-                top: -3.5rem;
-                left: 6rem;
-            }
-            
-            .feedbacks-card-container {
-                margin-top: 2rem;
-            }
-            
-            .main-page-feedback-image-top-left {
-                display: none;
-            }
-            
-            .main-page-feedback-image-bottom {
-                display: none;
-            }
-            
-            .main-page-feedback-image-top-right {
-                display: none;
-            }
-            
-            .main-page-feedback-image-top-right-2 {
-                display: none;
-            }
+        .teacher-card-wrapper-mobile {
+            display: flex;
+        }
+        
+        .teachers-title {
+            margin-top: 5rem;
+        }
+        
+        .text-babel-teachers-wrapper {
+            left: 19rem;
+            top: -3.5rem;
+        }
+        
+        .teachers-link-button-wrapper {
+            margin-top: 5rem;
+        }
+        
+        .feedback-container {
+            height: 50rem;
+        }
+        
+        .feedbacks-cards-title {
+            margin-top: 5rem;
+        }
+        
+        .text-babel-feedback-wrapper {
+            top: -3.5rem;
+            left: 6rem;
+        }
+        
+        .feedbacks-card-container {
+            margin-top: 2rem;
+        }
+        
+        .main-page-feedback-image-top-left {
+            display: none;
+        }
+        
+        .main-page-feedback-image-bottom {
+            display: none;
+        }
+        
+        .main-page-feedback-image-top-right {
+            display: none;
+        }
+        
+        .main-page-feedback-image-top-right-2 {
+            display: none;
+        }
 
-            .main-page-feedback-image-top-mobile {
-                display: block;
-            }
+        .main-page-feedback-image-top-mobile {
+            display: block;
+        }
 
-            .main-page-feedback-image-bottom-mobile {
-                display: block;
-            }
-            
-            .feedbacks-link-button-wrapper {
-                margin-top: 2rem;
-            }
-            
-            .about-container {
-                height: 61rem;
-            }
-            
-            .main-page-about-image-left {
-                display: none;
-            }
+        .main-page-feedback-image-bottom-mobile {
+            display: block;
+        }
+        
+        .feedbacks-link-button-wrapper {
+            margin-top: 2rem;
+        }
+        
+        .about-container {
+            height: 61rem;
+        }
+        
+        .main-page-about-image-left {
+            display: none;
+        }
 
-            .main-page-about-image-right {
-                display: none;
-            }
-            
-            .about-text-container {
-                width: 100%;
-                align-items: flex-start;
-                margin-top: 0;
-            }
-            
-            .about-description { 
-                font-size: 1.2rem;
-                line-height: 1.5;
-                width: 60%;
-                margin-left: 2rem;
-            }
-            
-            .about-title { 
-                align-self: flex-start;
-                margin: 5rem 0 2.5rem 2rem;
-            }
-            
-            .text-babel-about-wrapper {
-                top: -3.5rem;
-                left: 4rem;
-            }
-            
-            .main-page-about-image-right-mobile {
-                display: block;
-            }
-            
-            .about-image-carousel-tablet {
-                display: none;
-            }
-            
-            .about-image-carousel-mobile {
-                display: block;
-            }
-            
-            .about-link-button-wrapper {
-                margin-top: 6rem;
-                max-width: 28rem;
-            }
+        .main-page-about-image-right {
+            display: none;
+        }
+        
+        .about-text-container {
+            width: 100%;
+            align-items: flex-start;
+            margin-top: 0;
+        }
+        
+        .about-description { 
+            font-size: 1.2rem;
+            line-height: 1.5;
+            width: 60%;
+            margin-left: 2rem;
+        }
+        
+        .about-title { 
+            align-self: flex-start;
+            margin: 5rem 0 2.5rem 2rem;
+        }
+        
+        .text-babel-about-wrapper {
+            top: -3.5rem;
+            left: 4rem;
+        }
+        
+        .main-page-about-image-right-mobile {
+            display: block;
+        }
+        
+        .about-image-carousel-tablet {
+            display: none;
+        }
+        
+        .about-image-carousel-mobile {
+            display: block;
+        }
+        
+        .about-link-button-wrapper {
+            margin-top: 6rem;
+            max-width: 28rem;
         }
     }
 
