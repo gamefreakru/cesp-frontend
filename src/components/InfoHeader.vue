@@ -75,11 +75,12 @@
 <script>
     export default {
         props: {
-            textColor: String
+            textColor: String,
+            backgroundColor: String
         },
         computed: {
             style() {
-                return "color: " + this.textColor;
+                return "color: " + this.textColor + ";background-color: " + this.backgroundColor;
             }
         }
     }

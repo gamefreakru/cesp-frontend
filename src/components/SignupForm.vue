@@ -27,12 +27,12 @@
             <span style="color: var(--tomato)">Напишите </span>
             нам.
         </span>
-        <div class="signup-form-container">
+        <div class="signup-form-container signup-form-container-contacts">
             <form @submit.prevent="submit">
-                <input type="text" v-model="name" class="signup-form-input" style="margin-right: 2rem;" placeholder="Ваше имя (обязательно)">
-                <input type="text" v-model="contact" class="signup-form-input" style="margin-left: 2rem;" placeholder="Телефон (обязательно)">
+                <input type="text" v-model="name" class="signup-form-input signup-form-text-input-contacts" style="margin-right: 2rem;" placeholder="Ваше имя (обязательно)">
+                <input type="text" v-model="contact" class="signup-form-input signup-form-text-input-contacts" style="margin-left: 2rem;" placeholder="Телефон (обязательно)">
                 <textarea v-model="message" class="signup-form-input signup-form-input-contacts" style="margin: 3rem 2rem 0 2rem;" placeholder="Напишите ваш вопрос здесь"></textarea>
-                <button type="submit" onsubmit="ym(52043682, 'reachGoal', 'send'); return true;" class="signup-form-button" style="margin-left: 2rem; margin-top: 3rem;">
+                <button type="submit" onsubmit="ym(52043682, 'reachGoal', 'send'); return true;" class="signup-form-button signup-form-button-contacts" style="margin-left: 2rem; margin-top: 3rem;">
                     Отправить
                 </button>
             </form>
@@ -40,7 +40,8 @@
         <div class="signup-legal-text signup-legal-text-contacts">Нажимая на кнопку я соглашаюсь с
             <router-link class="signup-legal-link" to="/policy">Политикой конфиденциальности</router-link>
         </div>
-        <ThankYouModal @hideModal="hideModal" />
+        <ThankYouModal class="thank-you-modal" @hideModal="hideModal" />
+        <ThankYouModal class="thank-you-modal-tablet" :width="680" @hideModal="hideModal" />
     </div>
 </template>
 
@@ -222,6 +223,10 @@
         .signup-form-container {
             flex-direction: column;
         }
+        
+        .signup-form-container-contacts {
+            margin-top: 1.5rem !important;
+        }
 
         .signup-form-submit-container {
             flex-direction: column;
@@ -247,6 +252,25 @@
         
         .thank-you-modal-tablet {
             display: block;
+        }
+
+        .signup-form-text-input-contacts {
+            width: 30rem;
+            margin: 0 1rem !important;
+        }
+        
+        .signup-form-input-contacts {
+            margin-top: 2rem !important;
+            width: 62rem !important;
+            height: 15.5rem !important;
+        }
+        
+        .signup-form-button-contacts {
+            margin-top: 2rem !important;
+        }
+        
+        .signup-legal-text-contacts {
+            margin-top: 0.5rem !important;
         }
     }
 

@@ -1,8 +1,8 @@
 <template>
     <div class="contacts-page-container">
         <div class="contacts-page-header">
-            <img style="position: absolute; bottom:0; left: 8rem;" src="../assets/contacts/contacts-left.svg" alt="">
-            <img style="position: absolute; bottom:0; right: 6.5rem;" src="../assets/contacts/contacts-right.svg"
+            <img class="contacts-page-image-left" src="../assets/contacts/contacts-left.svg" alt="">
+            <img class="contacts-page-image-right" src="../assets/contacts/contacts-right.svg"
                  alt="">
             <span class="contacts-page-title">
                 Контакты
@@ -11,11 +11,11 @@
         </div>
         <div class="contacts-page-body">
             <SignupForm type="contact" class="contacts-page-signup-wrapper"/>
-            <img style="position: absolute; bottom:0; right: 0" src="../assets/contacts/contacts-bottom-right.svg"
+            <img class="contacts-page-image-bottom" src="../assets/contacts/contacts-bottom-right.svg"
                  alt="">
             <div class="contacts-page-info-container">
                 <div class="contacts-page-info-block-container">
-                    <span class="contacts-page-info-block-title">Где находится</span>
+                    <div class="contacts-page-info-block-title">Где находится</div>
                     <div class="contacts-page-info-block-place-container">
                         <img class="contacts-page-info-block-place-image" src="../assets/contacts/map-icon.svg" alt="">
                         <div class="contacts-page-info-block-place-info-container">
@@ -83,54 +83,84 @@
                             ОКПО: 0080732445 
                         </span>
                     </div>
+                    <div class="contacts-page-info-block-container contacts-page-info-block-how-to-get-tablet">
+                        <div class="contacts-page-info-block-title">Как добраться</div>
+                        <div class="contacts-page-info-block-content-container">
+                            <img class="contacts-page-info-block-metro-image"
+                                 src="../assets/contacts/metro-brown-icon.svg"
+                                 alt="">
+                            <span class="contacts-page-info-block-metro">
+                                <span class="contacts-page-info-block-metro-name">Добрынинская</span>
+                                - 5 мин. пешком
+                            </span>
+                        </div>
+                        <div class="contacts-page-info-block-content-container">
+                            <img class="contacts-page-info-block-metro-image"
+                                 src="../assets/contacts/metro-grey-icon.svg"
+                                 alt="">
+                            <span class="contacts-page-info-block-metro">
+                                <span class="contacts-page-info-block-metro-name">Серпуховская</span>
+                                - 5 мин. пешком
+                            </span>
+                        </div>
+                        <div class="contacts-page-info-block-content-container">
+                            <img class="contacts-page-info-block-metro-image"
+                                 src="../assets/contacts/metro-green-icon.svg"
+                                 alt="">
+                            <span class="contacts-page-info-block-metro">
+                                <span class="contacts-page-info-block-metro-name">Павелецкая</span>
+                                - 10 мин. пешком
+                            </span>
+                        </div>
+                    </div>
                 </div>
                 <div class="contacts-page-info-block-container">
-                    <span class="contacts-page-info-block-title">Как связаться</span>
+                    <div class="contacts-page-info-block-title">Как связаться</div>
                     <div class="contacts-page-info-block-content-container">
                         <img class="contacts-page-info-block-phone-image" src="../assets/common/phone-icon.svg" alt="">
                         <div class="contacts-page-info-block-content-info-container">
-                            <span class="contacts-page-info-block-info-title">+7 (916) 169-18-37</span>
-                            <span class="contacts-page-info-block-info">Ответим в Whatsapp в любое время!</span>
+                            <div class="contacts-page-info-block-info-title">+7 (916) 169-18-37</div>
+                            <div class="contacts-page-info-block-info">Ответим в Whatsapp в любое время!</div>
                         </div>
                     </div>
                     <div class="contacts-page-info-block-content-container">
                         <img class="contacts-page-info-block-phone-image" src="../assets/common/clock-icon.svg" alt="">
                         <div class="contacts-page-info-block-content-info-container">
-                            <span class="contacts-page-info-block-info-title">+7 (495) 920-74-30</span>
-                            <span class="contacts-page-info-block-info">Каждый день с 11:00 до 20:00</span>
+                            <div class="contacts-page-info-block-info-title">+7 (495) 920-74-30</div>
+                            <div class="contacts-page-info-block-info">Каждый день с 11:00 до 20:00</div>
                         </div>
                     </div>
                 </div>
-                <div class="contacts-page-info-block-container">
-                    <span class="contacts-page-info-block-title">Как добраться</span>
+                <div class="contacts-page-info-block-container contacts-page-info-block-how-to-get">
+                    <div class="contacts-page-info-block-title">Как добраться</div>
                     <div class="contacts-page-info-block-content-container">
                         <img class="contacts-page-info-block-metro-image" src="../assets/contacts/metro-brown-icon.svg"
                              alt="">
                         <span class="contacts-page-info-block-metro">
-                            <span style="font-family: GothamPro-Bold, sans-serif; text-decoration: underline; text-decoration-style: dashed;">
+                            <span class="contacts-page-info-block-metro-name">
                                 Добрынинская
                             </span>
-                             - 5 мин. пешком
+                            - 5 мин. пешком
                         </span>
                     </div>
                     <div class="contacts-page-info-block-content-container">
                         <img class="contacts-page-info-block-metro-image" src="../assets/contacts/metro-grey-icon.svg"
                              alt="">
                         <span class="contacts-page-info-block-metro">
-                            <span style="font-family: GothamPro-Bold, sans-serif; text-decoration: underline; text-decoration-style: dashed;">
+                            <span class="contacts-page-info-block-metro-name">
                                 Серпуховская
                             </span>
-                             - 5 мин. пешком
+                            - 5 мин. пешком
                         </span>
                     </div>
                     <div class="contacts-page-info-block-content-container">
                         <img class="contacts-page-info-block-metro-image" src="../assets/contacts/metro-green-icon.svg"
                              alt="">
                         <span class="contacts-page-info-block-metro">
-                            <span style="font-family: GothamPro-Bold, sans-serif; text-decoration: underline; text-decoration-style: dashed;">
+                            <span class="contacts-page-info-block-metro-name">
                                 Павелецкая
                             </span>
-                             - 10 мин. пешком
+                            - 10 мин. пешком
                         </span>
                     </div>
                 </div>
@@ -163,6 +193,18 @@
         background-color: var(--background-color-white);
     }
 
+    .contacts-page-image-left {
+        position: absolute;
+        bottom: 0;
+        left: 8rem;
+    }
+
+    .contacts-page-image-right {
+        position: absolute;
+        bottom: 0;
+        right: 6.5rem;
+    }
+
     .contacts-page-title {
         font-family: FedraSerifAPro-Medium, sans-serif;
         font-size: 4rem;
@@ -184,9 +226,15 @@
         position: relative;
         height: 120rem;
     }
-    
+
     .contacts-page-signup-wrapper {
         margin-top: 6rem;
+    }
+
+    .contacts-page-image-bottom {
+        position: absolute;
+        bottom: 0;
+        right: 0
     }
 
     .contacts-page-info-container {
@@ -204,6 +252,7 @@
     .contacts-page-info-block-title {
         font-family: FedraSerifAPro-Medium, sans-serif;
         font-size: 2.4rem;
+        text-align: left;
     }
 
     .contacts-page-info-block-place-container {
@@ -226,13 +275,15 @@
     .contacts-page-info-block-info-title {
         font-family: GothamPro-Medium, sans-serif;
         font-size: 1.6rem;
-        margin-bottom: 1rem;
+        margin: 0.2rem 0;
+        text-align: left;
     }
 
     .contacts-page-info-block-info {
         font-family: GothamPro, sans-serif;
         font-size: 1.4rem;
         margin: 0.2rem 0;
+        text-align: left;
     }
 
     .contacts-page-info-block-content-container {
@@ -262,6 +313,12 @@
         margin-left: 1rem;
     }
 
+    .contacts-page-info-block-metro-name {
+        font-family: GothamPro-Bold, sans-serif;
+        text-decoration: underline;
+        text-decoration-style: dashed;
+    }
+
     .contacts-page-social-networks-container {
         display: flex;
         flex-direction: column;
@@ -284,7 +341,7 @@
     .contacts-page-social-network-link {
         width: 4rem;
     }
-    
+
     .contacts-page-requisites-container {
         display: flex;
         flex-direction: column;
@@ -292,18 +349,83 @@
         align-items: flex-start;
         margin-top: 2rem;
     }
-    
+
     .contacts-page-requsites-title {
         font-family: GothamPro-Medium, sans-serif;
         font-size: 1.6rem;
         margin-bottom: 1rem;
     }
-    
+
     .contacts-page-requsites {
         font-family: GothamPro, sans-serif;
         font-size: 1.2rem;
         margin: 0.2rem 0;
         text-align: left;
+    }
+
+    .contacts-page-info-block-how-to-get-tablet {
+        display: none;
+    }
+
+    @media screen and (max-width: 1280px) {
+
+        .contacts-page-body {
+            height: 125rem;
+        }
+        
+        .contacts-page-header {
+            height: 20rem;
+        }
+
+        .contacts-page-image-left {
+            left: 0;
+            width: 30%;
+        }
+
+        .contacts-page-image-right {
+            right: 2.5rem;
+            width: 30%;
+        }
+
+        .contacts-page-title {
+            font-size: 3rem;
+            margin-top: 12rem;
+        }
+
+        .contacts-page-text-babel-wrapper {
+            top: -3.5rem;
+            left: 31rem;
+        }
+
+        .contacts-page-info-block-how-to-get {
+            display: none;
+        }
+
+        .contacts-page-info-block-how-to-get-tablet {
+            display: block;
+            margin: 4rem 0 0 0 !important;
+        }
+
+        .contacts-page-image-bottom {
+            width: 50%;
+        }
+
+        .contacts-page-info-container {
+            margin-top: 6rem;
+        }
+
+        .contacts-page-info-block-container {
+            margin: 0 2.5rem;
+        }
+
+        .contacts-page-info-block-container:first-child {
+            margin-left: 5rem
+        }
+
+        .contacts-page-info-block-container:last-child {
+            margin-right: 5rem;
+        }
+
     }
 
 </style>

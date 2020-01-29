@@ -1,7 +1,7 @@
 <template>
     <div>
         <Header/>
-        <InfoHeader text-color="black"/>
+        <InfoHeader text-color="black" background-color="var(----background-color-white)"/>
         <router-view/>
         <Footer/>
     </div>
