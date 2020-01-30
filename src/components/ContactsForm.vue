@@ -22,6 +22,7 @@
         </div>
         <ThankYouModal class="contacts-thank-you-modal" @hideModal="hideModal"/>
         <ThankYouModal class="contacts-thank-you-modal-tablet" width="680" @hideModal="hideModal"/>
+        <ThankYouModal class="contacts-thank-you-modal-phone" :width="280" :height="180" @hideModal="hideModal"/>
     </div>
 </template>
 
@@ -89,6 +90,7 @@
     .contacts-title {
         font-family: GothamPro-Medium, sans-serif;
         font-size: 2.4rem;
+        line-height: 1.38;
     }
 
     .contacts-form-container {
@@ -188,6 +190,10 @@
     .contacts-thank-you-modal-tablet {
         display: none;
     }
+    
+    .contacts-thank-you-modal-phone {
+        display: none;
+    }
 
     @media screen and (max-width: 1280px) {
 
@@ -223,15 +229,77 @@
 
     @media screen and (max-width: 760px) {
 
+        .contacts-container {
+            width: calc(100% - 4rem);
+            height: 40rem;
+            padding: 2rem;
+        }
+        
         .contacts-title {
             font-size: 1.6rem;
-            margin-bottom: 1rem;
+            width: 20rem;
         }
 
         .contacts-form-container {
+            margin-top: 1.5rem;
+            width: 100%;
+        }
+        
+        .contacts-form-input-container {
+            display: flex;
+            flex-direction: column;
+            width: inherit;
+        }
+        
+        .contacts-form-input {
+            width: 100%;
+            height: 4rem;
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+        }
+        
+        .contacts-form-input::placeholder {
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        
+        .contacts-form-input:first-child {
             margin-top: 0;
         }
+        
+        .contacts-form-input:last-child {
+            margin-bottom: 0;
+        }
+        
+        .contacts-form-input-body {
+            width: 100%;
+            height: 11rem;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+        }
 
+        .contacts-form-input-body::placeholder {
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        
+        .contacts-form-button {
+            width: 100%;
+            height: 4rem;
+            margin-top: 1rem;
+        }
+
+        .contacts-legal-text {
+            margin-top: 1rem;
+        }
+        
+        .contacts-thank-you-modal-tablet {
+            display: none;
+        }
+
+        .contacts-thank-you-modal-phone {
+            display: block;
+        }
     }
 
 </style>
