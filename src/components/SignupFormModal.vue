@@ -5,7 +5,7 @@
            @before-close="beforeClose"
            :width="1240"
            :height="230">
-        <SignupForm type="signup"/>
+        <SignupForm />
         <img class="signup-form-modal-close-image" @click="hideModal" src="../assets/common/cross.svg" alt="close">
     </modal>
 </template>

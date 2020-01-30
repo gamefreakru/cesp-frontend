@@ -67,7 +67,7 @@
                 </div>
                 <LinkButton class="group-recruitment-link-button-wrapper" title="Посмотреть расписание и цены" link="/schedule" />
             </div>
-            <SignupForm type="signup" class="signup-form-wrapper"/>
+            <SignupForm class="signup-form-wrapper"/>
         </div>
         <div class="events-container">
             <span class="main-section-title events-title">

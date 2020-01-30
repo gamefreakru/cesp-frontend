@@ -179,7 +179,7 @@
                 Наиболее популярен у студентов В2. Этот уровень языка – обязательное условие
                 для обучения в колледжах иуниверситетах Испании, а также для получения квалифицированной должности.
             </div>
-            <SignupForm type="signup" class="dele-page-signup-form-wrapper"/>
+            <SignupForm class="dele-page-signup-form-wrapper"/>
         </div>
     </div>
 </template>

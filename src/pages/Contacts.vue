@@ -10,7 +10,7 @@
             </span>
         </div>
         <div class="contacts-page-body">
-            <SignupForm type="contact" class="contacts-page-signup-wrapper"/>
+            <ContactsForm class="contacts-page-signup-wrapper"/>
             <img class="contacts-page-image-bottom" src="../assets/contacts/contacts-bottom-right.svg"
                  alt="">
             <div class="contacts-page-info-container">
@@ -172,12 +172,12 @@
 <script>
 
     import TextBabel from "../components/TextBabel";
-    import SignupForm from "../components/SignupForm";
+    import ContactsForm from "../components/ContactsForm";
 
     export default {
         components: {
             TextBabel,
-            SignupForm
+            ContactsForm
         }
     }
 </script>
@@ -370,7 +370,7 @@
     @media screen and (max-width: 1280px) {
 
         .contacts-page-body {
-            height: 125rem;
+            height: 130rem;
         }
         
         .contacts-page-header {
