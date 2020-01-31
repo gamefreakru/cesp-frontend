@@ -1,8 +1,10 @@
 <template>
     <div class="how-to-learn-container">
         <div class="how-to-learn-header">
-            <img style="position: absolute; left: 0; bottom: 0" src="../assets/pageHeader/man.svg" alt="man">
-            <img style="position: absolute; right: 0; bottom: 0" src="../assets/pageHeader/island.svg" alt="man">
+            <img class="how-to-learn-image-left" src="../assets/howToLearn/how-to-learn-left.svg" alt="">
+            <img class="how-to-learn-image-right" src="../assets/howToLearn/how-to-learn-right.svg" alt="">
+            <img class="how-to-learn-image-left-tablet" src="../assets/howToLearn/how-to-learn-left-tablet.svg" alt="">
+            <img class="how-to-learn-image-right-tablet" src="../assets/howToLearn/how-to-learn-right-tablet.svg" alt="">
             <span class="how-to-learn-header-title">Как выучить испанский язык?</span>
         </div>
         <div class="how-to-learn-body">
@@ -27,14 +29,10 @@
                 а может и остаться там жить.
             </div>
             <div class="how-to-learn-images-container">
-                <img class="how-to-learn-image" src="../assets/howToLearn/image1.png" 
-                     srcset="../assets/howToLearn/image1@2x.png 2x, ../assets/howToLearn/image1@3x.png 3x" alt="">
-                <img class="how-to-learn-image" src="../assets/howToLearn/image2.png"
-                     srcset="../assets/howToLearn/image2@2x.png 2x, ../assets/howToLearn/image2@3x.png 3x" alt="">
-                <img class="how-to-learn-image" src="../assets/howToLearn/image3.png"
-                     srcset="../assets/howToLearn/image3@2x.png 2x, ../assets/howToLearn/image3@3x.png 3x" alt="">
-                <img class="how-to-learn-image" src="../assets/howToLearn/image4.png"
-                     srcset="../assets/howToLearn/image4@2x.png 2x, ../assets/howToLearn/image4@3x.png 3x" alt="">
+                <img class="how-to-learn-image" src="../assets/howToLearn/image1.png" alt="">
+                <img class="how-to-learn-image" src="../assets/howToLearn/image2.png" alt="">
+                <img class="how-to-learn-image" src="../assets/howToLearn/image3.png" alt="">
+                <img class="how-to-learn-image" src="../assets/howToLearn/image4.png" alt="">
             </div>
             <div class="how-to-learn-text-block">
                 Выбрав цель, приступайте к выбору методики изучения. Вы будете учить самостоятельно или на курсах?
@@ -96,6 +94,20 @@
                            v-bind:title="event.name"
                            v-bind:image="event.photo"
                            v-bind:description="event.shortInfo"/>
+                <EventCard class="how-to-learn-event-card-wrapper-tablet" v-for="(event, index) in eventsTablet"
+                           v-bind:key="index + '-tablet'"
+                           v-bind:link="event.sysName | createEventLink"
+                           link-title="Записаться"
+                           v-bind:title="event.name"
+                           v-bind:image="event.photo"
+                           v-bind:description="event.shortInfo"/>
+                <EventCard class="how-to-learn-event-card-wrapper-phone" v-for="(event, index) in eventsPhone"
+                           v-bind:key="index + '-phone'"
+                           v-bind:link="event.sysName | createEventLink"
+                           link-title="Записаться"
+                           v-bind:title="event.name"
+                           v-bind:image="event.photo"
+                           v-bind:description="event.shortInfo"/>
             </div>
             <LinkButton class="how-to-learn-events-container-button" title="Все мероприятия" link="events"/>
         </div>
@@ -117,7 +129,9 @@
         },
         data() {
             return {
-                events: {}
+                events: {},
+                eventsTablet: {},
+                eventsPhone: {}
             }
         },
         filters: {
@@ -128,6 +142,8 @@
         mounted() {
             Service.get("events?count=3", (status, data) => {
                 this.events = data;
+                this.eventsTablet = data.slice(0,2);
+                this.eventsPhone = data.slice(0,1);
             });
         }
     }
@@ -148,8 +164,36 @@
         flex-direction: column;
     }
     
+    .how-to-learn-image-left {
+        position: absolute; 
+        left: 0; 
+        bottom: 0;   
+    }
+    
+    .how-to-learn-image-right {
+        position: absolute; 
+        right: 0; 
+        bottom: 0;   
+    }
+    
+    .how-to-learn-image-left-tablet {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 20%;
+        display: none;
+    }
+
+    .how-to-learn-image-right-tablet {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 20%;
+        display: none;
+    }
+    
     .how-to-learn-header-title {
-        font-family: FedraSerifAPro, sans-serif;
+        font-family: FedraSerifAPro-Medium, sans-serif;
         font-size: 4rem;
         margin-top: 25rem;
         max-width: 60rem;
@@ -207,6 +251,7 @@
         padding: 3rem 0;
         border-radius: 1.2rem;
         margin: 4rem 0;
+        box-sizing: border-box;
     }
     
     .how-to-learn-signup-form-wrapper {
@@ -223,8 +268,157 @@
         margin: 0 1.5rem;
     }
     
+    .how-to-learn-event-card-wrapper-tablet {
+        border: solid 0.1rem var(--light-border);
+        margin: 0 1.5rem;
+        display: none;
+    }
+    
+    .how-to-learn-event-card-wrapper-phone {
+        border: solid 0.1rem var(--light-border);
+        display: none;
+    }
+    
     .how-to-learn-events-container-button {
         margin-bottom: 8rem;
+    }
+
+    @media screen and (max-width: 1280px) {
+        
+        .how-to-learn-header {
+            height: 22rem;
+        }
+        
+        .how-to-learn-image-left {
+            display: none;
+        }
+        
+        .how-to-learn-image-right {
+            display: none;
+        }
+        
+        .how-to-learn-image-left-tablet {
+            display: block;
+        }
+        
+        .how-to-learn-image-right-tablet {
+            display: block;
+        }
+        
+        .how-to-learn-header-title {
+            font-size: 3rem;
+            max-width: 50rem;
+            margin-top: 12rem;
+        }
+        
+        .how-to-learn-text-block-header {
+            width: calc(100% - 17rem);
+        }
+        
+        .how-to-learn-text-question-mark {
+            width: calc(100% - 9rem);
+        }
+        
+        .how-to-learn-text-block {
+            width: calc(100% - 17rem);
+        }
+        
+        .how-to-learn-text-block-section {
+            width: calc(100% - 17rem);
+        }
+        
+        .how-to-learn-image {
+            max-width: 13rem;
+            margin: 0 2.5rem;
+        }
+        
+        .how-to-learn-event-card-wrapper {
+            display: none;
+        }
+        
+        .how-to-learn-event-card-wrapper-tablet {
+            display: block;
+        }
+        
+        .how-to-learn-events-container-button {
+            margin-bottom: 6rem;
+        }
+        
+    }
+
+    @media screen and (max-width: 760px) {
+
+        .how-to-learn-image-left-tablet {
+            display: none;
+        }
+        
+        .how-to-learn-image-right-tablet {
+            display: none;
+        }
+        
+        .how-to-learn-header-title {
+            font-size: 1.8rem;
+            max-width: 30rem;
+            margin-top: 14rem;
+        }
+        
+        .how-to-learn-text-block-header {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            width: calc(100% - 4rem);
+            margin-top: 4rem;
+        }
+        
+        .how-to-learn-text-question-mark {
+            width: calc(100% - 4rem);
+            font-size: 1.4rem;
+            line-height: 1.43;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .how-to-learn-text-block {
+            width: calc(100% - 4rem);
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin: 0.5rem 0;
+        }
+        
+        .how-to-learn-images-container {
+            flex-wrap: wrap;
+            margin: 1rem 0;
+            justify-content: center;
+        }
+        
+        .how-to-learn-image {
+            max-width: 12rem;
+            margin: 1.5rem 2rem;
+        } 
+        
+        .how-to-learn-text-block-section {
+            width: calc(100% - 4rem);
+        }
+        
+        .how-to-learn-signup-form-wrapper {
+            margin: 3rem 0;
+        }
+        
+        .how-to-learn-events-card-container {
+            margin: 3rem 0 2rem 0;
+        }
+        
+        .how-to-learn-event-card-wrapper-tablet {
+            display: none;
+        }
+        
+        .how-to-learn-event-card-wrapper-phone {
+            display: block;
+        }
+
+        .how-to-learn-events-container-button {
+            margin-bottom: 4rem;
+        }
+        
     }
     
 </style>

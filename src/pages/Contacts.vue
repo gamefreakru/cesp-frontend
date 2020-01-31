@@ -446,7 +446,7 @@
         }
         
         .contacts-page-body {
-            height: 135rem;
+            height: 133rem;
         }
         
         .contacts-page-image-left {
