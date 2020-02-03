@@ -22,7 +22,7 @@
             </li>
             <li class="menu-item">
                 <a target="_blank" rel="noopener noreferrer"
-                   href="https://docs.google.com/forms/d/e/1FAIpQLSfnMzKj6nP3gAyP3J0qdfqUro8aSmfM5pniW-lJFVHIzpCpFQ/viewform?embedded=true">Тест</a>
+                   href="https://forms.gle/MYA63eakq5fXDmMWA">Тест</a>
             </li>
             <li class="menu-item">
                 <router-link to="/contacts">Контакты</router-link>
@@ -39,7 +39,7 @@
                 <router-link class="mobile-menu-item" to="/teachers" v-on:click.native="changeMenuState">Преподаватели</router-link>
                 <router-link class="mobile-menu-item" to="/feedbacks" v-on:click.native="changeMenuState">Отзывы</router-link>
                 <router-link class="mobile-menu-item" to="/club" v-on:click.native="changeMenuState">Habla клуб</router-link>
-                <router-link class="mobile-menu-item" to="/partners" v-on:click.native="changeMenuState">Партнёры</router-link>
+                <a class="mobile-menu-item" href="https://forms.gle/MYA63eakq5fXDmMWA" v-on:click.native="changeMenuState">Тест</a>
                 <router-link class="mobile-menu-item" to="/contacts" v-on:click.native="changeMenuState">Контакты</router-link>
             </div>
             <div class="mobile-menu-delimiter"></div>
