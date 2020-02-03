@@ -41,7 +41,7 @@
     
     .payment-container-header {
         font-size: 3rem;
-        margin: 17rem 0 1rem;
+        margin: 25rem 0 1rem;
     }
     
     .payment-container input {

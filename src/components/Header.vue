@@ -21,7 +21,8 @@
                 <router-link to="/club">Habla клуб</router-link>
             </li>
             <li class="menu-item">
-                <router-link to="/partners">Партнёры</router-link>
+                <a target="_blank" rel="noopener noreferrer"
+                   href="https://docs.google.com/forms/d/e/1FAIpQLSfnMzKj6nP3gAyP3J0qdfqUro8aSmfM5pniW-lJFVHIzpCpFQ/viewform?embedded=true">Тест</a>
             </li>
             <li class="menu-item">
                 <router-link to="/contacts">Контакты</router-link>
