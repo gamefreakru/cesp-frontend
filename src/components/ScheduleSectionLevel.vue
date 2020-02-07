@@ -7,18 +7,18 @@
                                       :class="[{ 'schedule-section-level-item-border-wrapper': 
                                       index!==languageSectionLevelItems.length - 1  }, 
                                       'schedule-section-level-item-wrapper-tablet']"
-                                      v-bind:key="index"
-                                      v-bind:teacher-photo="languageSectionLevelItem.teacherPhoto"
-                                      v-bind:teacher-name="languageSectionLevelItem.teacherName"
-                                      v-bind:teacher-post="languageSectionLevelItem.teacherPost"
-                                      v-bind:start-time="languageSectionLevelItem.startTime"
-                                      v-bind:end-time="languageSectionLevelItem.endTime"
-                                      v-bind:days="languageSectionLevelItem.days"
-                                      v-bind:start-date="languageSectionLevelItem.startDate"
-                                      v-bind:price="languageSectionLevelItem.price"
-                                      v-bind:price-without-discount="languageSectionLevelItem.priceWithoutDiscount"
-                                      v-bind:discount-value="languageSectionLevelItem.discount"
-                                      v-bind:is-available="languageSectionLevelItem.isAvailable"
+                                      :key="index"
+                                      :teacher-photo="languageSectionLevelItem.teacherPhoto"
+                                      :teacher-name="languageSectionLevelItem.teacherName"
+                                      :teacher-post="languageSectionLevelItem.teacherPost"
+                                      :start-time="languageSectionLevelItem.startTime"
+                                      :end-time="languageSectionLevelItem.endTime"
+                                      :days="languageSectionLevelItem.days"
+                                      :start-date="languageSectionLevelItem.startDate"
+                                      :price="languageSectionLevelItem.price"
+                                      :price-without-discount="languageSectionLevelItem.priceWithoutDiscount"
+                                      :discount-value="languageSectionLevelItem.discount"
+                                      :is-available="languageSectionLevelItem.isAvailable"
             />
         </div>
     </div>

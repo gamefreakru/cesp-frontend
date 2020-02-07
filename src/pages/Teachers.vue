@@ -40,14 +40,14 @@
                           :description="modalData.info"/>
             <TeacherCard class="teacher-page-card-wrapper" v-for="(teacher, index) in teachers"
                          v-on:click.native=showModal(teacher)
-                         v-bind:key="index"
-                         v-bind:image="teacher.photo"
-                         v-bind:image-large="teacher.largePhoto"
-                         v-bind:name="teacher.name"
-                         v-bind:city="teacher.city"
-                         v-bind:languages="teacher.languages"
-                         v-bind:short-description="teacher.shortInfo"
-                         v-bind:description="teacher.info"
+                         :key="index"
+                         :image="teacher.photo"
+                         :image-large="teacher.largePhoto"
+                         :name="teacher.name"
+                         :city="teacher.city"
+                         :languages="teacher.languages"
+                         :short-description="teacher.shortInfo"
+                         :description="teacher.info"
                          type="normal"/>
         </div>
     </div>

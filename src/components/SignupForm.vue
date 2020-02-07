@@ -19,8 +19,8 @@
             <router-link class="signup-legal-link" to="/policy">Политикой конфиденциальности</router-link>
         </div>
         <ThankYouModal class="signup-thank-you-modal" @hideModal="hideModal"/>
-        <ThankYouModal class="signup-thank-you-modal-tablet" :width="680" @hideModal="hideModal"/>
-        <ThankYouModal class="signup-thank-you-modal-phone" :width="280" :height="180" @hideModal="hideModal"/>
+        <ThankYouModal class="signup-thank-you-modal-tablet" width="680" @hideModal="hideModal"/>
+        <ThankYouModal class="signup-thank-you-modal-phone" width="280" height="180" @hideModal="hideModal"/>
     </div>
 </template>
 

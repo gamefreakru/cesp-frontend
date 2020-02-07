@@ -88,26 +88,26 @@
             </div>
             <div class="how-to-learn-events-card-container">
                 <EventCard class="how-to-learn-event-card-wrapper" v-for="(event, index) in events"
-                           v-bind:key="index"
-                           v-bind:link="event.sysName | createEventLink"
+                           :key="index"
+                           :link="event.sysName | createEventLink"
                            link-title="Записаться"
-                           v-bind:title="event.name"
-                           v-bind:image="event.photo"
-                           v-bind:description="event.shortInfo"/>
+                           :title="event.name"
+                           :image="event.photo"
+                           :description="event.shortInfo"/>
                 <EventCard class="how-to-learn-event-card-wrapper-tablet" v-for="(event, index) in eventsTablet"
-                           v-bind:key="index + '-tablet'"
-                           v-bind:link="event.sysName | createEventLink"
+                           :key="index + '-tablet'"
+                           :link="event.sysName | createEventLink"
                            link-title="Записаться"
-                           v-bind:title="event.name"
-                           v-bind:image="event.photo"
-                           v-bind:description="event.shortInfo"/>
+                           :title="event.name"
+                           :image="event.photo"
+                           :description="event.shortInfo"/>
                 <EventCard class="how-to-learn-event-card-wrapper-phone" v-for="(event, index) in eventsPhone"
-                           v-bind:key="index + '-phone'"
-                           v-bind:link="event.sysName | createEventLink"
+                           :key="index + '-phone'"
+                           :link="event.sysName | createEventLink"
                            link-title="Записаться"
-                           v-bind:title="event.name"
-                           v-bind:image="event.photo"
-                           v-bind:description="event.shortInfo"/>
+                           :title="event.name"
+                           :image="event.photo"
+                           :description="event.shortInfo"/>
             </div>
             <LinkButton class="how-to-learn-events-container-button" title="Все мероприятия" link="events"/>
         </div>

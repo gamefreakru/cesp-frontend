@@ -117,6 +117,7 @@
         font-family: GothamPro, sans-serif;
         font-size: 1.4rem;
         margin: 0.2rem 0;
+        text-align: left;
     }
     
     .schedule-section-level-item-teacher-post {

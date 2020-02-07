@@ -76,26 +76,26 @@
             </span>
             <div class="events-card-container">
                 <EventCard class="event-card-wrapper" v-for="(event, index) in events"
-                           v-bind:key="index"
-                           v-bind:link="event.sysName | createEventLink"
+                           :key="index"
+                           :link="event.sysName | createEventLink"
                            link-title="Записаться"
-                           v-bind:title="event.name"
-                           v-bind:image="event.photo"
-                           v-bind:description="event.shortInfo"/>
+                           :title="event.name"
+                           :image="event.photo"
+                           :description="event.shortInfo"/>
                 <EventCard class="event-card-wrapper-tablet" v-for="(event, index) in eventsTablet"
-                           v-bind:key="index + '-tablet'"
-                           v-bind:link="event.sysName | createEventLink"
+                           :key="index + '-tablet'"
+                           :link="event.sysName | createEventLink"
                            link-title="Записаться"
-                           v-bind:title="event.name"
-                           v-bind:image="event.photo"
-                           v-bind:description="event.shortInfo"/>
+                           :title="event.name"
+                           :image="event.photo"
+                           :description="event.shortInfo"/>
                 <EventCard class="event-card-wrapper-mobile" v-for="(event, index) in eventsMobile"
-                           v-bind:key="index + '-mobile'"
-                           v-bind:link="event.sysName | createEventLink"
+                           :key="index + '-mobile'"
+                           :link="event.sysName | createEventLink"
                            link-title="Записаться"
-                           v-bind:title="event.name"
-                           v-bind:image="event.photo"
-                           v-bind:description="event.shortInfo"/>
+                           :title="event.name"
+                           :image="event.photo"
+                           :description="event.shortInfo"/>
             </div>
             <LinkButton class="events-link-button-wrapper" title="Все мероприятия" link="/events"/>
         </div>
@@ -174,30 +174,30 @@
             </span>
             <div class="teachers-card-container">
                 <TeacherCard class="teacher-card-wrapper" v-for="(teacher, index) in teachers"
-                             v-bind:key="index"
-                             v-bind:image="teacher.photo"
-                             v-bind:name="teacher.name"
-                             v-bind:city="teacher.city"
-                             v-bind:languages="teacher.languages"
-                             v-bind:short-description="teacher.shortInfo"
+                             :key="index"
+                             :image="teacher.photo"
+                             :name="teacher.name"
+                             :city="teacher.city"
+                             :languages="teacher.languages"
+                             :short-description="teacher.shortInfo"
                              type="normal"
                 />
                 <TeacherCard class="teacher-card-wrapper-tablet" v-for="(teacher, index) in teachersTablet"
-                             v-bind:key="index + '-tablet'"
-                             v-bind:image="teacher.photo"
-                             v-bind:name="teacher.name"
-                             v-bind:city="teacher.city"
-                             v-bind:languages="teacher.languages"
-                             v-bind:short-description="teacher.shortInfo"
+                             :key="index + '-tablet'"
+                             :image="teacher.photo"
+                             :name="teacher.name"
+                             :city="teacher.city"
+                             :languages="teacher.languages"
+                             :short-description="teacher.shortInfo"
                              type="normal"
                 />
                 <TeacherCard class="teacher-card-wrapper-mobile" v-for="(teacher, index) in teachersMobile"
-                             v-bind:key="index + '-mobile'"
-                             v-bind:image="teacher.photo"
-                             v-bind:name="teacher.name"
-                             v-bind:city="teacher.city"
-                             v-bind:languages="teacher.languages"
-                             v-bind:short-description="teacher.shortInfo"
+                             :key="index + '-mobile'"
+                             :image="teacher.photo"
+                             :name="teacher.name"
+                             :city="teacher.city"
+                             :languages="teacher.languages"
+                             :short-description="teacher.shortInfo"
                              type="normal"
                 />
             </div>
@@ -216,11 +216,11 @@
             </span>
             <div class="feedbacks-card-container">
                 <FeedbackCard class="feedback-card-wrapper" v-for="(feedback, index) in feedbacks"
-                              v-bind:key="index"
-                              v-bind:image="feedback.photo"
-                              v-bind:first-name="feedback.signature"
-                              v-bind:date="feedback.date"
-                              v-bind:text="feedback.message | trim(300)" />
+                              :key="index"
+                              :image="feedback.photo"
+                              :first-name="feedback.signature"
+                              :date="feedback.date"
+                              :text="feedback.message | trim(300)" />
             </div>
             <LinkButton class="feedbacks-link-button-wrapper" title="Все отзывы" link="/feedbacks"/>
         </div>
@@ -243,7 +243,7 @@
                 </div>
             </div>
             <div class="about-image-carousel">
-                <ImageCarousel v-bind:images="[getCarouselImgUrl('slide1'), getCarouselImgUrl('slide2'), getCarouselImgUrl('slide3'), 
+                <ImageCarousel :images="[getCarouselImgUrl('slide1'), getCarouselImgUrl('slide2'), getCarouselImgUrl('slide3'), 
                 getCarouselImgUrl('slide4'), getCarouselImgUrl('slide5'), getCarouselImgUrl('slide6'), getCarouselImgUrl('slide7'),
                 getCarouselImgUrl('slide8'), getCarouselImgUrl('slide9'), getCarouselImgUrl('slide10'), getCarouselImgUrl('slide11'),
                 getCarouselImgUrl('slide12'), getCarouselImgUrl('slide13'), getCarouselImgUrl('slide14'), getCarouselImgUrl('slide15'), 
@@ -251,7 +251,7 @@
                 getCarouselImgUrl('slide20'), getCarouselImgUrl('slide21')]"/>
             </div>
             <div class="about-image-carousel-tablet">
-                <ImageCarousel :image-width=144 :image-height=144 v-bind:images="[getCarouselImgUrl('slide1'), getCarouselImgUrl('slide2'), getCarouselImgUrl('slide3'), 
+                <ImageCarousel :image-width=144 :image-height=144 :images="[getCarouselImgUrl('slide1'), getCarouselImgUrl('slide2'), getCarouselImgUrl('slide3'), 
                 getCarouselImgUrl('slide4'), getCarouselImgUrl('slide5'), getCarouselImgUrl('slide6'), getCarouselImgUrl('slide7'),
                 getCarouselImgUrl('slide8'), getCarouselImgUrl('slide9'), getCarouselImgUrl('slide10'), getCarouselImgUrl('slide11'),
                 getCarouselImgUrl('slide12'), getCarouselImgUrl('slide13'), getCarouselImgUrl('slide14'), getCarouselImgUrl('slide15'), 
@@ -259,7 +259,7 @@
                 getCarouselImgUrl('slide20'), getCarouselImgUrl('slide21')]"/>
             </div>
             <div class="about-image-carousel-mobile">
-                <ImageCarousel :image-width=100 :image-height=100 :images-per-page="3" v-bind:images="[getCarouselImgUrl('slide1'), getCarouselImgUrl('slide2'), getCarouselImgUrl('slide3'), 
+                <ImageCarousel :image-width=100 :image-height=100 :images-per-page="3" :images="[getCarouselImgUrl('slide1'), getCarouselImgUrl('slide2'), getCarouselImgUrl('slide3'), 
                 getCarouselImgUrl('slide4'), getCarouselImgUrl('slide5'), getCarouselImgUrl('slide6'), getCarouselImgUrl('slide7'),
                 getCarouselImgUrl('slide8'), getCarouselImgUrl('slide9'), getCarouselImgUrl('slide10'), getCarouselImgUrl('slide11'),
                 getCarouselImgUrl('slide12'), getCarouselImgUrl('slide13'), getCarouselImgUrl('slide14'), getCarouselImgUrl('slide15'), 

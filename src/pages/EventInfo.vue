@@ -1,7 +1,7 @@
 <template>
     <div id="event-info">
-        <span id="title" v-html="event.name"></span>
-        <ImageCarousel v-bind:images="event.photos" :images-per-page=2 :image-width=600 :image-height=400 style="margin: 20px 0"/>
+        <span id="title" v-html="event.name"/>
+        <ImageCarousel :images="event.photos" :images-per-page=2 :image-width=600 :image-height=400 style="margin: 20px 0"/>
         <div id="description" v-html="event.info"></div>
         <Button :text="buttonText" link="/contacts" onclick="ym(52043682, 'reachGoal', 'want'); return true;" :button-height=20 :button-width="buttonWidth" style="align-self: center; margin: 20px 0"/>
     </div>

@@ -3,10 +3,10 @@
         <SectionHeader image="teachers" title="Partners" description="Наши партнёры" style="margin-top: 15rem;"/>
         <div id="partners-grid">
             <Partner v-for="(partner, index) in partners"
-                     v-bind:key="index"
-                     v-bind:image="partner.photo"
-                     v-bind:link="partner.sysName"
-                     v-bind:name="partner.name" />
+                     :key="index"
+                     :image="partner.photo"
+                     :link="partner.sysName"
+                     :name="partner.name" />
         </div>
     </div>
 </template>

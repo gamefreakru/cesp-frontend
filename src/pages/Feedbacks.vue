@@ -5,11 +5,11 @@
                        description="Отзывы о курсах испанского"/>
         <div id="feedbacks-grid">
             <Feedback v-for="(feedback, index) in feedbacks"
-                      v-bind:key="index" 
-                      v-bind:image="feedback.photo"
-                      v-bind:text="feedback.message"
-                      v-bind:date="feedback.date"
-                      v-bind:author="feedback.signature" />
+                      :key="index" 
+                      :image="feedback.photo"
+                      :text="feedback.message"
+                      :date="feedback.date"
+                      :author="feedback.signature" />
         </div>
         <div id="feedbacks-footer">
             <span id="footer-title">Откуда берутся отзывы?</span>

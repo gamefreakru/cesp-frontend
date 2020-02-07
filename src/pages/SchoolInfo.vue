@@ -4,7 +4,7 @@
 
         <span id="title">Школа испанского языка {{ title }}</span>
 
-        <ImageCarousel v-bind:images="images" :images-per-page=4 :image-width=300 :image-height=200 style="margin: 20px 0"/>
+        <ImageCarousel :images="images" :images-per-page=4 :image-width=300 :image-height=200 style="margin: 20px 0"/>
 
         <span id="sub-title">{{ title }}</span>
         <div id="description" v-html="description"></div>

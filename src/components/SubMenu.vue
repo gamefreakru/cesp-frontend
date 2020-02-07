@@ -1,9 +1,11 @@
 <template>
     <div id="container">
         <router-link :to="item.link" id="item" v-for="(item, index) in items"
-              v-bind:data="item" v-bind:key="index">
-            <span class="dot"></span>
-            <span class="text" v-bind:class="{ active: item.active}">{{ item.name }}</span>
+              :data="item" 
+              :key="index"
+        >
+            <span class="dot"/>
+            <span class="text" :class="{ active: item.active}">{{ item.name }}</span>
         </router-link>
     </div>
 </template>

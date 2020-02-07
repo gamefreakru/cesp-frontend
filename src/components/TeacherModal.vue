@@ -15,7 +15,7 @@
                     <div class="teacher-modal-info-language" 
                           v-for="(language, index) in languages" 
                           :class="language.color" 
-                          v-bind:key="index">
+                          :key="index">
                         {{language.name}}
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                         <div class="teacher-modal-info-language"
                               v-for="(language, index) in languages"
                               :class="language.color"
-                              v-bind:key="index">
+                              :key="index">
                             {{language.name}}
                         </div>
                     </div>

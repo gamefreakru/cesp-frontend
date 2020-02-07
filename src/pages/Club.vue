@@ -37,14 +37,14 @@
         </div>
         <div id="events">
             <ClubEvent v-for="(clubEvent, index) in clubEvents" 
-                       v-bind:key="index"
-                       v-bind:date="clubEvent.date"
-                       v-bind:image="clubEvent.photo"
-                       v-bind:title="clubEvent.name"
-                       v-bind:link="clubEvent.sysName"
-                       v-bind:level="clubEvent.minLanguageLevel"
-                       v-bind:description="clubEvent.shortInfo"
-                       v-bind:leader-name="clubEvent.teacher" />
+                       :key="index"
+                       :date="clubEvent.date"
+                       :image="clubEvent.photo"
+                       :title="clubEvent.name"
+                       :link="clubEvent.sysName"
+                       :level="clubEvent.minLanguageLevel"
+                       :description="clubEvent.shortInfo"
+                       :leader-name="clubEvent.teacher" />
         </div>
     </div>
 </template>

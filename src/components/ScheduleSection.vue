@@ -4,11 +4,11 @@
         <span v-if="durationDescription" class="schedule-section-duration">{{durationDescription}}</span>
         <span v-if="priceDesription" class="schedule-section-price-tablet">{{priceDesription}}</span>
         <ScheduleSectionLevel class="schedule-section-levels-wrapper" v-for="(languageLevel, index) in languageLevels"
-                              v-bind:class="{ 'schedule-section-levels-wrapper-border': 
+                              :class="{ 'schedule-section-levels-wrapper-border': 
                                       index!==languageLevels.length - 1 }"
-                              v-bind:key="index"
-                              v-bind:title="languageLevel.level"
-                              v-bind:language-section-level-items="languageLevel.scheduleItems"
+                              :key="index"
+                              :title="languageLevel.level"
+                              :language-section-level-items="languageLevel.scheduleItems"
         />
     </div>
 </template>

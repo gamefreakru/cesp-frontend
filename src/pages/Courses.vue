@@ -4,7 +4,7 @@
                        title="Cursos"
                        description="Курсы испанского и каталонского в Москве"/>
         <Delimiter/>
-        <SubMenu v-bind:items="[
+        <SubMenu :items="[
         {
             name: 'Типы курсов',
             active: true,
@@ -18,14 +18,14 @@
         <Delimiter/>
         <div id="courses-grid">
             <Course v-for="(course, index) in courses"
-                    v-bind:key="index"
-                    v-bind:title="course.name"
-                    v-bind:description="course.description"
-                    v-bind:image="course.photo"
-                    v-bind:duration="course.durationInfo" 
-                    v-bind:price-info="course.costInfo"
-                    v-bind:discount="course.discountPercent | formatDiscountMessage"
-                    v-bind:signup="true" />
+                    :key="index"
+                    :title="course.name"
+                    :description="course.description"
+                    :image="course.photo"
+                    :duration="course.durationInfo" 
+                    :price-info="course.costInfo"
+                    :discount="course.discountPercent | formatDiscountMessage"
+                    :signup="true" />
         </div>
         <div id="courses-footer">
             <span id="footer-title">Курсы испанского в Москве — эффективные методики дают отличный результат</span>

@@ -4,11 +4,11 @@
         <Delimiter/>
         <div id="events-grid">
             <Event v-for="(event, index) in events"
-                   v-bind:key="index"
-                   v-bind:title="event.name"
-                   v-bind:link="event.sysName" 
-                   v-bind:image="event.photo"
-                   v-bind:description="event.shortInfo" />
+                   :key="index"
+                   :title="event.name"
+                   :link="event.sysName" 
+                   :image="event.photo"
+                   :description="event.shortInfo" />
         </div>
     </div>
 </template>

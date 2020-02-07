@@ -10,8 +10,8 @@
               :paginationSize="12"
               :paginationPadding="6">
         <Slide v-for="(image, index) in images"
-               v-bind:data="image"
-               v-bind:key="index">
+               :data="image"
+               :key="index">
             <img :alt="image" :src=image :style="styling"/>
         </Slide>
     </Carousel>

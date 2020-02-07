@@ -1,15 +1,17 @@
 <template>
     <div class="dele-page-container">
         <div class="dele-page-header">
-            <img style="position: absolute; bottom:0; left: 3rem;" src="../assets/dele/dele-left.svg" alt="">
-            <img style="position: absolute; bottom:0; right: 6rem;" src="../assets/dele/dele-right.svg" alt="">
+            <img class="dele-page-image-left" src="../assets/dele/dele-left.svg" alt="">
+            <img class="dele-page-image-left-tablet" src="../assets/dele/dele-left-tablet.svg" alt="">
+            <img class="dele-page-image-right" src="../assets/dele/dele-right.svg" alt="">
+            <img class="dele-page-image-right-tablet" src="../assets/dele/dele-right-tablet.svg" alt="">
             <span class="dele-page-title">
                 Подготовка к DELE
                 <TextBabel class="dele-page-text-babel-wrapper" text="DELE"/>
             </span>
         </div>
         <div class="dele-page-body">
-            <div class="dele-page-text-block" style="margin-top: 6rem;">
+            <div class="dele-page-text-block dele-page-text-block-wrapper">
                 В центре VAMOS проходит подготовка к сдаче экзамена на получение сертификата DELE в Москве.
                 Наши ученики успешно проходят это сложное испытание благодаря качественно выстроенной программе.
                 При подготовке используются учебники, разработанные по европейским стандартам.
@@ -21,10 +23,24 @@
             </span>
             <div class="dele-page-teachers-card-container">
                 <TeacherCard class="dele-page-teacher-card-wrapper" v-for="(teacher, index) in teachers"
-                             v-bind:key="index"
-                             v-bind:image="teacher.photo"
-                             v-bind:name="teacher.name"
-                             v-bind:city="teacher.city"
+                             :key="index"
+                             :image="teacher.photo"
+                             :name="teacher.name"
+                             :city="teacher.city"
+                             type="small"
+                />
+                <TeacherCard class="dele-page-teacher-card-wrapper-tablet" v-for="(teacher, index) in teachersTablet"
+                             :key="index + '-tablet'"
+                             :image="teacher.photo"
+                             :name="teacher.name"
+                             :city="teacher.city"
+                             type="small"
+                />
+                <TeacherCard class="dele-page-teacher-card-wrapper-phone" v-for="(teacher, index) in teachersPhone"
+                             :key="index + '-phone'"
+                             :image="teacher.photo"
+                             :name="teacher.name"
+                             :city="teacher.city"
                              type="small"
                 />
             </div>
@@ -94,12 +110,12 @@
                 <span class="dele-page-schedule-section-level-column-title">Цена</span>
             </div>
             <div class="dele-page-schedule-sections-levels-container">
-                <ScheduleSectionLevel v-for="(schedule, index) in scheduleA"
-                                      v-bind:class="{ 'dele-page-schedule-section-levels-wrapper-border': 
+                <ScheduleSectionLevel class="dele-page-schedule-section-level-wrapper" v-for="(schedule, index) in scheduleA"
+                                      :class="{ 'dele-page-schedule-section-levels-wrapper-border': 
                                       index!==scheduleA.length - 1 }"
-                                      v-bind:key="index"
-                                      v-bind:title="schedule.level"
-                                      v-bind:language-section-level-items="schedule.scheduleItems"
+                                      :key="index"
+                                      :title="schedule.level"
+                                      :language-section-level-items="schedule.scheduleItems"
                 />
             </div>
             <div class="dele-page-level-container">
@@ -129,12 +145,12 @@
                 <span class="dele-page-schedule-section-level-column-title">Цена</span>
             </div>
             <div class="dele-page-schedule-sections-levels-container">
-                <ScheduleSectionLevel v-for="(schedule, index) in scheduleB"
-                                      v-bind:class="{ 'dele-page-schedule-section-levels-wrapper-border': 
+                <ScheduleSectionLevel class="dele-page-schedule-section-level-wrapper" v-for="(schedule, index) in scheduleB"
+                                      :class="{ 'dele-page-schedule-section-levels-wrapper-border': 
                                       index!==scheduleB.length - 1 }"
-                                      v-bind:key="index"
-                                      v-bind:title="schedule.level"
-                                      v-bind:language-section-level-items="schedule.scheduleItems"
+                                      :key="index"
+                                      :title="schedule.level"
+                                      :language-section-level-items="schedule.scheduleItems"
                 />
             </div>
             <div class="dele-page-level-container">
@@ -166,12 +182,12 @@
                 <span class="dele-page-schedule-section-level-column-title">Цена</span>
             </div>
             <div class="dele-page-schedule-sections-levels-container">
-                <ScheduleSectionLevel v-for="(schedule, index) in scheduleC"
-                                      v-bind:class="{ 'dele-page-schedule-section-levels-wrapper-border': 
+                <ScheduleSectionLevel class="dele-page-schedule-section-level-wrapper" v-for="(schedule, index) in scheduleC"
+                                      :class="{ 'dele-page-schedule-section-levels-wrapper-border': 
                                       index!==scheduleC.length - 1 }"
-                                      v-bind:key="index"
-                                      v-bind:title="schedule.level"
-                                      v-bind:language-section-level-items="schedule.scheduleItems"
+                                      :key="index"
+                                      :title="schedule.level"
+                                      :language-section-level-items="schedule.scheduleItems"
                 />
             </div>
             <div class="dele-page-text-block">
@@ -180,6 +196,9 @@
                 для обучения в колледжах иуниверситетах Испании, а также для получения квалифицированной должности.
             </div>
             <SignupForm class="dele-page-signup-form-wrapper"/>
+            <SignupFormModal @hideModal="hideModal('signup-form-modal')"/>
+            <SignupFormModalTablet @hideModal="hideModal('signup-form-modal-tablet')"/>
+            <SignupFormModalPhone @hideModal="hideModal('signup-form-modal-phone')"/>
         </div>
     </div>
 </template>
@@ -191,6 +210,9 @@
     import LinkButton from "../components/LinkButton";
     import TeacherCard from "../components/TeacherCard";
     import ScheduleSectionLevel from "../components/ScheduleSectionLevel";
+    import SignupFormModal from "../components/SignupFormModal";
+    import SignupFormModalTablet from "../components/SignupFormModalTablet";
+    import SignupFormModalPhone from "../components/SignupFormModalPhone";
     import Service from "../service"
 
     export default {
@@ -199,11 +221,16 @@
             SignupForm,
             LinkButton,
             TeacherCard,
-            ScheduleSectionLevel
+            ScheduleSectionLevel,
+            SignupFormModal,
+            SignupFormModalTablet,
+            SignupFormModalPhone
         },
         data() {
             return {
                 teachers: {},
+                teachersTablet: {},
+                teachersPhone: {},
                 scheduleA: {},
                 scheduleB: {},
                 scheduleC: {}
@@ -212,6 +239,8 @@
         mounted() {
             Service.get("teachers?count=6", (status, data) => {
                 this.teachers = data;
+                this.teachersTablet = data.slice(0, 4);
+                this.teachersPhone = data.slice(0, 1);
             });
             Service.get("schedule/levels?levelNames=A1&levelNames=A1.1&levelNames=A1.2&levelNames=A2.1&levelNames=A2.2",
                 (status, data) => {
@@ -225,6 +254,11 @@
                 (status, data) => {
                     this.scheduleC = data;
                 });
+        },
+        methods: {
+            hideModal(name) {
+                this.$modal.hide(name)
+            }
         }
     }
 </script>
@@ -238,6 +272,34 @@
         flex-direction: column;
         align-items: center;
         background-color: var(--background-color-white);
+    }
+    
+    .dele-page-image-left {
+        position: absolute; 
+        bottom: 0; 
+        left: 3rem;   
+    }
+    
+    .dele-page-image-left-tablet {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 25%;
+        display: none;
+    }
+    
+    .dele-page-image-right {
+        position: absolute; 
+        bottom: 0; 
+        right: 6rem;   
+    }
+    
+    .dele-page-image-right-tablet {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 20%;
+        display: none;
     }
 
     .dele-page-title {
@@ -268,6 +330,10 @@
         width: 84rem;
         margin-top: 2rem;
     }
+    
+    .dele-page-text-block-wrapper {
+        margin-top: 6rem;
+    }
 
     .dele-page-teachers-header {
         font-family: FedraSerifAPro-Medium, sans-serif;
@@ -283,6 +349,15 @@
 
     .dele-page-teacher-card-wrapper {
         margin: 0 4rem;
+    }
+    
+    .dele-page-teacher-card-wrapper-tablet {
+        margin: 0 3.5rem;
+        display: none;
+    }
+    
+    .dele-page-teacher-card-wrapper-phone {
+        display: none;
     }
 
     .dele-page-link-button-wrapper {
@@ -304,6 +379,7 @@
         background-image: url("../assets/common/block-background.png");
         border-radius: 1.2rem;
         margin-top: 3rem;
+        box-sizing: border-box;
     }
 
     .dele-page-information-block-title {
@@ -406,7 +482,7 @@
         box-sizing: border-box;
         box-shadow: 0 0.4rem 1.6rem 0 rgba(41, 41, 41, 0.15);
         border-bottom-left-radius: 0.8rem;
-        -webkit-border-bottom-right-radius: 0.8rem;
+        border-bottom-right-radius: 0.8rem;
     }
 
     .dele-page-schedule-section-levels-wrapper-border {
@@ -415,6 +491,208 @@
 
     .dele-page-signup-form-wrapper {
         margin: 10rem 0;
+    }
+
+    @media screen and (max-width: 1280px) {
+
+        .dele-page-header {
+            height: 20rem;
+        }
+        
+        .dele-page-image-left {
+            display: none;
+        }
+        
+        .dele-page-image-left-tablet {
+            display: block;
+        }
+        
+        .dele-page-image-right {
+            display: none;
+        }
+        
+        .dele-page-image-right-tablet {
+            display: block;
+        }
+        
+        .dele-page-title {
+            margin-top: 13rem;
+            font-size: 3rem;
+        }
+        
+        .dele-page-text-babel-wrapper {
+            top: -3.5rem;
+            left: 39rem;
+        }
+        
+        .dele-page-text-block {
+            width: calc(100% - 17rem);
+        }
+        
+        .dele-page-text-block-wrapper {
+            margin-top: 5rem;
+        }
+        
+        .dele-page-teachers-header {
+            margin-top: 3.5rem;
+        }
+        
+        .dele-page-teacher-card-wrapper {
+            display: none;
+        }
+        
+        .dele-page-teacher-card-wrapper-tablet {
+            display: block;
+        }
+        
+        .dele-page-text-block-header {
+            margin-bottom: 3rem;
+        }
+        
+        .dele-page-information-block-сontainer {
+            width: calc(100% - 9rem);
+        }
+        
+        .dele-page-level-container {
+            width: calc(100% - 9rem);
+            margin-top: 0;
+        }
+        
+        .dele-page-schedule-section-levels-header {
+            display: none;
+        }
+        
+        .dele-page-schedule-sections-levels-container {
+            margin-top: 3rem;
+            width: calc(100% - 9rem);
+            border-radius: 0.8rem;
+        }
+        
+        .dele-page-schedule-section-level-wrapper {
+            margin-top: 2.5rem;
+        }
+        
+        .dele-page-signup-form-wrapper {
+            margin-top: 6rem;
+        }
+        
+    }
+
+    @media screen and (max-width: 760px) {
+
+        .dele-page-header {
+            height: 23rem;
+        }
+        
+        .dele-page-image-left-tablet {
+            display: none;
+        }
+        
+        .dele-page-image-right-tablet {
+            display: none;
+        }
+        
+        .dele-page-title {
+            font-size: 1.8rem;
+            margin-top: 18rem;
+        }
+        
+        .dele-page-text-babel-wrapper {
+            left: 33rem;
+        }
+        
+        .dele-page-text-block {
+            width: calc(100% - 4rem);
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+        
+        .dele-page-teachers-header {
+            font-size: 1.8rem;
+        }
+        
+        .dele-page-teachers-card-container {
+            margin-top: 2.5rem;
+        }
+        
+        .dele-page-teacher-card-wrapper-tablet {
+            display: none;
+        }
+
+        .dele-page-teacher-card-wrapper-phone {
+            display: block;
+        }
+        
+        .dele-page-text-block-header {
+            font-size: 1.8rem;
+            margin-top: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .dele-page-information-block-сontainer {
+            width: calc(100% - 4rem);
+            padding: 0 2rem;
+            height: 23rem;
+        }
+
+        .dele-page-information-block-item-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        
+        .dele-page-information-block-item {
+            margin: 0.6rem 0;
+        }
+        
+        .dele-page-information-block-title {
+            font-size: 1.4rem;
+            text-align: left;
+        }
+        
+        .dele-page-information-block-item-text {
+            font-size: 1.2rem;
+            text-align: left;
+        }
+        
+        .dele-page-level-container {
+            flex-direction: column;
+            width: calc(100% - 4rem);
+        }
+        
+        .dele-page-level-information-container {
+            margin-left: 0;
+        }
+
+        .dele-page-level-image {
+            width: 8rem;
+            height: 8rem;
+            min-width: 8rem;
+            min-height: 8rem;
+        }
+        
+        .dele-page-level-information-level {
+            font-family: GothamPro-Medium, sans-serif;
+            font-size: 1.6rem;
+        }
+        
+        .dele-page-level-information-description {
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+        
+        .dele-page-schedule-sections-levels-container {
+            width: calc(100% - 2rem);
+            margin-bottom: 4rem;
+            padding: 0 2rem;
+        }
+        
+        .dele-page-signup-form-wrapper {
+            margin: 4rem 0;
+        }
     }
 
 </style>
