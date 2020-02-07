@@ -1,14 +1,14 @@
 <template>
     <div class="schedule-section-level-item-container">
         <div class="schedule-section-level-item-teacher-container">
-            <img v-if="teacherPhoto" class="schedule-section-level-item-teacher-photo" 
-                 :src="teacherPhoto" :alt="teacherName">
+            <img v-if="checkSmallPhoto(teacher)" class="schedule-section-level-item-teacher-photo" 
+                 :src="teacher.smallPhoto" :alt="teacher.name">
             <img v-else class="schedule-section-level-item-teacher-photo" 
                  src="../assets/teachers/teacher-default-small.svg" alt="">
             <div class="schedule-section-level-item-teacher-info-container">
-                <span v-if="teacherName" class="schedule-section-level-item-teacher-name">{{teacherName}}</span>
+                <span v-if="checkName(teacher)" class="schedule-section-level-item-teacher-name">{{teacher.name}}</span>
                 <span v-else class="schedule-section-level-item-teacher-name-empty">носитель</span>
-                <span v-if="teacherPost" class="schedule-section-level-item-teacher-post">{{teacherPost}}</span>
+                <span v-if="checkPosition(teacher)" class="schedule-section-level-item-teacher-post">{{teacher.position}}</span>
                 <span v-else class="schedule-section-level-item-teacher-post-empty">преподаватель</span>
             </div>
         </div>
@@ -52,9 +52,7 @@
     
     export default {
         props: {
-            teacherPhoto: String,
-            teacherName: String,
-            teacherPost: String,
+            teacher: {},
             startTime: String,
             endTime: String,
             days: String,
@@ -75,6 +73,15 @@
         methods: {
             showModal(name) {
                 this.$modal.show(name)
+            },
+            checkSmallPhoto(teacher) {
+                return teacher && teacher.smallPhoto;
+            },
+            checkName(teacher) {
+                return teacher && teacher.name;
+            },
+            checkPosition(teacher) {
+                return teacher && teacher.position;
             }
         }
     }

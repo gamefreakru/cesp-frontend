@@ -8,9 +8,7 @@
                                       index!==languageSectionLevelItems.length - 1  }, 
                                       'schedule-section-level-item-wrapper-tablet']"
                                       :key="index"
-                                      :teacher-photo="languageSectionLevelItem.teacherPhoto"
-                                      :teacher-name="languageSectionLevelItem.teacherName"
-                                      :teacher-post="languageSectionLevelItem.teacherPost"
+                                      :teacher="languageSectionLevelItem.teacher"
                                       :start-time="languageSectionLevelItem.startTime"
                                       :end-time="languageSectionLevelItem.endTime"
                                       :days="languageSectionLevelItem.days"
