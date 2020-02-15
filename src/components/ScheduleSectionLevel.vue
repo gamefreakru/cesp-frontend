@@ -41,6 +41,10 @@
         },
         computed: {
             priceDescription: function() {
+                if(this.minPrice === this.maxPrice)
+                {
+                    return this.minPrice + ' руб.'
+                }
                 return this.minPrice + ' - ' + this.maxPrice + ' руб.';
             }
         }
