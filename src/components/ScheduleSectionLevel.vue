@@ -1,6 +1,8 @@
 <template>
     <div class="schedule-section-level-container">
         <span class="schedule-section-level-title">{{title}}</span>
+        <span class="schedule-section-level-duration">{{duration}}</span>
+        <span class="schedule-section-level-price">{{priceDescription}}</span>
         <div class="schedule-section-level-delimiter-tablet"></div>
         <div class="schedule-section-level-items-container">
             <ScheduleSectionLevelItem v-for="(languageSectionLevelItem, index) in languageSectionLevelItems"
@@ -32,7 +34,15 @@
         },
         props: {
             title: String,
+            duration: String,
+            minPrice: String,
+            maxPrice: String,
             languageSectionLevelItems: Array
+        },
+        computed: {
+            priceDescription: function() {
+                return this.minPrice + ' - ' + this.maxPrice + ' руб.';
+            }
         }
     }
 </script>
@@ -49,6 +59,21 @@
         text-align: left;
         width: 18rem;
         margin-top: 2rem;
+    }
+    
+    .schedule-section-level-duration {
+        font-family: GothamPro, sans-serif;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        display: none;
+    }
+    
+    .schedule-section-level-price {
+        font-family: GothamPro-Medium, sans-serif;
+        font-size: 1.4rem;
+        color: var(--tomato);
+        margin-top: 1rem;
+        display: none;
     }
     
     .schedule-section-level-item-border-wrapper {
@@ -68,6 +93,14 @@
         
         .schedule-section-level-title {
             margin-top: 0;
+        }
+
+        .schedule-section-level-duration {
+            display: block;
+        }
+
+        .schedule-section-level-price {
+            display: block;
         }
         
         .schedule-section-level-delimiter-tablet {

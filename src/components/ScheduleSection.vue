@@ -1,13 +1,14 @@
 <template>
     <div class="schedule-section-container">
         <span class="schedule-section-title">{{title}}</span>
-        <span v-if="durationDescription" class="schedule-section-duration">{{durationDescription}}</span>
-        <span v-if="priceDesription" class="schedule-section-price-tablet">{{priceDesription}}</span>
         <ScheduleSectionLevel class="schedule-section-levels-wrapper" v-for="(languageLevel, index) in languageLevels"
                               :class="{ 'schedule-section-levels-wrapper-border': 
                                       index!==languageLevels.length - 1 }"
                               :key="index"
                               :title="languageLevel.level"
+                              :duration="languageLevel.duration"
+                              :min-price="languageLevel.minPrice"
+                              :max-price="languageLevel.maxPrice"
                               :language-section-level-items="languageLevel.scheduleItems"
         />
     </div>
@@ -23,8 +24,6 @@
         },
         props: {
             title: String,
-            durationDescription: String,
-            priceDesription: String,
             languageLevels: Array
         }
     }

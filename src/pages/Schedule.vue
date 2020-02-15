@@ -21,7 +21,6 @@
             <ScheduleSection class="schedule-section-wrapper" v-for="(scheduleSection, index) in schedule"
                              :key="index"
                              :title="scheduleSection.name"
-                             :duration-description="scheduleSection.description"
                              :language-levels="scheduleSection.scheduleSegments"
             />
         </div>
