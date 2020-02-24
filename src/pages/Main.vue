@@ -336,8 +336,7 @@
                     '<div class="info-block-circle"></div>' +
                     '<span class="info-block-circle-title">8 лет</span>' +
                     '<span class="info-block-circle-description">успешной работы</span>' +
-                    '</div>',
-                        
+                    '</div>'
                 ]
             }
         },

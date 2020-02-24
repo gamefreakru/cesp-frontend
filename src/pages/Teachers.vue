@@ -5,10 +5,10 @@
             <img class="teachers-page-header-image-right" src="../assets/teachers/teachers-right.svg"  alt="">
             <img class="teachers-page-header-image-left-tablet" src="../assets/teachers/teachers-left-tablet.svg"  alt="">
             <img class="teachers-page-header-image-right-tablet" src="../assets/teachers/teachers-right-tablet.svg"  alt="">
-            <span class="teachers-page-title">
+            <HeaderTitle class="teachers-page-title-wrapper">
                 Наши <span style="color: var(--tomato);">преподаватели</span>
                 <TextBabel class="teachers-page-text-babel-wrapper" text="Profesores"/>
-            </span>
+            </HeaderTitle>
         </div>
         <div class="teachers-page-card-container">
             <TeacherModal class="teachers-page-teacher-modal"
@@ -55,6 +55,7 @@
 
 <script>
 
+    import HeaderTitle from "../components/HeaderTitle";
     import TextBabel from "../components/TextBabel";
     import TeacherCard from "../components/TeacherCard";
     import TeacherModal from "../components/TeacherModal"
@@ -62,6 +63,7 @@
     
     export default {
         components: {
+            HeaderTitle,
             TextBabel,
             TeacherCard,
             TeacherModal
@@ -143,9 +145,7 @@
         right: 0;
     }
 
-    .teachers-page-title {
-        font-family: FedraSerifAPro-Medium, sans-serif;
-        font-size: 4rem;
+    .teachers-page-title-wrapper {
         margin-top: 25rem;
         width: 50rem;
         position: relative;
@@ -205,8 +205,7 @@
             display: block;
         }
         
-        .teachers-page-title {
-            font-size: 3rem;
+        .teachers-page-title-wrapper {
             width: 40rem;
             margin-top: 12rem;
         }
@@ -239,8 +238,7 @@
             display: none;
         }
         
-        .teachers-page-title {
-            font-size: 1.8rem;
+        .teachers-page-title-wrapper {
             width: 25rem;
             margin-top: 18rem;
         }

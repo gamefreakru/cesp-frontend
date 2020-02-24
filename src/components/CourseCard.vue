@@ -1,21 +1,23 @@
 <template>
     <router-link class="course-card-container" :to="link" onclick="ym(52043682, 'reachGoal', 'kurs-zapis'); return true;">
-        <img class="course-card-image" :src="image" alt=""/>
+        <div class="course-card-icons-container">
+            <img v-for="(icon, index) in icons" class="course-card-icon" :key="index" :src="icon" alt=""/>
+        </div>
         <div class="course-card-flex-container">
-            <span class="course-card-title">
-            <span style="color: var(--tomato);">{{redTitle}}</span>
-            {{title}}
-            </span>
+            <div class="course-card-title" v-html="title" />
             <div class="course-card-description">{{description}}</div>
             <span v-if="durationDescription" class="course-card-duration-title">Продолжительность</span>
             <div v-if="durationDescription" class="course-card-duration-description">{{durationDescription}}</div>
             <div class="course-card-position-container">
-                <div class="course-card-delimiter"></div>
-                <div class="course-card-bottom-flex-container">
-                    <!--                <span class="course-card-price">скидка {{discountValue}}%</span>-->
-                    <span class="course-card-price">{{priceDescription}}</span>
-                    <span class="course-card-lesson-registration">Записаться</span>
-                    <img class="course-card-arrow-image" src="../assets/common/arrow.svg" alt="arrow"/>
+                <div class="course-card-delimiter">
+                    <div v-if="discountValue" class="course-card-discount">скидка {{discountValue}}%</div>
+                </div>
+                <div class="course-card-bottom-container">
+                    <div class="course-card-price">{{priceDescription}}</div>
+                    <div class="course-card-registration-container">
+                        <div class="course-card-lesson-registration">Записаться</div>
+                        <img class="course-card-arrow-image" src="../assets/common/arrow.svg" alt="arrow"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -26,6 +28,7 @@
     export default {
         props: {
             image: String,
+            icons: Array,
             title: String,
             link: String,
             redTitle: String,
@@ -43,12 +46,34 @@
         background-color: white;
         width: 38.6rem;
         height: 39.3rem;
+        min-width: 38.6rem;
+        min-height: 39.3rem;
         border: solid 1px rgba(0, 0, 0, 0.1);
         border-radius: 1.2rem;
         text-align: left;
         position: relative;
         text-decoration: none;
         color: black;
+    }
+    
+    .course-card-icons-container {
+        position: absolute;
+        left: 4rem;
+        top: -3rem;
+        display: flex;
+        align-items: flex-start;
+    }
+    
+    .course-card-icon {
+        margin: 0 -1rem;
+    }
+    
+    .course-card-icon:first-child {
+        margin-left: 0;
+    }
+    
+    .course-card-icon:last-child {
+        margin-right: 0;
     }
 
     .course-card-image {
@@ -67,7 +92,6 @@
     .course-card-title {
         font-family: FedraSerifAPro-Medium, sans-serif;
         font-size: 2.4rem;
-        margin: 0.75rem 0;
     }
     
     .course-card-description {
@@ -104,59 +128,95 @@
         background-color: rgba(0, 0, 0, 0.1);
         margin-bottom: 1.25rem;
         width: 30rem;
+        position: relative;
     }
     
-    .course-card-bottom-flex-container {
+    .course-card-bottom-container {
         display: flex;
         margin-top: 1.25rem;
         align-items: center;
+        width: 30rem;
     }
     
     .course-card-price {
         font-family: GothamPro-Medium, sans-serif;
         font-size: 1.6rem;
         color: var(--tomato);
-        margin-right: 2rem;
+    }
+    
+    .course-card-registration-container {
+        display: flex;
+        margin-left: auto;
     }
     
     .course-card-lesson-registration {
         font-family: GothamPro-Bold, sans-serif;
         font-size: 1.4rem;
         text-transform: uppercase;
-        margin: 0 1rem 0 2.5rem 
+        margin-right: 1rem;
     }
     
-    .course-card-discount-value {
+    .course-card-discount {
         position: absolute;
+        top: -1.25rem;
+        width: 10rem;
+        height: 2.5rem;
+        font-family: GothamPro-Bold, sans-serif;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        background-color: var(--main-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.3rem;
     }
 
     @media screen and (max-width: 1280px) {
+        
         .course-card-container {
+            min-width: 32rem;
             width: 32rem;
-            height: 45rem;
+            min-height: 47rem;
+            height: 47rem;
         }
         
         .course-card-delimiter {
             width: 24rem;
+            margin-bottom: .75rem;
+        }
+
+        .course-card-bottom-container {
+            flex-direction: column;
+            width: 24rem;
+            align-items: flex-start;
+        }
+        
+        .course-card-registration-container {
+            margin-left: 0;
+            margin-top: 1.5rem;
         }
         
         .course-card-price {
             margin-right: 0;
         }
         
-        .course-card-lesson-registration {
-            margin: 0 1rem 0 0.5rem;
-        }
     }
 
     @media screen and (max-width: 760px) {
+        
         .course-card-container {
+            min-width: 28rem;
             width: 28rem;
-            height: 30.5rem;
+            min-height: 33rem;
+            height: 33rem;
+        }
+
+        .course-card-icons-container {
+            left: 2rem;
         }
         
         .course-card-flex-container {
-            padding: 0 2rem;
+            padding: 4rem 2rem 0;
         }
         
         .course-card-image {
@@ -168,7 +228,6 @@
         
         .course-card-title {
             font-size: 1.6rem;
-            margin-top: 2.5rem;
         }
         
         .course-card-description {
@@ -188,8 +247,8 @@
             bottom: 1.5rem;
         }
         
-        .course-card-bottom-flex-container {
-            margin: 0;
+        .course-card-registration-container {
+            margin-top: 1rem;
         }
         
         .course-card-price {

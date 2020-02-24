@@ -1,92 +1,45 @@
 <template>
-    <div class="courses-container">
-        <SectionHeader image="course"
-                       title="Cursos"
-                       description="Курсы испанского и каталонского в Москве"/>
-        <Delimiter/>
-        <SubMenu :items="[
-        {
-            name: 'Типы курсов',
-            active: true,
-            link: '/courses'
-        },
-        {
-            name: 'Расписание',
-            active: false,
-            link: '/schedule'
-        }]"/>
-        <Delimiter/>
-        <div id="courses-grid">
-            <Course v-for="(course, index) in courses"
-                    :key="index"
-                    :title="course.name"
-                    :description="course.description"
-                    :image="course.photo"
-                    :duration="course.durationInfo" 
-                    :price-info="course.costInfo"
-                    :discount="course.discountPercent | formatDiscountMessage"
-                    :signup="true" />
-        </div>
-        <div id="courses-footer">
-            <span id="footer-title">Курсы испанского в Москве — эффективные методики дают отличный результат</span>
-            <div id="footer-description">
-                <br>
-                Стоит ли убеждать в том, что в наше время без знания одного-двух иностранных языков обойтись очень трудно?
-                Современный мир каждому человеку предъявляет требование — быть полиглотом. И многие из нас стараются соответствовать
-                этому требованию. Современные жители мегаполисов много путешествуют, ведут международный бизнес,
-                читают книги на языке оригинала, покупают недвижимость заграницей. Поэтому языковые курсы в Москве не страдают 
-                от отсутствия желающих овладеть грамматикой и разговорной речью европейских языков. 
-                Испанский язык — один из самых востребованных.
-                <br>
-                <br>
-                Испания за последние годы стала для россиян одной из самых интересных и привлекательных. 
-                В эту страну многие едут отдыхать и учиться, строят там дачи, приобретают дома и квартиры, 
-                а потому на курсы испанского сегодня записывается большое число желающих выучить язык. 
-                Все они — люди разного возраста, социального положения и различных интересов. 
-                Вернее, один общий интерес все-таки их объединяет довольно серьезно. Это испанский язык: курсы, общение, культура страны.
-                <br>
-                <br>
-                Всем известно, что в компании единомышленников и под руководством профессионала изучение иностранного языка всегда проходит
-                более интересно и эффективно. Многим удается заговорить на испанском языке уже через пару недель обучения.
-                Это неудивительно: высококвалифицированные преподаватели, коммуникативные методики, новейшие учебники — 
-                все это дает отличный результат. Вы просто начинаете говорить по-испански.
-                <br>
-                <br>
-                Проблема одна — где найти этих единомышленников и хорошего педагога? Какие курсы испанского языка в 
-                Москве действительно гарантируют качественное изучение языка в группе неравнодушных людей. 
-                Выбирайте те курсы, где работают педагоги c опытом, владеющие современными методами преподавания 
-                иностранных языков и изучавшие язык непосредственно в тех странах, где он является государственным. 
-                Мы надеемся, что наши курсы испанского языка не только отвечают этим требованиям, 
-                но и дают стимул и мотивацию к дальнейшему углублению и погружению в язык, ведь это процесс долгий, 
-                который длится годами и, чтобы он действительно был успешным, уже в самом начале нужно применить 
-                грамотные стимулирующие методики.
-                <br>
-                <br>
-                Даже если работа идет в группах, преподаватели знают, как найти индивидуальный подход к каждому, 
-                кто записался на наши курсы испанского в Москве. Кроме того, занятия организованы так, 
-                чтобы участники могли обмениваться знаниями. Процесс обучения — познавательный, разноплановый, неутомительный.
-                Готовитесь вы к сдаче экзамена по испанскому, собираетесь на отдых в Испании или язык вам понадобился 
-                для продвижения по карьерной лестнице, мы постараемся помочь вам преобрести прочные и уверенные знания испанского языка.
-            </div>
-        </div>
-    </div>
+	<div class="courses-page-container">
+		<div class="courses-page-header-container">
+			<img class="courses-page-header-image-left" src="../assets/courses/courses-left.svg" alt="">
+			<img class="courses-page-header-image-right" src="../assets/courses/courses-right.svg" alt="">
+			<img class="courses-page-header-image-left-tablet" src="../assets/courses/courses-left-tablet.svg" alt="">
+			<img class="courses-page-header-image-right-tablet" src="../assets/courses/courses-right-tablet.svg" alt="">
+			<HeaderTitle class="courses-page-header-title-wrapper">
+				Курсы
+				<TextBabel class="courses-page-header-text-babel-wrapper" text="Coursos"/>
+			</HeaderTitle>
+		</div>
+		<div class="courses-page-body-container">
+			<CourseCard class="courses-page-course-wrapper" v-for="(course, index) in courses"
+						:key="index"
+						link="/contacts"
+						:title="course.name"
+						:description="course.description"
+						:image="course.photo"
+						:icons="course.icons"
+						:duration-description="course.durationInfo"
+						:price-description="course.price"
+						:discount-value="course.discountPercent"
+			/>
+		</div>
+	</div>
 </template>
 
 <script>
-
-    import SectionHeader from '../components/SectionHeader.vue'
-    import Course from '../components/Course.vue'
-    import Delimiter from '../components/Delimiter'
-    import SubMenu from '../components/SubMenu'
+	
+	import HeaderTitle from "../components/HeaderTitle";
+	import TextBabel from "../components/TextBabel";
+    import CourseCard from '../components/CourseCard.vue'
     import Service from "../service";
-
+	
     export default {
-        components: {
-            SectionHeader,
-            Course,
-            Delimiter,
-            SubMenu
-        },
+        name: "Courses",
+		components: {
+            HeaderTitle,
+            TextBabel,
+			CourseCard
+		},
         filters: {
             formatDiscountMessage(value)
             {
@@ -108,37 +61,125 @@
 </script>
 
 <style scoped>
+	
+	.courses-page-header-container {
+		height: 50rem;
+		position: relative;
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 239, 170, 0.3) 55%);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.courses-page-header-image-left {
+		position: absolute;
+		left: 0;
+		bottom: 7rem;
+	}
+	
+	.courses-page-header-image-left-tablet {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		display: none;
+	}
+	
+	.courses-page-header-image-right {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
+	
+	.courses-page-header-image-right-tablet {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		display: none;
+	}
+	
+	.courses-page-header-title-wrapper {
+		position: relative;
+		width: 30rem;
+		margin-top: 25rem;
+	}
+	
+	.courses-page-header-text-babel-wrapper {
+		position: absolute;
+		top: -4rem;
+		left: 20rem;
+	}
+	
+	.courses-page-body-container {
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: -7.5rem;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.courses-page-course-wrapper {
+		margin: 3.5rem 2rem;
+	}
 
-    .courses-container {
-        padding: 5rem 5.5rem;
-        margin-top: 10rem;
-        font-size: 1.6rem;
-    }
-    
-    #courses-footer {
-        display: flex;
-        flex-direction: column;
-        margin-top: 50px;
-    }
+	@media screen and (max-width: 1280px) {
 
-    #courses-grid {
-        margin-top: 5rem;
-        display: inline-grid;
-        grid-template-columns: auto auto auto;
-        grid-gap: 50px 35px;
-    }
-    
-    #footer-title {
-        font-size: 1.6rem;
-        color: #888888;
-        font-weight: bold;
-        text-align: left;
-    }
-    
-    #footer-description {
-        font-size: 1.4rem;
-        color: #888888;
-        text-align: left;
-    }
+		.courses-page-header-container {
+			height: 38rem;
+		}
+		
+		.courses-page-header-title-wrapper {
+			margin-top: 20rem;
+		}
+		
+		.courses-page-header-text-babel-wrapper {
+			top: -3.5rem;
+			left: 18rem;
+		}
+		
+		.courses-page-header-image-left {
+			display: none;
+		}
+
+		.courses-page-header-image-left-tablet {
+			display: block;
+		}
+
+		.courses-page-header-image-right {
+			display: none;
+		}
+		
+		.courses-page-header-image-right-tablet {
+			display: block;
+		}
+		
+	}
+
+	@media screen and (max-width: 760px) {
+
+		.courses-page-header-container {
+			height: 30rem;
+		}
+
+		.courses-page-header-title-wrapper {
+			margin-top: 18rem;
+		}
+
+		.courses-page-header-text-babel-wrapper {
+			left: 16rem;
+		}
+		
+		.courses-page-header-image-left-tablet {
+			display: none;
+		}
+		
+		.courses-page-header-image-right-tablet {
+			display: none;
+		}
+
+		.courses-page-course-wrapper {
+			margin: 2.5rem 2rem;
+		}
+		
+	}
 
 </style>
