@@ -1,27 +1,30 @@
 <template>
-    <router-link class="course-card-container" :to="link" onclick="ym(52043682, 'reachGoal', 'kurs-zapis'); return true;">
-        <div class="course-card-icons-container">
-            <img v-for="(icon, index) in icons" class="course-card-icon" :key="index" :src="icon" alt=""/>
-        </div>
-        <div class="course-card-flex-container">
-            <div class="course-card-title" v-html="title" />
-            <div class="course-card-description">{{description}}</div>
-            <span v-if="durationDescription" class="course-card-duration-title">Продолжительность</span>
-            <div v-if="durationDescription" class="course-card-duration-description">{{durationDescription}}</div>
-            <div class="course-card-position-container">
-                <div class="course-card-delimiter">
-                    <div v-if="discountValue" class="course-card-discount">скидка {{discountValue}}%</div>
-                </div>
-                <div class="course-card-bottom-container">
-                    <div class="course-card-price">{{priceDescription}}</div>
-                    <div class="course-card-registration-container">
-                        <div class="course-card-lesson-registration">Записаться</div>
-                        <img class="course-card-arrow-image" src="../assets/common/arrow.svg" alt="arrow"/>
+    <div class="course-card-container">
+        <div class="course-card-header"></div>
+        <router-link class="course-card-body-container" :to="link" onclick="ym(52043682, 'reachGoal', 'kurs-zapis'); return true;">
+            <div class="course-card-icons-container">
+                <img v-for="(icon, index) in icons" class="course-card-icon" :key="index" :src="icon" alt=""/>
+            </div>
+            <div class="course-card-flex-container">
+                <div class="course-card-title" v-html="title" />
+                <div class="course-card-description">{{description}}</div>
+                <span v-if="durationDescription" class="course-card-duration-title">Продолжительность</span>
+                <div v-if="durationDescription" class="course-card-duration-description">{{durationDescription}}</div>
+                <div class="course-card-position-container">
+                    <div class="course-card-delimiter">
+                        <div v-if="discountValue" class="course-card-discount">скидка {{discountValue}}%</div>
+                    </div>
+                    <div class="course-card-bottom-container">
+                        <div class="course-card-price">{{priceDescription}}</div>
+                        <div class="course-card-registration-container">
+                            <div class="course-card-lesson-registration">Записаться</div>
+                            <img class="course-card-arrow-image" src="../assets/common/arrow.svg" alt="arrow"/>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </router-link>
+        </router-link>
+    </div>
 </template>
 
 <script>
@@ -31,7 +34,6 @@
             icons: Array,
             title: String,
             link: String,
-            redTitle: String,
             description: String,
             durationDescription: String,
             discountValue: Number,
@@ -43,6 +45,16 @@
 <style scoped>
 
     .course-card-container {
+        width: 38.6rem;
+        height: 43.3rem;
+    }
+    
+    .course-card-header {
+        height: 3rem;
+        width: 38.6rem;
+    }
+    
+    .course-card-body-container {
         background-color: white;
         width: 38.6rem;
         height: 39.3rem;
@@ -54,6 +66,7 @@
         position: relative;
         text-decoration: none;
         color: black;
+        display: block;
     }
     
     .course-card-icons-container {
@@ -172,8 +185,13 @@
     }
 
     @media screen and (max-width: 1280px) {
-        
+
         .course-card-container {
+            width: 32rem;
+            height: 51rem;
+        }
+        
+        .course-card-body-container {
             min-width: 32rem;
             width: 32rem;
             min-height: 47rem;
@@ -203,8 +221,13 @@
     }
 
     @media screen and (max-width: 760px) {
-        
+
         .course-card-container {
+            width: 28rem;
+            height: 37rem;
+        }
+        
+        .course-card-body-container {
             min-width: 28rem;
             width: 28rem;
             min-height: 33rem;

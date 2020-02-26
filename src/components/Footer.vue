@@ -144,7 +144,7 @@
                 <img class="payment-method" alt="mir" src="../assets/footer/mir.svg">
             </div>
         </div>
-        <div class="info-text-tablet">© Centro Vamos, 2019</div>
+        <div class="info-text-tablet">© Centro Vamos, 2020</div>
     </div>
 </template>
 

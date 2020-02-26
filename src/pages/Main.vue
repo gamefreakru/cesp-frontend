@@ -39,8 +39,8 @@
                  alt="">
             <div class="group-recruitment-information-container">
                 <span class="group-recruitment-information-title">Идёт набор в группы: 
-                    <span style="color: var(--tomato);">январь</span>, 
-                    <span style="color: var(--tomato);">февраль</span>
+                    <span style="color: var(--tomato);">февраль</span>, 
+                    <span style="color: var(--tomato);">март</span>
                 </span>
                 <span class="group-recruitment-information-description">
                     При оплате полного стандартного курса действуют скидки:
@@ -105,66 +105,25 @@
                 наших курсов
                 <TextBabel class="text-babel-courses-wrapper" text="Cursos"/>
             </span>
-            <div class="courses-card-container">
-                <CourseCard class="course-card-wrapper"
-                            :image="getImgUrl('spain-course')"
-                            red-title="Испанский"
-                            title=" стандартный курс"
-                            link="/contacts"
-                            description="Классический курс испанского языка в Москве продолжительностью около двух месяцев."
-                            duration-description="60 ак. часов (9 недель)"
-                            :discount-value=19
-                            price-description="от 19 000 руб."
-                />
-                <CourseCard class="course-card-wrapper"
-                            :image="getImgUrl('catalan-course')"
-                            red-title="Каталонский"
-                            title=" язык"
-                            link="/contacts"
-                            description="Каталонский является официальным языком Каталонии, Балеарских островов, Арагона, Валенсии и Андорры."
-                            price-description="от 19 000 руб."
-                />
-                <CourseCard class="course-card-wrapper"
-                            :image="getImgUrl('personal-course')"
-                            red-title="Индивидуальные"
-                            title=" занятия и мини-группы"
-                            link="/contacts"
-                            description="Занятия проходят индивидуально 1-2 человека или в мини-группах по 3-4 человека."
-                            duration-description="Частота и продолжительность согласовываются с учётом ваших пожеланий"
-                            price-description="2 500 руб./час"/>
-            </div>
-            <div class="courses-card-container-tablet">
-                <CourseCard class="course-card-wrapper"
-                            :image="getImgUrl('spain-course')"
-                            red-title="Испанский"
-                            title=" стандартный курс"
-                            link="/contacts"
-                            description="Классический курс испанского языка в Москве продолжительностью около двух месяцев."
-                            duration-description="60 ак. часов (9 недель)"
-                            :discount-value=19
-                            price-description="от 19 000 руб."
-                />
-                <CourseCard class="course-card-wrapper"
-                            :image="getImgUrl('catalan-course')"
-                            red-title="Каталонский"
-                            title=" язык"
-                            link="/contacts"
-                            description="Каталонский является официальным языком Каталонии, Балеарских островов, Арагона, Валенсии и Андорры."
-                            price-description="от 19 000 руб."
-                />
-            </div>
-            <div class="courses-card-container-mobile">
-                <CourseCard class="course-card-wrapper"
-                            :image="getImgUrl('spain-course')"
-                            red-title="Испанский"
-                            title=" стандартный курс"
-                            link="/contacts"
-                            description="Классический курс испанского языка в Москве продолжительностью около двух месяцев."
-                            duration-description="60 ак. часов (9 недель)"
-                            :discount-value=19
-                            price-description="от 19 000 руб."
-                />
-            </div>
+            <vue-carousel :centerMode="true"
+                          :autoplay="true"
+                          :scrollPerPage="false"
+                          :perPageCustom="[[1024, 3],[760, 2],[320, 1]]"
+                          :paginationEnabled="false"
+                          class="course-card-slider-container">
+                <slide v-for="(course, index) in courses" :key="index">
+                    <CourseCard class="course-card-wrapper"
+                                link="/contacts"
+                                :title="course.name"
+                                :description="course.description"
+                                :image="course.photo"
+                                :icons="course.icons"
+                                :duration-description="course.durationInfo"
+                                :price-description="course.price"
+                                :discount-value="course.discountPercent"
+                    />
+                </slide>
+            </vue-carousel>
             <LinkButton class=courses-link-button-wrapper title="Выбрать курсы" link="/courses"/>
         </div>
         <div class="teachers-container">
@@ -282,6 +241,7 @@
     import TextBabel from "../components/TextBabel";
     import ImageCarousel from "../components/ImageCarousel";
     import Service from "../service";
+    import {Carousel, Slide} from 'vue-carousel'
 
     export default {
         components: {
@@ -292,7 +252,9 @@
             LinkButton,
             SignupForm,
             TextBabel,
-            ImageCarousel
+            'vue-carousel': Carousel,
+            Slide,
+            ImageCarousel,
         },
         methods: {
             getImgUrl(imagePath) {
@@ -320,6 +282,7 @@
                 events: {},
                 eventsTablet: {},
                 eventsMobile: {},
+                courses: {},
                 feedbacks: {},
                 topCarouselMobileData: [
                     '<div class="info-block-circle-item">' +
@@ -354,6 +317,9 @@
             Service.get("feedbacks?count=1", (status, data) => {
                 this.feedbacks = data;
             });
+            Service.get("courses?count=3", (status, data) => {
+                this.courses = data;
+            })
         }
     }
 </script>
@@ -625,7 +591,7 @@
     }
 
     .courses-container {
-        height: 70rem;
+        height: 75rem;
         background-color: var(--background-color-lighter);
         display: flex;
         flex-direction: column;
@@ -644,20 +610,12 @@
         left: 31rem;
     }
 
-    .courses-card-container {
-        display: flex;
+    .course-card-slider-container {
+        width: calc(100% - 16rem);
     }
     
-    .courses-card-container-tablet {
-        display: none;
-    }
-    
-    .courses-card-container-mobile {
-        display: none;
-    }
-
     .course-card-wrapper {
-        margin: 0 2rem;
+        margin: 0 auto;
     }
 
     .courses-link-button-wrapper {
@@ -1030,15 +988,11 @@
         }
 
         .courses-container {
-            height: 75rem;
+            height: 82rem;
         }
 
-        .courses-card-container {
-            display: none;
-        }
-
-        .courses-card-container-tablet {
-            display: flex;
+        .course-card-slider-container {
+            width: 100%;
         }
 
         .teacher-card-wrapper {
@@ -1252,15 +1206,7 @@
         .courses-container {
             background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 239, 170, 0.3) 55%);
             background-color: white;
-            height: 52rem;
-        }
-        
-        .courses-card-container-tablet {
-            display: none;
-        }
-        
-        .courses-card-container-mobile {
-            display: flex;
+            height: 58rem;
         }
         
         .courses-cards-title {
@@ -1273,16 +1219,12 @@
             top: -3.5rem;
         }
         
-        .course-card-wrapper {
-            margin: 0;
-        }
-        
         .courses-link-button-wrapper {
             margin-top: 2rem;
         }
         
         .teachers-container {
-            height: 75rem;
+            height: 60rem;
         }
         
         .teacher-card-wrapper-tablet {

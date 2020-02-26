@@ -112,7 +112,7 @@
 	.courses-page-body-container {
 		display: flex;
 		flex-wrap: wrap;
-		margin-top: -7.5rem;
+		margin-top: -10.5rem;
 		align-items: center;
 		justify-content: center;
 	}
