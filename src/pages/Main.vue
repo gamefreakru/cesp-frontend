@@ -31,7 +31,31 @@
                     <span class="info-block-circle-description">успешной работы</span>
                 </div>
             </div>
-            <carousel class="main-page-top-carousel-mobile" :data="topCarouselMobileData"/>
+            <carousel :center-mode="true"
+                      :autoplay="true"
+                      :loop="true"
+                      :scroll-per-page="false"
+                      :per-page="1"
+                      :touch-drag="false"
+                      :mouse-drag="false"
+                      :pagination-enabled="false"
+                      class="main-page-top-carousel-mobile">
+                <slide class="info-block-circle-item">
+                    <div class="info-block-circle"></div>
+                    <span class="info-block-circle-title">4 000</span>
+                    <span class="info-block-circle-description">довольных слушателей</span>
+                </slide>
+                <slide class="info-block-circle-item">
+                    <div class="info-block-circle"></div>
+                    <span class="info-block-circle-title">от 319 ₽</span>
+                    <span class="info-block-circle-description">стоимость 1 часа занятий</span>
+                </slide>
+                <slide class="info-block-circle-item">
+                    <div class="info-block-circle"></div>
+                    <span class="info-block-circle-title">8 лет</span>
+                    <span class="info-block-circle-description">успешной работы</span>
+                </slide>
+            </carousel>
             <img class="arrow-element" src="../assets/main/scroll-arrow.svg" alt="arrow"/>
         </div>
         <div class="group-recruitment-container">
@@ -74,29 +98,24 @@
                 Наша афиша
                 <TextBabel class="text-babel-events-wrapper" text="Nuestro cartel"/>
             </span>
-            <div class="events-card-container">
-                <EventCard class="event-card-wrapper" v-for="(event, index) in events"
-                           :key="index"
-                           :link="event.sysName | createEventLink"
-                           link-title="Записаться"
-                           :title="event.name"
-                           :image="event.photo"
-                           :description="event.shortInfo"/>
-                <EventCard class="event-card-wrapper-tablet" v-for="(event, index) in eventsTablet"
-                           :key="index + '-tablet'"
-                           :link="event.sysName | createEventLink"
-                           link-title="Записаться"
-                           :title="event.name"
-                           :image="event.photo"
-                           :description="event.shortInfo"/>
-                <EventCard class="event-card-wrapper-mobile" v-for="(event, index) in eventsMobile"
-                           :key="index + '-mobile'"
-                           :link="event.sysName | createEventLink"
-                           link-title="Записаться"
-                           :title="event.name"
-                           :image="event.photo"
-                           :description="event.shortInfo"/>
-            </div>
+            <carousel :centerMode="true"
+                      :autoplay="true"
+                      :scrollPerPage="false"
+                      :perPageCustom="[[1280, 3],[760, 2],[320, 1]]"
+                      :paginationEnabled="false"
+                      :loop="true"
+                      :autoplay-timeout="10000"
+                      class="events-card-container">
+                <slide v-for="(event, index) in events" :key=index>
+                    <EventCard class="event-card-wrapper"
+                               :link="event.sysName | createEventLink"
+                               link-title="Записаться"
+                               :title="event.name"
+                               :image="event.photo"
+                               :description="event.shortInfo"
+                    />
+                </slide>
+            </carousel>
             <LinkButton class="events-link-button-wrapper" title="Все мероприятия" link="/events"/>
         </div>
         <div class="courses-container">
@@ -105,12 +124,14 @@
                 наших курсов
                 <TextBabel class="text-babel-courses-wrapper" text="Cursos"/>
             </span>
-            <vue-carousel :centerMode="true"
-                          :autoplay="true"
-                          :scrollPerPage="false"
-                          :perPageCustom="[[1024, 3],[760, 2],[320, 1]]"
-                          :paginationEnabled="false"
-                          class="course-card-slider-container">
+            <carousel :centerMode="true"
+                      :autoplay="true"
+                      :scrollPerPage="false"
+                      :perPageCustom="[[1280, 3],[760, 2],[320, 1]]"
+                      :paginationEnabled="false"
+                      :loop="true"
+                      :autoplay-timeout="10000"
+                      class="course-card-carousel-container">
                 <slide v-for="(course, index) in courses" :key="index">
                     <CourseCard class="course-card-wrapper"
                                 link="/contacts"
@@ -123,7 +144,7 @@
                                 :discount-value="course.discountPercent"
                     />
                 </slide>
-            </vue-carousel>
+            </carousel>
             <LinkButton class=courses-link-button-wrapper title="Выбрать курсы" link="/courses"/>
         </div>
         <div class="teachers-container">
@@ -131,35 +152,25 @@
                 Наши преподаватели
                 <TextBabel class="text-babel-teachers-wrapper" text="Profesores"/>
             </span>
-            <div class="teachers-card-container">
-                <TeacherCard class="teacher-card-wrapper" v-for="(teacher, index) in teachers"
-                             :key="index"
-                             :image="teacher.photo"
-                             :name="teacher.name"
-                             :city="teacher.city"
-                             :languages="teacher.languages"
-                             :short-description="teacher.shortInfo"
-                             type="normal"
-                />
-                <TeacherCard class="teacher-card-wrapper-tablet" v-for="(teacher, index) in teachersTablet"
-                             :key="index + '-tablet'"
-                             :image="teacher.photo"
-                             :name="teacher.name"
-                             :city="teacher.city"
-                             :languages="teacher.languages"
-                             :short-description="teacher.shortInfo"
-                             type="normal"
-                />
-                <TeacherCard class="teacher-card-wrapper-mobile" v-for="(teacher, index) in teachersMobile"
-                             :key="index + '-mobile'"
-                             :image="teacher.photo"
-                             :name="teacher.name"
-                             :city="teacher.city"
-                             :languages="teacher.languages"
-                             :short-description="teacher.shortInfo"
-                             type="normal"
-                />
-            </div>
+            <carousel :centerMode="true"
+                      :autoplay="true"
+                      :scrollPerPage="false"
+                      :perPageCustom="[[1280, 4],[760, 2],[320, 1]]"
+                      :paginationEnabled="false"
+                      :loop="true"
+                      :autoplay-timeout="10000"
+                      class="teachers-card-container">
+                <slide v-for="(teacher, index) in teachers" :key="index">
+                    <TeacherCard class="teacher-card-wrapper"
+                                 :image="teacher.photo"
+                                 :name="teacher.name"
+                                 :city="teacher.city"
+                                 :languages="teacher.languages"
+                                 :short-description="teacher.shortInfo"
+                                 type="normal"
+                    />
+                </slide>
+            </carousel>
             <LinkButton class="teachers-link-button-wrapper" title="Все преподаватели" link="/teachers"/>
         </div>
         <div class="feedback-container">
@@ -173,14 +184,24 @@
                 Отзывы
                 <TextBabel class="text-babel-feedback-wrapper" text="Opiniones"/>
             </span>
-            <div class="feedbacks-card-container">
-                <FeedbackCard class="feedback-card-wrapper" v-for="(feedback, index) in feedbacks"
-                              :key="index"
-                              :image="feedback.photo"
-                              :first-name="feedback.signature"
-                              :date="feedback.date"
-                              :text="feedback.message | trim(300)" />
-            </div>
+            <carousel :centerMode="true"
+                      :autoplay="true"
+                      :scrollPerPage="false"
+                      :perPage="1"
+                      :paginationEnabled="false"
+                      :loop="true"
+                      :autoplay-timeout="10000"
+                      class="feedbacks-card-container">
+                <slide v-for="(feedback, index) in feedbacks" :key="index">
+                    <FeedbackCard class="feedback-card-wrapper"
+                                  :image="feedback.photo"
+                                  :first-name="feedback.signature"
+                                  :date="feedback.date"
+                                  :text="feedback.message | trim(300)" 
+                    />
+                </slide>
+               
+            </carousel>
             <LinkButton class="feedbacks-link-button-wrapper" title="Все отзывы" link="/feedbacks"/>
         </div>
         <div class="about-container">
@@ -241,7 +262,6 @@
     import TextBabel from "../components/TextBabel";
     import ImageCarousel from "../components/ImageCarousel";
     import Service from "../service";
-    import {Carousel, Slide} from 'vue-carousel'
 
     export default {
         components: {
@@ -252,8 +272,6 @@
             LinkButton,
             SignupForm,
             TextBabel,
-            'vue-carousel': Carousel,
-            Slide,
             ImageCarousel,
         },
         methods: {
@@ -277,44 +295,19 @@
         data() {
             return {
                 teachers: {},
-                teachersTablet: {},
-                teachersMobile: {},
                 events: {},
-                eventsTablet: {},
-                eventsMobile: {},
                 courses: {},
-                feedbacks: {},
-                topCarouselMobileData: [
-                    '<div class="info-block-circle-item">' +
-                    '<div class="info-block-circle"></div>' +
-                    '<span class="info-block-circle-title">4 000</span>' +
-                    '<span class="info-block-circle-description">довольных слушателей</span>' +
-                    '</div>',
-                    '<div class="info-block-circle-item">' +
-                    '<div class="info-block-circle"></div>' +
-                    '<span class="info-block-circle-title">от 319 ₽</span>' +
-                    '<span class="info-block-circle-description">стоимость 1 часа занятий</span>' +
-                    '</div>',
-                    '<div class="info-block-circle-item">' +
-                    '<div class="info-block-circle"></div>' +
-                    '<span class="info-block-circle-title">8 лет</span>' +
-                    '<span class="info-block-circle-description">успешной работы</span>' +
-                    '</div>'
-                ]
+                feedbacks: {}
             }
         },
         mounted() {
             Service.get("teachers?count=4", (status, data) => {
                 this.teachers = data;
-                this.teachersTablet = this.teachers.slice(0,2);
-                this.teachersMobile = this.teachers.slice(0,1);
             });
             Service.get("events?count=3", (status, data) => {
                 this.events = data;
-                this.eventsTablet =  this.events.slice(0,2);
-                this.eventsMobile = this.events.slice(0,1);
             });
-            Service.get("feedbacks?count=1", (status, data) => {
+            Service.get("feedbacks?count=5", (status, data) => {
                 this.feedbacks = data;
             });
             Service.get("courses?count=3", (status, data) => {
@@ -396,22 +389,22 @@
         justify-content: center;
     }
 
-    /deep/ .info-block-circle-item {
+    .info-block-circle-item {
         display: flex;
         flex-direction: column;
         margin: 0 11rem;
         align-items: center;
     }
     
-    /deep/ .info-block-circle-item:first-child {
+    .info-block-circle-item:first-child {
         margin-left: 0;
     }
     
-    /deep/ .info-block-circle-item:last-child {
+    .info-block-circle-item:last-child {
         margin-right: 0;
     }
 
-    /deep/ .info-block-circle {
+    .info-block-circle {
         height: 20rem;
         width: 20rem;
         border-radius: 10rem;
@@ -422,7 +415,7 @@
         background-color: rgba(255, 201, 0, 0.4);
     }
 
-    /deep/ .info-block-circle-title {
+    .info-block-circle-title {
         font-size: 6rem;
         font-family: GothamPro-Medium, sans-serif;
         color: white;
@@ -430,7 +423,7 @@
         width: 25rem;
     }
 
-    /deep/ .info-block-circle-description {
+    .info-block-circle-description {
         font-family: FedraSerifAPro-Medium, sans-serif;
         font-size: 2.4rem;
         line-height: 1.33;
@@ -610,7 +603,7 @@
         left: 31rem;
     }
 
-    .course-card-slider-container {
+    .course-card-carousel-container {
         width: calc(100% - 16rem);
     }
     
@@ -641,26 +634,15 @@
     }
 
     .events-card-container {
-        display: flex;
+        width: calc(100% - 16rem);
         margin-top: 6rem;
     }
 
     .event-card-wrapper {
-        margin: 0 1.8rem;
+        margin: 0 auto;
         border: solid 0.1rem rgba(0, 0, 0, 0.06);
     }
     
-    .event-card-wrapper-tablet {
-        margin: 0 1.8rem;
-        border: solid 0.1rem rgba(0, 0, 0, 0.06);
-        display: none;
-    }
-    
-    .event-card-wrapper-mobile {
-        display: none;
-        border: solid 0.1rem rgba(0, 0, 0, 0.06);
-    }
-
     .events-link-button-wrapper {
         margin-top: 5rem;
     }
@@ -686,21 +668,13 @@
     .teachers-card-container {
         display: flex;
         margin-top: 4rem;
+        width: 100%;
     }
 
     .teacher-card-wrapper {
-        margin: 0 2rem;
+        margin: 0 auto;
     }
     
-    .teacher-card-wrapper-tablet {
-        display: none;
-        margin: 0 2rem;
-    }
-    
-    .teacher-card-wrapper-mobile {
-        display: none;
-    }
-
     .teachers-link-button-wrapper {
         margin-top: 8rem;
     }
@@ -765,7 +739,7 @@
     }
 
     .feedback-card-wrapper {
-        box-shadow: 0 4px 16px 0 rgba(41, 41, 41, 0.15);
+        margin: 0 auto;
     }
 
     .feedbacks-cards-title {
@@ -780,11 +754,9 @@
     }
 
     .feedbacks-card-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         z-index: 2;
         margin-top: 6rem;
+        width: 100%;
     }
 
     .feedbacks-link-button-wrapper {
@@ -896,6 +868,7 @@
     }
 
     @media screen and (max-width: 1280px) {
+        
         .arrow-element {
             display: none;
         }
@@ -924,21 +897,21 @@
             top: 27rem;
         }
 
-        /deep/ .info-block-circle-item {
+        .info-block-circle-item {
             margin: 0 5rem;
         }
 
-        /deep/ .info-block-circle {
+        .info-block-circle {
             height: 18rem;
             width: 18rem;
         }
 
-        /deep/ .info-block-circle-title {
+        .info-block-circle-title {
             font-size: 3.6rem;
             width: 15rem;
         }
 
-        /deep/ .info-block-circle-description {
+        .info-block-circle-description {
             font-family: FedraSerifAPro, sans-serif;
             font-size: 1.6rem;
             max-width: 13rem;
@@ -975,32 +948,20 @@
             height: 123rem;
         }
 
+        .events-card-container {
+            width: calc(100% - 4rem);
+        }
+
         .events-title {
             margin-top: 50rem;
-        }
-
-        .event-card-wrapper {
-            display: none;
-        }
-
-        .event-card-wrapper-tablet {
-            display: block;
         }
 
         .courses-container {
             height: 82rem;
         }
 
-        .course-card-slider-container {
-            width: 100%;
-        }
-
-        .teacher-card-wrapper {
-            display: none;
-        }
-
-        .teacher-card-wrapper-tablet {
-            display: block;
+        .course-card-carousel-container {
+            width: calc(100% - 4rem);
         }
 
         .feedback-container {
@@ -1061,6 +1022,7 @@
     }
         
     @media screen and (max-width: 760px) {
+        
         .information-container {
             margin-top: 13.2rem;
             height: 42rem;
@@ -1108,11 +1070,13 @@
             display: block;
             position: absolute;
             height: 21rem;
+            width: 100%;
             top: 19rem;
         }
         
-        /deep/ .info-block-circle-item {
+        .info-block-circle-item {
             height: 18rem;
+            margin: 0 auto;
         }
         
         .group-recruitment-container {
@@ -1188,19 +1152,16 @@
         }
         
         .events-card-container {
+            width: 100%;
             margin-top: 2.5rem;
-        }
-        
-        .event-card-wrapper-tablet {
-            display: none;
-        }
-
-        .event-card-wrapper-mobile {
-            display: block;
         }
         
         .events-link-button-wrapper {
             margin-top: 2rem;
+        }
+
+        .course-card-carousel-container {
+            width: 100%;
         }
         
         .courses-container {
@@ -1225,14 +1186,6 @@
         
         .teachers-container {
             height: 60rem;
-        }
-        
-        .teacher-card-wrapper-tablet {
-            display: none;
-        }
-
-        .teacher-card-wrapper-mobile {
-            display: flex;
         }
         
         .teachers-title {

@@ -50,6 +50,7 @@
         text-align: left;
         color: black;
         position: relative;
+        display: block;
     }
     
     .event-card-text-container {
@@ -108,6 +109,7 @@
     }
 
     @media screen and (max-width: 1280px) {
+        
         .event-card-container {
             width: 32rem;
             height: 49rem;
@@ -117,9 +119,11 @@
         .event-card-delimiter {
             width: 25rem;
         }
+        
     }
 
     @media screen and (max-width: 760px) {
+        
         .event-card-container {
             width: 28rem;
             height: 30.5rem;

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import VueJSModal from "vue-js-modal";
-import VueCarousel from '@chenfengyuan/vue-carousel';
+import VueCarousel from 'vue-carousel';
 
 Vue.config.productionTip = false;
 

@@ -1,5 +1,5 @@
 <template>
-    <Carousel :autoplay="true"
+    <carousel :autoplay="true"
               :loop="true"
               :perPage="imagesPerPage"
               :speed="750"
@@ -9,17 +9,15 @@
               paginationColor="#bbc3c0"
               :paginationSize="12"
               :paginationPadding="6">
-        <Slide v-for="(image, index) in images"
+        <slide v-for="(image, index) in images"
                :data="image"
                :key="index">
             <img :alt="image" :src=image :style="styling"/>
-        </Slide>
-    </Carousel>
+        </slide>
+    </carousel>
 </template>
 
 <script>
-    // noinspection ES6CheckImport
-    import {Carousel, Slide} from 'vue-carousel'
 
     export default {
         props: {
@@ -36,10 +34,6 @@
                 type: Number,
                 default: 5
             }
-        },
-        components: {
-            Carousel,
-            Slide
         },
         computed: {
             styling() {
