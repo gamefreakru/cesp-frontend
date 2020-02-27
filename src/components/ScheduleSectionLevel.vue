@@ -12,6 +12,7 @@
                                       :key="index"
                                       :teacher="languageSectionLevelItem.teacher"
                                       :start-time="languageSectionLevelItem.startTime"
+                                      :duration="duration"
                                       :end-time="languageSectionLevelItem.endTime"
                                       :days="languageSectionLevelItem.days"
                                       :start-date="languageSectionLevelItem.startDate"
@@ -119,7 +120,7 @@
     @media screen and (max-width: 760px) {
         
         .schedule-section-level-title {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
         }
         
         .schedule-section-level-item-wrapper-tablet {

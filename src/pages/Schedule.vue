@@ -10,10 +10,11 @@
                 <TextBabel class="schedule-page-text-babel-wrapper" text="Horarios y precios"/>
             </span>
             <div class="schedule-page-table-header">
-                <span style="width: 18rem;" class="schedule-page-table-header-column-title">Уровень</span>
-                <span style="width: 20rem;" class="schedule-page-table-header-column-title">Преподаватель</span>
-                <span style="width: 20rem;" class="schedule-page-table-header-column-title">Время занятий</span>
-                <span style="width: 20rem;" class="schedule-page-table-header-column-title">Дата начала</span>
+                <span style="width: 12rem;" class="schedule-page-table-header-column-title">Уровень</span>
+                <span style="width: 16rem;" class="schedule-page-table-header-column-title">Преподаватель</span>
+                <span style="width: 16rem;" class="schedule-page-table-header-column-title">Время занятий</span>
+                <span style="width: 10rem;" class="schedule-page-table-header-column-title">Дата начала</span>
+                <span style="width: 20rem;" class="schedule-page-table-header-column-title">Продолжительность</span>
                 <span class="schedule-page-table-header-column-title">Цена</span>
             </div>
         </div>

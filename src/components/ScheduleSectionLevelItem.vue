@@ -31,6 +31,7 @@
             </div>
         </div>
         <span class="schedule-section-level-item-start-date">{{startDate | moment("DD.MM.YYYY")}}</span>
+        <div class="schedule-section-level-item-duration">{{duration}}</div>
         <div class="schedule-section-level-item-price-container">
             <div class="schedule-section-level-item-price-info-container">
             <span v-if="priceWithoutDiscount" class="schedule-section-level-item-price-without-discount">
@@ -57,6 +58,7 @@
             endTime: String,
             days: String,
             startDate: String,
+            duration: String,
             price: Number,
             priceWithoutDiscount: Number,
             discountValue: Number,
@@ -146,7 +148,6 @@
         display: flex;
         flex-direction: column;
         width: 20rem;
-        margin-left: 4rem;
     }
     
     .schedule-section-level-item-time {
@@ -179,11 +180,21 @@
         font-family: GothamPro, sans-serif;
         font-size: 1.4rem;
         text-align: left;
-        width: 20rem;
+        width: 14rem;
         box-sizing: border-box;
-        margin-left: 4rem;
         margin-top: 0.2rem;
         align-self: flex-start;
+    }
+    
+    .schedule-section-level-item-duration {
+        font-family: GothamPro, sans-serif;
+        font-size: 1.2rem;
+        text-align: left;
+        width: 20rem;
+        align-self: flex-start;
+        margin-top: 0.2rem;
+        padding-right: 6rem;
+        box-sizing: border-box;
     }
     
     .schedule-section-level-item-price-container {
@@ -264,6 +275,10 @@
         }
         
         .schedule-section-level-item-start-date {
+            display: none;
+        }
+        
+        .schedule-section-level-item-duration {
             display: none;
         }
         

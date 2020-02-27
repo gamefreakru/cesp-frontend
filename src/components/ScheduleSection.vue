@@ -48,20 +48,6 @@
         font-size: 1.6rem;
     }
     
-    .schedule-section-duration {
-        font-family: GothamPro, sans-serif;
-        font-size: 1.4rem;
-        margin-top: 1rem;
-    }
-    
-    .schedule-section-price-tablet {
-        display: none;
-        font-family: GothamPro-Medium, sans-serif;
-        font-size: 1.4rem;
-        color: var(--tomato);
-        margin-top: 1.5rem;
-    }
-    
     .schedule-section-levels-wrapper {
         margin-top: 2rem;
     }
@@ -76,10 +62,6 @@
             min-height: 14.5rem;
             width: calc(100% - 8.8rem);
         }
-        
-        .schedule-section-price-tablet {
-            display: block;
-        }
       
     }
 
@@ -92,13 +74,6 @@
             border-radius: 0.8rem;
         }
         
-        .schedule-section-title {
-            font-size: 1.4rem;
-        }
-        
-        .schedule-section-duration {
-            font-size: 1.2rem;
-        }
     }
 
 </style>

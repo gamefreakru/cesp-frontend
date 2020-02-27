@@ -103,10 +103,11 @@
                 </div>
             </div>
             <div class="dele-page-schedule-section-levels-header">
-                <span style="width: 18rem;" class="dele-page-schedule-section-level-column-title">Уровень</span>
-                <span style="width: 20rem;" class="dele-page-schedule-section-level-column-title">Преподаватель</span>
-                <span style="width: 20rem;" class="dele-page-schedule-section-level-column-title">Время занятий</span>
-                <span style="width: 20rem;" class="dele-page-schedule-section-level-column-title">Дата начала</span>
+                <span style="width: 12rem;" class="dele-page-schedule-section-level-column-title">Уровень</span>
+                <span style="width: 16rem;" class="dele-page-schedule-section-level-column-title">Преподаватель</span>
+                <span style="width: 16rem;" class="dele-page-schedule-section-level-column-title">Время занятий</span>
+                <span style="width: 10rem;" class="dele-page-schedule-section-level-column-title">Дата начала</span>
+                <span style="width: 20rem;" class="dele-page-schedule-section-level-column-title">Продолжительность</span>
                 <span class="dele-page-schedule-section-level-column-title">Цена</span>
             </div>
             <div class="dele-page-schedule-sections-levels-container">
@@ -114,6 +115,7 @@
                                       :class="{ 'dele-page-schedule-section-levels-wrapper-border': 
                                       index!==scheduleA.length - 1 }"
                                       :key="index"
+                                      :duration="schedule.duration"
                                       :title="schedule.level"
                                       :language-section-level-items="schedule.scheduleItems"
                 />
@@ -138,10 +140,11 @@
                 </div>
             </div>
             <div v-if="scheduleB" class="dele-page-schedule-section-levels-header">
-                <span style="width: 18rem;" class="dele-page-schedule-section-level-column-title">Уровень</span>
-                <span style="width: 20rem;" class="dele-page-schedule-section-level-column-title">Преподаватель</span>
-                <span style="width: 20rem;" class="dele-page-schedule-section-level-column-title">Время занятий</span>
-                <span style="width: 20rem;" class="dele-page-schedule-section-level-column-title">Дата начала</span>
+                <span style="width: 12rem;" class="dele-page-schedule-section-level-column-title">Уровень</span>
+                <span style="width: 16rem;" class="dele-page-schedule-section-level-column-title">Преподаватель</span>
+                <span style="width: 16rem;" class="dele-page-schedule-section-level-column-title">Время занятий</span>
+                <span style="width: 10rem;" class="dele-page-schedule-section-level-column-title">Дата начала</span>
+                <span style="width: 20rem;" class="dele-page-schedule-section-level-column-title">Продолжительность</span>
                 <span class="dele-page-schedule-section-level-column-title">Цена</span>
             </div>
             <div class="dele-page-schedule-sections-levels-container">
@@ -149,6 +152,7 @@
                                       :class="{ 'dele-page-schedule-section-levels-wrapper-border': 
                                       index!==scheduleB.length - 1 }"
                                       :key="index"
+                                      :duration="schedule.duration"
                                       :title="schedule.level"
                                       :language-section-level-items="schedule.scheduleItems"
                 />
@@ -175,10 +179,11 @@
                 </div>
             </div>
             <div v-if="scheduleC.length >= 1" class="dele-page-schedule-section-levels-header">
-                <span style="width: 18rem;" class="dele-page-schedule-section-level-column-title">Уровень</span>
-                <span style="width: 20rem;" class="dele-page-schedule-section-level-column-title">Преподаватель</span>
-                <span style="width: 20rem;" class="dele-page-schedule-section-level-column-title">Время занятий</span>
-                <span style="width: 20rem;" class="dele-page-schedule-section-level-column-title">Дата начала</span>
+                <span style="width: 12rem;" class="dele-page-schedule-section-level-column-title">Уровень</span>
+                <span style="width: 16rem;" class="dele-page-schedule-section-level-column-title">Преподаватель</span>
+                <span style="width: 16rem;" class="dele-page-schedule-section-level-column-title">Время занятий</span>
+                <span style="width: 10rem;" class="dele-page-schedule-section-level-column-title">Дата начала</span>
+                <span style="width: 20rem;" class="dele-page-schedule-section-level-column-title">Продолжительность</span>
                 <span class="dele-page-schedule-section-level-column-title">Цена</span>
             </div>
             <div class="dele-page-schedule-sections-levels-container">
@@ -186,6 +191,7 @@
                                       :class="{ 'dele-page-schedule-section-levels-wrapper-border': 
                                       index!==scheduleC.length - 1 }"
                                       :key="index"
+                                      :duration="schedule.duration"
                                       :title="schedule.level"
                                       :language-section-level-items="schedule.scheduleItems"
                 />

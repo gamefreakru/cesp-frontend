@@ -5,12 +5,12 @@
             <img class="main-page-background-image-right" src="../assets/main/background.png" alt="">
             <img class="main-page-background-image-right-mobile" src="../assets/main/background-mobile.png" alt="">
             <div class="title-block-container">
-                <div style="width: 60rem;" class="title-block">Лучшая школа
-                    <span style="color: var(--tomato);">испанского</span></div>
-                <div style="width: 55rem;" class="title-block">и каталанского в Москве</div>
-                <div class="title-block-mobile">Лучшая школа</div>
-                <div class="title-block-mobile" style="color: var(--tomato); border-radius: 0;">испанского</div>
+                <div class="title-block">Школа
+                    <span style="color: var(--tomato);">испанского</span> и каталанского</div>
+                <div style="width: 55rem;" class="title-block">с носителем в Москве</div>
+                <div class="title-block-mobile">Школа <span style="color: var(--tomato);">испанского</span></div>
                 <div class="title-block-mobile">и каталанского</div>
+                <div class="title-block-mobile">с носителем</div>
                 <div class="title-block-mobile">в Москве</div>
             </div>
             <div class="info-block-circle-container">
@@ -372,6 +372,7 @@
         height: 6rem;
         border-radius: 0.8rem;
         margin-top: -1rem;
+        width: 80rem;
     }
     
     .title-block-mobile {
@@ -893,6 +894,12 @@
             top: 11rem;
         }
 
+        .title-block {
+            font-size: 3.5rem;
+            height: 5rem;
+            width: 70rem;
+        }
+        
         .info-block-circle-container {
             top: 27rem;
         }
