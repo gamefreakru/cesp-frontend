@@ -53,66 +53,6 @@
                             </a>
                         </div>
                     </div>
-                    <div class="contacts-page-requisites-container">
-                        <span class="contacts-page-requsites-title">Реквизиты компании</span>
-                        <span class="contacts-page-requsites">
-                            Индивидуальный предприниматель Неудачина Наталья Анатольевна
-                        </span>
-                        <span class="contacts-page-requsites">
-                            Юридический адрес: 665724 Иркутская обл. г. Братск ул. Возрождения  3-15
-                        </span>
-                        <span class="contacts-page-requsites">
-                            Р/с 40802810620130007157
-                        </span>
-                        <span class="contacts-page-requsites">
-                            К/с: 30101810450040000751
-                        </span>
-                        <span class="contacts-page-requsites">
-                            БАНК: Филиал №5440 ВТБ 24 (ПАО) г.Новосибирск
-                        </span>
-                        <span class="contacts-page-requsites">
-                            БИК: 045004751
-                        </span>
-                        <span class="contacts-page-requsites">
-                            ИНН: 380400215546  
-                        </span>
-                        <span class="contacts-page-requsites">
-                            ОГРН: 304380409300079 выдано 02 Апреля 2004 г 
-                        </span>
-                        <span class="contacts-page-requsites">
-                            ОКПО: 0080732445 
-                        </span>
-                    </div>
-                    <div class="contacts-page-info-block-container contacts-page-info-block-how-to-get-tablet">
-                        <div class="contacts-page-info-block-title">Как добраться</div>
-                        <div class="contacts-page-info-block-content-container">
-                            <img class="contacts-page-info-block-metro-image"
-                                 src="../assets/contacts/metro-brown-icon.svg"
-                                 alt="">
-                            <span class="contacts-page-info-block-metro">
-                                <span class="contacts-page-info-block-metro-name">Добрынинская</span>
-                                - 5 мин. пешком
-                            </span>
-                        </div>
-                        <div class="contacts-page-info-block-content-container">
-                            <img class="contacts-page-info-block-metro-image"
-                                 src="../assets/contacts/metro-grey-icon.svg"
-                                 alt="">
-                            <span class="contacts-page-info-block-metro">
-                                <span class="contacts-page-info-block-metro-name">Серпуховская</span>
-                                - 5 мин. пешком
-                            </span>
-                        </div>
-                        <div class="contacts-page-info-block-content-container">
-                            <img class="contacts-page-info-block-metro-image"
-                                 src="../assets/contacts/metro-green-icon.svg"
-                                 alt="">
-                            <span class="contacts-page-info-block-metro">
-                                <span class="contacts-page-info-block-metro-name">Павелецкая</span>
-                                - 10 мин. пешком
-                            </span>
-                        </div>
-                    </div>
                 </div>
                 <div class="contacts-page-info-block-container">
                     <div class="contacts-page-info-block-title">Как связаться</div>

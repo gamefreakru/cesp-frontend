@@ -18,7 +18,6 @@ import About from './pages/About'
 import Program from './pages/Program'
 import Policy from './pages/Policy'
 import Schedule from './pages/Schedule';
-import Payment from './pages/Payment'
 import NotFound from './pages/NotFound';
 import HowToLearn from './pages/HowToLearn';
 import Dele from './pages/Dele'
@@ -116,11 +115,6 @@ export default new Router({
             path: '/dele',
             name: 'dele',
             component: Dele
-        },
-        {
-            path: '/payment',
-            name: 'payment',
-            component: Payment
         },
         {
             path: '/program',
