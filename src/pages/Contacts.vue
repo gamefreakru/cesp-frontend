@@ -53,6 +53,36 @@
                             </a>
                         </div>
                     </div>
+                    <div class="contacts-page-info-block-container contacts-page-info-block-how-to-get-tablet">
+                        <div class="contacts-page-info-block-title">Как добраться</div>
+                        <div class="contacts-page-info-block-content-container">
+                            <img class="contacts-page-info-block-metro-image"
+                                 src="../assets/contacts/metro-brown-icon.svg"
+                                 alt="">
+                            <span class="contacts-page-info-block-metro">
+                                <span class="contacts-page-info-block-metro-name">Добрынинская</span>
+                                - 5 мин. пешком
+                            </span>
+                        </div>
+                        <div class="contacts-page-info-block-content-container">
+                            <img class="contacts-page-info-block-metro-image"
+                                 src="../assets/contacts/metro-grey-icon.svg"
+                                 alt="">
+                            <span class="contacts-page-info-block-metro">
+                                <span class="contacts-page-info-block-metro-name">Серпуховская</span>
+                                - 5 мин. пешком
+                            </span>
+                        </div>
+                        <div class="contacts-page-info-block-content-container">
+                            <img class="contacts-page-info-block-metro-image"
+                                 src="../assets/contacts/metro-green-icon.svg"
+                                 alt="">
+                            <span class="contacts-page-info-block-metro">
+                                <span class="contacts-page-info-block-metro-name">Павелецкая</span>
+                                - 10 мин. пешком
+                            </span>
+                        </div>
+                    </div>
                 </div>
                 <div class="contacts-page-info-block-container">
                     <div class="contacts-page-info-block-title">Как связаться</div>
