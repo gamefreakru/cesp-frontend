@@ -13,6 +13,12 @@
                 <div class="title-block-mobile">с носителем</div>
                 <div class="title-block-mobile">в Москве</div>
             </div>
+            <div class="main-page-online-course-signup" @click="showModal()">
+                Набор группы на онлайн-курс
+            </div>
+            <SignupFormModal @hideModal="hideModal('signup-form-modal')"/>
+            <SignupFormModalTablet @hideModal="hideModal('signup-form-modal-tablet')"/>
+            <SignupFormModalPhone @hideModal="hideModal('signup-form-modal-phone')"/>
             <div class="info-block-circle-container">
                 <div class="info-block-circle-item">
                     <div class="info-block-circle info-block-circle-light"></div>
@@ -261,6 +267,9 @@
     import SignupForm from "../components/SignupForm";
     import TextBabel from "../components/TextBabel";
     import ImageCarousel from "../components/ImageCarousel";
+    import SignupFormModal from "../components/SignupFormModal";
+    import SignupFormModalTablet from "../components/SignupFormModalTablet";
+    import SignupFormModalPhone from "../components/SignupFormModalPhone";
     import Service from "../service";
 
     export default {
@@ -273,6 +282,9 @@
             SignupForm,
             TextBabel,
             ImageCarousel,
+            SignupFormModal,
+            SignupFormModalTablet,
+            SignupFormModalPhone
         },
         methods: {
             getImgUrl(imagePath) {
@@ -282,7 +294,23 @@
             getCarouselImgUrl(imagePath) {
                 var images = require.context('../assets/carousel', false, /\.jpg$/);
                 return images('./' + imagePath + ".jpg");
-            }
+            },
+            hideModal(name) {
+                this.$modal.hide(name)
+            },
+            showModal() {
+                if(window.innerWidth >= 1280) {
+                    this.$modal.show('signup-form-modal');
+                    return;
+                }
+                if(window.innerWidth >= 760) {
+                    this.$modal.show('signup-form-modal-tablet');
+                    return;
+                }
+                if(window.innerWidth < 760) {
+                    this.$modal.show('signup-form-modal-phone');
+                }
+            },
         },
         filters: {
             trim(value, count) {
@@ -377,6 +405,19 @@
     
     .title-block-mobile {
         display: none;
+    }
+    
+    .main-page-online-course-signup {
+        position: absolute;
+        top: 35rem;
+        font-family: GothamPro-Medium, sans-serif;
+		font-size: 2.6rem;
+		color: white;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        cursor: pointer;
     }
 
     .info-block-circle-container {
@@ -900,6 +941,12 @@
             width: 70rem;
         }
         
+        .main-page-online-course-signup {
+            top: 47rem;
+            font-size: 2.4rem;
+            width: 30rem;
+        }
+        
         .info-block-circle-container {
             top: 27rem;
         }
@@ -1067,6 +1114,11 @@
             border-radius: 0.4rem;
             padding: 0.1rem 1rem;
             margin: -0.2rem 0;
+        }
+        
+        .main-page-online-course-signup {
+            font-size: 1.4rem;
+            top: 39rem;
         }
         
         .info-block-circle-container {
