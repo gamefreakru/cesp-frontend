@@ -69,8 +69,8 @@
                  alt="">
             <div class="group-recruitment-information-container">
                 <span class="group-recruitment-information-title">Идёт набор в группы: 
-                    <span style="color: var(--tomato);">февраль</span>, 
-                    <span style="color: var(--tomato);">март</span>
+                    <span style="color: var(--tomato);">апрель</span>, 
+                    <span style="color: var(--tomato);">май</span>
                 </span>
                 <span class="group-recruitment-information-description">
                     При оплате полного стандартного курса действуют скидки:
@@ -418,6 +418,7 @@
         margin-left: auto;
         margin-right: auto;
         cursor: pointer;
+        text-decoration: underline;
     }
 
     .info-block-circle-container {
