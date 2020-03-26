@@ -43,6 +43,7 @@
         },
         methods: {
             submit() {
+                this.showModal();
                 Service.post("sendemail", {
                     name: this.name,
                     contact: this.contact,
@@ -50,7 +51,6 @@
                     if (status === 200) {
                         this.name = '';
                         this.contact = '';
-                        this.showModal();
                     }
                 })
             },
